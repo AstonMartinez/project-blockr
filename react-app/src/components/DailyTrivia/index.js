@@ -139,8 +139,8 @@ const DailyTrivia = () => {
 
     return (
         <div id='trivia-page-wrapper'>
-            <div>
-                <h1>Today's Trivia</h1>
+            <div id='trivia-page-header'>
+                <h1>Trivia Practice</h1>
             </div>
             <section className='question-container'>
                 <div className='question-text'>
@@ -622,7 +622,7 @@ const DailyTrivia = () => {
                     )}
                 </div>
             </section>
-            <div>
+            <div id='trivia-submit-container'>
                 {submitError && (<p className="error-text">{submitError}</p>)}
                 <button onClick={handleSubmit} disabled={hasSubmitted}>Submit</button>
             </div>

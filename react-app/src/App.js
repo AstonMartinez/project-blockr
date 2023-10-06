@@ -9,6 +9,8 @@ import UserDashboard from "./components/UserDashboard";
 import LandingPage from "./components/LandingPage";
 import DailyTrivia from "./components/DailyTrivia";
 import DailyPlanner from "./components/DailyPlanner";
+import FlashCards from "./components/FlashCards";
+import ResourcesComponent from "./components/ResourcesComponent";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +24,12 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/resources'>
+            <ResourcesComponent />
+          </Route>
+          <Route exact path='/flashcards'>
+            <FlashCards />
+          </Route>
           <Route exact path='/planner'>
             <DailyPlanner />
           </Route>

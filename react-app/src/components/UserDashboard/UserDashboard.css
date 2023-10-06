@@ -1,0 +1,43 @@
+.day-of-week {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-left: 30px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#user-dashboard-wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#dashboard-header {
+    display: flex;
+    justify-content: center;
+}
+
+.weekday {
+    width: 4%;
+}
+
+/* #tuesday {
+    margin-left: 10px;
+}
+
+#wednesday {
+    margin-left: 15px;
+}
+
+#thursday {
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+#friday {
+    padding-left: 20px;
+} */
+
+.planners-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}

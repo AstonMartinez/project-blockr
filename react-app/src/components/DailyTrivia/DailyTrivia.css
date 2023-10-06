@@ -1,0 +1,48 @@
+.question-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 15px 0 15px 15px;
+}
+
+.error-text {
+    color: red;
+}
+
+.answer-status-correct {
+    color: green;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.answer-status-incorrect {
+    color: red;
+}
+
+#correct {
+    color: green;
+}
+
+#incorrect {
+    color: red;
+}
+
+#trivia-page-wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.question-text {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    margin: 5px 0;
+}
+
+.input-container > input {
+    margin-right: 8px;
+}

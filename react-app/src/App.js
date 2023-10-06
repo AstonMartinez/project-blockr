@@ -5,6 +5,10 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+import UserDashboard from "./components/UserDashboard";
+import LandingPage from "./components/LandingPage";
+import DailyTrivia from "./components/DailyTrivia";
+import DailyPlanner from "./components/DailyPlanner";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,10 +22,22 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login" >
+          <Route exact path='/planner'>
+            <DailyPlanner />
+          </Route>
+          <Route exact path = '/trivia'>
+            <DailyTrivia />
+          </Route>
+          <Route exact path = '/'>
+            <LandingPage />
+          </Route>
+          <Route exact path = '/dashboard'>
+            <UserDashboard />
+          </Route>
+          <Route exact path="/login" >
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
         </Switch>

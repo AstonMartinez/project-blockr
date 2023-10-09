@@ -12,6 +12,10 @@ label {
     font-weight: bold;
 }
 
+#trivia-submit-container {
+
+}
+
 .error-text {
     color: red;
 }

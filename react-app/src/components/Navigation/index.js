@@ -32,6 +32,11 @@ function Navigation({ isLoaded }){
 				}}>
 					Resources
 				</div>
+				<div className='nav-option' onClick={() => {
+					history.push('/practice')
+				}}>
+					Practice
+				</div>
 			</>
 		)
 	} else {

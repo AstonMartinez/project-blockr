@@ -1,0 +1,29 @@
+.fc-set-wrapper {
+    border: 1px solid black;
+    flex-grow: 1;
+    flex-basis: 200;
+    margin: 10px;
+    width: 20%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fc-options-holder {
+    border: 1px solid red;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#flash-card-page-wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#fc-header {
+    text-align: center;
+}

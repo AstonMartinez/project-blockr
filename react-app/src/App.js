@@ -11,6 +11,7 @@ import DailyTrivia from "./components/DailyTrivia";
 import DailyPlanner from "./components/DailyPlanner";
 import FlashCards from "./components/FlashCards";
 import ResourcesComponent from "./components/ResourcesComponent";
+import Practice from "./components/Practice";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,31 +22,41 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/practice'>
+          <Navigation isLoaded={isLoaded} />
+            <Practice />
+          </Route>
           <Route exact path='/resources'>
+          <Navigation isLoaded={isLoaded} />
             <ResourcesComponent />
           </Route>
           <Route exact path='/flashcards'>
+          <Navigation isLoaded={isLoaded} />
             <FlashCards />
           </Route>
-          <Route exact path='/planner'>
+          <Route exact path='/schedule'>
+          <Navigation isLoaded={isLoaded} />
             <DailyPlanner />
           </Route>
           <Route exact path = '/trivia'>
+          <Navigation isLoaded={isLoaded} />
             <DailyTrivia />
           </Route>
           <Route exact path = '/'>
+          <Navigation isLoaded={isLoaded} />
             <LandingPage />
           </Route>
           <Route exact path = '/dashboard'>
             <UserDashboard />
           </Route>
           <Route exact path="/login" >
+          <Navigation isLoaded={isLoaded} />
             <LoginFormPage />
           </Route>
           <Route exact path="/signup">
+          <Navigation isLoaded={isLoaded} />
             <SignupFormPage />
           </Route>
         </Switch>

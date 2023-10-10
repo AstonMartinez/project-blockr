@@ -8,10 +8,10 @@ import Navigation from "./components/Navigation";
 import UserDashboard from "./components/UserDashboard";
 import LandingPage from "./components/LandingPage";
 import DailyTrivia from "./components/DailyTrivia";
-import DailyPlanner from "./components/DailyPlanner";
 import FlashCards from "./components/FlashCards";
 import ResourcesComponent from "./components/ResourcesComponent";
 import Practice from "./components/Practice";
+import WeeklySchedule from "./components/WeeklySchedule";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function App() {
           </Route>
           <Route exact path='/schedule'>
           <Navigation isLoaded={isLoaded} />
-            <DailyPlanner />
+            <WeeklySchedule />
           </Route>
           <Route exact path = '/trivia'>
           <Navigation isLoaded={isLoaded} />

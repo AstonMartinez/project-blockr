@@ -9,45 +9,65 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import FlashOnIcon from '@mui/icons-material/FlashOn';
+import AddLinkIcon from '@mui/icons-material/AddLink';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import { Redirect } from 'react-router-dom';
+import Link from '@mui/material/Link';
+
 
 const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Schedule" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Trivia" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Flash Cards" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Practice" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Resources" />
-    </ListItemButton>
+    <Link href="/dashboard" style={{"textDecoration": "none", "color": "black"}}>
+        <ListItemButton>
+        <ListItemIcon>
+            <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+        </ListItemButton>
+    </Link>
+    <Link href="/schedule" style={{"textDecoration": "none", "color": "black"}}>
+        <ListItemButton>
+        <ListItemIcon>
+            <CalendarMonthIcon />
+        </ListItemIcon>
+        <ListItemText primary="Schedule" />
+        </ListItemButton>
+    </Link>
+    <Link href="/trivia" style={{"textDecoration": "none", "color": "black"}}>
+        <ListItemButton>
+        <ListItemIcon>
+            <PsychologyIcon />
+        </ListItemIcon>
+        <ListItemText primary="Trivia" />
+        </ListItemButton>
+    </Link>
+    <Link href="/flashcards" style={{"textDecoration": "none", "color": "black"}}>
+        <ListItemButton>
+        <ListItemIcon>
+            <FlashOnIcon />
+        </ListItemIcon>
+        <ListItemText primary="Flash Cards" />
+        </ListItemButton>
+    </Link>
+    <Link href="/practice" style={{"textDecoration": "none", "color": "black"}}>
+        <ListItemButton>
+        <ListItemIcon>
+            <AppRegistrationIcon />
+        </ListItemIcon>
+        <ListItemText primary="Practice" />
+        </ListItemButton>
+    </Link>
+    <Link href="/resources" style={{"textDecoration": "none", "color": "black"}}>
+        <ListItemButton>
+        <ListItemIcon>
+            <AddLinkIcon />
+        </ListItemIcon>
+        <ListItemText primary="Resources" />
+        </ListItemButton>
+    </Link>
   </React.Fragment>
 );
 

@@ -210,7 +210,7 @@ export const cSharpCards = [
     },
     {
         front: "How do you declare a variable in C#?",
-        back: "Using the 'var', 'int', 'string', or other data type keywords, followed by a variable  name"
+        back: "Using the 'var', 'int', 'string', or other data type keywords, followed by a variable name"
     },
     {
         front: "Explain the 'class' keyword in C#",

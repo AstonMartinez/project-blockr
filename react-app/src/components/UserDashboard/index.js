@@ -51,7 +51,6 @@ import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -61,6 +60,7 @@ import Orders from './Orders';
 import Copyright from './Copyright'
 import { useHistory } from 'react-router-dom'
 import mainListItems from './listItems';
+import PersonIcon from '@mui/icons-material/Person';
 
 const drawerWidth = 240;
 
@@ -153,6 +153,9 @@ export default function UserDashboard() {
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
+            </IconButton>
+            <IconButton color="inherit">
+                <PersonIcon />
             </IconButton>
           </Toolbar>
         </AppBar>

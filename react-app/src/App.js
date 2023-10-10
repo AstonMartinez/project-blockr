@@ -12,6 +12,7 @@ import FlashCards from "./components/FlashCards";
 import ResourcesComponent from "./components/ResourcesComponent";
 import Practice from "./components/Practice";
 import WeeklySchedule from "./components/WeeklySchedule";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ function App() {
     <>
       {isLoaded && (
         <Switch>
+          <Route exact path='/user'>
+            <UserProfile />
+          </Route>
           <Route exact path='/practice'>
           <Navigation isLoaded={isLoaded} />
             <Practice />

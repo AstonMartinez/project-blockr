@@ -86,9 +86,6 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function LoginFormPage() {
@@ -107,14 +104,13 @@ export default function LoginFormPage() {
       setErrors(data);
     }
   };
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
+
+  const handleDemoLogin = async () => {
+    const data = await dispatch(login("demo@aa.io", "password"))
+    if (data) {
+      setErrors(data)
+    }
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -187,12 +183,28 @@ export default function LoginFormPage() {
               >
                 Sign In
               </Button>
+              {/* <Grid item xs> */}
+                    <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                    onClick={handleDemoLogin}
+                  >
+                    Demo Login
+                  </Button>
               <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
+                {/* <Grid item xs>
+                    <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                    onClick={handleDemoLogin}
+                  >
+                    Demo Login
+                  </Button>
+                </Grid> */}
                 <Grid item>
                   <Link href="#" variant="body2">
                     {"Don't have an account? Sign Up"}

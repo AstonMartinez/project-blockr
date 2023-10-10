@@ -108,15 +108,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function UserDashboard() {
     const history = useHistory()
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+    const [open, setOpen] = React.useState(true);
+    const toggleDrawer = () => {
+        setOpen(!open);
+    };
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -155,7 +154,7 @@ export default function UserDashboard() {
               </Badge>
             </IconButton>
             <IconButton color="inherit">
-                <PersonIcon />
+                <PersonIcon onClick={() => history.push('/user')} />
             </IconButton>
           </Toolbar>
         </AppBar>

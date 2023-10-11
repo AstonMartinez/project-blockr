@@ -17,27 +17,23 @@ const IndividualCard = ({front, back}) => {
         cardContent = back
     }
 
-    const card = (
-            <React.Fragment sx={{border: "1px solid lightgray"}}>
-            <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-                {cardContent}
-            </Typography>
-            </CardContent>
-            <CardActions>
-            <Button onClick={() => {
-                cardSide === "front" ? setCardSide("back") : setCardSide("front")
-            }} size="small">See {cardSide === "front" ? "back" : "front"}</Button>
-            </CardActions>
-        </React.Fragment>
-    )
-
     return (
-        // <div>
-            // <div>
-            <Card className='fc-set-wrapper' variant="outlined">{card}</Card>
-            // </div>
-        // </div>
+        <div id='fc-card-holder'>
+            <Card variant="outlined" id='flsh-crd'>
+                <React.Fragment>
+                    <CardContent>
+                    <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+                        {cardContent}
+                    </Typography>
+                    </CardContent>
+                    <CardActions>
+                    <Button onClick={() => {
+                        cardSide === "front" ? setCardSide("back") : setCardSide("front")
+                    }} size="small">See {cardSide === "front" ? "back" : "front"}</Button>
+                    </CardActions>
+                </React.Fragment>
+            </Card>
+        </div>
     )
 }
 

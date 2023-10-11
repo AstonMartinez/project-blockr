@@ -19,9 +19,12 @@ import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { useHistory } from 'react-router-dom'
+import { useHistory, NavLink } from 'react-router-dom'
 import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCardSets } from '../../store/cards';
 
 const drawerWidth = 240;
 
@@ -71,15 +74,30 @@ const AppBar = styled(MuiAppBar, {
 
 const FlashCards = () => {
   const history = useHistory()
+  const dispatch = useDispatch()
+  const allSets = useSelector(state => state.cards.allSets)
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
       setOpen(!open);
   };
+
+  useEffect(() => {
+    dispatch(getCardSets()).then(() => {
+      console.log(allSets)
+    })
+
+  }, [dispatch])
+
+  const setsArr = Object.values(allSets)
+
       const jsCard = (
         <React.Fragment>
           <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+            <Typography sx={{ fontSize: 20, textAlign: 'center' }} color="text.secondary" gutterBottom>
               JavaScript
+            </Typography>
+            <Typography sx={{ fontSize: 13, textAlign: 'center' }} color="text.secondary" gutterBottom>
+              Sharpen your JavaScript knowledge
             </Typography>
           </CardContent>
           <CardActions>
@@ -218,8 +236,8 @@ const FlashCards = () => {
         </React.Fragment>
       );
     return (
-      <Box sx={{ display: 'flex', height: "100vh" }}>
-      <Box sx={{ display: 'flex', height: "100vh" }}>
+      <Box sx={{ display: 'flex'}}>
+      <Box sx={{ display: 'flex'}}>
   <CssBaseline />
   <AppBar position="absolute" open={open}>
     <Toolbar
@@ -277,23 +295,38 @@ const FlashCards = () => {
     </List>
   </Drawer>
       </Box>
-      <Box>
+      <Box component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto',
+          }}>
       <div style={{"marginTop": "70px"}} id='flash-card-page-wrapper'>
             <div id='fc-header'>
                 <h1>Flash Cards</h1>
             </div>
             <section id='fc-options-holder'>
-                    <Card className='fc-set-wrapper' variant="outlined">{jsCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{pyCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{reCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{csCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{cpCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{jaCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{anCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{neCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{ruCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{tsCard}</Card>
-                    <Card className='fc-set-wrapper' variant="outlined">{svCard}</Card>
+              {setsArr.length && setsArr.map(set => (
+                <Card className='fc-set-wrapper' variant="outlined">
+                  <CardContent>
+                    <Typography sx={{ fontSize: 20, textAlign: 'center' }} color="text.secondary" gutterBottom>
+                      {set.title}
+                    </Typography>
+                    <Typography sx={{ fontSize: 13, textAlign: 'center' }} color="text.secondary" gutterBottom>
+                      {set.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <NavLink exact to={`/sets/${set.id}`}>
+                      <Button size="small">Practice</Button>
+                    </NavLink>
+                  </CardActions>
+                </Card>
+              ))}
             </section>
         </div>
       </Box>

@@ -1,41 +1,3 @@
-// import './UserDashboard.css';
-// import { useState, useSelector } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
-// import DailyPlanner from '../DailyPlanner';
-
-// const UserDashboard = () => {
-//     const history = useHistory()
-//     const sessionUser = useSelector(state => state.session.user)
-//     if(!sessionUser) history.push('/login')
-
-//     return (
-//         <div id='user-dashboard-wrapper'>
-//             <div id='dashboard-header'>
-//                 <h1>Weekly Overview</h1>
-//             </div>
-//             <section className='day-of-week'>
-//                 <span className='weekday' id='monday'>Monday</span>
-//                 <span className='weekday' id='tuesday'>Tuesday</span>
-//                 <span className='weekday' id='wednesday'>Wednesday</span>
-//                 <span className='weekday' id='thursday'>Thursday</span>
-//                 <span className='weekday' id='friday'>Friday</span>
-//                 <span className='weekday' id='saturday'>Saturday</span>
-//                 <span className='weekday' id='sunday'>Sunday</span>
-//             </section>
-//             <section className='planners-wrapper'>
-//                 <DailyPlanner id={1} />
-//                 <DailyPlanner id={2} />
-//                 <DailyPlanner id={3} />
-//                 <DailyPlanner id={4} />
-//                 <DailyPlanner id={5} />
-//                 <DailyPlanner id={6} />
-//                 <DailyPlanner id={7} />
-//             </section>
-//         </div>
-//     )
-// }
-
-// export default UserDashboard;
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -61,6 +23,7 @@ import Copyright from './Copyright'
 import { useHistory } from 'react-router-dom'
 import mainListItems from './listItems';
 import PersonIcon from '@mui/icons-material/Person';
+import Footer from '../Footer';
 
 const drawerWidth = 240;
 
@@ -174,41 +137,6 @@ export default function UserDashboard() {
           <Divider />
           <List component="nav">
             {mainListItems}
-            {/* <div onClick={() => {
-                history.push('/dashboard')
-            }}>
-                <p style={{"marginLeft": "10px"}}>Dashboard</p>
-            </div>
-            <Divider sx={{ my: 1 }} />
-            <div onClick={() => {
-                history.push('/schedule')
-            }}>
-                <p style={{"marginLeft": "10px"}}>Schedule</p>
-            </div>
-            <Divider sx={{ my: 1 }} />
-            <div onClick={() => {
-                history.push('/trivia')
-            }}>
-                <p style={{"marginLeft": "10px"}}>Trivia</p>
-            </div>
-            <Divider sx={{ my: 1 }} />
-            <div onClick={() => {
-                history.push('/flashcards')
-            }}>
-                <p style={{"marginLeft": "10px"}}>Flash Cards</p>
-            </div>
-            <Divider sx={{ my: 1 }} />
-            <div onClick={() => {
-                history.push('/practice')
-            }}>
-                <p style={{"marginLeft": "10px"}}>Practice</p>
-            </div>
-            <Divider sx={{ my: 1 }} />
-            <div onClick={() => {
-                history.push('/resources')
-            }}>
-                <p style={{"marginLeft": "10px"}}>Resources</p>
-            </div> */}
           </List>
         </Drawer>
         <Box
@@ -259,7 +187,7 @@ export default function UserDashboard() {
                 </Paper>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
+            <Footer sx={{marginTop: "20px"}} />
           </Container>
         </Box>
       </Box>

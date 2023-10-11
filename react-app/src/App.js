@@ -14,6 +14,7 @@ import Practice from "./components/Practice";
 import WeeklySchedule from "./components/WeeklySchedule";
 import UserProfile from "./components/UserProfile";
 import CardSet from "./components/FlashCards/CardSet";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,13 +42,13 @@ function App() {
           <Route exact path='/schedule'>
             <WeeklySchedule />
           </Route>
-          <Route exact path = '/trivia'>
+          <Route exact path='/trivia'>
             <DailyTrivia />
           </Route>
-          <Route exact path = '/'>
+          <Route exact path='/'>
             <LandingPage />
           </Route>
-          <Route exact path = '/dashboard'>
+          <Route exact path='/dashboard'>
             <UserDashboard />
           </Route>
           <Route exact path="/login" >
@@ -56,7 +57,7 @@ function App() {
           <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path='/test'>
+          <Route exact path='/sets/:setId'>
             <CardSet />
           </Route>
         </Switch>

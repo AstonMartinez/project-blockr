@@ -16,9 +16,7 @@ class CardQuestion(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'creator_id': self.creator_id,
-            'title': self.title,
-            'description': self.description,
-            'status': self.status,
-            'set': self.set.to_dict()
+            'set_id': self.set_id,
+            'front': self.front,
+            'back': self.back
         }

@@ -13,6 +13,7 @@ import ResourcesComponent from "./components/ResourcesComponent";
 import Practice from "./components/Practice";
 import WeeklySchedule from "./components/WeeklySchedule";
 import UserProfile from "./components/UserProfile";
+import CardSet from "./components/FlashCards/CardSet";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,39 +30,34 @@ function App() {
             <UserProfile />
           </Route>
           <Route exact path='/practice'>
-          <Navigation isLoaded={isLoaded} />
             <Practice />
           </Route>
-          <Route exact path='/resources'>
-          <Navigation isLoaded={isLoaded} />
+          {/* <Route exact path='/resources'>
             <ResourcesComponent />
-          </Route>
+          </Route> */}
           <Route exact path='/flashcards'>
-          <Navigation isLoaded={isLoaded} />
             <FlashCards />
           </Route>
           <Route exact path='/schedule'>
-          <Navigation isLoaded={isLoaded} />
             <WeeklySchedule />
           </Route>
           <Route exact path = '/trivia'>
-          <Navigation isLoaded={isLoaded} />
             <DailyTrivia />
           </Route>
           <Route exact path = '/'>
-          <Navigation isLoaded={isLoaded} />
             <LandingPage />
           </Route>
           <Route exact path = '/dashboard'>
             <UserDashboard />
           </Route>
           <Route exact path="/login" >
-          <Navigation isLoaded={isLoaded} />
             <LoginFormPage />
           </Route>
           <Route exact path="/signup">
-          <Navigation isLoaded={isLoaded} />
             <SignupFormPage />
+          </Route>
+          <Route exact path='/test'>
+            <CardSet />
           </Route>
         </Switch>
       )}

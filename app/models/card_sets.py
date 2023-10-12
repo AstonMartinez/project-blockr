@@ -11,6 +11,7 @@ class CardSets(db.Model):
     title = db.Column(db.String(100))
     description = db.Column(db.String(100))
     status = db.Column(db.String(100))
+    category = db.Column(db.String(100))
 
     user = db.relationship('User', back_populates='cards')
     questions = db.relationship('CardQuestion', back_populates="set")
@@ -22,5 +23,6 @@ class CardSets(db.Model):
             'title': self.title,
             'description': self.description,
             'status': self.status,
+            'category': self.category
             # 'questions': self.questions[0].to_dict()
         }

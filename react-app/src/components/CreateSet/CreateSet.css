@@ -1,0 +1,31 @@
+.card-questions {
+    border: 0.5px solid lightgray;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#create-fc-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#create-fc-info, #fc-cat-select, #fc-num-select, #fc-cards-inputs, #create-fc-submit {
+    /* border: 1px solid blue; */
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fc-desc-input, #fc-title-input {
+    text-align: center;
+}

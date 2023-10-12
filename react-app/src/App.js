@@ -15,6 +15,7 @@ import WeeklySchedule from "./components/WeeklySchedule";
 import UserProfile from "./components/UserProfile";
 import CardSet from "./components/FlashCards/CardSet";
 import Footer from "./components/Footer";
+import CreateSet from "./components/CreateSet";
 
 function App() {
   const dispatch = useDispatch();
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path='/sets/new'>
+            <CreateSet />
           </Route>
           <Route exact path='/sets/:setId'>
             <CardSet />

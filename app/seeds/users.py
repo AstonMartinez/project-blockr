@@ -1347,49 +1347,56 @@ def seed_users():
         creator_id=1,
         title="Basic JavaScript",
         description="Sharpen your JavaScript knowledge",
-        status="public"
+        status="public",
+        category="JavaScript"
     )
 
     pythonCards = CardSets(
         creator_id=1,
         title="Basic Python",
         description="Sharpen your Python knowledge",
-        status="public"
+        status="public",
+        category="Python"
     )
 
     reactCards = CardSets(
         creator_id=1,
         title="Basic React",
         description="Sharpen your React knowledge",
-        status="public"
+        status="public",
+        category="React"
     )
 
     cSharpCards = CardSets(
         creator_id=1,
         title="Basic C#",
         description="Sharpen your C# knowledge",
-        status="public"
+        status="public",
+        category="C#"
     )
 
     javaCards = CardSets(
         creator_id=1,
         title="Basic Java",
         description="Sharpen your Java knowledge",
-        status="public"
+        status="public",
+        category="Java"
     )
 
     cPlusPlusCards = CardSets(
         creator_id=1,
         title="Basic C++",
         description="Sharpen your C++ knowledge",
-        status="public"
+        status="public",
+        category="C++"
     )
 
     angularCards = CardSets(
         creator_id=1,
         title="Basic Angular",
         description="Sharpen your Angular knowledge",
-        status="public"
+        status="public",
+        category="Angular"
     )
 
     nextJSCards = CardSets(
@@ -1397,6 +1404,7 @@ def seed_users():
         title="Basic NextJS",
         description="Sharpen your NextJS knowledge",
         status="public",
+        category="NextJS"
     )
 
     rustCards = CardSets(
@@ -1404,20 +1412,23 @@ def seed_users():
         title="Basic Rust",
         description="Sharpen your Rust knowledge",
         status="public",
+        category="Rust"
     )
 
     svelteCards = CardSets(
         creator_id=1,
         title="Basic Svelte",
         description="Sharpen your Svelte knowledge",
-        status="public"
+        status="public",
+        category="Svelte"
     )
 
     typeScriptCards = CardSets(
         creator_id=1,
         title="Basic TypeScript",
         description="Sharpen your TypeScript knowledge",
-        status="public"
+        status="public",
+        category="TypeScript"
     )
 
     js1 = CardQuestion(

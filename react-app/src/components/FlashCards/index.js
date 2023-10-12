@@ -25,6 +25,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardSets } from '../../store/cards';
+import CreateIcon from '@mui/icons-material/Create';
 
 const drawerWidth = 240;
 
@@ -90,152 +91,7 @@ const FlashCards = () => {
 
   const setsArr = Object.values(allSets)
 
-      const jsCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20, textAlign: 'center' }} color="text.secondary" gutterBottom>
-              JavaScript
-            </Typography>
-            <Typography sx={{ fontSize: 13, textAlign: 'center' }} color="text.secondary" gutterBottom>
-              Sharpen your JavaScript knowledge
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const pyCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              Python
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const reCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              React
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const csCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              C#
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const cpCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              C++
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const jaCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              Java
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const anCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              Angular
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const neCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              NextJS
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const ruCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              Rust
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const tsCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              TypeScript
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-
-      const svCard = (
-        <React.Fragment>
-          <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-              Svelte
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Practice</Button>
-          </CardActions>
-        </React.Fragment>
-      );
-    return (
+  return (
       <Box sx={{ display: 'flex'}}>
       <Box sx={{ display: 'flex'}}>
   <CssBaseline />
@@ -308,6 +164,13 @@ const FlashCards = () => {
       <div style={{"marginTop": "70px"}} id='flash-card-page-wrapper'>
             <div id='fc-header'>
                 <h1>Flash Cards</h1>
+            </div>
+            <div>
+              <NavLink exact to='/sets/new'>
+                <Button variant="contained" size="medium">
+                  <CreateIcon sx={{"marginRight": "5px"}} />Create Set
+                </Button>
+              </NavLink>
             </div>
             <section id='fc-options-holder'>
               {setsArr.length && setsArr.map(set => (

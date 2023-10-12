@@ -18,12 +18,12 @@ const WeeklySchedule = () => {
             </section>
             <section className='planners-wrapper'>
                 <DailyPlanner id={1} />
-                <DailyPlanner id={2} />
+                {/* <DailyPlanner id={2} />
                 <DailyPlanner id={3} />
                 <DailyPlanner id={4} />
                 <DailyPlanner id={5} />
                 <DailyPlanner id={6} />
-                <DailyPlanner id={7} />
+                <DailyPlanner id={7} /> */}
             </section>
         </div>
     )

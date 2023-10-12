@@ -38,11 +38,14 @@ def delete_study_session(id):
 @study_session_routes.route('/new', methods=["POST"])
 def new_study_session():
     form = NewStudySessionForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         num_correct = request.json['num_correct']
         num_incorrect = request.json['num_incorrect']
         out_of = request.json['out_of']
         time_spent = request.json['time_spent']
+        session_type = request.json['session_type']
+        category = request.json['category']
         date_created = datetime.now()
         new_session = StudySession(
             user_id=current_user.id,
@@ -50,7 +53,9 @@ def new_study_session():
             num_incorrect=num_incorrect,
             out_of=out_of,
             time_spent=time_spent,
-            date_created=date_created
+            date_created=date_created,
+            session_type=session_type,
+            category=category
         )
         db.session.add(new_session)
         db.session.commit()

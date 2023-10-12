@@ -25,7 +25,10 @@ import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
 import Footer from '../Footer';
 import Button from '@mui/joy/Button';
-
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+import Check from '@mui/icons-material/Check';
+import { createNewSession } from '../../store/studySessions';
 
 const drawerWidth = 240;
 
@@ -79,31 +82,102 @@ const CardSet = () => {
     // const allSets = useSelector(state => state.cards.allSets)
     // const currSet = allSets[setId]
     const currSet = useSelector(state => state.cards.singleSet)
-    const [questionArr, setQuestionArr] = useState([])
+    const sessionData = useSelector(state => state.study.singleSession)
+    const currSetQs = currSet.all_questions
+    let currSetArr = []
     // const qArr = Object.values(currQs)
     const [cardNum, setCardNum] = useState(1)
     const history = useHistory()
     const [open, setOpen] = useState(true);
     const [isLoaded, setIsLoaded] = useState(false)
     const [isStarted, setIsStarted] = useState(false)
+    const [numCorrect, setNumCorrect] = useState(0)
+    const [numIncorrect, setNumIncorrect] = useState(0)
+    const [outOf, setOutOf] = useState(0)
+    const [startTime, setStartTime] = useState(null)
+    const [endTime, setEndTime] = useState(null)
+    if(isLoaded && currSetQs) {
+        currSetArr = Object.values(currSetQs)
+    }
+
+    const [questionArr, setQuestionArr] = useState(currSetArr)
+    const [hasSubmitted, setHasSubmitted] = useState(false)
+    const [timeSpent, setTimeSpent] = useState('')
+
     const toggleDrawer = () => {
         setOpen(!open);
     };
 
+    const handleSubmitStudySession = async() => {
+        if(outOf === 0) {
+            return
+        }
+
+        const hourNum = 60 * 60000
+        const minuteNum = 60000
+        const secondNum = 1000
+        let hours
+        let minutes
+        let seconds
+
+        // const millis = Date.now() - startTime
+        const timeElapsed = new Date() - startTime
+        if(timeElapsed > hourNum) {
+            hours = Math.floor(timeElapsed / hourNum)
+            const timeLeft = timeElapsed - (hourNum * hours)
+            minutes = Math.floor(timeLeft / minuteNum)
+            const newTimeLeft = timeLeft - (minuteNum * minutes)
+            seconds = Math.floor(newTimeLeft / secondNum)
+        } else {
+            hours = 0
+            if(timeElapsed > minuteNum) {
+                minutes = Math.floor(timeElapsed / minuteNum)
+                const timeLeft = timeElapsed - (minuteNum * minutes)
+                seconds = Math.floor(timeLeft / secondNum)
+            } else {
+                minutes = 0
+                seconds = Math.floor(timeElapsed / secondNum)
+            }
+        }
+
+        const timeSpentStr = `${hours} hours, ${minutes} minutes, ${seconds} seconds`
+        setTimeSpent(timeSpentStr)
+        const category = currSet?.category
+        // const final = Math.floor(timeElapsed / 1000)
+        const studySession = {
+            num_correct: numCorrect,
+            num_incorrect: numIncorrect,
+            out_of: outOf,
+            time_spent: timeSpentStr,
+            session_type: "Flashcards",
+            category: category
+        }
+        await dispatch(createNewSession(studySession))
+        setHasSubmitted(true)
+        return
+    }
+
+    const reset = () => {
+        setCardNum(1)
+        setNumCorrect(0)
+        setNumIncorrect(0)
+        setOutOf(0)
+        setHasSubmitted(false)
+        setIsStarted(true)
+        setStartTime(new Date())
+        return
+    }
+
     useEffect(() => {
         dispatch(getOneSet(setId)).then(() => {
             setIsLoaded(true)
-            const currQs = currSet?.all_questions
-            if(currQs) {
-                setQuestionArr(Object.values(currQs))
-            }
-            return
         })
     }, [dispatch])
 
+
+
     return (
         <Box sx={{ display: 'flex'}}>
-
         <Box sx={{ display: 'flex'}}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
@@ -179,32 +253,50 @@ const CardSet = () => {
                     <p>{currSet?.description}</p>
                 </div>
                 {!isStarted ? (
-                    <div>
-                        <Button variant="solid" color="primary" onClick={() => setIsStarted(true)}>Start Study Session</Button>
+                    <div id='start-button-wrap'>
+                        <Button variant="solid" color="primary" onClick={() => {
+                            reset()
+                        }}>Start Study Session</Button>
+                        {hasSubmitted ? (
+                            <div id='submitted-sess-text'>
+                                <span>Great job!</span>
+                                <span>You studied for {sessionData?.time_spent} and got {sessionData?.correct}/{sessionData?.out_of} correct!</span>
+                            </div>
+                        ) : ''}
                     </div>
                 ) : (
                     <>
                         <div id='fc-options-holder'>
-                            {questionArr && questionArr?.filter(item => item.id === cardNum)?.map(item => (
+                            {currSetArr?.filter(item => item.id === cardNum)?.map(item => (
                                 <IndividualCard front={item?.front} back={item?.back} />
                             ))}
                         </div>
                         <div id='fc-arrows-holder'>
-                            <ArrowBackIosIcon onClick={() => {
-                                if(cardNum === 1) {
-                                    setCardNum(questionArr?.length)
-                                } else {
-                                    setCardNum(cardNum - 1)
-                                }
-                            }} sx={{color: 'black[100]'}} />
-                            <Button onClick={() => setIsStarted(false)} variant="plain">End Session</Button>
-                            <ArrowForwardIosIcon onClick={() => {
-                                if(cardNum === questionArr?.length) {
+                            <CloseIcon onClick={() => {
+                                setNumIncorrect(numIncorrect + 1)
+                                setOutOf(outOf + 1)
+                                if(cardNum === currSetArr?.length) {
+                                    setCardNum(1)
+                                } else if (cardNum > currSetArr?.length) {
                                     setCardNum(1)
                                 } else {
                                     setCardNum(cardNum + 1)
                                 }
-                            }} sx={{color: 'black[100]'}} />
+                            }} color="error" />
+                            <Button onClick={() => {
+                                setEndTime(Date.now())
+                                setIsStarted(false)
+                                handleSubmitStudySession()
+                            }} variant="plain">End Session</Button>
+                            <CheckIcon onClick={() => {
+                                setNumCorrect(numCorrect + 1)
+                                setOutOf(outOf + 1)
+                                if(cardNum !== currSetArr?.length) {
+                                    setCardNum(cardNum+1)
+                                } else {
+                                    setCardNum(1)
+                                }
+                            }} color="success" />
                         </div>
                     </>
                 )}

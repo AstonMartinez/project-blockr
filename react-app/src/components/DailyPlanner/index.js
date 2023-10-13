@@ -1,5 +1,5 @@
 import './DailyPlanner.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import sampleTasks from './sampletaskdata';
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -47,7 +47,7 @@ import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import FormHelperText from '@mui/joy/FormHelperText';
 import InfoOutlined from '@mui/icons-material/InfoOutlined';
-import { createTask } from '../../store/tasks';
+import { createTask, getByDate } from '../../store/tasks';
 
 const style = {
     position: 'absolute',
@@ -63,6 +63,9 @@ const style = {
 
 const DailyPlanner = () => {
     const dispatch = useDispatch()
+    const allTasks = useSelector(state => state.tasks.allTasks)
+    const taskArr = Object.values(allTasks).toSorted((start_time, end_time) => start_time - end_time)
+    console.log(taskArr)
     const [startTime, setStartTime] = useState(null)
     const [endTime, setEndTime] = useState(null)
     const [open, setOpen] = React.useState(false);
@@ -94,10 +97,14 @@ const DailyPlanner = () => {
     const [startTimeError, setStartTimeError] = useState(null)
     const [endTimeError, setEndTimeError] = useState(null)
     const [iconError, setIconError] = useState(null)
+    const [currDay, setCurrDay] = useState("Monday")
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const taskArr = []
+
+    useEffect(() => {
+        dispatch(getByDate(currDay))
+    }, [dispatch])
 
     const handleTaskSubmit = async () => {
         if(title === null) {
@@ -177,7 +184,7 @@ const DailyPlanner = () => {
                             onClose={handleClose}
                             aria-labelledby="modal-modal-title"
                             aria-describedby="modal-modal-description"
-                            // sx={{overflowY: "scroll", width: "600px", height: "100vh"}}
+                            sx={{height: "80%"}}
 
                         >
                             <Box sx={style}>
@@ -594,8 +601,54 @@ const DailyPlanner = () => {
                             </Box>
                         </Modal>
                         </div>
-        <Timeline position="alternate">
-        <TimelineItem>
+                        <Timeline position="alternate">
+                            {taskArr && taskArr.map(task => (
+                                <>
+                                    <TimelineItem>
+                                        <TimelineOppositeContent
+                                            sx={{ m: 'auto 0' }}
+                                            align="right"
+                                            variant='body2'
+                                            color={task.color}
+                                        >
+                                            {task.start_time} - {task.end_time}
+                                        </TimelineOppositeContent>
+                                        <TimelineSeparator>
+                                            <TimelineDot>
+                                                <FastfoodIcon />
+                                            </TimelineDot>
+                                            <TimelineConnector />
+                                        </TimelineSeparator>
+                                        <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                        <Typography variant="h6" component="span">
+                                            {task.title}
+                                        </Typography>
+                                        <Typography>{task.description}</Typography>
+                                        </TimelineContent>
+                                    </TimelineItem>
+                                </>
+                            ))}
+                        </Timeline>
+            {/* {taskArr && taskArr.map(task => (
+                        <TimelineItem>
+                        <TimelineOppositeContent
+                            sx={{ m: 'auto 0' }}
+                            align="right"
+                            variant="body2"
+                            color="text.secondary"
+                            >
+                            {}
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                        <TimelineConnector />
+                        <TimelineDot>
+                            <FastfoodIcon />
+                        </TimelineDot>
+                        <TimelineConnector />
+                        </TimelineSeparator>
+            ))} */}
+
+        {/* <TimelineItem>
             <TimelineOppositeContent
                 sx={{ m: 'auto 0' }}
                 align="right"
@@ -669,8 +722,8 @@ const DailyPlanner = () => {
             </Typography>
             <Typography>Because this is the life you love!</Typography>
             </TimelineContent>
-        </TimelineItem>
-        </Timeline>
+        </TimelineItem> */}
+
     </div>
     )
 }

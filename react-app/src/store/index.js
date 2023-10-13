@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import cardsReducer from './cards';
 import studyReducer from './studySessions';
+import taskReducer from './tasks';
 
 const rootReducer = combineReducers({
   session,
   cards: cardsReducer,
   study: studyReducer,
+  tasks: taskReducer,
 });
 
 

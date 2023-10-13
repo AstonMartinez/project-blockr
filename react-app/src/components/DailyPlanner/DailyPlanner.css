@@ -69,3 +69,43 @@
 .orange {
     background-color: orange;
 }
+
+.task-icon:hover {
+    cursor: pointer;
+}
+
+.icon-false {
+    border: none;
+}
+
+.icon-true {
+    border: 1px solid purple;
+}
+
+.error-text {
+    color: red;
+}
+
+.task-input-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 10px;
+    /* margin-bottom: 15px; */
+}
+
+.task-input {
+    /* margin: 0px 0 10px 0; */
+    margin: 10px 0;
+}
+
+#task-submit-cont {
+    display: flex;
+    justify-content: center;
+}
+.task-submit-btn {
+    justify-self: center;
+    margin-top: 20px;
+}
+
+#task-color-label {
+    margin: 5px 0;
+}

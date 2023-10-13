@@ -11,6 +11,7 @@ from .api.card_sets import card_routes
 from .api.trivia_routes import trivia_routes
 from .api.user_stats_routes import stats_routes
 from .api.study_session_routes import study_session_routes
+from .api.task_routes import task_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -36,6 +37,7 @@ app.register_blueprint(card_routes, url_prefix='/api/cards')
 app.register_blueprint(trivia_routes, url_prefix='/api/trivia')
 app.register_blueprint(stats_routes, url_prefix='/api/stats')
 app.register_blueprint(study_session_routes, url_prefix='/api/study')
+app.register_blueprint(task_routes, url_prefix='/api/tasks')
 db.init_app(app)
 Migrate(app, db)
 

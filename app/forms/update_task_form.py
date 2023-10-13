@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, ValidationError
 
-class NewTaskForm(FlaskForm):
+class UpdateTaskForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
     description = StringField('description', validators=[DataRequired()])
     day = StringField('day', validators=[DataRequired()])

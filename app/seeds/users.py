@@ -3,7 +3,9 @@ from app.models.trivia_questions import TriviaQuestion
 from app.models.card_sets import CardSets
 from app.models.card_questions import CardQuestion
 from app.models.user_stats import UserStats
+from app.models.task import Task
 from sqlalchemy.sql import text
+from datetime import time
 
 
 # Adds a demo user, you can add other users here if you want
@@ -2427,6 +2429,18 @@ def seed_users():
         back="Type assertions allow you to tell the compiler that you know more about the type of a value than it does"
     )
 
+    task1 = Task(
+        user_id=1,
+        title="Sample task",
+        description="testing, testing, 1 2 3...",
+        icon="group",
+        day="Monday",
+        start_time="10:00",
+        end_time="10:30",
+        color="#ababab",
+
+    )
+
     db.session.add_all([demo, marnie, bobbie])
     db.session.add_all([questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen,
                         questionEleven, questionTwelve, questionThirteen, questionFourteen, questionFifteen, questionSixteen, questionSeventeen, questionEighteen, questionNineteen, questionTwenty,
@@ -2453,6 +2467,7 @@ def seed_users():
                         ru1, ru2, ru3, ru4, ru5, ru6, ru7, ru8, ru9, ru10, ru11, ru12, ru13, ru14, ru15,
                         sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10, sv11, sv12, sv13, sv14, sv15,
                         ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts10, ts11, ts12, ts13, ts14, ts15])
+    db.session.add(task1)
 
 
     db.session.commit()

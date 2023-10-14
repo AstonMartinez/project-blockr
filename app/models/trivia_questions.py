@@ -7,6 +7,7 @@ class TriviaQuestion(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
+    quiz_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("trivia_quizzes.id")), nullable=False)
     question = db.Column(db.String(500), nullable=False)
     answer_one = db.Column(db.String(500), nullable=False)
     answer_two = db.Column(db.String(500), nullable=False)
@@ -19,6 +20,7 @@ class TriviaQuestion(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'quiz_id': self.quiz_id,
             'question': self.question,
             'answer_one': self.answer_one,
             'answer_two': self.answer_two,

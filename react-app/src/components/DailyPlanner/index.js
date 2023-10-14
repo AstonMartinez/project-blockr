@@ -1,5 +1,5 @@
 import './DailyPlanner.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import sampleTasks from './sampletaskdata';
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -47,7 +47,68 @@ import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import FormHelperText from '@mui/joy/FormHelperText';
 import InfoOutlined from '@mui/icons-material/InfoOutlined';
-import { createTask } from '../../store/tasks';
+import { createTask, getByDate } from '../../store/tasks';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import MuiDrawer from '@mui/material/Drawer';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useHistory } from 'react-router-dom'
+import mainListItems from '../UserDashboard/listItems'
+import PersonIcon from '@mui/icons-material/Person';
+
+const drawerWidth = 240;
+
+const AppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== 'open',
+  })(({ theme, open }) => ({
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    ...(open && {
+      marginLeft: drawerWidth,
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    }),
+  }));
+
+  const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+    ({ theme, open }) => ({
+      '& .MuiDrawer-paper': {
+        position: 'relative',
+        whiteSpace: 'nowrap',
+        width: drawerWidth,
+        transition: theme.transitions.create('width', {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.enteringScreen,
+        }),
+        boxSizing: 'border-box',
+        ...(!open && {
+          overflowX: 'hidden',
+          transition: theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+          }),
+          width: theme.spacing(7),
+          [theme.breakpoints.up('sm')]: {
+            width: theme.spacing(9),
+          },
+        }),
+      },
+    }),
+  );
 
 const style = {
     position: 'absolute',
@@ -61,8 +122,11 @@ const style = {
     p: 4,
   };
 
-const DailyPlanner = () => {
+const DailyPlanner = ({nowDay}) => {
     const dispatch = useDispatch()
+    const allTasks = useSelector(state => state.tasks.allTasks)
+    const taskArr = Object.values(allTasks).toSorted((start_time, end_time) => start_time - end_time)
+    console.log(taskArr)
     const [startTime, setStartTime] = useState(null)
     const [endTime, setEndTime] = useState(null)
     const [open, setOpen] = React.useState(false);
@@ -95,9 +159,27 @@ const DailyPlanner = () => {
     const [endTimeError, setEndTimeError] = useState(null)
     const [iconError, setIconError] = useState(null)
 
+    function compare( a, b ) {
+        const startSplitA = a.start_time.split(":")
+        const startSplitB = b.start_time.split(":")
+        if ( Number(startSplitA[0]) < Number(startSplitB[0])){
+          return -1;
+        }
+        if ( Number(startSplitA[0]) > Number(startSplitB[0]) ){
+          return 1;
+        }
+        return 0;
+      }
+
+      taskArr.sort(compare)
+
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const taskArr = []
+
+    useEffect(() => {
+        dispatch(getByDate(nowDay))
+    }, [dispatch])
 
     const handleTaskSubmit = async () => {
         if(title === null) {
@@ -166,18 +248,20 @@ const DailyPlanner = () => {
         }
 
         setHasSubmitted(true)
+        dispatch(getByDate('Monday'))
+        handleClose()
     }
 
     return (
         <div id='user-timeline-container'>
-                    <div>
+                    <div style={{"marginTop": "70px"}}>
                         <Button variant="contained" onClick={handleOpen}>Add a Task</Button>
                         <Modal
                             open={open}
                             onClose={handleClose}
                             aria-labelledby="modal-modal-title"
                             aria-describedby="modal-modal-description"
-                            // sx={{overflowY: "scroll", width: "600px", height: "100vh"}}
+                            sx={{height: "80%", marginTop: "70px"}}
 
                         >
                             <Box sx={style}>
@@ -185,7 +269,7 @@ const DailyPlanner = () => {
                                 Task title:
                             </Typography> */}
                             <FormControl error={title === null && hasSubmitted ? true : false}>
-                                <label className='task-input-label'>Task Title:</label>
+                                <label style={{"fontSize": "12px"}}  className='task-input-label'>Task Title:</label>
                                 <Input
                                     className='task-input'
                                     value={title}
@@ -203,7 +287,7 @@ const DailyPlanner = () => {
                                 Task Description:
                             </Typography> */}
                             <FormControl error={description === null && hasSubmitted ? true : false}>
-                                <label className='task-input-label'>Task Description:</label>
+                                <label style={{"fontSize": "12px"}} className='task-input-label'>Task Description:</label>
                                 <Input
                                     className='task-input'
                                     value={description}
@@ -221,7 +305,7 @@ const DailyPlanner = () => {
                                 Day:
                             </Typography> */}
                                 <FormControl sx={{margin: "10px 0"}} error={day === null && hasSubmitted ? true : false}>
-                                    <label className='task-input-label'>Day:</label>
+                                    <label style={{"fontSize": "12px"}}  className='task-input-label'>Day:</label>
                                 <Input
                                     className='task-input'
                                     value={day}
@@ -238,14 +322,14 @@ const DailyPlanner = () => {
                             {/* <Typography id="modal-modal-title" variant="h6" component="h2">
                                 Task Color:
                             </Typography> */}
-                            <label id='task-color-label' className='task-input-label'>Task Color:</label>
+                            <label style={{"fontSize": "12px"}}  id='task-color-label' className='task-input-label'>Task Color:</label>
                             <Input className='task-input' type="color" value={color} onChange={(e) => setColor(e.target.value)} />
                             {/* <Typography id="modal-modal-title" variant="h6" component="h2">
                                 Task Icon:
                             </Typography> */}
-                            <label className='task-input-label'>Task Icon:</label>
+                            <label style={{"fontSize": "12px"}}  className='task-input-label'>Task Icon:</label>
                                 <Box sx={{marginTop: "15px", marginBottom: "15px"}}>
-                                    <Box sx={{width: "380px", display: "flex", justifyContent: "space-between"}}>
+                                    <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
                                         <FastfoodIcon className={`task-icon icon-${iconOneActive}`} fontSize="medium" onClick={() => {
                                             setIcon("food")
                                             setIconOneActive(true)
@@ -323,7 +407,7 @@ const DailyPlanner = () => {
                                             setIconSixteenActive(false)
                                         }} />
                                     </Box>
-                                    <Box sx={{width: "380px", display: "flex", justifyContent: "space-between"}}>
+                                    <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
                                         <GroupsIcon className={`task-icon icon-${iconFiveActive}`} fontSize="medium" onClick={() => {
                                             setIcon("groups")
                                             setIconOneActive(false)
@@ -401,7 +485,7 @@ const DailyPlanner = () => {
                                             setIconSixteenActive(false)
                                         }} />
                                     </Box>
-                                    <Box sx={{width: "380px", display: "flex", justifyContent: "space-between"}}>
+                                    <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
                                         <CakeIcon className={`task-icon icon-${iconNineActive}`} fontSize="medium" onClick={() => {
                                             setIcon("cake")
                                             setIconOneActive(false)
@@ -479,7 +563,7 @@ const DailyPlanner = () => {
                                             setIconSixteenActive(false)
                                         }} />
                                     </Box>
-                                    <Box sx={{width: "380px", display: "flex", justifyContent: "space-between"}}>
+                                    <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
                                         <AutoAwesomeIcon className={`task-icon icon-${iconThirteenActive}`} fontSize="medium" onClick={() => {
                                             setIcon("sparkle")
                                             setIconOneActive(false)
@@ -562,7 +646,7 @@ const DailyPlanner = () => {
                                 Choose a start time:
                             </Typography> */}
                             <FormControl error={startTime === null && hasSubmitted ? true : false}>
-                                <label className='task-input-label'>Choose a Start Time:</label>
+                                <label style={{"fontSize": "10px"}}  className='task-input-label'>Choose a Start Time:</label>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <TimeField value={startTime} onChange={(newValue) => setStartTime(newValue)} />
                                 </LocalizationProvider>
@@ -594,84 +678,83 @@ const DailyPlanner = () => {
                             </Box>
                         </Modal>
                         </div>
-        <Timeline position="alternate">
-        <TimelineItem>
-            <TimelineOppositeContent
-                sx={{ m: 'auto 0' }}
-                align="right"
-                variant="body2"
-                color="text.secondary"
-                >
-                9:30 am
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot>
-                <FastfoodIcon />
-            </TimelineDot>
-            <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
-                Eat
-            </Typography>
-            <Typography>Because you need strength</Typography>
-            </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-            <TimelineOppositeContent
-            sx={{ m: 'auto 0' }}
-            variant="body2"
-            color="text.secondary"
-            >
-            10:00 am
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot color="primary">
-                <LaptopMacIcon />
-            </TimelineDot>
-            <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
-                Code
-            </Typography>
-            <Typography>Because it&apos;s awesome!</Typography>
-            </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-            <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot color="primary" variant="outlined">
-                <HotelIcon />
-            </TimelineDot>
-            <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
-                Sleep
-            </Typography>
-            <Typography>Because you need rest</Typography>
-            </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-            <TimelineSeparator>
-            <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-            <TimelineDot color="secondary">
-                <RepeatIcon />
-            </TimelineDot>
-            <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
-                Repeat
-            </Typography>
-            <Typography>Because this is the life you love!</Typography>
-            </TimelineContent>
-        </TimelineItem>
-        </Timeline>
-    </div>
+                        <Timeline position="alternate">
+                            {taskArr && taskArr.map(task => (
+                                <>
+                                    <TimelineItem>
+                                        <TimelineOppositeContent
+                                            sx={{ m: 'auto 0' }}
+                                            align="right"
+                                            variant='body2'
+                                            color={task.color}
+                                        >
+                                            {task.start_time} - {task.end_time}
+                                        </TimelineOppositeContent>
+                                        <TimelineSeparator>
+                                            <TimelineDot sx={{backgroundColor: `${task.color}`}}>
+                                                {task.icon === "food" && (
+                                                    <FastfoodIcon />
+                                                )}
+                                                {task.icon === "laptop" && (
+                                                    <LaptopMacIcon />
+                                                )}
+                                                {task.icon === "repeat" && (
+                                                    <RepeatIcon />
+                                                )}
+                                                {task.icon === "hotel" && (
+                                                    <HotelIcon />
+                                                )}
+                                                {task.icon === "group" && (
+                                                    <GroupsIcon />
+                                                )}
+                                                {task.icon === "fitness" && (
+                                                    <FitnessCenterIcon />
+                                                )}
+                                                {task.icon === "health" && (
+                                                    <HealthAndSafetyIcon />
+                                                )}
+                                                {task.icon === "call" && (
+                                                    <CallIcon />
+                                                )}
+                                                {task.icon === "cake" && (
+                                                    <CakeIcon />
+                                                )}
+                                                {task.icon === "code" && (
+                                                    <CodeIcon />
+                                                )}
+                                                {task.icon === "morning" && (
+                                                    <LightModeIcon />
+                                                )}
+                                                {task.icon === "evening" && (
+                                                    <BedtimeIcon />
+                                                )}
+                                                {task.icon === "sparkle" && (
+                                                    <AutoAwesomeIcon />
+                                                )}
+                                                {task.icon === "event" && (
+                                                    <EventIcon />
+                                                )}
+                                                {task.icon === "tree" && (
+                                                    <AccountTreeIcon />
+                                                )}
+                                                {task.icon === "alert" && (
+                                                    <CrisisAlertIcon />
+                                                )}
+                                            </TimelineDot>
+                                            <TimelineConnector />
+                                        </TimelineSeparator>
+                                        <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                        <Typography variant="h6" component="span">
+                                            {task.title}
+                                        </Typography>
+                                        <Typography>{task.description}</Typography>
+                                        </TimelineContent>
+                                    </TimelineItem>
+                                </>
+                            ))}
+                        </Timeline>
+                    </div>
+
     )
 }
 

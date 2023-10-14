@@ -78,7 +78,7 @@ def create_task():
 @task_routes.route('/<day>')
 def get_task_by_day(day):
     result = {}
-    tasks = Task.query.filter(and_(Task.user_id == current_user.id, Task.day == day))
+    tasks = Task.query.filter(and_(Task.user_id == current_user.id, Task.day.ilike(day))).order_by(Task.start_time)
     for task in tasks:
         task_dict = task.to_dict()
         result[task.id] = task_dict

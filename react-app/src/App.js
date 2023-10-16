@@ -47,7 +47,7 @@ function App() {
             <DailyTrivia />
           </Route>
           <Route exact path='/'>
-            <LandingPage />
+            <UserDashboard />
           </Route>
           <Route exact path='/dashboard'>
             <UserDashboard />

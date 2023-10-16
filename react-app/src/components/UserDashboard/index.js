@@ -19,11 +19,11 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
-import Copyright from './Copyright'
 import { useHistory } from 'react-router-dom'
 import mainListItems from './listItems';
 import PersonIcon from '@mui/icons-material/Person';
 import Footer from '../Footer';
+import { useSelector } from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -74,11 +74,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const defaultTheme = createTheme();
 
 export default function UserDashboard() {
+  const sessionUser = useSelector(state => state.session.user)
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
     };
+
+    if(!sessionUser) {
+      history.push('/signup')
+    }
 
   return (
     <ThemeProvider theme={defaultTheme}>

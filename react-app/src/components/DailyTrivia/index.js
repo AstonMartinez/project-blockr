@@ -21,6 +21,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useHistory } from 'react-router-dom'
 import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
+import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
 
@@ -209,7 +210,6 @@ const DailyTrivia = () => {
     }
 
     return (
-        // <div id='trivia-page-wrapper'>
         <Box sx={{ display: 'flex' }}>
 
         <Box sx={{ display: 'flex' }}>
@@ -281,8 +281,16 @@ const DailyTrivia = () => {
             height: '100vh',
             overflow: 'auto',
           }}>
+            <div id='trivia-quiz-wrapper' style={{"marginTop": "70px"}}>
+                <div>
+                    <h1>Trivia</h1>
+                </div>
+                <div>
+                    <Button variant='contained'>Create Quiz</Button>
+                </div>
+            </div>
 
-                <div id='trivia-page-header'>
+                {/* <div id='trivia-page-header'>
                     <h1>Trivia Practice</h1>
                 </div>
                 <section className='question-container'>
@@ -774,7 +782,7 @@ const DailyTrivia = () => {
                         <h3>You got {numCorrect}/10 correct!</h3>
                         {saveButton}
                     </section>
-                )}
+                )} */}
                 </Box>
         </Box>
             // </div>

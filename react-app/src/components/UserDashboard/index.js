@@ -82,7 +82,7 @@ export default function UserDashboard() {
     };
 
     if(!sessionUser) {
-      history.push('/signup')
+      history.push('/login')
     }
 
   return (

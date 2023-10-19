@@ -9,7 +9,7 @@ const getById = (data) => {
 
 export const getByQuizId = (id) => async (dispatch) => {
     try {
-        const response = await fetch(`/quizzes/${id}/questions`)
+        const response = await fetch(`/api/quizzes/${id}/all`)
         if(response.ok) {
             const data = await response.json()
             dispatch(getById(data))

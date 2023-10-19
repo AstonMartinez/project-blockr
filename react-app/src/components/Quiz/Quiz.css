@@ -47,6 +47,6 @@
     background-color: lightblue;
 }
 
-.answer-option-wrapper > input[type="radio"]:checked {
+input[type="radio"]:checked {
     font-weight: bold;
 }

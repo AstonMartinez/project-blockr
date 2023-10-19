@@ -38,9 +38,9 @@ function App() {
           <Route exact path='/practice'>
             <Practice />
           </Route>
-          {/* <Route exact path='/resources'>
+          <Route exact path='/resources'>
             <ResourcesComponent />
-          </Route> */}
+          </Route>
           <Route exact path='/flashcards'>
             <FlashCards />
           </Route>

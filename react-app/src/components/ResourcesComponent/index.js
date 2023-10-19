@@ -81,6 +81,7 @@ const ResourcesComponent = () => {
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              backgroundColor: "black"
             }}
           >
             <IconButton
@@ -95,6 +96,7 @@ const ResourcesComponent = () => {
             >
               <MenuIcon />
             </IconButton>
+            <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
             <Typography
               component="h1"
               variant="h6"
@@ -102,7 +104,7 @@ const ResourcesComponent = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Resources
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -133,9 +135,19 @@ const ResourcesComponent = () => {
           </List>
         </Drawer>
             </Box>
-            <Box>
+            <Box component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto',
+            marginTop: "70px"
+          }}>
             <div id='practice-page-wrapper'>
-                <div style={{"border": "1px solid red"}}>
+                <div style={{"display": "flex", "justifyContent": "center"}}>
                     <h2>Resources</h2>
                 </div>
             </div>

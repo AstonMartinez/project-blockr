@@ -89,6 +89,7 @@ const WeeklySchedule = () => {
   <Toolbar
     sx={{
       pr: '24px', // keep right padding when drawer closed
+      backgroundColor: "black"
     }}
   >
     <IconButton
@@ -103,6 +104,7 @@ const WeeklySchedule = () => {
     >
       <MenuIcon />
     </IconButton>
+    <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
     <Typography
       component="h1"
       variant="h6"
@@ -110,7 +112,7 @@ const WeeklySchedule = () => {
       noWrap
       sx={{ flexGrow: 1 }}
     >
-      Dashboard
+      Schedule
     </Typography>
     <IconButton color="inherit">
       <Badge badgeContent={4} color="secondary">

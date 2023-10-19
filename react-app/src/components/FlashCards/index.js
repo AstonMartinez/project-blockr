@@ -99,6 +99,7 @@ const FlashCards = () => {
     <Toolbar
       sx={{
         pr: '24px', // keep right padding when drawer closed
+        backgroundColor: "black"
       }}
     >
       <IconButton
@@ -113,6 +114,7 @@ const FlashCards = () => {
       >
         <MenuIcon />
       </IconButton>
+      <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
       <Typography
         component="h1"
         variant="h6"
@@ -120,7 +122,7 @@ const FlashCards = () => {
         noWrap
         sx={{ flexGrow: 1 }}
       >
-        Dashboard
+        Flash Cards
       </Typography>
       <IconButton color="inherit">
         <Badge badgeContent={4} color="secondary">

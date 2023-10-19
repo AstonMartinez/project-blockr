@@ -4,12 +4,16 @@ import session from './session'
 import cardsReducer from './cards';
 import studyReducer from './studySessions';
 import taskReducer from './tasks';
+import quizReducer from './quiz';
+import questionReducer from './triviaQuestions';
 
 const rootReducer = combineReducers({
   session,
   cards: cardsReducer,
   study: studyReducer,
   tasks: taskReducer,
+  quizzes: quizReducer,
+  questions: questionReducer,
 });
 
 

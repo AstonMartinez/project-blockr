@@ -16,6 +16,7 @@ import UserProfile from "./components/UserProfile";
 import CardSet from "./components/FlashCards/CardSet";
 import Footer from "./components/Footer";
 import CreateSet from "./components/CreateSet";
+import Quiz from "./components/Quiz";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ function App() {
     <>
       {isLoaded && (
         <Switch>
+          <Route exact path ='/quizzes/:quizId'>
+            <Quiz />
+          </Route>
           <Route exact path='/user'>
             <UserProfile />
           </Route>

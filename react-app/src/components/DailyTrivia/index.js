@@ -1,8 +1,7 @@
 import './DailyTrivia.css';
-import allTriviaQs from './triviaquestions';
 import * as React from 'react'
 import { useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -22,6 +21,7 @@ import { useHistory } from 'react-router-dom'
 import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
 import Button from '@mui/material/Button';
+import { fetchAllPublic } from '../../store/quiz';
 
 const drawerWidth = 240;
 
@@ -70,27 +70,35 @@ const AppBar = styled(MuiAppBar, {
   );
 
 const DailyTrivia = () => {
+    const dispatch = useDispatch()
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
     };
-    const triviaLength = allTriviaQs.length
+
+    React.useEffect(() => {
+        dispatch(fetchAllPublic())
+    }, [dispatch])
+
+    // const triviaLength = allTriviaQs.length
     const sessionUser = useSelector(state => state.session.user)
+    const allQuizzes = useSelector(state => state.quizzes.allQuizzes)
+    const quizArr = Object.values(allQuizzes)
     let saveButton;
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-    const [indexOne, setIndexOne] = useState(getRandomInt(triviaLength))
-    const [indexTwo, setIndexTwo] = useState(getRandomInt(triviaLength))
-    const [indexThree, setIndexThree] = useState(getRandomInt(triviaLength))
-    const [indexFour, setIndexFour] = useState(getRandomInt(triviaLength))
-    const [indexFive, setIndexFive] = useState(getRandomInt(triviaLength))
-    const [indexSix, setIndexSix] = useState(getRandomInt(triviaLength))
-    const [indexSeven, setIndexSeven] = useState(getRandomInt(triviaLength))
-    const [indexEight, setIndexEight] = useState(getRandomInt(triviaLength))
-    const [indexNine, setIndexNine] = useState(getRandomInt(triviaLength))
-    const [indexTen, setIndexTen] = useState(getRandomInt(triviaLength))
+    // const [indexOne, setIndexOne] = useState(getRandomInt(triviaLength))
+    // const [indexTwo, setIndexTwo] = useState(getRandomInt(triviaLength))
+    // const [indexThree, setIndexThree] = useState(getRandomInt(triviaLength))
+    // const [indexFour, setIndexFour] = useState(getRandomInt(triviaLength))
+    // const [indexFive, setIndexFive] = useState(getRandomInt(triviaLength))
+    // const [indexSix, setIndexSix] = useState(getRandomInt(triviaLength))
+    // const [indexSeven, setIndexSeven] = useState(getRandomInt(triviaLength))
+    // const [indexEight, setIndexEight] = useState(getRandomInt(triviaLength))
+    // const [indexNine, setIndexNine] = useState(getRandomInt(triviaLength))
+    // const [indexTen, setIndexTen] = useState(getRandomInt(triviaLength))
 
     const [answerOne, setAnswerOne] = useState('')
     const [answerTwo, setAnswerTwo] = useState('')
@@ -120,85 +128,85 @@ const DailyTrivia = () => {
 
     const handleSubmit = () => {
         let correctCount = 0;
-        if(answerOne === "" || answerTwo === "" || answerThree === "" || answerFour === "" || answerFive === "" || answerSix === "" || answerSeven === "" || answerEight === "" || answerNine === "" || answerTen === "") {
-            setSubmitError("Please answer all questions to submit.")
-            return
-        } else {
-            if(answerOne.toLowerCase() === allTriviaQs[indexOne].s.toLowerCase()) {
-                correctCount++
-                setAnswerOneStatus("correct")
-            } else {
-                setAnswerOneStatus("incorrect")
-            }
+        // if(answerOne === "" || answerTwo === "" || answerThree === "" || answerFour === "" || answerFive === "" || answerSix === "" || answerSeven === "" || answerEight === "" || answerNine === "" || answerTen === "") {
+        //     setSubmitError("Please answer all questions to submit.")
+        //     return
+        // } else {
+        //     if(answerOne.toLowerCase() === allTriviaQs[indexOne].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerOneStatus("correct")
+        //     } else {
+        //         setAnswerOneStatus("incorrect")
+        //     }
 
-            if(answerTwo.toLowerCase() === allTriviaQs[indexTwo].s.toLowerCase()) {
-                correctCount++
-                setAnswerTwoStatus("correct")
-            } else {
-                setAnswerTwoStatus("incorrect")
-            }
+        //     if(answerTwo.toLowerCase() === allTriviaQs[indexTwo].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerTwoStatus("correct")
+        //     } else {
+        //         setAnswerTwoStatus("incorrect")
+        //     }
 
-            if(answerThree.toLowerCase() === allTriviaQs[indexThree].s.toLowerCase()) {
-                correctCount++
-                setAnswerThreeStatus("correct")
-            } else {
-                setAnswerThreeStatus("incorrect")
-            }
+        //     if(answerThree.toLowerCase() === allTriviaQs[indexThree].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerThreeStatus("correct")
+        //     } else {
+        //         setAnswerThreeStatus("incorrect")
+        //     }
 
-            if(answerFour.toLowerCase() === allTriviaQs[indexFour].s.toLowerCase()) {
-                correctCount++
-                setAnswerFourStatus("correct")
-            } else {
-                setAnswerFourStatus("incorrect")
-            }
+        //     if(answerFour.toLowerCase() === allTriviaQs[indexFour].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerFourStatus("correct")
+        //     } else {
+        //         setAnswerFourStatus("incorrect")
+        //     }
 
-            if(answerFive.toLowerCase() === allTriviaQs[indexFive].s.toLowerCase()) {
-                correctCount++
-                setAnswerFiveStatus("correct")
-            } else {
-                setAnswerFiveStatus("incorrect")
-            }
+        //     if(answerFive.toLowerCase() === allTriviaQs[indexFive].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerFiveStatus("correct")
+        //     } else {
+        //         setAnswerFiveStatus("incorrect")
+        //     }
 
-            if(answerSix.toLowerCase() === allTriviaQs[indexSix].s.toLowerCase()) {
-                correctCount++
-                setAnswerSixStatus("correct")
-            } else {
-                setAnswerSixStatus("incorrect")
-            }
+        //     if(answerSix.toLowerCase() === allTriviaQs[indexSix].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerSixStatus("correct")
+        //     } else {
+        //         setAnswerSixStatus("incorrect")
+        //     }
 
-            if(answerSeven.toLowerCase() === allTriviaQs[indexSeven].s.toLowerCase()) {
-                correctCount++
-                setAnswerSevenStatus("correct")
-            } else {
-                setAnswerSevenStatus("incorrect")
-            }
+        //     if(answerSeven.toLowerCase() === allTriviaQs[indexSeven].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerSevenStatus("correct")
+        //     } else {
+        //         setAnswerSevenStatus("incorrect")
+        //     }
 
-            if(answerEight.toLowerCase() === allTriviaQs[indexEight].s.toLowerCase()) {
-                correctCount++
-                setAnswerEightStatus("correct")
-            } else {
-                setAnswerEightStatus("incorrect")
-            }
+        //     if(answerEight.toLowerCase() === allTriviaQs[indexEight].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerEightStatus("correct")
+        //     } else {
+        //         setAnswerEightStatus("incorrect")
+        //     }
 
-            if(answerNine.toLowerCase() === allTriviaQs[indexNine].s.toLowerCase()) {
-                correctCount++
-                setAnswerNineStatus("correct")
-            } else {
-                setAnswerNineStatus("incorrect")
-            }
+        //     if(answerNine.toLowerCase() === allTriviaQs[indexNine].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerNineStatus("correct")
+        //     } else {
+        //         setAnswerNineStatus("incorrect")
+        //     }
 
-            if(answerTen.toLowerCase() === allTriviaQs[indexTen].s.toLowerCase()) {
-                correctCount++
-                setAnswerTenStatus("correct")
-            } else {
-                setAnswerTenStatus("incorrect")
-            }
-        }
+        //     if(answerTen.toLowerCase() === allTriviaQs[indexTen].s.toLowerCase()) {
+        //         correctCount++
+        //         setAnswerTenStatus("correct")
+        //     } else {
+        //         setAnswerTenStatus("incorrect")
+        //     }
+        // }
 
-        setSubmitError('')
-        setNumCorrect(correctCount)
-        setHasSubmitted(true)
-        return
+        // setSubmitError('')
+        // setNumCorrect(correctCount)
+        // setHasSubmitted(true)
+        // return
     }
 
     if(sessionUser) {
@@ -288,6 +296,20 @@ const DailyTrivia = () => {
                 <div>
                     <Button variant='contained'>Create Quiz</Button>
                 </div>
+                <section>
+                    <h2>All Public</h2>
+                    <div>
+                        {quizArr.length && quizArr.map(q => (
+                            <div>
+                                <h3>{q?.title}</h3>
+                                <span>{q?.description}</span>
+                                <button onClick={() => {
+                                    history.push(`/quizzes/${q.id}`)
+                                }}>Take Quiz</button>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
 
                 {/* <div id='trivia-page-header'>

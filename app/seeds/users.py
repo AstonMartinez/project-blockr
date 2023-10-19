@@ -1993,7 +1993,7 @@ def seed_users():
         answer_one="Styling web pages",
         answer_two="Server-side scripting",
         answer_three="Client-side scripting",
-        question_four="Database management",
+        answer_four="Database management",
         solution="Client-side scripting",
         category="JavaScript",
         status="Public"
@@ -2005,7 +2005,7 @@ def seed_users():
         answer_one="`v`",
         answer_two="`variable`",
         answer_three="`declare`",
-        question_four="`var`",
+        answer_four="`var`",
         solution="`var`",
         category="JavaScript",
         status="Public"
@@ -2017,7 +2017,7 @@ def seed_users():
         answer_one="Document Object Model",
         answer_two="Data Object Model",
         answer_three="Design Object Model",
-        question_four="Dynamic Object Manipulation",
+        answer_four="Dynamic Object Manipulation",
         solution="Document Object Model",
         category="JavaScript",
         status="Public"
@@ -2029,7 +2029,7 @@ def seed_users():
         answer_one="`addElement()`",
         answer_two="`appendElement()`",
         answer_three="`push()`",
-        question_four="`addToArray()`",
+        answer_four="`addToArray()`",
         solution="`push()`",
         category="JavaScript",
         status="Public"
@@ -2041,7 +2041,7 @@ def seed_users():
         answer_one="10",
         answer_two="55",
         answer_three="5 + 5",
-        question_four="Error",
+        answer_four="Error",
         solution="55",
         category="JavaScript",
         status="Public"
@@ -2053,7 +2053,7 @@ def seed_users():
         answer_one="`// This is a comment`",
         answer_two="`<!-- This is a comment -->`",
         answer_three="`/* This is a comment */`",
-        question_four="`# This is a comment`",
+        answer_four="`# This is a comment`",
         solution="`# This is a comment`",
         category="JavaScript",
         status="Public"
@@ -2065,7 +2065,7 @@ def seed_users():
         answer_one="`typeOf(variable)`",
         answer_two="`typeof(variable)`",
         answer_three="`variable.type()`",
-        question_four="`variable.getType()`",
+        answer_four="`variable.getType()`",
         solution="`typeof(variable)`",
         category="JavaScript",
         status="Public"
@@ -2077,7 +2077,7 @@ def seed_users():
         answer_one="JavaFX",
         answer_two="React",
         answer_three="Django",
-        question_four="Angular",
+        answer_four="Angular",
         solution="React",
         category="JavaScript",
         status="Public"

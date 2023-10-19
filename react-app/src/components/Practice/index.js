@@ -168,6 +168,7 @@ const Practice = () => {
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              backgroundColor: "black"
             }}
           >
             <IconButton
@@ -182,6 +183,7 @@ const Practice = () => {
             >
               <MenuIcon />
             </IconButton>
+            <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
             <Typography
               component="h1"
               variant="h6"
@@ -189,7 +191,7 @@ const Practice = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Practice
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -220,7 +222,17 @@ const Practice = () => {
           </List>
         </Drawer>
             </Box>
-            <Box>
+            <Box component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto',
+            marginTop: "70px"
+          }}>
             <div id='practice-page-wrapper'>
                 <div>
                     <h1 id='practice-header'>Practice</h1>

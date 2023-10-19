@@ -89,125 +89,6 @@ const DailyTrivia = () => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-    // const [indexOne, setIndexOne] = useState(getRandomInt(triviaLength))
-    // const [indexTwo, setIndexTwo] = useState(getRandomInt(triviaLength))
-    // const [indexThree, setIndexThree] = useState(getRandomInt(triviaLength))
-    // const [indexFour, setIndexFour] = useState(getRandomInt(triviaLength))
-    // const [indexFive, setIndexFive] = useState(getRandomInt(triviaLength))
-    // const [indexSix, setIndexSix] = useState(getRandomInt(triviaLength))
-    // const [indexSeven, setIndexSeven] = useState(getRandomInt(triviaLength))
-    // const [indexEight, setIndexEight] = useState(getRandomInt(triviaLength))
-    // const [indexNine, setIndexNine] = useState(getRandomInt(triviaLength))
-    // const [indexTen, setIndexTen] = useState(getRandomInt(triviaLength))
-
-    const [answerOne, setAnswerOne] = useState('')
-    const [answerTwo, setAnswerTwo] = useState('')
-    const [answerThree, setAnswerThree] = useState('')
-    const [answerFour, setAnswerFour] = useState('')
-    const [answerFive, setAnswerFive] = useState('')
-    const [answerSix, setAnswerSix] = useState('')
-    const [answerSeven, setAnswerSeven] = useState('')
-    const [answerEight, setAnswerEight] = useState('')
-    const [answerNine, setAnswerNine] = useState('')
-    const [answerTen, setAnswerTen] = useState('')
-
-    const [answerOneStatus, setAnswerOneStatus] = useState('')
-    const [answerTwoStatus, setAnswerTwoStatus] = useState('')
-    const [answerThreeStatus, setAnswerThreeStatus] = useState('')
-    const [answerFourStatus, setAnswerFourStatus] = useState('')
-    const [answerFiveStatus, setAnswerFiveStatus] = useState('')
-    const [answerSixStatus, setAnswerSixStatus] = useState('')
-    const [answerSevenStatus, setAnswerSevenStatus] = useState('')
-    const [answerEightStatus, setAnswerEightStatus] = useState('')
-    const [answerNineStatus, setAnswerNineStatus] = useState('')
-    const [answerTenStatus, setAnswerTenStatus] = useState('')
-    const [submitError, setSubmitError] = useState('')
-    const [numCorrect, setNumCorrect] = useState(null)
-    const [hasSubmitted, setHasSubmitted] = useState(false)
-
-
-    const handleSubmit = () => {
-        let correctCount = 0;
-        // if(answerOne === "" || answerTwo === "" || answerThree === "" || answerFour === "" || answerFive === "" || answerSix === "" || answerSeven === "" || answerEight === "" || answerNine === "" || answerTen === "") {
-        //     setSubmitError("Please answer all questions to submit.")
-        //     return
-        // } else {
-        //     if(answerOne.toLowerCase() === allTriviaQs[indexOne].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerOneStatus("correct")
-        //     } else {
-        //         setAnswerOneStatus("incorrect")
-        //     }
-
-        //     if(answerTwo.toLowerCase() === allTriviaQs[indexTwo].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerTwoStatus("correct")
-        //     } else {
-        //         setAnswerTwoStatus("incorrect")
-        //     }
-
-        //     if(answerThree.toLowerCase() === allTriviaQs[indexThree].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerThreeStatus("correct")
-        //     } else {
-        //         setAnswerThreeStatus("incorrect")
-        //     }
-
-        //     if(answerFour.toLowerCase() === allTriviaQs[indexFour].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerFourStatus("correct")
-        //     } else {
-        //         setAnswerFourStatus("incorrect")
-        //     }
-
-        //     if(answerFive.toLowerCase() === allTriviaQs[indexFive].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerFiveStatus("correct")
-        //     } else {
-        //         setAnswerFiveStatus("incorrect")
-        //     }
-
-        //     if(answerSix.toLowerCase() === allTriviaQs[indexSix].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerSixStatus("correct")
-        //     } else {
-        //         setAnswerSixStatus("incorrect")
-        //     }
-
-        //     if(answerSeven.toLowerCase() === allTriviaQs[indexSeven].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerSevenStatus("correct")
-        //     } else {
-        //         setAnswerSevenStatus("incorrect")
-        //     }
-
-        //     if(answerEight.toLowerCase() === allTriviaQs[indexEight].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerEightStatus("correct")
-        //     } else {
-        //         setAnswerEightStatus("incorrect")
-        //     }
-
-        //     if(answerNine.toLowerCase() === allTriviaQs[indexNine].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerNineStatus("correct")
-        //     } else {
-        //         setAnswerNineStatus("incorrect")
-        //     }
-
-        //     if(answerTen.toLowerCase() === allTriviaQs[indexTen].s.toLowerCase()) {
-        //         correctCount++
-        //         setAnswerTenStatus("correct")
-        //     } else {
-        //         setAnswerTenStatus("incorrect")
-        //     }
-        // }
-
-        // setSubmitError('')
-        // setNumCorrect(correctCount)
-        // setHasSubmitted(true)
-        // return
-    }
 
     if(sessionUser) {
         saveButton = (
@@ -226,6 +107,7 @@ const DailyTrivia = () => {
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              backgroundColor: "black"
             }}
           >
             <IconButton
@@ -240,6 +122,7 @@ const DailyTrivia = () => {
             >
               <MenuIcon />
             </IconButton>
+            <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
             <Typography
               component="h1"
               variant="h6"
@@ -247,7 +130,7 @@ const DailyTrivia = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Trivia
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">

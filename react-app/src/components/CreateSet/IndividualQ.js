@@ -1,41 +1,31 @@
 import { useState } from 'react'
-import Input from '@mui/joy/Input';
-import Textarea from '@mui/joy/Textarea';
 
-const IndividualQ = ({cardId}) => {
+const IndividualQ = () => {
     const [front, setFront] = useState('')
     const [back, setBack] = useState('')
-    console.log(cardId)
     return (
         <section className='card-questions'>
-            <div>
-                {/* <h3>Card {cardId}</h3> */}
+            <div style={{ "display": "flex", "flexDirection": "column" }}>
                 <label htmlFor='front'>Front</label>
-                {/* <input
+                <textarea
                     id='card-q-front'
-                    type='text'
+                    className='new-fc-textarea'
+                    placeholder='Enter front of flash card here...'
                     name='front'
-                    value={front}
-                    onChange={(e) => setFront(e.target.value)}
-                /> */}
-                <Textarea sx={{"width": "300px", "height": "100px"}}
                     value={front}
                     onChange={(e) => setFront(e.target.value)}
                 />
             </div>
-            <div>
+            <div style={{ "display": "flex", "flexDirection": "column" }}>
                 <label htmlFor='back'>Back</label>
-                <Textarea sx={{"width": "300px", "height": "100px"}}
+                <textarea
+                    id='card-q-back'
+                    className='new-fc-textarea'
+                    placeholder='Enter back of flash card here...'
+                    name='back'
                     value={back}
                     onChange={(e) => setBack(e.target.value)}
                 />
-                    {/* <input
-                        id='card-q-back'
-                        type='text'
-                        name='back'
-                        value={back}
-                        onChange={(e) => setBack(e.target.value)}
-                    /> */}
             </div>
         </section>
     )

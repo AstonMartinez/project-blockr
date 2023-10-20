@@ -234,14 +234,14 @@ const Practice = () => {
             marginTop: "70px"
           }}>
             <div id='practice-page-wrapper'>
-                <div>
+                <div style={{"display": "flex", "justifyContent": "center"}}>
                     <h1 id='practice-header'>Practice</h1>
                 </div>
                 <section id='languages-to-choose'>
-                    <div id='what-language-text'>
+                    <div id='what-language-text' style={{"display": "flex", "justifyContent": "center"}}>
                         <h3>Which language would you like to practice?</h3>
                     </div>
-                    <div id='languages'>
+                    <div id='languages' style={{"display": "flex", "justifyContent": "space-evenly", "width": "100%", "marginBottom": "15px"}}>
                         <span className='lang' onClick={() => {
                             setCodeType("JS")
                         }}>JavaScript</span>

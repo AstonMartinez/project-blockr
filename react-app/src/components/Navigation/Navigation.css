@@ -1,0 +1,38 @@
+.profile-dropdown {
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+#user-profile-button {
+  margin-right: 10px;
+}
+
+#nav-bar-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  height: 50px;
+  align-items: center;
+}
+
+#home-button {
+  margin-right: 10px;
+  display: flex;
+  width: 600px;
+  /* border: 1px solid rebeccapurple; */
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+.nav-option:hover {
+  cursor: pointer;
+}
+
+#home-button > a {
+  text-decoration: none;
+  color: black;
+}

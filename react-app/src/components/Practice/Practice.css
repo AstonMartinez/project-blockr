@@ -1,0 +1,30 @@
+#practice-page-wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#practice-header {
+    text-align: center;
+}
+
+#languages-to-choose {
+    border: 1px solid black;
+    padding-bottom: 20px;
+}
+
+#what-language-text {
+    text-align: center;
+}
+
+#languages {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lang {
+    border-bottom: 3px solid transparent;
+}
+
+.lang:hover {
+    border-bottom: 3px solid black;
+    cursor: pointer;
+}

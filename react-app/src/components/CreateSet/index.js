@@ -29,7 +29,7 @@ import * as React from 'react'
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: (prop) => prop !== 'open',
   })(({ theme, open }) => ({
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -73,7 +73,7 @@ const AppBar = styled(MuiAppBar, {
   );
 
 const CreateSet = () => {
-    let cardsArr = []
+    let cardsArr = [{}]
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
@@ -87,33 +87,18 @@ const CreateSet = () => {
         cardsArr.push({id: i, front: null, back: null})
     }
     const [finalCardArr, setFinalCardArr] = useState(cardsArr)
-    // console.log(cardsArr[0].id)
-    const numsContent = (
-        <div>
-            {finalCardArr.map(card => (
-                <div style={{"border": "1px solid red"}}>
-                    <h3>Card {cardsArr[card].id}</h3>
-                    <IndividualQ cardId={cardsArr[cardsArr.indexOf(card)].id} />
-                </div>
-            ))}
-        </div>
-    )
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // console.log(document.querySelectorAll('#card-q-front'))
-        // console.log(document.querySelectorAll('#card-q-back'))
         const cardFronts = document.querySelectorAll('#card-q-front')
         const cardBacks = document.querySelectorAll('#card-q-back')
         const resArr = []
         for(let i = 0; i < cardFronts.length; i ++) {
-            // console.log("INSIDE FRONT LOOP: ", cardFronts[i].value)
             resArr.push({
                 front: cardFronts[i].value,
                 back: cardBacks[i].value
             })
         }
-        // console.log("FINAL: ", resArr)
         const setInfo = {
             title: title,
             description: description,
@@ -125,170 +110,145 @@ const CreateSet = () => {
     }
 
     return (
+      <Box sx={{ display: 'flex' }}>
         <Box sx={{ display: 'flex' }}>
-        <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar position="absolute" open={open}>
-          <Toolbar
-            sx={{
-              pr: '24px', // keep right padding when drawer closed
-              backgroundColor: "black"
-            }}
-          >
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={toggleDrawer}
+          <CssBaseline />
+          <AppBar position="absolute" open={open}>
+            <Toolbar sx={{ pr: '24px', backgroundColor: "black" }}>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={toggleDrawer}
+                  sx={{ marginRight: '36px', ...(open && { display: 'none' }) }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
+                <Typography
+                  component="h1"
+                  variant="h6"
+                  color="inherit"
+                  noWrap
+                  sx={{ flexGrow: 1 }}
+                >
+                  Flash Cards
+                </Typography>
+                <IconButton color="inherit">
+                  <Badge badgeContent={4} color="secondary">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton color="inherit">
+                  <PersonIcon onClick={() => history.push('/user')} />
+                </IconButton>
+              </Toolbar>
+            </AppBar>
+            <Drawer variant="permanent" open={open}>
+            <Toolbar
               sx={{
-                marginRight: '36px',
-                ...(open && { display: 'none' }),
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'flex-end',
+                  px: [1],
               }}
             >
-              <MenuIcon />
-            </IconButton>
-            <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Flash Cards
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-                <PersonIcon onClick={() => history.push('/user')} />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <Drawer variant="permanent" open={open}>
-          <Toolbar
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-              px: [1],
-            }}
-          >
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-          <Divider />
-          <List component="nav">
-            {mainListItems}
-          </List>
-        </Drawer>
+              <IconButton onClick={toggleDrawer}>
+                <ChevronLeftIcon />
+              </IconButton>
+            </Toolbar>
+            <Divider />
+            <List component="nav">
+              {mainListItems}
+            </List>
+          </Drawer>
         </Box>
-
-        <Box component="main"
+        <Box
+          component="main"
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[100]
+              : theme.palette.grey[900],
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
           }}>
-                    <div id='create-fc-wrapper'>
+          <div id='create-fc-wrapper'>
             <div>
-                <h1>Create a Flashcard Set</h1>
+              <h1>Create a Flashcard Set</h1>
             </div>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <section id='create-fc-info'>
-                        <h2>Set Info</h2>
-                        <section id='fc-title-input'>
-                            <label htmlFor='title'>Title</label>
-                            <Input sx={{"width": "300px"}}
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
-                            />
-                        </section>
-                        <section id='fc-desc-input'>
-                            <label htmlFor='description'>Description</label>
-                            <Textarea sx={{"height": "100px", "width": "300px"}}
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                            />
-                        </section>
-                    </section>
-                    <section id='fc-cat-select'>
-                        <label>Category</label>
-                        <Select defaultValue="General" onChange={(e) => setCategory(e.target.value)} sx={{"width": "300px"}}>
-                            <Option value="Angular">Angular</Option>
-                            <Option value="C#">C#</Option>
-                            <Option value="C++">C++</Option>
-                            <Option value="General">General</Option>
-                            <Option value="Java">Java</Option>
-                            <Option value="JavaScript">JavaScript</Option>
-                            <Option value="NextJS">NextJS</Option>
-                            <Option value="Python">Python</Option>
-                            <Option value="React">React</Option>
-                            <Option value="Rust">Rust</Option>
-                            <Option value="Svelte">Svelte</Option>
-                            <Option value="TypeScript">TypeScript</Option>
-                            <Option value="Other">Other</Option>
-                        </Select>
-                    </section>
-                    <section id='fc-num-select'>
-                        <label htmlFor='num-cards'>How Many Cards?</label>
-                        <Input sx={{"width": "300px"}}
-                            type="number"
-                            defaultValue={1}
-                            slotProps={{
-                                input: {
-                                    min: 1,
-                                    max: 50
-                                }
-                            }}
-                            value={numCards}
-                            onChange={(e) => setNumCards(e.target.value)}
-                        />
-                        {/* <input
-                            type='number'
-                            value={numCards}
-                            onChange={(e) => setNumCards(e.target.value)}
-                            name='num-cards'
-                        /> */}
-                    </section>
-                    <section id='fc-cards-inputs'>
-                        <h2>Cards</h2>
-                        <section id='all-fcs'>
+              <form onSubmit={handleSubmit}>
+                <section id='create-fc-info'>
+                  <h2>Set Info</h2>
+                  <section id='fc-title-input'>
+                    <label htmlFor='title' className='create-fc-set-label'>Title</label>
+                    <Input sx={{"width": "300px"}}
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                    />
+                  </section>
+                  <section id='fc-desc-input'>
+                    <label className='create-fc-set-label' htmlFor='description'>Description</label>
+                    <Textarea sx={{"height": "100px", "width": "300px"}}
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                  </section>
+                </section>
+                <section id='fc-cat-select'>
+                  <label className='create-fc-set-label'>Category</label>
+                  <Select defaultValue="General" onChange={(e) => setCategory(e.target.value)} sx={{"width": "300px"}}>
+                    <Option value="Angular">Angular</Option>
+                    <Option value="C#">C#</Option>
+                    <Option value="C++">C++</Option>
+                    <Option value="General">General</Option>
+                    <Option value="Java">Java</Option>
+                    <Option value="JavaScript">JavaScript</Option>
+                    <Option value="NextJS">NextJS</Option>
+                    <Option value="Python">Python</Option>
+                    <Option value="React">React</Option>
+                    <Option value="Rust">Rust</Option>
+                    <Option value="Svelte">Svelte</Option>
+                    <Option value="TypeScript">TypeScript</Option>
+                    <Option value="Other">Other</Option>
+                  </Select>
+                </section>
+                <section id='fc-num-select'>
+                  <label className='create-fc-set-label' htmlFor='num-cards'>How Many Cards?</label>
+                  <input
+                    id='num-fc-new'
+                    style={{"width": "300px"}}
+                    type="number"
+                    defaultValue={1}
+                    min={1}
+                    max={30}
+                    value={numCards}
+                    onChange={(e) => setNumCards(e.target.value)}
+                  />
+                </section>
+                <section id='fc-cards-inputs'>
+                  <h2>Cards</h2>
+                  <section id='all-fcs'>
+                    <div>
+                      {/* <IndividualQ /> */}
+                        {cardsArr.map(card => (
+                          <>
                             <IndividualQ />
-                            {cardsArr.map(card => (
-                                <div>
-                                    <IndividualQ front={card.front} back={card.back} />
-                                </div>
-                            ))}
-                            {numsContent}
-                        </section>
-                        {/* <section>
-                            <AddIcon onClick={() => {
-                                cardsArr.push({
-                                    front: null,
-                                    back: null
-                                })
-                                setFinalCardArr(cardsArr)
-                            }} />
-                        </section> */}
-                    </section>
-                    <section id='create-fc-submit'>
-                        <Button type="submit" size="md">Submit</Button>
-                    </section>
-                    {/* <button type="submit">Submit</button> */}
-                </form>
+                          </>
+                        ))}
+                    </div>
+                  </section>
+                </section>
+                <section id='create-fc-submit'>
+                  <Button type="submit" size="md">Submit</Button>
+                </section>
+              </form>
             </div>
-        </div>
-          </Box>
-          </Box>
+          </div>
+        </Box>
+      </Box>
     )
 }
 

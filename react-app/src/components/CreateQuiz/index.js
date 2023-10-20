@@ -1,6 +1,5 @@
-import './CreateSet.css'
+import './CreateQuiz.css'
 import AddIcon from '@mui/icons-material/Add';
-import IndividualQ from './IndividualQ';
 import { useState } from 'react'
 import Textarea from '@mui/joy/Textarea';
 import Input from '@mui/joy/Input';
@@ -72,28 +71,151 @@ const AppBar = styled(MuiAppBar, {
     }),
   );
 
-const CreateSet = () => {
-    let cardsArr = []
+const CreateQuiz = () => {
+    let qArr = []
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
     };
-    const [numCards, setNumCards] = useState(1)
+    const [numQuestions, setNumQuestion] = useState(1)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
-    for(let i = 1; i < numCards; i++) {
-        cardsArr.push({id: i, front: null, back: null})
+
+    const [q1q, setQ1Q] = useState(null)
+    const [q2q, setQ2Q] = useState(null)
+    const [q3q, setQ3q] = useState(null)
+    const [q4q, setQ4Q] = useState(null)
+    const [q5q, setQ5Q] = useState(null)
+    const [q6q, setQ6Q] = useState(null)
+    const [q7q, setQ7Q] = useState(null)
+    const [q8q, setQ8q] = useState(null)
+    const [q9q, setQ9Q] = useState(null)
+    const [q10q, setQ10Q] = useState(null)
+    const [q11q, setQ11Q] = useState(null)
+    const [q12q, setQ12Q] = useState(null)
+    const [q13q, setQ13q] = useState(null)
+    const [q14q, setQ14Q] = useState(null)
+    const [q15q, setQ15Q] = useState(null)
+    const [q16q, setQ16Q] = useState(null)
+    const [q17q, setQ17Q] = useState(null)
+    const [q18q, setQ18q] = useState(null)
+    const [q19q, setQ19Q] = useState(null)
+    const [q20q, setQ20Q] = useState(null)
+
+    const [q1a1, setQ1A1] = useState(null)
+    const [q1a2, setQ1A2] = useState(null)
+    const [q1a3, setQ1A3] = useState(null)
+    const [q1a4, setQ1A4] = useState(null)
+
+    const [q2a1, setQ2A1] = useState(null)
+    const [q2a2, setQ2A2] = useState(null)
+    const [q2a3, setQ2A3] = useState(null)
+    const [q2a4, setQ2A4] = useState(null)
+
+    const [q3a1, setQ3A1] = useState(null)
+    const [q3a2, setQ3A2] = useState(null)
+    const [q3a3, setQ3A3] = useState(null)
+    const [q3a4, setQ3A4] = useState(null)
+
+    const [q4a1, setQ4A1] = useState(null)
+    const [q4a2, setQ4A2] = useState(null)
+    const [q4a3, setQ4A3] = useState(null)
+    const [q4a4, setQ4A4] = useState(null)
+
+    const [q5a1, setQ5A1] = useState(null)
+    const [q5a2, setQ5A2] = useState(null)
+    const [q5a3, setQ5A3] = useState(null)
+    const [q5a4, setQ5A4] = useState(null)
+
+    const [q6a1, setQ6A1] = useState(null)
+    const [q6a2, setQ6A2] = useState(null)
+    const [q6a3, setQ6A3] = useState(null)
+    const [q6a4, setQ6A4] = useState(null)
+
+    const [q7a1, setQ7A1] = useState(null)
+    const [q7a2, setQ7A2] = useState(null)
+    const [q7a3, setQ7A3] = useState(null)
+    const [q7a4, setQ7A4] = useState(null)
+
+    const [q8a1, setQ8A1] = useState(null)
+    const [q8a2, setQ8A2] = useState(null)
+    const [q8a3, setQ8A3] = useState(null)
+    const [q8a4, setQ8A4] = useState(null)
+
+    const [q9a1, setQ9A1] = useState(null)
+    const [q9a2, setQ9A2] = useState(null)
+    const [q9a3, setQ9A3] = useState(null)
+    const [q9a4, setQ9A4] = useState(null)
+
+    const [q10a1, setQ10A1] = useState(null)
+    const [q10a2, setQ10A2] = useState(null)
+    const [q10a3, setQ10A3] = useState(null)
+    const [q10a4, setQ10A4] = useState(null)
+
+    const [q11a1, setQ11A1] = useState(null)
+    const [q11a2, setQ11A2] = useState(null)
+    const [q11a3, setQ11A3] = useState(null)
+    const [q11a4, setQ11A4] = useState(null)
+
+    const [q12a1, setQ12A1] = useState(null)
+    const [q12a2, setQ12A2] = useState(null)
+    const [q12a3, setQ12A3] = useState(null)
+    const [q12a4, setQ12A4] = useState(null)
+
+    const [q13a1, setQ13A1] = useState(null)
+    const [q13a2, setQ13A2] = useState(null)
+    const [q13a3, setQ13A3] = useState(null)
+    const [q13a4, setQ13A4] = useState(null)
+
+    const [q14a1, setQ14A1] = useState(null)
+    const [q14a2, setQ14A2] = useState(null)
+    const [q14a3, setQ14A3] = useState(null)
+    const [q14a4, setQ14A4] = useState(null)
+
+    const [q15a1, setQ15A1] = useState(null)
+    const [q15a2, setQ15A2] = useState(null)
+    const [q15a3, setQ15A3] = useState(null)
+    const [q15a4, setQ15A4] = useState(null)
+
+    const [q16a1, setQ16A1] = useState(null)
+    const [q16a2, setQ16A2] = useState(null)
+    const [q16a3, setQ16A3] = useState(null)
+    const [q16a4, setQ16A4] = useState(null)
+
+    const [q17a1, setQ17A1] = useState(null)
+    const [q17a2, setQ17A2] = useState(null)
+    const [q17a3, setQ17A3] = useState(null)
+    const [q17a4, setQ17A4] = useState(null)
+
+    const [q18a1, setQ18A1] = useState(null)
+    const [q18a2, setQ18A2] = useState(null)
+    const [q18a3, setQ18A3] = useState(null)
+    const [q18a4, setQ18A4] = useState(null)
+
+    const [q19a1, setQ19A1] = useState(null)
+    const [q19a2, setQ19A2] = useState(null)
+    const [q19a3, setQ19A3] = useState(null)
+    const [q19a4, setQ19A4] = useState(null)
+
+    const [q20a1, setQ20A1] = useState(null)
+    const [q20a2, setQ20A2] = useState(null)
+    const [q20a3, setQ20A3] = useState(null)
+    const [q20a4, setQ20A4] = useState(null)
+
+
+    for(let i = 1; i < numQuestions; i++) {
+        qArr.push({id: i, front: null, back: null})
     }
-    const [finalCardArr, setFinalCardArr] = useState(cardsArr)
-    // console.log(cardsArr[0].id)
+    const [finalQArr, setFinalQArr] = useState(qArr)
+
     const numsContent = (
         <div>
-            {finalCardArr.map(card => (
+            {finalQArr.map(q => (
                 <div style={{"border": "1px solid red"}}>
-                    <h3>Card {cardsArr[card].id}</h3>
-                    <IndividualQ cardId={cardsArr[cardsArr.indexOf(card)].id} />
+                    <h3>Card {qArr[q].id}</h3>
+                    {/* <IndividualQ cardId={qArr[qArr.indexOf(q)].id} /> */}
                 </div>
             ))}
         </div>
@@ -101,19 +223,15 @@ const CreateSet = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // console.log(document.querySelectorAll('#card-q-front'))
-        // console.log(document.querySelectorAll('#card-q-back'))
         const cardFronts = document.querySelectorAll('#card-q-front')
         const cardBacks = document.querySelectorAll('#card-q-back')
         const resArr = []
         for(let i = 0; i < cardFronts.length; i ++) {
-            // console.log("INSIDE FRONT LOOP: ", cardFronts[i].value)
             resArr.push({
                 front: cardFronts[i].value,
                 back: cardBacks[i].value
             })
         }
-        // console.log("FINAL: ", resArr)
         const setInfo = {
             title: title,
             description: description,
@@ -123,7 +241,6 @@ const CreateSet = () => {
         console.log(setInfo)
 
     }
-
     return (
         <Box sx={{ display: 'flex' }}>
         <Box sx={{ display: 'flex' }}>
@@ -155,7 +272,7 @@ const CreateSet = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Flash Cards
+              Trivia
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -199,7 +316,7 @@ const CreateSet = () => {
           }}>
                     <div id='create-fc-wrapper'>
             <div>
-                <h1>Create a Flashcard Set</h1>
+                <h1>Create a Quiz</h1>
             </div>
             <div>
                 <form onSubmit={handleSubmit}>
@@ -239,7 +356,7 @@ const CreateSet = () => {
                         </Select>
                     </section>
                     <section id='fc-num-select'>
-                        <label htmlFor='num-cards'>How Many Cards?</label>
+                        <label htmlFor='num-cards'>How Many Questions?</label>
                         <Input sx={{"width": "300px"}}
                             type="number"
                             defaultValue={1}
@@ -249,41 +366,24 @@ const CreateSet = () => {
                                     max: 50
                                 }
                             }}
-                            value={numCards}
-                            onChange={(e) => setNumCards(e.target.value)}
+                            value={numQuestions}
+                            onChange={(e) => setNumQuestion(e.target.value)}
                         />
-                        {/* <input
-                            type='number'
-                            value={numCards}
-                            onChange={(e) => setNumCards(e.target.value)}
-                            name='num-cards'
-                        /> */}
+
                     </section>
                     <section id='fc-cards-inputs'>
-                        <h2>Cards</h2>
+                        <h2>Questions</h2>
                         <section id='all-fcs'>
-                            <IndividualQ />
-                            {cardsArr.map(card => (
+                            {qArr.map(card => (
                                 <div>
-                                    <IndividualQ front={card.front} back={card.back} />
                                 </div>
                             ))}
                             {numsContent}
                         </section>
-                        {/* <section>
-                            <AddIcon onClick={() => {
-                                cardsArr.push({
-                                    front: null,
-                                    back: null
-                                })
-                                setFinalCardArr(cardsArr)
-                            }} />
-                        </section> */}
                     </section>
                     <section id='create-fc-submit'>
                         <Button type="submit" size="md">Submit</Button>
                     </section>
-                    {/* <button type="submit">Submit</button> */}
                 </form>
             </div>
         </div>
@@ -292,4 +392,4 @@ const CreateSet = () => {
     )
 }
 
-export default CreateSet;
+export default CreateQuiz;

@@ -17,6 +17,7 @@ import CardSet from "./components/FlashCards/CardSet";
 import Footer from "./components/Footer";
 import CreateSet from "./components/CreateSet";
 import Quiz from "./components/Quiz";
+import CreateQuiz from "./components/CreateQuiz";
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route exact path='/schedule'>
             <WeeklySchedule />
+          </Route>
+          <Route exact path='/trivia/new'>
+            <CreateQuiz />
           </Route>
           <Route exact path='/trivia'>
             <DailyTrivia />

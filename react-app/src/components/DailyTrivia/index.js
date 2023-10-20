@@ -177,7 +177,9 @@ const DailyTrivia = () => {
                     <h1>Trivia</h1>
                 </div>
                 <div>
-                    <Button variant='contained'>Create Quiz</Button>
+                    <Button variant='contained' onClick={() => {
+                        history.push('/trivia/new')
+                    }}>Create Quiz</Button>
                 </div>
                 <section>
                     <h2>All Public</h2>

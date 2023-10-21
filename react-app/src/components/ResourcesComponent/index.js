@@ -22,7 +22,569 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { TableVirtuoso } from 'react-virtuoso';
 import './Resources.css'
+
+// Resource Types:
+//  - Documentation
+//  - Tutorials
+//  - Courses
+//  - Services
+//  - Tools
+//  - Applications & Plugins
+//  - Troubleshooting / Debugging
+//  - Community & News
+//  - Helpful Info
+//  - Practice
+
+// Table Columns:
+//  - Resource Name
+//  - Link
+//  - Resource Type
+//  - Related Languages
+
+function createData(resourceName, link, resourceType, relatedLanguages) {
+  return { resourceName, link, resourceType, relatedLanguages };
+}
+
+function createData2(challengeName, link, resourceType, relatedLanguages, difficulty) {
+  return { challengeName, link, resourceType, relatedLanguages, difficulty }
+}
+
+const rows1 = [
+  createData('LeetCode', "https://leetcode.com", "Practice", "All"),
+  createData('NeetCode', "https://neetcode.io", "Practice", "All"),
+  createData('Structy', "https://structy.net", "Practice", "All"),
+  createData('"Data Structure Visualization"', "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html", "Helpful Info", "All"),
+  createData('Big-O Cheat Sheet', "https://www.bigocheatsheet.com/", "Helpful Info", "All"),
+  createData('VisuAlgo', "https://visualgo.net/en", "Tools, Helpful Info", "All"),
+  createData('Time Complexity Analysis of Array', "https://iq.opengenus.org/time-complexity-of-array/", "Helpful Info", "All")
+];
+
+const rows2 = [
+  createData2('Build a Binary Search Tree', "https://discuss.codecademy.com/t/challenge-build-and-test-balance-of-a-binary-search-tree/84300?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*l7a2o3*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.", "Practice", "All", "Easy"),
+  createData2('FizzBuzz', "https://discuss.codecademy.com/t/challenge-the-classic-fizzbuzz-challenge/82165?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*moppjj*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.", "Practice", "All", "Easy"),
+  createData2('Hello World Variations', "https://discuss.codecademy.com/t/challenge-the-hello-world-challenge/24751/2?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*p5ea6j*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.", "Practice", "All", "Easy"),
+  createData2('Code in a New Language', "https://discuss.codecademy.com/t/challenge-code-in-another-language-challenge/24823?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*p5ea6j*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjAuMTY5Nzg1MTQ0Ni42MC4wLjA.", "Practice", "All", "Easy"),
+  createData2('String Reversa;', "https://discuss.codecademy.com/t/challenge-reverse-words/83796?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*jtjm0i*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Easy"),
+  createData2('Fibonacci', "https://discuss.codecademy.com/t/challenge-fibonacci-finder/129506?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*jtjm0i*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Easy"),
+  createData2('isPrime', "https://discuss.codecademy.com/t/challenge-prime-number-printer/101926?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*l3h12u*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Easy"),
+  createData2('Check if Binary Search Tree is Valid', "https://discuss.codecademy.com/t/challenge-build-and-test-balance-of-a-binary-search-tree/84300?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1wejfgi*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Intermediate"),
+  createData2('Reverse Word Order w/ Punctuation', "https://discuss.codecademy.com/t/challenge-reverse-words/83796?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1wejfgi*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Intermediate"),
+  createData2('Find Shortest Transformation', "https://discuss.codecademy.com/t/challenge-word-transformation/84306?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1ygh4sm*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "Python", "Intermediate"),
+  createData2('Find nth Number in Fibonacci', "https://discuss.codecademy.com/t/challenge-word-transformation/84306?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1ygh4sm*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Intermediate"),
+  createData2('Print All Prime Nums in String', "https://discuss.codecademy.com/t/challenge-word-transformation/84306?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1ygh4sm*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Intermediate"),
+  createData2('Insert List Into Binary Tree O(n log n)', "https://discuss.codecademy.com/t/challenge-build-and-test-balance-of-a-binary-search-tree/84300?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1ed0kcl*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Hard"),
+  createData2('Reverse Word Order w/ Punctuation O(n)', "https://discuss.codecademy.com/t/challenge-reverse-words/83796?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1t8tkw1*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MzYxMS4yLjEuMTY5Nzg1MzYzOS4zMi4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Hard"),
+  createData2('Find nth Number in Fibonacci O(n)', "https://discuss.codecademy.com/t/challenge-fibonacci-finder/129506?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1t8tkw1*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MzYxMS4yLjEuMTY5Nzg1MzYzOS4zMi4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Hard"),
+  createData2('Create a Web Page for Your Favorite Band', "https://discuss.codecademy.com/t/challenge-build-a-web-page-for-your-favorite-band/505142?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1os64d9*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MzYxMS4yLjEuMTY5Nzg1MzYzOS4zMi4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Variable"),
+  createData2('Recreate Magazine Layout w/ Semantic HTML & Flexbox', "https://discuss.codecademy.com/t/challenge-recreate-a-magazine-layout-using-semantic-html-and-css-flexbox/549635?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1j4zmkx*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MzYxMS4yLjEuMTY5Nzg1MzYzOS4zMi4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Variable"),
+  createData2('Build a Static Portfolio Site', "https://discuss.codecademy.com/t/challenge-build-a-static-portfolio-site/535417?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1l4cvx1*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MzYxMS4yLjEuMTY5Nzg1MzYzOS4zMi4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Variable"),
+  createData2('Maximize Stock Trading Profit', "https://discuss.codecademy.com/t/challenge-maximize-stock-trading-profit/86193?utm_source=ccblog&utm_medium=ccblog&utm_campaign=ccblog&utm_content=cw_20_code_challenges_blog&_gl=1*1l4cvx1*_ga*MTQyMTMzNzMuMTY5Nzg1MTQ0Ng..*_ga_3LRZM6TM9L*MTY5Nzg1MzYxMS4yLjEuMTY5Nzg1MzYzOS4zMi4wLjA.*_ga_T0PG03GR11*MTY5Nzg1MTQ0Ni4xLjEuMTY5Nzg1MTY4Ni4yOS4wLjA.", "Practice", "All", "Variable")
+];
+
+const rows3 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row4 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows5 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows6 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows7 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows8 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows9 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows10 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows11 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows12 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows13 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row14 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows15 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows16 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows17 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows18 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows19 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows20 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows21 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows22 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows23 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row24 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows25 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows26 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows27 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows28 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows29 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows30 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows31 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows32 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows33 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row34 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows35 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows36 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows37 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows38 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows39 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows40 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows41 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows42 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows43 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row44 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows45 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows46 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows47 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows48 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows49 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows50 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows51 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows52 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows53 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row54 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows55 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows56 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows57 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows58 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows59 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows60 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows61 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows62 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const rows63 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const row64 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
 
 const drawerWidth = 240;
 
@@ -179,10 +741,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Data Structures & Algorithms</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-                    Aliquam eget maximus est, id dignissim quam.
-                  </Typography>
+                              <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows1.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -196,11 +782,36 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Coding Problems</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-                    varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-                    laoreet.
-                  </Typography>
+                <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Challenge Name</TableCell>
+            <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+            <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+            <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+            <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">difficulty</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows2.map((row) => (
+            <TableRow
+              key={row.resourceName}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              {/* <TableCell component="th" scope="row">
+                {row.resourceName}
+              </TableCell> */}
+              <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.challengeName}</TableCell>
+              <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Challenge Link</a></TableCell>
+              <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+              <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+              <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.difficulty}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
                 </AccordionDetails>
               </Accordion>
 

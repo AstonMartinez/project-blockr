@@ -1,5 +1,16 @@
-#helpful-resources-text {
-    border: 1px solid red;
-    width: 100%;
-    height: 100%;
+#resource-page-wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0px 50px;
+    /* border: 1px solid red; */
+}
+
+/* .resource-main-content {
+    border: 1px solid blue;
+    margin: 20px;
+} */
+
+.resource-section {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin: 20px 10px;
 }

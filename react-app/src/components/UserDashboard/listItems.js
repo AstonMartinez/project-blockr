@@ -17,7 +17,6 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import { Redirect } from 'react-router-dom';
 import Link from '@mui/material/Link';
 
-
 const mainListItems = (
   <React.Fragment>
     <Link href="/dashboard" style={{"textDecoration": "none", "color": "black"}}>

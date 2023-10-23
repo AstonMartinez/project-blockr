@@ -95,8 +95,14 @@ const defaultTheme = createTheme();
 
 export default function UserDashboard() {
   const dispatch = useDispatch()
+  const history = useHistory()
   const allMaterials = useSelector(state => state.materials.allMaterials)
   const allTasks = useSelector(state => state.tasks.allTasks)
+  const sessionUser = useSelector(state => state.session.user)
+
+  if(!sessionUser) {
+    history.push('/login')
+  }
 
   const userCards = allMaterials.cards
   const userQuizzes = allMaterials.quizzes
@@ -166,16 +172,10 @@ export default function UserDashboard() {
     )
   }
 
-  const sessionUser = useSelector(state => state.session.user)
-  const history = useHistory()
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
       setOpen(!open);
   };
-
-    if(!sessionUser) {
-      history.push('/login')
-    }
 
     React.useEffect(() => {
       dispatch(fetchMaterials())

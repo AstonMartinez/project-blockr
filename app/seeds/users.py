@@ -15,7 +15,8 @@ def seed_users():
         firstName='Demo',
         lastName='Lition',
         email='demo@aa.io',
-        password='password'
+        password='password',
+        bio="Your friendly neighborhood coder on a never-ending quest to unravel the mysteries of software development. Whether I'm weaving spells in Python or conjuring web wonders with JavaScript, I'm always exploring the enchanting world of code. My trusty wand? The keyboard! My incantations? Lines of code! My magic potions? Coffee and Stack Overflow!"
     )
 
     marnie = User(

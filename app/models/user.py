@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
     lastName = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    bio = db.Column(db.String(500))
 
     cards = db.relationship('CardSets', back_populates='user')
     stats = db.relationship('UserStats', back_populates='user')
@@ -35,5 +36,6 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'firstName': self.firstName,
             'lastName': self.lastName,
+            'bio': self.bio
             # 'stats': self.stats.to_dict()
         }

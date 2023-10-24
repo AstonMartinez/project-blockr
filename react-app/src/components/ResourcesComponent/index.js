@@ -475,19 +475,91 @@ const rows15 = [
 ];
 
 const rows16 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('SQLAlchemy Documentation', 'https://www.sqlalchemy.org/', 'Documentation', 'SQL/Python'),
+  createData('Optimizing Database Interactions in Python', 'https://soshace.com/optimizing-database-interactions-in-python-sqlalchemy-best-practices/', 'Tutorials', 'SQL/Python'),
+  createData('SQLAlchemy Tutorial with Examples', 'https://www.datacamp.com/tutorial/sqlalchemy-tutorial-examples', 'Tutorials', 'SQL/Python'),
+  createData('SQLAlchemy ORM Tutorial for Python Developers', 'https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/', 'Tutorials', 'SQL/Python'),
+  createData('SQLAlchemy - Python Tutorial', 'https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91', 'Tutorials', 'SQL/Python'),
+  createData('SQLAlchemy-Continuum', 'https://sqlalchemy-continuum.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-mptt', 'https://sqlalchemy-mptt.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLALchemy-ORM-tree', 'https://sqlalchemy-orm-tree.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Vdm', 'https://github.com/okfn/vdm', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-Enum34', 'https://github.com/spoqa/sqlalchemy-enum34', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-utc', 'https://github.com/spoqa/sqlalchemy-utc', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-utils', 'https://sqlalchemy-utils.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Alembic', 'https://alembic.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-migrate', 'https://sqlalchemy-migrate.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Filedepot', 'https://depot.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-ImageAttach', 'https://sqlalchemy-imageattach.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-media', 'https://github.com/pylover/sqlalchemy-media', 'Packages & Utilities', 'SQL/Python'),
+  createData('ColanderAlchemy', 'https://github.com/stefanofontanelli/ColanderAlchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Flask-Validator', 'https://flask-validator.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('FormAlchemy', 'https://github.com/FormAlchemy/formalchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('WTForms-Alchemy', 'https://wtforms-alchemy.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sprox', 'https://sprox.org/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-Searchable', 'https://sqlalchemy-searchable.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-FullText-Search', 'https://github.com/mengzhuo/sqlalchemy-fulltext-search', 'Packages & Utilities', 'SQL/Python'),
+  createData('GeoAlchemy', 'https://geoalchemy.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('GeoAlchemy 2', 'https://geoalchemy-2.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sqlakeyset', 'https://github.com/djrobstep/sqlakeyset', 'Packages & Utilities', 'SQL/Python'),
+  createData('Marshmallow-SQLAlchemy', 'https://marshmallow-sqlalchemy.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Pydantic', 'https://github.com/samuelcolvin/pydantic', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLAlchemy-dict', 'https://github.com/meyt/sqlalchemy-dict', 'Packages & Utilities', 'SQL/Python'),
+  createData('Charlatan', 'https://github.com/uber/charlatan', 'Packages & Utilities', 'SQL/Python'),
+  createData('Factory-boy', 'https://github.com/FactoryBoy/factory_boy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Mixer', 'https://github.com/klen/mixer', 'Packages & Utilities', 'SQL/Python'),
+  createData('Dataset', 'https://dataset.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Rdflib-sqlalchemy', 'https://github.com/RDFLib/rdflib-sqlalchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('PugSQL', 'https://pugsql.org/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLSoup', 'https://sqlsoup.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLModel', 'https://sqlmodel.tiangolo.com/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Zillion', 'https://totalhack.github.io/zillion/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Flask-SQLAlchemy-PGEvents', 'https://github.com/shawalli/flask-sqlalchemy-pgevents', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sqlalchemy-crosstab-postgresql', 'https://github.com/makmanalp/sqlalchemy-crosstab-postgresql', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sqlalchemy-postgres-copy', 'https://github.com/jmcarp/sqlalchemy-postgres-copy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sadisplay', 'https://bitbucket.org/estin/sadisplay', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sqlalchemy_schemadisplay', 'https://github.com/fschulze/sqlalchemy_schemadisplay', 'Packages & Utilities', 'SQL/Python'),
+  createData('Eralchemy', 'https://github.com/Alexis-benoist/eralchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Bottle-sqlalchemy', 'https://github.com/iurisilvio/bottle-sqlalchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Filteralchemy', 'https://github.com/jmcarp/filteralchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Flask-SQLAlchemy', 'https://pythonhosted.org/Flask-SQLAlchemy/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Flask-Admin', 'https://github.com/flask-admin/flask-admin', 'Packages & Utilities', 'SQL/Python'),
+  createData('Pyramid-sqlalchemy', 'https://pyramid-sqlalchemy.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Pyramid-restler', 'https://github.com/wylee/pyramid_restler', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sacrud', 'https://sacrud.readthedocs.io/', 'Packages & Utilities', 'SQL/Python'),
+  createData('SQLA-wrapper', 'https://github.com/jpscaletti/sqla-wrapper', 'Packages & Utilities', 'SQL/Python'),
+  createData('Zope.sqlalchemy', 'https://pypi.org/project/zope.sqlalchemy/', 'Packages & Utilities', 'SQL/Python'),
+  createData('Paginate_sqlalchemy', 'https://github.com/Pylons/paginate_sqlalchemy', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sandman2', 'https://github.com/jeffknupp/sandman2', 'Packages & Utilities', 'SQL/Python'),
+  createData('Sqlalchemy-mixins', 'https://github.com/absent1706/sqlalchemy-mixins', 'Packages & Utilities', 'SQL/Python')
 ];
 
 const rows17 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('PostgreSQL Documentation', '', 'Documentation', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
+  createData('', '', '', 'SQL'),
 ];
 
 const rows18 = [
@@ -1630,10 +1702,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>SQLAlchemy</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows16.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 

@@ -535,31 +535,22 @@ const rows16 = [
 ];
 
 const rows17 = [
-  createData('PostgreSQL Documentation', '', 'Documentation', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
-  createData('', '', '', 'SQL'),
+  createData('PostgreSQL Documentation', 'https://www.postgresql.org/docs/', 'Documentation', 'SQL'),
+  createData('DBeaver - Free Universal Database Tool', 'https://dbeaver.io/download/', 'Tools', 'SQL'),
+  createData('PostgreSQL 101', 'https://www.red-gate.com/hub/events/series/postgresql-101?utm_source=google&utm_medium=cpc&utm_campaign=postgresql&utm_term=learn-postgresql&utm_content=P-GS-PostgreSQL-Informational&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NOvjoe7OKvClMtZxB1zK5z4Be-aubhjKyd3gG-3-22bSoEA3ecyVXBoCXPMQAvD_BwE', 'Courses', 'SQL'),
+  createData('PostgreSQL Tutorial', 'https://www.postgresqltutorial.com/', 'Tutorials', 'SQL'),
+  createData('Tutorials Point PostgreSQL', 'https://www.tutorialspoint.com/postgresql/', 'Tutorials', 'SQL'),
+  createData('PG Exercises', 'https://pgexercises.com/', 'Practices', 'SQL'),
+  createData('PostgreSQL Primer for Busy Poeple', 'https://zaiste.net/posts/postgresql-primer-for-busy-people/', 'Helpful Info', 'SQL'),
+  createData('Schemaverse', 'https://schemaverse.com/', 'Practices', 'SQL'),
+  createData('Awesome Postgres', 'https://github.com/dhamaniasad/awesome-postgres', 'Helpful Info', 'SQL'),
+  createData('The Complete Python and PostgreSQL Developer Course', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-python-postgresql-developer-course%2F', 'Courses', 'SQL'),
+  createData('SQL and PostgreSQL for Beginners', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsql-and-postgresql-for-beginners%2F', 'Courses', 'SQL'),
+  createData('PostgreSQL: Getting Started', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fpostgresql-getting-started', 'Courses', 'SQL'),
+  createData('Intro to PostgreSQL Databases with PgAdmin for Beginners', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fintro-to-postgresql-databases-with-pgadmin%2F', 'Courses', 'SQL'),
+  createData('Free PostgreSQL Course from FreeCodeCamp', 'https://www.youtube.com/watch?v=qw--VYLpxG4', 'Courses', 'SQL'),
+  createData('SQL Crash Course: PostgreSQL for Beginners', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsql-crash-course-postgresql-for-beginners%2F', 'Courses', 'SQL'),
+  createData('PostgreSQL: Advanced SQL Queries', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fpostgresql-advanced-sql-queries', 'Courses', 'SQL')
 ];
 
 const rows18 = [
@@ -1743,10 +1734,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>PostgreSQL</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows17.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 

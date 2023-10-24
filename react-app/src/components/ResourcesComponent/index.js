@@ -91,19 +91,54 @@ const rows2 = [
 ];
 
 const rows3 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Women Who Code', "https://www.womenwhocode.com/", "Community & News", "All"),
+  createData('Hashnode', "https://hashnode.com/", "Community & News", "All"),
+  createData('Hackernoon', "https://hackernoon.com/", "Community & News", "All"),
+  createData('Hacker News', "https://news.ycombinator.com/", "Community & News", "All"),
+  createData('Stack Overflow', "https://stackoverflow.com/", "Community & News", "All"),
+  createData('Code Project', "https://www.codeproject.com/", "Community & News", "All"),
+  createData('Reddit - r/Coding', "https://www.reddit.com/r/coding/", "Community & News", "All"),
+  createData('DEV Community', "https://dev.to/", "Community & News", "All"),
+  createData('DevHubby', "https://devhubby.com/", "Community & News", "All")
 ];
 
-const row4 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+const rows4 = [
+  createData('TLDR Newsletter', "https://tldr.tech/", "Community & News", "All"),
+  createData('SD Times', "https://sdtimes.com/", "Community & News", "All"),
+  createData('InfoWorld', "https://www.infoworld.com/category/application-development/", "Community & News", "All"),
+  createData('InfoQ', "https://www.infoq.com/", "Community & News", "All"),
+  createData('The New Stack', "https://thenewstack.io/software-development/", "Community & News", "All"),
+  createData('Developer Tech News', 'https://www.developer-tech.com/', 'Community & News', 'All'),
+  createData('Software Engineering Daily', 'https://softwareengineeringdaily.com/', 'Community & News', 'All'),
+  createData('Wired', 'https://www.wired.com/tag/developers/', 'Community & News', 'All'),
+  createData('Podcast - The Changelog', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=4574101&q=site:https%3A%2F%2Fchangelog.com%2Fpodcast%2Ffeed', 'Community & News', 'All'),
+  createData('Podcast - Software Engineering Daily', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5015752&q=site:https%3A%2F%2Fsoftwareengineeringdaily.com%2Ffeed%2Fpodcast', 'Community & News', 'All'),
+  createData('Podcast - Software Engineering Radio', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=1153451&q=site:https%3A%2F%2Ffeeds.feedburner.com%2Fse-radio%3Fq%3Drss', 'Community & News', 'All'),
+  createData('Podcast - The Cloudcast', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=4978915&q=site:https%3A%2F%2Fwww.thecloudcast.net%2Ffeeds%2Fposts%2Fdefault%3Falt%3Drss', 'Community & News', 'All'),
+  createData('Podcast - Software Engineering Institute (SEI)', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5308409&q=site:https%3A%2F%2Fcmu-sei-podcasts.libsyn.com%2Frss', 'Community & News', 'All'),
+  createData('Podcast - Software Engineering Unlocked', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5308410&q=site:https%3A%2F%2Ffeeds.simplecast.com%2FK1_mv0CJ', 'Community & News', 'All'),
+  createData('Podcast - CoRecursive', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=4978952&q=site:https%3A%2F%2Fcorecursive.libsyn.com%2Ffeed', 'Community & News', 'All'),
+  createData('Podcast - Conversations about Software Engineering', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=4978948&q=site:https%3A%2F%2Fwww.case-podcast.org%2Ffeed%2Fmp3', 'Community & News', 'All'),
+  createData('Podcast - The Cynical Developer', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5181869&q=site:https%3A%2F%2Fcynicaldeveloper.libsyn.com%2Frss', 'Community & News', 'All'),
+  createData('Podcast - The Rabit Hole', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5181866&q=site:https%3A%2F%2Ftherabbithole.libsyn.com%2Frss', 'Community & News', 'All'),
+  createData('Podcast - Software Engineering Digest', 'https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=4978985&q=site:https%3A%2F%2Ffeeds.feedburner.com%2Fsoftwareengineeringdigest', 'Community & News', 'All'),
+  createData('YouTube - freeCodeCamp.org', 'https://www.youtube.com/@freecodecamp', 'Community & News', 'All'),
+  createData('YouTube - Fireship', 'https://www.youtube.com/@Fireship', 'Community & News', 'All'),
+  createData('YouTube - The Net Ninja', 'https://www.youtube.com/@NetNinja', 'Community & News', 'All'),
+  createData('YouTube - Andy Sterkowitz', 'https://www.youtube.com/@AndySterkowitz', 'Community & News', 'All'),
+  createData('YouTube - Alex Hyatt', 'https://www.youtube.com/@alexhyettdev', 'Community & News', 'All'),
+  createData('YouTube - ArjanCodes', 'https://www.youtube.com/@ArjanCodes/videos', 'Community & News', 'All'),
+  createData('YouTube - Nick Chapsas', 'https://www.youtube.com/@nickchapsas', 'Community & News', 'All'),
+  createData('YouTube - Code with Ania Kubów', 'https://www.youtube.com/@AniaKubow', 'Community & News', 'All'),
+  createData('YouTube - Coding with John', 'https://www.youtube.com/@CodingWithJohn', 'Community & News', 'All'),
+  createData('YouTube - Coderbyte', 'https://www.youtube.com/@CoderbyteDevelopers', 'Community & News', 'All'),
+  createData('YouTube - Alvin the Programmer', 'https://www.youtube.com/@AlvintheProgrammer', 'Community & News', 'All'),
+  createData('YouTube - Back to Back SWE', 'https://www.youtube.com/@BackToBackSWE', 'Community & News', 'All'),
+  createData('YouTube - Web Dev Simplified', 'https://www.youtube.com/@WebDevSimplified', 'Community & News', 'All'),
+  createData('YouTube - CBT Nuggets', 'https://www.youtube.com/@cbtnuggets', 'Community & News', 'All'),
+  createData('YouTube - Programming with Mosh', 'https://www.youtube.com/@programmingwithmosh', 'Community & News', 'All'),
+  createData('YouTube - Leela Web Dev', 'https://www.youtube.com/@LeelaWebDev', 'Community & News', 'All'),
+  createData('YouTube - Simplilearn', 'https://www.youtube.com/@SimplilearnOfficial', 'Community & News', 'All'),
 ];
 
 const rows5 = [
@@ -741,7 +776,7 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Data Structures & Algorithms</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                              <TableContainer component={Paper}>
+                  <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
                       <TableHead>
                         <TableRow>
@@ -825,10 +860,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Developer Communities</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows3.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -842,10 +901,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>News</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows4.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>

@@ -554,11 +554,13 @@ const rows17 = [
 ];
 
 const rows18 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('MongoDB Documentation', 'https://www.mongodb.com/docs/', 'Documentation', 'NoSQL'),
+  createData('The Complete Developers Guide to MongoDB', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fthe-complete-developers-guide-to-mongodb%2F', 'Courses', 'NoSQL'),
+  createData('Introduction to MongoDB', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fmongodb-introduction', 'Courses', 'NoSQL'),
+  createData('MongoDB Essentials - Complete MongoDB Guide', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fmongodb-essentials-m%2F', 'Courses', 'NoSQL'),
+  createData('MongoDB Administration', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fmongodb-administration', 'Courses', 'NoSQL'),
+  createData('MongoDB 101 & MongoDB 201', 'https://studio3t.com/academy/', 'Courses', 'NoSQL'),
+  createData('Learn MongoDB: Leading NoSQL Database from Scratch', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-mongodb-leading-nosql-database-from-scratch%2F', 'Courses', 'NoSQL')
 ];
 
 const rows19 = [
@@ -1775,15 +1777,39 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>MongoDB</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows18.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* NoSQL */}
-              <Accordion expanded={expanded === 'panel19'} onChange={handleChange('panel19')}>
+              {/* <Accordion expanded={expanded === 'panel19'} onChange={handleChange('panel19')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel19bh-content"
@@ -1797,7 +1823,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Containerization</h4>

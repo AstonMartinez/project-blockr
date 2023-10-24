@@ -142,91 +142,336 @@ const rows4 = [
 ];
 
 const rows5 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Angular Documentation', 'https://angular.io/docs', 'Documentation', 'TypeScript'),
+  createData('John Lindquist\'s Video Tutorials on Egghead.io', 'https://egghead.io/browse/frameworks/angularjs', 'Tutorials', 'TypeScript'),
+  createData('Build a Gmail Clone', 'https://www.thinkful.com/learn/angularjs-tutorial-build-a-gmail-clone/', 'Tutorials', 'TypeScript'),
+  createData('NgRx Complex Forms with Jesse Sanders', 'https://www.youtube.com/watch?v=f6XpwaLmJ3U', 'Helpful Info', 'TypeScript'),
+  createData('Advanced Caching with RxJS with Dominic Elm', 'https://youtu.be/j7Gb1qw23ks', 'Tutorials', 'TypeScript'),
+  createData('Advanced NgRx Recipes with Xavier Lozinguez', 'https://youtu.be/aBktwqlqzKE', 'Helpful Info', 'TypeScript'),
+  createData('Angular: From Theory to Practice', 'https://youtu.be/gW0R4Bic8gw', 'Tutorials', 'TypeScript'),
+  createData('Angular Full Course in 6 Hours with Edureka', 'https://youtu.be/gW0R4Bic8gw', 'Courses', 'TypeScript'),
+  createData('Angular - The Complete Guide (2022 Edition) by Udemy', 'https://www.udemy.com/course/the-complete-guide-to-angular-2/', 'Courses', 'TypeScript'),
+  createData('Angular Fundamental Courses', 'https://ultimatecourses.com/courses/angular', 'Courses', 'TypeScript'),
+  createData('Learn Angular - Crash Course', 'https://www.freecodecamp.org/news/learn-angular-full-course/', 'Courses', 'TypeScript'),
+  createData('Angular: Getting Started with PluralSights', 'https://www.pluralsight.com/courses/angular-2-getting-started-update', 'Courses', 'TypeScript'),
+  createData('Medium - Angular', 'https://medium.com/tag/angular', 'Helpful Resources', 'TypeScript'),
+  createData('Podcast - Adventures in Angular', 'https://topenddevs.com/podcasts/adventures-in-angular', 'Helpful Info', 'TypeScript'),
 ];
 
 const rows6 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('ReactJS Tutorial', 'https://reactjs.org/tutorial/tutorial.html', 'Tutorials', 'JavaScript'),
+  createData('React Official Website', 'https://reactjs.org/', 'Documentation', 'JavaScript'),
+  createData('React Documentation', 'https://reactjs.org/docs', 'Documentation', 'JavaScript'),
+  createData('React GitHub', 'https://github.com/facebook/react', 'Documentation', 'JavaScript'),
+  createData('Reactiflux Discord Channel', 'http://www.reactiflux.com/', 'Communities & News', 'JavaScript'),
+  createData('React StackOverflow', 'http://stackoverflow.com/questions/tagged/reactjs', 'Communities & News', 'JavaScript'),
+  createData('React Twitter', 'https://twitter.com/reactjs', 'Communities & News', 'JavaScript'),
+  createData('Reactiflux', 'https://www.reactiflux.com/', 'Communities & News', 'JavaScript'),
+  createData('React-Redux Resources', 'https://github.com/markerikson/react-redux-links', 'Tutorials', 'JavaScript'),
+  createData('Awesome React', 'https://github.com/enaqx/awesome-react', 'Helpful Info', 'JavaScript'),
+  createData('Awesome React Components', 'https://github.com/brillout/awesome-react-components', 'Helpful Info', 'JavaScript'),
+  createData('Awesome React Talks', 'https://github.com/tiaanduplessis/awesome-react-talks', 'Helpful Info', 'JavaScript'),
+  createData('Awesome React Videos', 'https://www.awesomereact.com/', 'Helpful Info', 'JavaScript'),
+  createData('Hero35 React Hub', 'https://hero35.com/topic/react', 'Helpful Info', 'JavaScript'),
+  createData('Material UI (MUI)', 'https://github.com/mui-org/material-ui', 'UI Libraries', 'JavaScript'),
+  createData('Blueprint', 'https://github.com/palantir/blueprint', 'UI Libraries', 'JavaScript'),
+  createData('React-bootstrap', 'https://github.com/react-bootstrap/react-bootstrap', 'UI Libraries', 'JavaScript'),
+  createData('Reactstrap', 'https://github.com/reactstrap/reactstrap', 'UI Libraries', 'JavaScript'),
+  createData('Ant-design', 'https://github.com/ant-design/ant-design', 'UI Libraries', 'JavaScript'),
+  createData('Chakra-ui', 'https://github.com/chakra-ui/chakra-ui/', 'UI Libraries', 'JavaScript'),
+  createData('Semantic UI React', 'https://github.com/chakra-ui/chakra-ui/', 'UI Libraries', 'JavaScript'),
+  createData('Evergreen', 'https://github.com/segmentio/evergreen', 'UI Libraries', 'JavaScript'),
+  createData('Fluent UI', 'https://github.com/microsoft/fluentui', 'UI Libraries', 'JavaScript'),
+  createData('Grommet', 'https://github.com/grommet/grommet', 'UI Libraries', 'JavaScript'),
+  createData('Rebass', 'https://github.com/rebassjs/rebass', 'UI Libraries', 'JavaScript'),
+  createData('Reakit', 'https://github.com/reakit/reakit', 'UI Libraries', 'JavaScript'),
+  createData('Rsuite', 'https://github.com/rsuite/rsuite', 'UI Libraries', 'JavaScript'),
+  createData('Primereact', 'https://github.com/primefaces/primereact', 'UI Libraries', 'JavaScript'),
+  createData('Eui', 'https://github.com/elastic/eui', 'UI Libraries', 'JavaScript'),
+  createData('React-spectrum', 'https://github.com/adobe/react-spectrum', 'UI Libraries', 'JavaScript'),
+  createData('React-bulma-components', 'https://github.com/couds/react-bulma-components', 'UI Libraries', 'JavaScript'),
+  createData('Mantine', 'https://github.com/mantinedev/mantine', 'UI Libraries', 'JavaScript'),
+  createData('Next.js', 'https://github.com/vercel/next.js', 'Frameworks', 'JavaScript'),
+  createData('Gatsby.js', 'https://github.com/gatsbyjs/gatsby', 'Frameworks', 'JavaScript'),
+  createData('React Admin', 'https://github.com/marmelab/react-admin', 'Frameworks', 'JavaScript'),
+  createData('Blitz', 'https://blitzjs.com/', 'Frameworks', 'JavaScript'),
+  createData('Materio - MUI React Next.js Admin Template', 'https://themeselection.com/products/materio-mui-react-nextjs-admin-template/', 'Commercial Projects', 'JavaScript'),
+  createData('Vuexy - Vuejs, React - Next.js, HTML, Laravel & Asp.Net Admin Dashboard Template', 'https://1.envato.market/vusax_admin', 'Commercial Projects', 'JavaScript'),
+  createData('Jumbo React Redux Admin Template', 'https://themeselection.com/go/jumbo-react-react-redux-material-bootstrap-admin-template/', 'Commercial Projects', 'JavaScript'),
+  createData('Dnote Command Line Notebook', 'https://www.getdnote.com/', 'Commercial Projects', 'JavaScript'),
+  createData('Kibana', 'https://www.elastic.co/kibana/', 'Commercial Projects', 'JavaScript'),
+  createData('EasyDev', 'https://themeselection.com/go/easydev-developer-friendly-react-redux-bootstrap-4-admin-template-seed-project/', 'Commercial Projects', 'JavaScript'),
+  createData('React Select', 'https://github.com/jedwatson/react-select', 'Open Source Projects', 'JavaScript'),
+  createData('DevHub', 'https://github.com/devhubapp/devhub', 'Open Source Projects', 'JavaScript'),
+  createData('React Spring', 'https://github.com/react-spring/react-spring', 'Open Source Projects', 'JavaScript'),
+  createData('ArchitectUI React', 'https://dashboardpack.com/theme-details/architectui-react-dashboard-free/', 'Open Source Projects', 'JavaScript'),
+  createData('Take Note', 'https://github.com/taniarascia/takenote', 'Open Source Projects', 'JavaScript'),
+  createData('Write with Me', 'https://github.com/dabit3/write-with-me', 'Open Source Projects', 'JavaScript'),
+  createData('ReactJS Crash Course', 'https://www.youtube.com/watch?v=w7ejDZ8SWv8', 'Tutorials', 'JavaScript'),
+  createData('ReactJS Course for Beginners', 'https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ', 'Tutorials', 'JavaScript'),
+  createData('React Crash Course for Beginners by Academind', 'https://www.youtube.com/watch?v=Dorf8i6lCuk', 'Tutorials', 'JavaScript'),
+  createData('ReactJS Tutorial for Beginners', 'https://www.youtube.com/watch?v=-cMqr9HpZ-Y', 'Tutorials', 'JavaScript'),
+  createData('What\'s New in React 18', 'https://www.youtube.com/watch?v=bpVRWrrfM1M', 'Helpful Info', 'JavaScript'),
+  createData('What you NEED to Know About React 18', 'https://www.youtube.com/watch?v=uOGImWM85Uw', 'Helpful Info', 'JavaScript'),
+  createData('ReactJS Roadmap for Developers', 'https://dev.to/theme_selection/reactjs-roadmap-for-developers-2824', 'Helpful Info', 'JavaScript'),
+  createData('React Project Ideas for Beginners', 'https://themeselection.com/react-project-ideas-for-beginners/', 'Helpful Info', 'JavaScript'),
+  createData('React Boilerplate', 'https://themeselection.com/react-boilerplate/', 'Helpful Info', 'JavaScript'),
+  createData('The Best 10+ React Developer Tools 2021', 'https://themeselection.com/react-developer-tools/', 'Helpful Info', 'JavaScript')
+  // createData('Learn React', 'https://react.dev/learn', 'Documentation', 'JavaScript'),
+  // createData('Tutorial: Tic-Tac-Toe', 'https://react.dev/learn/tutorial-tic-tac-toe', 'Tutorials', 'JavaScript'),
+  // createData('React API Reference Docs', 'https://react.dev/reference/react', 'Documentation', 'JavaScript'),
+  // createData('The Beginner\'s Guide to React', 'https://egghead.io/courses/the-beginner-s-guide-to-react', 'Courses', 'JavaScript'),
+  // createData('Epic React', 'https://epicreact.dev/', 'Courses', 'JavaScript'),
+  // createData('Learn React: Codecademy', 'https://www.codecademy.com/learn/react-101', 'Courses', 'JavaScript'),
+  // createData('ReactResources', 'https://reactresources.com/', 'Tutorials', 'JavaScript'),
+  // createData('React Basic in just 1 Hour', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Freact-basic-in-just-1-hour%2F', 'Courses', 'JavaScript'),
+  // createData('React Fundamentals', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Freact-fundamentals%2F', 'Courses', 'JavaScript'),
+  // createData('React with Redux, React-Router, Hooks, and AuthO', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmodern-react%2F', 'Courses', 'JavaScript'),
+  // createData('Build Your First ReactJS Application', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fbuild-your-first-react-js-application%2F', 'Courses', 'JavaScript'),
+  // createData('React for Beginners with Hooks - 2023', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Freact-for-beginners-with-hooks-2021%2F', 'Courses', 'JavaScript'),
+  // createData('Build an Online Store Using AWS, React, and Stripe', 'https://youtu.be/JgwI22y_eFA', 'Tutorials', 'JavaScript'),
 ];
 
 const rows7 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Svelte.dev Docs', 'https://svelte.dev/docs', 'Documentation', 'JavaScript'),
+  createData('Svelte.dev Tutorial', 'https://svelte.dev/tutorial/basics', 'Tutorials', 'JavaScript'),
+  createData('SvelteKit Docs', 'https://kit.svelte.dev/docs/introduction', 'Documentation', 'JavaScript'),
+  createData('Learn Svelte.dev', 'https://learn.svelte.dev/tutorial/welcome-to-svelte', 'Tutorials', 'JavaScript'),
+  createData('Svelte Society', 'https://www.youtube.com/c/SvelteSociety', 'Helpful Info', 'JavaScript'),
+  createData('lihautan', 'https://www.youtube.com/c/lihautan', 'Tutorials', 'JavaScript'),
+  createData('Joy of Code', 'https://www.youtube.com/c/JoyofCodeDev', 'Tutorials', 'JavaScript'),
+  createData('Scott Spence SvelteKit Playlist', 'https://www.youtube.com/playlist?list=PLGi_uHe_v04AuMoPAtBN3ULy7zhFILKRQ', 'Tutorials', 'JavaScript'),
+  createData('Level Up Tuts', 'https://www.youtube.com/c/LevelUpTuts', 'Tutorials', 'JavaScript'),
+  createData('Beginner Guide to SvelteKit', 'https://www.youtube.com/playlist?list=PLtgYhHmUIr3qDB2eTzY-nuBH1W5tOK8a4', 'Courses', 'JavaScript'),
+  createData('Svelte Tutorials by Script Raccoon Playlist', 'https://www.youtube.com/playlist?app=desktop&list=PL1LHMFscti8t4KyuLYSDLpuJP-8Im4P42', 'Tutorials', 'JavaScript'),
+  createData('Svelte Discord Channel', 'https://discord.gg/svelte', 'Community & News', 'JavaScript'),
+  createData('Svelte Sirens', 'https://sveltesirens.dev/', 'Community & News', 'JavaScript'),
+  createData('Svelte Summit', 'https://www.sveltesummit.com/', 'Helpful Info', 'JavaScript'),
+  createData('Made with Svelte', 'https://madewithsvelte.com/', 'Packages & Utilities', 'JavaScript'),
+  createData('Svelte Add', 'https://github.com/svelte-add/svelte-add', 'Packages & Utilities', 'JavaScript'),
+  createData('Svelte Actions', 'https://github.com/sw-yx/svelte-actions', 'Packages & Utilities', 'JavaScript'),
+  createData('Svelte MultiSelect', 'https://svelte-multiselect.netlify.app/', 'Packages & Utilities', 'JavaScript'),
+  createData('Svelte-tiny-virtual-list', 'https://github.com/Skayo/svelte-tiny-virtual-list', 'Packages & Utilities', 'JavaScript'),
+  createData('Svelte Notifications', 'https://svelte-notifications.netlify.app/', 'Packages & Utilities', 'JavaScript'),
+  createData('mdsvex', 'https://mdsvex.pngwn.io/', 'Packages & Utilities', 'JavaScript'),
+  createData('Vest', 'https://vestjs.dev/', 'Packages & Utilities', 'JavaScript'),
+  createData('vitest-svelte-kit', 'https://github.com/nickbreaton/vitest-svelte-kit', 'Packages & Utilities', 'JavaScript')
 ];
 
 const rows8 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Best of Next.js', 'https://www.bestofnextjs.com/', 'Helpful Info', 'JavaScript'),
+  createData('Next.js Documentation', 'https://nextjs.org/docs', 'Documentation', 'JavaScript'),
+  createData('The Next.js Handbook', 'https://www.freecodecamp.org/news/the-next-js-handbook/', 'Helpful Info', 'JavaScript'),
+  createData('Awesome Next.js', 'https://awesomenextjs.com/', 'Tutorials', 'JavaScript'),
+  createData('Complete Next.js Developer in 2022: Zero to Mastery', 'https://academy.zerotomastery.io/p/learn-next-js', 'Courses', 'JavaScript'),
+  createData('Mastering Next.js', 'https://masteringnextjs.com/', 'Helpful Info', 'JavaScript'),
+  createData('Getting Started with Next.js', 'https://flaviocopes.com/nextjs/', 'Tutorials', 'JavaScript'),
+  createData('Complete Next.js with React & Node - Beautiful Portfolio App', 'https://academy.eincode.com/courses/complete-next-js-with-react-node-beautiful-portfolio-app', 'Courses', 'JavaScript'),
+  createData('Building Server-Side Rendered React Apps for Beginners', 'https://www.pluralsight.com/courses/building-server-side-rendered-react-apps-beginners', 'Courses', 'JavaScript'),
+  createData('Next.js - The Ultimate Way to Build React Apps', 'https://www.educative.io/courses/next-js-build-react-apps', 'Courses', 'JavaScript'),
+  createData('This Mission: Next.js from the Ground Up', 'https://explorers.netlify.com/learn/nextjs', 'Courses', 'JavaScript'),
+  createData('Learn Next.js 11 - Build Modern Next.js Applications', 'https://codedamn.com/learn/nextjs-fundamentals', 'Courses', 'JavaScript'),
+  createData('Build a Fullstack App with Strapi and Next.js', 'https://www.digitalocean.com/community/tech_talks/build-a-fullstack-app-with-strapi-and-next-js', 'Tutorials', 'JavaScript'),
+  createData('Next.js Crash Course', 'https://www.youtube.com/watch?v=mTz0GXj8NN0', 'Courses', 'JavaScript'),
+  createData('Next.js Tutorial from The Net Ninja', 'https://youtube.com/playlist?list=PL4cUxeGkcC9g9gP2onazU5-2M-AzA8eBw', 'Tutorials', 'JavaScript'),
+  createData('From Design to Development Crash Course - Full Stack Next.js Tutorial', 'https://www.youtube.com/watch?v=QjZIeA952jE&t=402s', 'Tutorials', 'JavaScript'),
+  createData('Using Next.js - React Resources', 'https://reactresources.com/topics/nextjs', 'Documentation', 'JavaScript'),
+  createData('Next.js Tutorial - Tutorialspoint', 'https://www.tutorialspoint.com/nextjs/index.htm', 'Tutorials', 'JavaScript'),
+  createData('Production-Ready Next.js', 'https://frontendmasters.com/workshops/production-next-js/', 'Courses', 'JavaScript'),
+  createData('Getting Started with Next.js', 'https://teacode.io/blog/getting-started-next-js', 'Helpful Info', 'JavaScript'),
+  createData('Next.js Conference 2020', 'https://www.youtube.com/playlist?list=PLBnKlKpPeagnT2Cmv4giCbosfrbKnuYTD', 'Helpful Info', 'JavaScript'),
+  createData('Next.js - Egghead.io', 'https://egghead.io/q/next', 'Tutorials', 'JavaScript'),
+  createData('Using Next.js with Wordpress Headless CMS', 'https://academind.com/tutorials/nextjs-wordpress-headless-cms', 'Tutorials', 'JavaScript')
 ];
 
 const rows9 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Flask Official Documentation', 'https://flask.palletsprojects.com/en/3.0.x/', 'Documentation', 'Python'),
+  createData('The Flask Mega-Tutorial', 'https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world', 'Tutorials', 'Python'),
+  createData('Rest APIs with Flask and Python', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Frest-api-flask-and-python%2F', 'Courses', 'Python'),
+  createData('Python and Flask Bootcamp: Create Websites using Flask', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpython-and-flask-bootcamp-create-websites-using-flask%2F', 'Courses', 'Python'),
+  createData('Flask: Getting Started', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fflask-getting-started', 'Courses', 'Python'),
+  createData('Flask: Develop Web Applications in Python', 'https://www.educative.io/courses/flask-develop-web-applications-in-python?affiliate_id=5073518643380224', 'Courses', 'Python'),
+  createData('Python Flask for Beginners: Build a CRUD Web App Using Flask', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpython-flask-beginners%2F', 'Courses', 'Python'),
+  createData('Awesome Flask Resources & Frameworks', 'https://github.com/humiaozuzu/awesome-flask', 'Helpful Info', 'Python'),
+  createData('Flask Subreddit Community', 'https://www.reddit.com/r/flask/', 'Community & News', 'Python'),
+  createData('Python Subreddit Community', 'https://www.reddit.com/r/Python/', 'Community & News', 'Python'),
+  createData('Setting Up a Static Site', 'http://youtu.be/WfpFUmV1d0w', 'Tutorials', 'Python'),
+  createData('Creating a Login Page', 'http://youtu.be/bLA6eBGN-_0', 'Tutorials', 'Python'),
+  createData('User Authentication', 'http://youtu.be/BnBjhmspw4c', 'Tutorials', 'Python'),
+  createData('Template Inheritance', 'http://youtu.be/hNzruwVPtCE', 'Tutorials', 'Python'),
+  createData('Databases', 'http://youtu.be/_vrAjAHhUsA', 'Tutorials', 'Python'),
+  createData('List Comprehensions', 'http://youtu.be/WqmqNC8Teeo', 'Tutorials', 'Python'),
+  createData('Unit Tests', 'http://youtu.be/1aHNs1aEATg', 'Tutorials', 'Python'),
+  createData('Deploying to Heroku', 'http://youtu.be/L9uD74nHvFY', 'Tutorials', 'Python'),
+  createData('SQLAlchemy', 'https://www.youtube.com/watch?v=kuyrL6krkwA', 'Tutorials', 'Python'),
+  createData('Configuration', 'https://www.youtube.com/watch?v=4Eww3wVZK2I', 'Tutorials', 'Python'),
+  createData('Secret Key', 'http://youtu.be/tqu9y4iqKVI', 'Tutorials', 'Python'),
+  createData('Heroku Configuration Settings', 'http://youtu.be/Y-ONxFkAUJc', 'Tutorials', 'Python'),
+  createData('Heroku Postgres Setup', 'https://www.youtube.com/watch?v=FD0p-opdyoE', 'Tutorials', 'Python'),
+  createData('Local PostgreSQL Setup', 'https://www.youtube.com/watch?v=Up3p20rgWCw', 'Tutorials', 'Python'),
+  createData('Managing Database Migrations', 'http://youtu.be/YJibNSI-iaE', 'Tutorials', 'Python'),
+  createData('Database Downgrades with Flask-Migrate/Alembic', 'http://youtu.be/5UT1binVuYc', 'Tutorials', 'Python'),
+  createData('Virtualenvwrapper', 'http://youtu.be/thHNYVrY0lU', 'Tutorials', 'Python'),
+  createData('Password Hashing', 'http://youtu.be/LTJH5Mdgn4w', 'Tutorials', 'Python'),
+  createData('Blueprints', 'http://youtu.be/AeI_rBeZmwg', 'Tutorials', 'Python'),
+  createData('Blueprints Redux', 'http://youtu.be/TwNp1UagE9U', 'Tutorials', 'Python'),
+  createData('User Authentication (Part 2)', 'http://youtu.be/_pzMDIi5BuI', 'Tutorials', 'Python'),
+  createData('Unit Testing with Flask-Testing', 'http://youtu.be/WDh_VQ41kYI', 'Tutorials', 'Python'),
+  createData('Session Management with Flask Login', 'http://youtu.be/rJGMOOSnHL0', 'Tutorials', 'Python'),
+  createData('Testing User Login and Logout', 'https://www.youtube.com/watch?v=v0fp1O7zCUY', 'Tutorials', 'Python'),
+  createData('User Registration (Functionality & Unit Tests)', 'http://youtu.be/kt4PEa5tsVw', 'Tutorials', 'Python'),
+  createData('Finalize Messaging System', 'http://youtu.be/WnT188ePHg4', 'Tutorials', 'Python'),
+  createData('Test Coverage with coverage.py', 'http://youtu.be/7Aqcn0-uAr0', 'Tutorials', 'Python'),
+  createData('Flask Testing', 'http://youtu.be/YO2k80aDJj8', 'Tutorials', 'Python'),
+  createData('Flask Testing (Increase Test Coverage)', 'http://youtu.be/ASNNTb6o3pU', 'Tutorials', 'Python'),
+  createData('Continuous Integration', 'http://youtu.be/qAe6v_6SMA8', 'Tutorials', 'Python'),
 ];
 
 const rows10 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Express.js Documentation', 'https://expressjs.com/', 'Documentation', 'JavaScript'),
+  createData('Express.js GitHub Repository', 'https://github.com/expressjs/express', 'Documentation', 'JavaScript'),
+  createData('Tutorial Series by Code School', 'https://www.youtube.com/watch?v=IjXAr5CJ2Ec', 'Tutorials', 'JavaScript'),
+  createData('Tutorial by Derek Banas', 'https://www.youtube.com/watch?v=xDCKcNBFsuI', 'Tutorials', 'JavaScript'),
+  createData('Learn to Use the New Router in ExpressJS 4.0', 'https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4', 'Tutorials', 'JavaScript'),
+  createData('Simple Server-Side Cache for Express.js with Node.js', 'https://medium.com/the-node-js-collection/simple-server-side-cache-for-express-js-with-node-js-45ff296ca0f0', 'Helpful Info', 'JavaScript'),
+  createData('How to Uncouple Emit Events from Connection Event into Socket.io and Express', 'https://dev.to/wakeupmh/how-to-decouples-emit-events-from-connection-event-into-socket-io-8dk', 'Tutorials', 'JavaScript'),
+  createData('LinkedIn Login Using NodeJS, Express, and Passport', 'https://www.loginradius.com/engineering/blog/linkedin-login-using-node-passport/', 'Tutorials', 'JavaScript'),
+  createData('Facebook Login Using NodeJS, Express, and Passport', 'https://www.loginradius.com/engineering/blog/facebook-authentication-using-node-and-passport/', 'Tutorials', 'JavaScript'),
+  createData('Creating a Google Hangout Bot with Express and Node.js', 'https://www.loginradius.com/engineering/blog/creating-a-google-hangout-bot-with-express-and-node-js/', 'Tutorials', 'JavaScript'),
+  createData('OAuth Implementation with Node.js and Github', 'https://www.loginradius.com/engineering/blog/oAuth-implemenation-using-node/', 'Tutorials', 'JavaScript'),
+  createData('Express Integration with TW Elements', 'https://tw-elements.com/docs/standard/integrations/express-integration/', 'Tutorials', 'JavaScript'),
+  createData('Express.js Fundamentals', 'https://www.udemy.com/expressjs-fundamentals/', 'Courses', 'JavaScript'),
+  createData('Projects in ExpressJS - Learn ExpressJS Building 10 Projects', 'https://www.udemy.com/projects-in-expressjs-learn-expressjs-building-10-projects/', 'Courses', 'JavaScript'),
+  createData('Building Blocks of Express.js', 'https://www.codeschool.com/courses/building-blocks-of-express-js', 'Courses', 'JavaScript'),
+  createData('Express.js Courses at Classpert', 'https://classpert.com/express-js', 'Courses', 'JavaScript'),
+  createData('Express.js Course from MDN', 'https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs', 'Courses', 'JavaScript'),
+  createData('Just Express (With a Bunch of Node and HTTP)', 'https://www.udemy.com/course/just-express-with-a-bunch-of-node-and-http-in-detail/', 'Courses', 'JavaScript'),
+  createData('Learn Express', 'https://www.udemy.com/course/learn-express/', 'Courses', 'JavaScript'),
+  createData('Express Application Generator', 'https://expressjs.com/en/starter/generator.html', 'Tools', 'JavaScript'),
+  createData('Express MVC Generator', 'https://github.com/rajikaimal/express-mvc', 'Tools', 'JavaScript'),
+  createData('Yeoman Express Generator', 'https://github.com/petecoop/generator-express', 'Tools', 'JavaScript'),
+  createData('MicroTS Code Generator for Microservices', 'https://www.npmjs.com/package/microts', 'Tools', 'JavaScript'),
+  createData('Design-first API Template Engine', 'https://adam-hanna.github.io/design-first-docs/', 'Tools', 'JavaScript'),
+  createData('Express Interactive ES6+ Generator', 'https://github.com/eklemen/generate-express', 'Tools', 'JavaScript'),
+  createData('Expressa', 'https://github.com/thomas4019/expressa', 'Middleware', 'JavaScript'),
+  createData('Morgan', 'https://github.com/expressjs/morgan', 'Middleware', 'JavaScript'),
+  createData('Cors', 'https://github.com/expressjs/cors', 'Middleware', 'JavaScript'),
+  createData('Body-parser', 'https://github.com/expressjs/body-parser', 'Middleware', 'JavaScript'),
+  createData('Multer', 'https://github.com/expressjs/multer', 'Middleware', 'JavaScript'),
+  createData('Session', 'https://github.com/expressjs/session', 'Middleware', 'JavaScript'),
+  createData('Compression', 'https://github.com/expressjs/compression', 'Middleware', 'JavaScript'),
+  createData('Express-youch', 'https://github.com/hmil/express-youch', 'Middleware', 'JavaScript'),
+  createData('Errorhandler', 'https://github.com/expressjs/errorhandler', 'Middleware', 'JavaScript'),
+  createData('Serve-favicon', 'https://github.com/expressjs/serve-favicon', 'Middleware', 'JavaScript'),
+  createData('Csurf', 'https://github.com/expressjs/csurf', 'Middleware', 'JavaScript'),
+  createData('Passport', 'http://www.passportjs.org/', 'Middleware', 'JavaScript'),
+  createData('Merror', 'https://github.com/mamsoudi/merror', 'Middleware', 'JavaScript'),
+  createData('Optic-document-express', 'https://docs.useoptic.com/#/example-fixtures/api-ingestion/node-express', 'Middleware', 'JavaScript'),
+  createData('Stats', 'https://github.com/phil-r/stats', 'Middleware', 'JavaScript'),
+  createData('Swagger-stats', 'https://github.com/slanatech/swagger-stats', 'Middleware', 'JavaScript'),
+  createData('Express-routes-catalogue', 'https://www.npmjs.com/package/express-routes-catalogue', 'Middleware', 'JavaScript'),
+  createData('Tweenz', 'https://github.com/sharkcore/tweenz', 'Middleware', 'JavaScript'),
+  createData('Express-sharp', 'https://github.com/pmb0/express-sharp', 'Middleware', 'JavaScript'),
+  createData('Express-actuator', 'https://github.com/rcruzper/express-actuator', 'Middleware', 'JavaScript'),
+  createData('Express-decorator-router', 'https://github.com/LucasMendesl/express-decorator-router', 'Middleware', 'JavaScript'),
+  createData('Sonic-express', 'https://github.com/Tiemma/sonic-express', 'Middleware', 'JavaScript'),
+  createData('Express-pino-logger', 'https://github.com/pinojs/express-pino-logger', 'Middleware', 'JavaScript'),
+  createData('Express-validator', 'https://github.com/express-validator/express-validator', 'Middleware', 'JavaScript'),
+  createData('Express-response-hooks', 'https://github.com/arikw/express-response-hooks', 'Middleware', 'JavaScript'),
 ];
 
 const rows11 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Bootstrap Official Website', 'https://getbootstrap.com/', 'Documentation', 'JavaScript'),
+  createData('Bootstrap 4 Quick Start: Code Modern Responsive Websites', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fbootstrap-4%2F', 'Courses', 'JavaScript'),
+  createData('Complete Bootstrap 4 Course', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fbootstrap-4-tutorials%2F', 'Courses', 'JavaScript'),
+  createData('Learn Bootstrap 4 by Example', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-bootstrap-4-by-example%2F', 'Courses', 'JavaScript'),
+  createData('Understanding Bootstrap Grids and Columns', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Funderstanding-bootstrap-grids-and-columns%2F', 'Courses', 'JavaScript'),
+  createData('Introduction to Bootstrap', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fbootstrap-introduction%2F', 'Courses', 'JavaScript'),
+  createData('Get Started with Bootstrap - How to Make Websites from Scratch', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fget-started-with-bootstrap-how-to-make-websites-from-scratch%2F', 'Courses', 'JavaScript'),
+  createData('Rapid Website Design with Bootstrap', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fresponsive-website-design%2F', 'Courses', 'JavaScript'),
+  createData('Bootstrap CSS Framework - Full Course for Beginners', 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjNyp-K1I-CAxUig2oFHSHpBNcQwqsBegQIKRAG&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-qfEOE4vtxE&usg=AOvVaw1R-KS4d7QMmCboggmIfUH9&opi=89978449', 'Courses', 'JavaScript')
 ];
 
 const rows12 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Material-UI Official Website', 'https://mui.com/material-ui/getting-started', 'Documentation', 'JavaScript'),
+  createData('Material-UI v5 Crash Course', 'https://www.youtube.com/watch?v=o1chMISeTC0', 'Courses', 'JavaScript'),
+  createData('React + Material-UI - From Zero to Hero', 'https://www.youtube.com/playlist?list=PLDxCaNaYIuUlG5ZqoQzFE27CUOoQvOqnQ', 'Tutorials', 'JavaScript'),
+  createData('Next.js Setup with Material-UI v5', 'https://www.youtube.com/watch?v=IFaFFmPYyMI', 'Tutorials', 'JavaScript'),
+  createData('Material-UI v5 Crash Course + Intro to React (2022 Edition)', 'https://www.youtube.com/watch?v=_W3uuxDnySQ', 'Courses', 'JavaScript'),
+  createData('Material-UI v5 Tutorial Playlist', 'https://www.youtube.com/playlist?list=PLlR2O33QQkfXnZMMZC0y22gLayBbB1UQd', 'Tutorials', 'JavaScript'),
+  createData('The Clever Dev', 'https://www.youtube.com/channel/UCb6AZy0_D1y661PMZck3jOw', 'Helpful Info', 'JavaScript'),
+  createData('The Smart Devpreneur', 'https://smartdevpreneur.com/category/javascript/material-ui/', 'Helpful Info', 'JavaScript'),
+  createData('Learn Material-UI in One Hour - React Material UI Project Tutorial [2022]', 'https://www.youtube.com/watch?v=Xoz31I1FuiY', 'Tutorials', 'JavaScript'),
+  createData('Material UI - React.school', 'https://react.school/material-ui', 'Courses', 'JavaScript'),
+  createData('Material UI - The Complete Guide with React (2023 Edition)', 'https://www.udemy.com/course/material-ui/', 'Courses', 'JavaScript'),
+  createData('Material UI Tutorial', 'https://www.classcentral.com/course/youtube-material-ui-tutorial-45818', 'Tutorials', 'JavaScript')
+
 ];
 
 const rows13 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Tailwind CSS Website', 'https://tailwindcss.com/', 'Documentation', 'HTML/CSS'),
+  createData('Tailwind CSS: Beginner to Advanced 2022 (with Project)', 'https://www.tuthub.io/resources/62924e6b8f7bd94d6aa7be73', 'Tutorials', 'HTML/CSS'),
+  createData('Tailwind CSS Tutorial', 'https://www.tuthub.io/resources/6284fd10c5e67326b880f1fd', 'Tutorials', 'HTML/CSS'),
+  createData('Tailwind CSS React Tutorial', 'https://www.tuthub.io/resources/62933b8a8f7bd94d6aa7c388', 'Tutorials', 'HTML/CSS'),
+  createData('Tailwind Crash Course | Project from Scratch', 'https://www.tuthub.io/resources/628906e526eb0bb71ecb59b7', 'Courses', 'HTML/CSS'),
+  createData('Net Ninja Tailwind CSS Crash Course', 'https://www.youtube.com/watch?v=bxmDnn7lrnk&list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw', 'Courses', 'HTML/CSS'),
+  createData('TailwindInk Color Code Generator', 'https://tailwind.ink/', 'Tools', 'HTML/CSS'),
+  createData('Tailblocks UI Blocks', 'https://mertjf.github.io/tailblocks/', 'Tools', 'HTML/CSS'),
+  createData('Tailwind Starter Kit', 'https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation', 'Tools', 'HTML/CSS'),
+  createData('Stitches Template Generator', 'https://stitches.hyperyolo.com/', 'Tools', 'HTML/CSS'),
+  createData('Tailwind Typography Playground', 'https://tailwind-typography-playground.vercel.app/', 'Tools', 'HTML/CSS'),
+  createData('Tailwind Components', 'https://tailwindcomponents.com/', 'Tools', 'HTML/CSS'),
+  createData('Tailwind Weekly', 'https://www.getrevue.co/profile/tailwind-weekly', 'Helpful Info', 'HTML/CSS'),
+  createData('Tailwind Run', 'https://tailwind.run/new', 'Tools', 'HTML/CSS'),
+  createData('Tailwind Gradient Generator', 'https://tailwind-gradient-designer.csspost.com/', 'Tools', 'HTML/CSS'),
+  createData('Awesome Tailwind CSS', 'https://github.com/aniftyco/awesome-tailwindcss', 'Tools', 'HTML/CSS')
 ];
 
 const row14 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('SQL Developer Documentation', 'https://docs.oracle.com/cd/E12151_01/index.htm', 'Documentation', 'SQL'),
+  createData('Codecademy\'s Free SQL Course', 'https://www.codecademy.com/catalog/language/sql', 'Courses', 'SQL'),
+  createData('Intro to SQL: Querying and Managing Data', 'https://www.khanacademy.org/computing/computer-programming/sql', 'Courses', 'SQL'),
+  createData('Databases: Relational Databases and SQL', 'https://online.stanford.edu/courses/soe-ydatabases0005-databases-relational-databases-and-sql', 'Courses', 'SQL'),
+  createData('SQL and Databases - A Full Course for Beginners', 'https://www.freecodecamp.org/news/sql-and-databases-full-course/', 'Courses', 'SQL'),
+  createData('Introduction to SQL', 'https://www.datacamp.com/courses/introduction-to-sql', 'Courses', 'SQL'),
+  createData('SQLCourse', 'https://www.sqlcourse.com/', 'Courses', 'SQL'),
+  createData('W3Schools SQL Tutorial', 'https://www.w3schools.com/sql/', 'Tutorials', 'SQL'),
+  createData('SQLZoo', 'https://sqlzoo.net/', 'Practice', 'SQL'),
+  createData('SQLBolt', 'https://sqlbolt.com/', 'Practice', 'SQL'),
+  createData('SQL Joins - Venn Diagram', 'https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins', 'Helpful Info', 'SQL'),
+  createData('SQL Joins - Checkered Flag Diagram', 'https://github.com/amartinson193/SQL_Checkered_Flag_Join_Diagrams', 'Helpful Info', 'SQL'),
+  createData('SQL Order of Execution Cheatsheet', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/SQL%20Order%20of%20Execution%20-%20Data%20Science%20Infinity.pdf', 'Helpful Info', 'SQL'),
+  createData('SQL Mind Map - Data Engineering LATAM', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/SQL%20Mind%20Map.jpeg', 'Helpful Info', 'SQL'),
+  createData('SQL Commands Cheatsheet', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/SQL%20Commands%20Cheatsheet.jpeg', 'Helpful Info', 'SQL'),
+  createData('Data Prep with SQL Quick Reference', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/Data%20Prep%20with%20SQL%20-%20Quick%20Reference.jpeg', 'Helpful Info', 'SQL'),
+  createData('The Big 6 of SQL Query Cheatsheet', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/The%20Big%206%20of%20SQL%20Querying%20from%20Maven%20Analytics.pdf', 'Helpful Info', 'SQL'),
+  createData('Row Number, Rank, and Dense Rank', 'https://www.linkedin.com/feed/update/urn:li:activity:6975822793540001792', 'Helpful Info', 'SQL'),
+  createData('SQL Commands Categories', 'https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/', 'Helpful Info', 'SQL'),
+  createData('Common Commands SQL Cheatsheet', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/SQL%20Cheatsheet%20Compilation.jpeg', 'Helpful Info', 'SQL'),
+  createData('Database Types', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/Types%20of%20Databases.jpeg', 'Helpful Info', 'SQL'),
+  createData('Inner Joins Gone Wrong', 'https://github.com/amartinson193/The-Ultimate-List-of-Free-SQL-Resources/blob/main/CheatSheets/Inner%20Joins%20Gone%20Wrong%20-%20Jeffrey%20Wigington.pdf', 'Helpful Info', 'SQL'),
+  createData('SQL Interview Questions & Answers', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/SQL%20Interview%20Questions%20%26%20Answers.pdf', 'Helpful Info', 'SQL'),
+  createData('MySQL Interview Questions', 'https://www.stratascratch.com/blog/mysql-interview-questions/', 'Helpful Info', 'SQL'),
+  createData('Basic Statistics Using SQL', 'https://github.com/amartinson193/The_Ultimate_List_of_Free_SQL_Resources/blob/main/CheatSheets/Basic%20Statistics%20Using%20SQL.pdf', 'Helpful Info', 'SQL'),
+  createData('SQLBattle', 'https://sqlbattle.dev/', 'Practice', 'SQL'),
+  createData('Schemaverse', 'https://schemaverse.com/', 'Practice', 'SQL'),
+  createData('SQL Murder Mystery', 'https://mystery.knightlab.com/', 'Practice', 'SQL'),
+  createData('Codewars', 'https://www.codewars.com/', 'Practice', 'SQL'),
+  createData('Ace the SQL Interview', 'https://datalemur.com/', 'Practice', 'SQL'),
+  createData('SQL Concepts - Data.World', 'https://docs.data.world/documentation/sql/concepts/basic/SELECT_and_FROM.html', 'Helpful Info', 'SQL')
 ];
 
 const rows15 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Sequelize Documentation', 'https://sequelize.org/docs', 'Documentation', 'SQL/JavaScript'),
+  createData('Introduction to Sequelize ORM for Node.js 6', 'https://www.pluralsight.com/courses/sequelize-orm-nodejs-introduction', 'Courses', 'SQL/JavaScript'),
+  createData('Getting Started with Sequelize and Postgres', 'https://dev.to/nedsoft/getting-started-with-sequelize-and-postgres-emp', 'Tutorials', 'SQL/JavaScript'),
+  createData('Building a Simple Backend with NodeJS, MySQL, Sequelize, and Express', 'https://medium.com/@clint360.rebase/building-a-simple-backend-with-nodejs-mysql-sequelize-and-express-e08f021537dd', 'Tutorials', 'SQL/JavaScript'),
+  createData('Sequelize Relationships - Ultimate Guide', 'https://medium.com/@eth3rnit3/sequelize-relationships-ultimate-guide-f26801a75554', 'Helpful Info', 'SQL/JavaScript'),
+  createData('Master the Node.js, Sequelize and TypeScript Stack', 'https://www.youtube.com/watch?v=up6N-NWnSRQ', 'Tutorials', 'SQL/JavaScript'),
+  createData('Awesome Sequelize', 'https://sequelize.org/docs/v7/other-topics/resources/', 'Helpful Info', 'SQL/JavaScript'),
+  createData('10 Sequelize.js Best Practices - CLIMB', 'https://climbtheladder.com/10-sequelize-js-best-practices/', 'Helpful Info', 'SQL/JavaScript'),
+  createData('Understanding Node.js Sequelize ORM Models', 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiwpdbp34-CAxU_rmoFHWbvAcY4FBAWegQICxAB&url=https%3A%2F%2Fwww.section.io%2Fengineering-education%2Funderstanding-nodejs-sequelize-orm-models%2F&usg=AOvVaw0mlHJIQEfYqTohTl8BMhJQ&opi=89978449', 'Helpful Info', 'SQL/JavaScript'),
+  createData('An Elegant Guide to Sequelize and Node.js - Fullstack.io', 'https://www.newline.co/@AoX04/an-elegant-guide-to-sequelize-and-nodejs--1378842c', 'Helpful Info', 'SQL/JavaScript')
 ];
 
 const rows16 = [
@@ -834,9 +1079,6 @@ const ResourcesComponent = () => {
               key={row.resourceName}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              {/* <TableCell component="th" scope="row">
-                {row.resourceName}
-              </TableCell> */}
               <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.challengeName}</TableCell>
               <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Challenge Link</a></TableCell>
               <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -944,10 +1186,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Angular</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows5.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -961,10 +1227,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>React</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows6.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -978,10 +1268,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Svelte</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows7.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -995,10 +1309,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>NextJS</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows8.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1012,10 +1350,31 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Flask</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows9.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1029,10 +1388,31 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Express.js</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows10.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1046,10 +1426,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Bootstrap</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows11.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1063,10 +1467,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>MaterialUI</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows12.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1080,10 +1508,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Tailwind CSS</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows13.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -1099,10 +1551,31 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>SQL</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row14.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1116,10 +1589,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Sequelize</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows15.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 

@@ -25,6 +25,9 @@ import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
 import * as React from 'react'
 import IndividualQuestion from './IndividualQA';
+import { useDispatch } from 'react-redux';
+import { createNewQuiz } from '../../store/quiz';
+import TextField from '@mui/material/TextField';
 
 const drawerWidth = 240;
 
@@ -74,6 +77,7 @@ const AppBar = styled(MuiAppBar, {
 
 const CreateQuiz = () => {
     let qArr = []
+    const dispatch = useDispatch()
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
@@ -82,7 +86,9 @@ const CreateQuiz = () => {
     const [numQuestions, setNumQuestion] = useState(1)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('General')
+    const [status, setStatus] = useState('Public')
+    const [submitError, setSubmitError] = useState('')
 
     for(let i = 0; i < numQuestions; i++) {
         qArr.push({id: i, front: null, back: null})
@@ -97,25 +103,55 @@ const CreateQuiz = () => {
         const fourthOptions = document.querySelectorAll('#ans-opt-4')
         const solutions = document.querySelectorAll('#solutions')
         const resArr = []
+
+        console.log(solutions)
+
+        if(solutions.length < allQuestions.length) {
+            setSubmitError("Please make sure you've set a solution for each question!")
+            return
+        }
+
         for(let i = 0; i < allQuestions.length; i ++) {
+            // console.log(solutions[i].value === "Not empty")
+            if(solutions[i].value === "") {
+                setSubmitError("Please make sure you've set a solution for each question!")
+                return
+            }
             resArr.push({
                 question: allQuestions[i].value,
                 answer_one: firstOptions[i].value,
                 answer_two: secondOptions[i].value,
                 answer_three: thirdOptions[i].value,
                 answer_four: fourthOptions[i].value,
-                solution: solutions[i].value
+                solution: solutions[i].value,
+                status: status
             })
         }
         const quizInfo = {
             title: title,
             description: description,
             category: category,
-            questions: resArr
+            status: status,
+            length: numQuestions
         }
-        console.log(quizInfo)
 
+        const questionInfo = { questions: resArr }
+        console.log(questionInfo)
+
+        // dispatch(createNewQuiz(quizInfo))
+        // .then(async(res) => {
+        //   const response = await fetch(`/api/quizzes/${res.id}/add`, {
+        //     method: "POST",
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(questionInfo)
+        //   })
+        // }).then(() => {
+        //     history.push('/trivia')
+        // })
     }
+
     return (
         <Box sx={{ display: 'flex' }}>
             <Box sx={{ display: 'flex', marginBottom: "20px" }}>
@@ -189,18 +225,24 @@ const CreateQuiz = () => {
                         <div>
                             <section id='create-fc-info'>
                                 <h2>Set Info</h2>
-                                <section id='fc-title-input'>
-                                    <label htmlFor='title' id='quiz-title-label'>Title</label>
-                                    <Input sx={{"width": "300px", marginBottom: "10px"}}
+                                <section style={{ "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "10px" }}>
+                                    <div>
+                                        <label htmlFor='title' id='quiz-title-label'>Title</label><span style={{ "color": "red" }}>*</span>
+                                    </div>
+                                    <input id='quiz-title-input' sx={{"width": "300px", marginBottom: "10px"}}
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
+                                        required
                                     />
                                 </section>
-                                <section id='fc-desc-input'>
-                                    <label htmlFor='description' id='quiz-desc-label'>Description</label>
-                                    <Textarea sx={{"height": "100px", "width": "300px"}}
+                                <section  style={{ "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "10px" }}>
+                                    <div>
+                                        <label htmlFor='description' id='quiz-desc-label'>Description</label><span style={{ "color": "red" }}>*</span>
+                                    </div>
+                                    <textarea id='quiz-desc-input' sx={{"height": "100px", "width": "300px"}}
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
+                                        required
                                     />
                                 </section>
                             </section>
@@ -220,6 +262,13 @@ const CreateQuiz = () => {
                                     <Option value="Svelte">Svelte</Option>
                                     <Option value="TypeScript">TypeScript</Option>
                                     <Option value="Other">Other</Option>
+                                </Select>
+                            </section>
+                            <section id='fc-cat-select'>
+                                <label className='create-fc-set-label'>Status</label>
+                                <Select defaultValue="Public" onChange={(e) => setStatus(e.target.value)} sx={{"width": "300px"}}>
+                                    <Option value="Public">Public</Option>
+                                    <Option value="Private">Private</Option>
                                 </Select>
                             </section>
                             <section id='fc-num-select'>
@@ -245,6 +294,9 @@ const CreateQuiz = () => {
                                         ))}
                                     </div>
                                 </section>
+                            </section>
+                            <section style={{ "marginLeft": "50px" }}>
+                                {submitError && (<p style={{ "color": "red" }}>{submitError}</p>)}
                             </section>
                             <section id='create-quiz-submit'>
                                 <Button size="md" onClick={handleSubmit}>Submit</Button>

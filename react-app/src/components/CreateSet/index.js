@@ -90,7 +90,7 @@ const CreateSet = () => {
     const [numCards, setNumCards] = useState(1)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('General')
     const [status, setStatus] = useState('Public')
 
     for(let i = 1; i < numCards; i++) {
@@ -115,12 +115,9 @@ const CreateSet = () => {
             description: description,
             category: category,
             status: status
-            // cards: resArr
         }
 
         const cardInfo = { cards: resArr }
-
-        console.log("...submitting")
 
         dispatch(createFlashCardSet(setInfo))
         .then(async(res) => {

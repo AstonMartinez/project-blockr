@@ -6,6 +6,28 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 quiz_routes = Blueprint('quizzes', __name__)
 
+@quiz_routes.route('/quizzes/new', methods=["POST"])
+def create_quiz():
+    user_id = current_user.id
+    title = request.json['title']
+    description = request.json['description']
+    length = request.json['length']
+    category = request.json['category']
+    status = request.json['status']
+
+    new_quiz = TriviaQuiz(
+        user_id=user_id,
+        title=title,
+        description=description,
+        length=length,
+        category=category,
+        status=status
+    )
+
+    db.session.add(new_quiz)
+    db.session.commit()
+    return new_quiz.to_dict()
+
 @quiz_routes.route('/quizzes/public')
 def get_all_public():
     result = {}
@@ -19,30 +41,7 @@ def get_all_public():
 @quiz_routes.route('/quizzes/<int:id>')
 def get_by_quiz_id(id):
     result = {}
-    # questions = {}
-    # info = {}
     quiz = TriviaQuiz.query.get(id)
-    # questions = TriviaQuestion.query.filter(TriviaQuestion.quiz_id == quiz.id).all()
-    # all_qs = {}
-
-    # if quiz:
-    #     info = quiz.to_dict()
-
-    # for q in questions:
-    #     a_obj = {}
-
-    #     a_obj[1] = q.answer_one
-    #     a_obj[2] = q.answer_two
-
-    #     if q.answer_three != None:
-    #         a_obj[3] = q.answer_three
-
-    #     if q.answer_four != None:
-    #         a_obj[4] = q.answer_four
-
-    #     q_dict = q.to_dict()
-    #     q_dict["options"] = a_obj
-    #     all_qs[q.id] = q_dict
     result = quiz.to_dict()
 
     return result

@@ -1,8 +1,33 @@
 from flask import Blueprint, jsonify
-from flask_login import login_required
+from flask_login import login_required, current_user
 from app.models import User
+from app.models.card_sets import CardSets
+from app.models.trivia_quiz import TriviaQuiz
 
 user_routes = Blueprint('users', __name__)
+
+@user_routes.route('/materials')
+def get_user_materials():
+    all_cards = {}
+    all_quizzes = {}
+    result = {}
+    cards = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
+    quizzes = TriviaQuiz.query.filter(TriviaQuiz.user_id == current_user.id).all()
+
+    if cards:
+        for card in cards:
+            card_dict = card.to_dict()
+            all_cards[card.id] = card_dict
+
+    if quizzes:
+        for quiz in quizzes:
+            quiz_dict = quiz.to_dict()
+            all_quizzes[quiz.id] = quiz_dict
+
+    result['cards'] = all_cards
+    result['quizzes'] = all_quizzes
+    return result
+
 
 
 @user_routes.route('/')

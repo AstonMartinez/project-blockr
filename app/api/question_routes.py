@@ -6,6 +6,35 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 question_routes = Blueprint('questions', __name__)
 
+@question_routes.route('/<int:id>/add', methods=["POST"])
+def create_quiz_questions(id):
+    questions = request.json['questions']
+
+    for q in questions:
+        question = q['question']
+        answer_one = q['answer_one']
+        answer_two = q['answer_two']
+        answer_three = q['answer_three']
+        answer_four = q['answer_four']
+        solution = q['solution']
+        status = q['status']
+
+        new_question = TriviaQuestion(
+            quiz_id=id,
+            question=question,
+            answer_one=answer_one,
+            answer_two=answer_two,
+            answer_three=answer_three,
+            answer_four=answer_four,
+            solution=solution,
+            status=status
+        )
+
+        db.session.add(new_question)
+    db.session.commit()
+    return {}
+
+
 @question_routes.route('/<int:id>/all')
 def get_qs(id):
     result = {}

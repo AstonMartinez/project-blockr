@@ -1,5 +1,6 @@
 const GET_SETS = '/cards/getAllSets'
 const GET_SINGLE_SET = '/cards/getOne'
+const CREATE_SET = '/cards/create'
 
 const getAllSets = (data) => {
     return {
@@ -11,6 +12,13 @@ const getAllSets = (data) => {
 const getOne = (data) => {
     return {
         type: GET_SINGLE_SET,
+        payload: data,
+    }
+}
+
+const create = (data) => {
+    return {
+        type: CREATE_SET,
         payload: data,
     }
 }
@@ -49,6 +57,30 @@ export const getOneSet = (id) => async (dispatch) => {
     }
 }
 
+export const createFlashCardSet = (setData) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/cards/sets/new`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(setData)
+        })
+
+        if(response.ok) {
+            const data = await response.json()
+            dispatch(create(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
+    }
+}
+
 const initialState = { allSets: {}, singleSet: {} }
 const cardsReducer = (state = initialState, action) => {
     let newState
@@ -58,6 +90,10 @@ const cardsReducer = (state = initialState, action) => {
             newState.allSets = action.payload
             return newState
         case GET_SINGLE_SET:
+            newState = Object.assign({ ...state })
+            newState.singleSet = action.payload
+            return newState
+        case CREATE_SET:
             newState = Object.assign({ ...state })
             newState.singleSet = action.payload
             return newState

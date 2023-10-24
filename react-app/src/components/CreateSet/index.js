@@ -25,6 +25,13 @@ import { useHistory } from 'react-router-dom'
 import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
 import * as React from 'react'
+import { useDispatch } from 'react-redux';
+import { createFlashCardSet } from '../../store/cards';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ListSubheader from '@mui/material/ListSubheader';
+import { logout } from '../../store/session';
 
 const drawerWidth = 240;
 
@@ -74,6 +81,7 @@ const AppBar = styled(MuiAppBar, {
 
 const CreateSet = () => {
     let cardsArr = [{}]
+    const dispatch = useDispatch()
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
@@ -82,7 +90,9 @@ const CreateSet = () => {
     const [numCards, setNumCards] = useState(1)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('General')
+    const [status, setStatus] = useState('Public')
+
     for(let i = 1; i < numCards; i++) {
         cardsArr.push({id: i, front: null, back: null})
     }
@@ -99,14 +109,31 @@ const CreateSet = () => {
                 back: cardBacks[i].value
             })
         }
+
         const setInfo = {
             title: title,
             description: description,
             category: category,
-            cards: resArr
+            status: status
         }
-        console.log(setInfo)
 
+        const cardInfo = { cards: resArr }
+
+        dispatch(createFlashCardSet(setInfo))
+        .then(async(res) => {
+          console.log(res.id)
+          const response = await fetch(`/api/cards/sets/${res.id}/add`, {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cardInfo)
+          })
+
+          if(response.ok) {
+            history.push(`/sets/${res.id}`)
+          }
+        })
     }
 
     return (
@@ -160,6 +187,16 @@ const CreateSet = () => {
             <Divider />
             <List component="nav">
               {mainListItems}
+              {/* <Link href="/resources" style={{"textDecoration": "none", "color": "black"}}> */}
+        <ListItemButton>
+        <ListItemIcon>
+            <button onClick={() => {
+              dispatch(logout())
+            }}>Log Out</button>
+        </ListItemIcon>
+        {/* <ListItemText primary="Resources" /> */}
+        </ListItemButton>
+    {/* </Link> */}
             </List>
           </Drawer>
         </Box>
@@ -215,6 +252,13 @@ const CreateSet = () => {
                     <Option value="Other">Other</Option>
                   </Select>
                 </section>
+                <section id='fc-cat-select'>
+                  <label className='create-fc-set-label'>Status</label>
+                  <Select defaultValue="Public" onChange={(e) => setStatus(e.target.value)} sx={{"width": "300px"}}>
+                    <Option value="Public">Public</Option>
+                    <Option value="Private">Private</Option>
+                  </Select>
+                </section>
                 <section id='fc-num-select'>
                   <label className='create-fc-set-label' htmlFor='num-cards'>How Many Cards?</label>
                   <input
@@ -242,7 +286,7 @@ const CreateSet = () => {
                   </section>
                 </section>
                 <section id='create-fc-submit'>
-                  <Button type="submit" size="md">Submit</Button>
+                  <Button type="submit" size="md" onClick={handleSubmit}>Submit</Button>
                 </section>
               </form>
             </div>

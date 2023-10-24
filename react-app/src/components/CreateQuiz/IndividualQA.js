@@ -15,7 +15,7 @@ const IndividualQuestion = () => {
             <section id='question-input-holder'>
                 <label className='create-quiz-card-label'>Question</label>
                 <textarea
-                    id='question-card-top-input'
+                    id='question-text'
                     value={question}
                     placeholder="Question (i.e., 2 + 2 = ?)"
                     onChange={(e) => setQuestion(e.target.value)}
@@ -29,6 +29,7 @@ const IndividualQuestion = () => {
                     </div>
                     <div>
                         <textarea
+                            id='ans-opt-1'
                             className='create-quiz-card-textarea left-outer'
                             value={answerOne}
                             placeholder="Option one"
@@ -37,6 +38,7 @@ const IndividualQuestion = () => {
                     </div>
                     <div>
                         <textarea
+                            id='ans-opt-2'
                             className='create-quiz-card-textarea right-outer'
                             value={answerTwo}
                             placeholder="Option two"
@@ -55,6 +57,7 @@ const IndividualQuestion = () => {
                     </div>
                     <div>
                         <textarea
+                            id='ans-opt-3'
                             className='create-quiz-card-textarea left-outer'
                             value={answerThree}
                             placeholder="Option three"
@@ -63,6 +66,7 @@ const IndividualQuestion = () => {
                     </div>
                     <div>
                         <textarea
+                            id='ans-opt-4'
                             className='create-quiz-card-textarea right-outer'
                             value={answerFour}
                             placeholder="Option four"
@@ -76,79 +80,10 @@ const IndividualQuestion = () => {
                 </div>
             </section>
             <section id='card-solution-holder'>
-                <span>Solution: </span>
-                <span>{solution}</span>
+                <span style={{ "fontWeight": "bold" }}>Solution: </span>
+                <input id='solutions' style={{ "border": "none", "textAlign": "center", "fontSize": "15px" }} value={solution} disabled="true"></input>
             </section>
         </div>
-        // <div id='question-card-wrapper'>
-        //     <div className='q-card-field'>
-        //         <label className='create-qa-label' htmlFor='question'>Question</label>
-        //         <textarea
-        //             id='question-text'
-        //             name='question'
-        //             value={question}
-        //             onChange={(e) => setQuestion(e.target.value)}
-        //         />
-        //     </div>
-        //     <div className='q-card-field'>
-        //         <label className='create-qa-label' htmlFor='option-1'>Answer Option One</label>
-        //         <div className='ans-and-but'>
-        //             <textarea
-        //                 id='ans-opt-1'
-        //                 name='option-1'
-        //                 value={answerOne}
-        //                 onChange={(e) => setAnswerOne(e.target.value)}
-        //             />
-        //             {/* <button className='cor-ans-but' onClick={() => {
-        //                 setSolution(answerOne)
-        //             }}>Correct Answer?</button> */}
-        //             <CheckCircleOutlineIcon sx={{color: solution === answerOne ? "green" : "gray", marginLeft: "10px" }} onClick={() => setSolution(answerOne)} />
-        //             <CloseIcon sx={{color: solution !== answerOne ? "red" : "gray"}} />
-        //         </div>
-        //     </div>
-        //     <div className='q-card-field'>
-        //         <label className='create-qa-label' htmlFor='option-2'>Answer Option Two</label>
-        //         <div className='ans-and-but'>
-        //             <textarea
-        //                 id='ans-opt-2'
-        //                 name='option-2'
-        //                 value={answerTwo}
-        //                 onChange={(e) => setAnswerTwo(e.target.value)}
-        //             />
-        //             <CheckCircleOutlineIcon sx={{color: solution === answerTwo ? "green" : "gray", marginLeft: "10px"}} onClick={() => setSolution(answerTwo)} />
-        //             <CloseIcon sx={{color: solution !== answerTwo ? "red" : "gray"}} />
-        //         </div>
-        //     </div>
-        //     <div className='q-card-field'>
-        //         <label className='create-qa-label' htmlFor='option-3'>Answer Option Three</label>
-        //         <div className='ans-and-but'>
-        //             <textarea
-        //                 id='ans-opt-3'
-        //                 name='option-3'
-        //                 value={answerThree}
-        //                 onChange={(e) => setAnswerThree(e.target.value)}
-        //             />
-        //             <CheckCircleOutlineIcon sx={{color: solution === answerThree ? "green" : "gray", marginLeft: "10px" }} onClick={() => setSolution(answerThree)} />
-        //             <CloseIcon sx={{color: solution !== answerThree ? "red" : "gray"}} />
-        //         </div>
-        //     </div>
-        //     <div className='q-card-field'>
-        //         <label className='create-qa-label' htmlFor='option-4'>Answer Option Four</label>
-        //         <div className='ans-and-but'>
-        //             <textarea
-        //                 id='ans-opt-4'
-        //                 name='option-4'
-        //                 value={answerFour}
-        //                 onChange={(e) => setAnswerFour(e.target.value)}
-        //             />
-        //             <CheckCircleOutlineIcon sx={{color: solution === answerFour ? "green" : "gray", marginLeft: "10px" }} onClick={() => setSolution(answerFour)} />
-        //             <CloseIcon sx={{color: solution !== answerFour ? "red" : "gray"}} />
-        //         </div>
-        //     </div>
-        //     <div id='q-solution-holder'>
-        //         <span>Solution: </span><span id='solutions'>{solution}</span>
-        //     </div>
-        // </div>
     )
 }
 

@@ -871,653 +871,653 @@ const rows37 = [
   createData4('Godot Documentation', 'https://docs.godotengine.org/en/stable/index.html', 'C, C#, C++')
 ];
 
-// C# - Documentation
+// C# - Documentation & Tools
 const rows38 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// C# - Tutorials
+// C# - Courses & Tutorials
 const rows39 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // C# - Courses
-const rows40 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows40 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// C++ - Documentation
+// C++ - Documentation & Tools
 const rows41 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// C++ - Tutorials
+// C++ - Courses & Tutorials
 const rows42 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // C++ - Courses
-const rows43 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows43 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// CSS - Documentation
+// CSS - Documentation & Tools
 const row44 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// CSS - Tutorials
+// CSS - Courses & Tutorials
 const rows45 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // CSS - Courses
-const rows46 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows46 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// HTML - Documentation
+// HTML - Documentation & Tools
 const rows47 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// HTML - Tutorials
+// HTML - Courses & Tutorials
 const rows48 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // HTML - Courses
-const rows49 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows49 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// JavaScript - Documentation
+// JavaScript - Documentation & Tools
 const rows50 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// JavaScript - Tutorials
+// JavaScript - Courses & Tutorials
 const rows51 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // JavaScript - Courses
-const rows52 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows52 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// Java - Documentation
+// Java - Documentation & Tools
 const rows53 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// Java - Tutorials
+// Java - Courses & Tutorials
 const row54 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // Java - Courses
-const rows55 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows55 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// Python - Documentation
+// Python - Documentation & Tools
 const rows56 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// Python - Tutorials
+// Python - Courses & Tutorials
 const rows57 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // Python - Courses
-const rows58 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows58 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// Rust - Documentation
+// Rust - Documentation & Tools
 const rows59 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// Rust - Tutorials
+// Rust - Courses & Tutorials
 const rows60 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // Rust - Courses
-const rows61 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const rows61 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
-// TypeScript - Documentation
+// TypeScript - Documentation & Tools
 const rows62 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
-// TypeScript - Tutorials
+// TypeScript - Courses & Tutorials
 const rows63 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
+  createData('', '', '', ''),
 ];
 
 // TypeScript - Courses
-const row64 = [
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-  createData4('', '', ''),
-];
+// const row64 = [
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+//   createData4('', '', ''),
+// ];
 
 const drawerWidth = 240;
 
@@ -3152,7 +3152,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel38bh-content"
                   id="panel38bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -3169,7 +3169,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel39bh-content"
                   id="panel39bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -3180,7 +3180,7 @@ const ResourcesComponent = () => {
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel40'} onChange={handleChange('panel40')}>
+              {/* <Accordion expanded={expanded === 'panel40'} onChange={handleChange('panel40')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel40bh-content"
@@ -3194,7 +3194,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>C++</h4>
@@ -3205,13 +3205,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel41bh-content"
                   id="panel41bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows41.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3222,18 +3246,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel42bh-content"
                   id="panel42bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows42.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel43'} onChange={handleChange('panel43')}>
+              {/* <Accordion expanded={expanded === 'panel43'} onChange={handleChange('panel43')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel43bh-content"
@@ -3247,7 +3295,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>CSS</h4>
@@ -3258,13 +3306,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel44bh-content"
                   id="panel44bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row44.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3275,18 +3347,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel45bh-content"
                   id="panel45bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows45.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel46'} onChange={handleChange('panel46')}>
+              {/* <Accordion expanded={expanded === 'panel46'} onChange={handleChange('panel46')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel46bh-content"
@@ -3300,7 +3396,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>HTML</h4>
@@ -3311,13 +3407,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel47bh-content"
                   id="panel47bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows47.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3328,18 +3448,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel48bh-content"
                   id="panel48bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows48.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel49'} onChange={handleChange('panel49')}>
+              {/* <Accordion expanded={expanded === 'panel49'} onChange={handleChange('panel49')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel49bh-content"
@@ -3353,7 +3497,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>JavaScript</h4>
@@ -3364,13 +3508,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel50bh-content"
                   id="panel50bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows50.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3381,18 +3549,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel51bh-content"
                   id="panel51bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows51.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel52'} onChange={handleChange('panel52')}>
+              {/* <Accordion expanded={expanded === 'panel52'} onChange={handleChange('panel52')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel52bh-content"
@@ -3406,7 +3598,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Java</h4>
@@ -3417,13 +3609,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel53bh-content"
                   id="panel53bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows53.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3434,18 +3650,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel54bh-content"
                   id="panel54bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row54.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel55'} onChange={handleChange('panel55')}>
+              {/* <Accordion expanded={expanded === 'panel55'} onChange={handleChange('panel55')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel55bh-content"
@@ -3459,7 +3699,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Python</h4>
@@ -3470,13 +3710,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel56bh-content"
                   id="panel56bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows56.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3487,18 +3751,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel57bh-content"
                   id="panel57bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows57.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel58'} onChange={handleChange('panel58')}>
+              {/* <Accordion expanded={expanded === 'panel58'} onChange={handleChange('panel58')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel58bh-content"
@@ -3512,7 +3800,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Rust</h4>
@@ -3523,13 +3811,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel59bh-content"
                   id="panel59bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows59.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3540,18 +3852,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel60bh-content"
                   id="panel60bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows60.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel61'} onChange={handleChange('panel61')}>
+              {/* <Accordion expanded={expanded === 'panel61'} onChange={handleChange('panel61')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel61bh-content"
@@ -3565,7 +3901,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>TypeScript</h4>
@@ -3576,13 +3912,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel62bh-content"
                   id="panel62bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows62.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3593,18 +3953,42 @@ const ResourcesComponent = () => {
                   aria-controls="panel63bh-content"
                   id="panel63bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows63.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
               {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel64'} onChange={handleChange('panel64')}>
+              {/* <Accordion expanded={expanded === 'panel64'} onChange={handleChange('panel64')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel64bh-content"
@@ -3618,7 +4002,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
           </div>
         </div>

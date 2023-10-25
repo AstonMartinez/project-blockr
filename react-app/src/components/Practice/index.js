@@ -1,8 +1,7 @@
 // import './Practice.css'
 import { useState } from 'react'
 import * as React from 'react'
-import { useSelector } from 'react-redux';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';

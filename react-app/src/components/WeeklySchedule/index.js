@@ -1,7 +1,7 @@
 import DailyPlanner from "../DailyPlanner";
 import './WeeklySchedule.css';
 import * as React from 'react'
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -78,7 +78,7 @@ const WeeklySchedule = () => {
 
     React.useEffect(() => {
         dispatch(getByDate(currDay))
-    }, [dispatch])
+    }, [dispatch, currDay])
     return (
         <>
         <Box sx={{ display: 'flex' }}>

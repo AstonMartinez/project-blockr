@@ -97,7 +97,6 @@ export default function UserDashboard() {
   const dispatch = useDispatch()
   const history = useHistory()
   const allMaterials = useSelector(state => state.materials.allMaterials)
-  const allTasks = useSelector(state => state.tasks.allTasks)
   const sessionUser = useSelector(state => state.session.user)
 
   if(!sessionUser) {
@@ -108,7 +107,7 @@ export default function UserDashboard() {
   const userQuizzes = allMaterials.quizzes
 
   const currentDay = new Date().toDateString().split(" ")[0]
-  const [dayOfWeek, setDayOfWeek] = React.useState(dayConvert(currentDay))
+  const dayOfWeek = dayConvert(currentDay)
 
   let materialsDisplay
 
@@ -180,7 +179,7 @@ export default function UserDashboard() {
     React.useEffect(() => {
       dispatch(fetchMaterials())
       dispatch(getByDate(dayOfWeek))
-    }, [dispatch])
+    }, [dispatch, dayOfWeek])
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -313,41 +312,6 @@ export default function UserDashboard() {
             </Grid>
             <Footer sx={{marginTop: "20px"}} />
           </Container>
-          {/* <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-=              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
-              </Grid>
-=              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
-              </Grid>
-=              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
-                </Paper>
-              </Grid>
-            </Grid>
-            <Footer sx={{marginTop: "20px"}} />
-          </Container> */}
         </Box>
       </Box>
     </ThemeProvider>

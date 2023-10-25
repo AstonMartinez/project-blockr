@@ -37,5 +37,4 @@ class User(db.Model, UserMixin):
             'firstName': self.firstName,
             'lastName': self.lastName,
             'bio': self.bio
-            # 'stats': self.stats.to_dict()
         }

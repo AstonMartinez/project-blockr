@@ -1,12 +1,9 @@
 import './CreateQuiz.css'
-import AddIcon from '@mui/icons-material/Add';
 import { useState } from 'react'
-import Textarea from '@mui/joy/Textarea';
-import Input from '@mui/joy/Input';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 import Button from '@mui/joy/Button';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -27,7 +24,6 @@ import * as React from 'react'
 import IndividualQuestion from './IndividualQA';
 import { useDispatch } from 'react-redux';
 import { createNewQuiz } from '../../store/quiz';
-import TextField from '@mui/material/TextField';
 
 const drawerWidth = 240;
 
@@ -104,15 +100,12 @@ const CreateQuiz = () => {
         const solutions = document.querySelectorAll('#solutions')
         const resArr = []
 
-        console.log(solutions)
-
         if(solutions.length < allQuestions.length) {
             setSubmitError("Please make sure you've set a solution for each question!")
             return
         }
 
         for(let i = 0; i < allQuestions.length; i ++) {
-            // console.log(solutions[i].value === "Not empty")
             if(solutions[i].value === "") {
                 setSubmitError("Please make sure you've set a solution for each question!")
                 return
@@ -136,20 +129,19 @@ const CreateQuiz = () => {
         }
 
         const questionInfo = { questions: resArr }
-        console.log(questionInfo)
 
-        // dispatch(createNewQuiz(quizInfo))
-        // .then(async(res) => {
-        //   const response = await fetch(`/api/quizzes/${res.id}/add`, {
-        //     method: "POST",
-        //     headers: {
-        //       'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(questionInfo)
-        //   })
-        // }).then(() => {
-        //     history.push('/trivia')
-        // })
+        dispatch(createNewQuiz(quizInfo))
+        .then(async(res) => {
+          await fetch(`/api/quizzes/${res.id}/add`, {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(questionInfo)
+          })
+        }).then(() => {
+            history.push('/trivia')
+        })
     }
 
     return (

@@ -182,6 +182,7 @@ export default function LoginFormPage() {
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In
+                {errors.length > 0 ? (<p>{errors}</p>) : ''}
               </Button>
               {/* <Grid item xs> */}
                     <Button
@@ -194,17 +195,6 @@ export default function LoginFormPage() {
                     Demo Login
                   </Button>
               <Grid container>
-                {/* <Grid item xs>
-                    <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
-                    onClick={handleDemoLogin}
-                  >
-                    Demo Login
-                  </Button>
-                </Grid> */}
                 <Grid item>
                   <Link href="#" variant="body2">
                     {"Don't have an account? Sign Up"}

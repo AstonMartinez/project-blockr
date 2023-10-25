@@ -24,5 +24,4 @@ class CardSets(db.Model):
             'description': self.description,
             'status': self.status,
             'category': self.category
-            # 'questions': self.questions[0].to_dict()
         }

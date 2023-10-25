@@ -14,10 +14,7 @@
 }
 
 .time-container {
-    /* width: 6px; */
     font-size: 13px;
-    /* height: 160px; */
-    /* border:1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -29,7 +26,6 @@
     border-radius: 10px;
     padding: 5px;
     width: 11%;
-    /* height: 800px; */
 }
 
 #task-dropdown-false {
@@ -89,11 +85,9 @@
 .task-input-label {
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 10px;
-    /* margin-bottom: 15px; */
 }
 
 .task-input {
-    /* margin: 0px 0 10px 0; */
     margin: 10px 0;
 }
 

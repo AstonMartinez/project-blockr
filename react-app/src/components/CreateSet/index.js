@@ -183,16 +183,13 @@ const CreateSet = () => {
             <Divider />
             <List component="nav">
               {mainListItems}
-              {/* <Link href="/resources" style={{"textDecoration": "none", "color": "black"}}> */}
         <ListItemButton>
         <ListItemIcon>
             <button onClick={() => {
               dispatch(logout())
             }}>Log Out</button>
         </ListItemIcon>
-        {/* <ListItemText primary="Resources" /> */}
         </ListItemButton>
-    {/* </Link> */}
             </List>
           </Drawer>
         </Box>

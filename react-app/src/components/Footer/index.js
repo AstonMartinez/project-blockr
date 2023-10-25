@@ -12,9 +12,6 @@ const Footer = (props) => {
                 {'.'}
             </Typography>
         </>
-        // <div id='footer-wrap'>
-        //     Footer
-        // </div>
     )
 }
 

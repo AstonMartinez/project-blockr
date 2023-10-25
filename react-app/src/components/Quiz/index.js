@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getByQuizId } from '../../store/triviaQuestions'
 import { fetchSingleQuiz } from '../../store/quiz'
 import * as React from 'react'
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -129,8 +129,6 @@ const Quiz = () => {
 
     const [isLoaded, setIsLoaded] = useState(false)
 
-    const [newArr, setNewArr] = useState(null)
-
     useEffect(() => {
         dispatch(fetchSingleQuiz(quizId))
         .then(() => {
@@ -142,15 +140,9 @@ const Quiz = () => {
                 setIsLoaded(true)
             }, [3000])
         }).then(() => {
-            setNewArr(Object.values(questions))
             setToggleRender(!toggleRender)
-        }).then(() => {
-            setTimeout(() => {
-                rerender()
-            }, [3000])
         })
-        // return rerender()
-    }, [dispatch])
+    }, [dispatch, quizId, toggleRender])
 
 
 
@@ -369,11 +361,6 @@ const Quiz = () => {
         <span style={{"color": "green"}}>Correct</span>
     )
 
-    const rerender = () => {
-        setToggleRender(!toggleRender)
-        return
-    }
-
     return(
         <Box sx={{ display: 'flex' }}>
 
@@ -452,7 +439,6 @@ const Quiz = () => {
             {!isLoaded && (
                 <LoadingScreen />
             )}
-            {/* {rerender()} */}
             {isLoaded && qArr !== undefined && (
                 <section>
 
@@ -1676,6 +1662,7 @@ const Quiz = () => {
                 {hasSubmitted && (
                     <section>
                         <h2>{resStarter} You got {result} correct!</h2>
+                        <button onClick={reset}>Take Quiz Again?</button>
                     </section>
                 )}
                 </section>

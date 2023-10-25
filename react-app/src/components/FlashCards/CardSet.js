@@ -1,12 +1,9 @@
 import { useParams } from 'react-router-dom';
 import IndividualCard from './IndividualCard';
-import { javaScriptCards } from './flashcardlist';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { getOneSet } from '../../store/cards';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -23,11 +20,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useHistory } from 'react-router-dom'
 import mainListItems from '../UserDashboard/listItems'
 import PersonIcon from '@mui/icons-material/Person';
-import Footer from '../Footer';
 import Button from '@mui/joy/Button';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import Check from '@mui/icons-material/Check';
 import { createNewSession } from '../../store/studySessions';
 
 const drawerWidth = 240;
@@ -95,14 +90,11 @@ const CardSet = () => {
     const [numIncorrect, setNumIncorrect] = useState(0)
     const [outOf, setOutOf] = useState(0)
     const [startTime, setStartTime] = useState(null)
-    const [endTime, setEndTime] = useState(null)
     if(isLoaded && currSetQs) {
         currSetArr = Object.values(currSetQs)
     }
 
-    const [questionArr, setQuestionArr] = useState(currSetArr)
     const [hasSubmitted, setHasSubmitted] = useState(false)
-    const [timeSpent, setTimeSpent] = useState('')
 
     const toggleDrawer = () => {
         setOpen(!open);
@@ -120,7 +112,6 @@ const CardSet = () => {
         let minutes
         let seconds
 
-        // const millis = Date.now() - startTime
         const timeElapsed = new Date() - startTime
         if(timeElapsed > hourNum) {
             hours = Math.floor(timeElapsed / hourNum)
@@ -141,7 +132,6 @@ const CardSet = () => {
         }
 
         const timeSpentStr = `${hours} hours, ${minutes} minutes, ${seconds} seconds`
-        setTimeSpent(timeSpentStr)
         const category = currSet?.category
         // const final = Math.floor(timeElapsed / 1000)
         const studySession = {
@@ -172,7 +162,7 @@ const CardSet = () => {
         dispatch(getOneSet(setId)).then(() => {
             setIsLoaded(true)
         })
-    }, [dispatch])
+    }, [dispatch, setId])
 
 
 
@@ -284,7 +274,6 @@ const CardSet = () => {
                                 }
                             }} color="error" />
                             <Button onClick={() => {
-                                setEndTime(Date.now())
                                 setIsStarted(false)
                                 handleSubmitStudySession()
                             }} variant="plain">End Session</Button>

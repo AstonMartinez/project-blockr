@@ -58,6 +58,10 @@ function createData2(challengeName, link, resourceType, relatedLanguages, diffic
   return { challengeName, link, resourceType, relatedLanguages, difficulty }
 }
 
+function createData3(resourceName, link, resourceType) {
+  return { resourceName, link, resourceType }
+}
+
 const rows1 = [
   createData('LeetCode', "https://leetcode.com", "Practice", "All"),
   createData('NeetCode', "https://neetcode.io", "Practice", "All"),
@@ -622,37 +626,67 @@ const rows21 = [
   createData('A Practical Guide to Kubernetes Logging', 'https://logz.io/blog/a-practical-guide-to-kubernetes-logging/', 'Helpful Info', "All")
 ];
 
+// Machine Learning - Services & Tools
 const rows22 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('Gradio', 'https://www.gradio.app/', 'Packages & Utilities'),
+  createData3('Vertex AI', 'https://cloud.google.com/vertex-ai?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1605212&utm_content=text-ad-none-any-DEV_c-CRE_665735422037-ADGP_Hybrid+%7C+BKWS+-+MIX+%7C+Txt_AI+and+ML+General-KWID_43700077225650913-aud-1461360047640:kwd-553582750299&utm_term=KW_vertex+ai-ST_vertex+ai&gclid=CjwKCAjwvrOpBhBdEiwAR58-3PCUcW_oFAegwdr6Kjp-WTU8qXiATyfG_0PR_VfmDIEG6KqtVhJwIRoCpskQAvD_BwE&gclsrc=aw.ds&hl=en', 'Tools'),
+  createData3('Google Colab', 'https://colab.research.google.com/?authuser=2#scrollTo=OwuxHmxllTwN', 'Tools'),
+  createData3('OpenAI API', 'https://openai.com/blog/openai-api', 'Tools'),
+  createData3('OpenAI Model', 'https://platform.openai.com/docs/models', 'Models'),
+  createData3('PaLM 2', 'https://ai.google/discover/palm2/', 'Models'),
+  createData3('Hugging Face', 'https://huggingface.co/models', 'Models'),
+  createData3('Kaggle', 'https://www.kaggle.com/models', 'Models'),
+  createData3('Cohere', 'https://docs.cohere.com/docs', 'Models'),
+  createData3('Hugging Face Datasets', 'https://huggingface.co/docs/datasets/index', 'Datasets'),
+  createData3('Kaggle Datasets', 'https://www.kaggle.com/datasets', 'Datasets'),
+  createData3('Awesome Data', 'https://github.com/awesomedata/awesome-public-datasets', 'Datasets'),
+  createData3('Google Dataset Search Tool', 'https://datasetsearch.research.google.com/', 'Tools'),
+  createData3('Reddit Dataset', 'https://www.reddit.com/r/datasets/', 'Datasets'),
+  createData3('Whisper API', 'https://whisperapi.com/', 'Tools'),
+  createData3('Google API', 'https://cloud.google.com/products/ai', 'Tools'),
+  createData3('Amazon Web Services (AWS)', 'https://aws.amazon.com/machine-learning/', 'Tools'),
+  createData3('BotPress', 'https://botpress.com/', 'Tools'),
+  createData3('PyTorch', 'https://pytorch.org/', 'Packages & Utilites'),
+  createData3('TensorFlow', 'https://www.tensorflow.org/', 'Packages & Utilities')
 ];
 
+// Machine Learning - Courses
 const rows23 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('Building Systems with the ChatGPT API', 'https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/', 'Courses'),
+  createData3('Prompt Engineering 101', 'https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/', 'Courses'),
+  createData3('How Diffusion Models Work', 'https://www.deeplearning.ai/short-courses/how-diffusion-models-work/', 'Courses'),
+  createData3('LangChain for LLM Application Development', 'https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/', 'Courses'),
+  createData3('Intro to Generative AI', 'https://www.cloudskillsboost.google/course_templates/536', 'Courses'),
+  createData3('Intro to Large Language Models', 'https://www.cloudskillsboost.google/course_templates/539', 'Courses'),
+  createData3('Intro to Responsible AI', 'https://www.cloudskillsboost.google/course_templates/554', 'Courses'),
+  createData3('Intro to Image Generation', 'https://www.cloudskillsboost.google/course_templates/541', 'Courses'),
+  createData3('Encoder-Decoder', 'https://www.cloudskillsboost.google/course_templates/543', 'Courses'),
+  createData3('Attention Mechanism', 'https://www.cloudskillsboost.google/course_templates/537', 'Courses'),
+  createData3('Transformers & BERT Models', 'https://www.cloudskillsboost.google/course_templates/538', 'Courses'),
+  createData3('Create Image Captioning Models', 'https://www.cloudskillsboost.google/course_templates/542', 'Courses'),
+  createData3('Intro to Gen AI Studio', 'https://www.cloudskillsboost.google/course_templates/552', 'Courses')
 ];
 
+// Machine Learning - Tutorials
 const row24 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('How to Build a ChatGPT-Powered Recipe Chatbot with BotPress', 'https://www.youtube.com/watch?v=yu1Sg_M_Ltc', 'Tutorials'),
+  createData3('Capturing User Information', 'https://www.youtube.com/watch?v=yu1Sg_M_Ltc', 'Tutorials'),
+  createData3('GeeksforGeeks Machine Learning Tutorial', 'https://www.geeksforgeeks.org/machine-learning/', 'Tutorials'),
+  createData3('Machine Learning Tutorial: A Step-by-Step Guide for Beginners', 'https://www.simplilearn.com/tutorials/machine-learning-tutorial', 'Tutorials'),
+  createData3('Python Machine Learning', 'https://www.w3schools.com/python/python_ml_getting_started.asp', 'Tutorials'),
+  createData3('Machine Learning Tutorial for Beginners', 'https://www.mygreatlearning.com/blog/machine-learning-tutorial/', 'Tutorials'),
+  createData3('Machine Learning Tutorial - TutorialsPoint', 'https://www.tutorialspoint.com/machine_learning/index.htm', 'Tutorials'),
+  createData3('A Machine Learning Tutorial with Examples: An Introduction to ML Theory and Its Applications', 'https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer', 'Tutorials')
 ];
 
-const rows25 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+// Machine Learning - Documentation
+// const rows25 = [
+//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+//   createData('Eclair', 262, 16.0, 24, 6.0),
+//   createData('Cupcake', 305, 3.7, 67, 4.3),
+//   createData('Gingerbread', 356, 16.0, 49, 3.9),
+// ];
 
 const rows26 = [
   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
@@ -1959,10 +1993,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Services & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows22.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1976,10 +2034,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows23.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1993,15 +2075,39 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row24.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
                 {/* Documentation */}
-                <Accordion expanded={expanded === 'panel25'} onChange={handleChange('panel25')}>
+                {/* <Accordion expanded={expanded === 'panel25'} onChange={handleChange('panel25')}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel25bh-content"
@@ -2015,7 +2121,7 @@ const ResourcesComponent = () => {
                     amet egestas eros, vitae egestas augue. Duis vel est augue.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Front-End Development</h4>
@@ -2077,7 +2183,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel29bh-content"
                   id="panel29bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Svelte</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2273,7 +2379,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel40bh-content"
                   id="panel40bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2309,7 +2415,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel42bh-content"
                   id="panel42bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2326,7 +2432,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel43bh-content"
                   id="panel43bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2379,7 +2485,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel46bh-content"
                   id="panel46bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2432,7 +2538,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel49bh-content"
                   id="panel49bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2485,7 +2591,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel52bh-content"
                   id="panel52bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2538,7 +2644,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel55bh-content"
                   id="panel55bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2591,7 +2697,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel58bh-content"
                   id="panel58bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2644,7 +2750,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel61bh-content"
                   id="panel61bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Continue Learning</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
@@ -2697,7 +2803,7 @@ const ResourcesComponent = () => {
                   aria-controls="panel64bh-content"
                   id="panel64bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>

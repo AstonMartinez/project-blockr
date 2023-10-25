@@ -2,18 +2,23 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import AddLinkIcon from '@mui/icons-material/AddLink';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Link from '@mui/material/Link';
+import { logout } from '../../store/session';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-const mainListItems = (
-  <React.Fragment>
+const MainListItems = () => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+  return (
+    <React.Fragment>
     <Link href="/dashboard" style={{"textDecoration": "none", "color": "black"}}>
         <ListItemButton>
         <ListItemIcon>
@@ -62,33 +67,18 @@ const mainListItems = (
         <ListItemText primary="Resources" />
         </ListItemButton>
     </Link>
-  </React.Fragment>
-);
-
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
+    <ListItemButton onClick={() => {
+      dispatch(logout()).then(() => {
+        history.push('/login')
+      })
+    }}>
       <ListItemIcon>
-        <AssignmentIcon />
+        <LogoutIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="Log Out" />
     </ListItemButton>
   </React.Fragment>
-);
+  )
+}
 
-export default mainListItems;
+export default MainListItems;

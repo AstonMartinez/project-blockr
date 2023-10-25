@@ -873,50 +873,44 @@ const rows37 = [
 
 // C# - Documentation & Tools
 const rows38 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('C# Documentation', 'https://learn.microsoft.com/en-us/dotnet/csharp/', 'Documentation'),
+  createData3('C# Concepts Documentation', 'https://docs.microsoft.com/dotnet/csharp/programming-guide/?WT.mc_id=dotnet-35129-website', 'Documentation'),
+  createData3('C# Reference Documentation', 'https://docs.microsoft.com/dotnet/csharp/language-reference/?WT.mc_id=dotnet-35129-website', 'Documentation'),
+  createData3('Visual Studio Code', 'https://code.visualstudio.com/', 'Tools'),
+  createData3('MonoDevelop Cross Platform IDE', 'http://www.monodevelop.com/', 'Tools'),
+  createData3('dotPeek .NET Decompiler', 'https://www.jetbrains.com/decompiler/', 'Tools'),
+  createData3('LINQPad Testing Tool', 'http://www.linqpad.net/', 'Tools'),
+  createData3('.NET SDK', 'https://dotnet.microsoft.com/en-us/download/visual-studio-sdks', 'Tools'),
+  createData3('C# on Discord', 'https://aka.ms/csharp-discord', 'Communities & News'),
+  createData3('C# on Stack Overflow', 'https://stackoverflow.com/questions/tagged/c%23', 'Communities & News'),
+  createData3('.NET Developer Community', 'https://dotnet.microsoft.com/platform/community', 'Communities & News'),
+  createData3('The Productive C# Podcast', 'https://podcasters.spotify.com/pod/show/productivecsharp', 'Tools'),
+  createData3('The .NET Core Podcast', 'https://dotnetcore.show/', 'Tools'),
+  createData3('The Azure Podcast', 'https://azpodcast.azurewebsites.net/', 'Tools'),
 ];
 
 // C# - Courses & Tutorials
 const rows39 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('Explore Record Types', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records', 'Tutorials'),
+  createData3('Explore Top Level Statements', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/top-level-statements', 'Tutorials'),
+  createData3('Explore New Patterns', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/patterns-objects', 'Tutorials'),
+  createData3('Write a Custom String Interpolation Handler', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/interpolated-string-handler', 'Tutorials'),
+  createData3('Display Command Line', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/how-to-display-command-line-arguments', 'Tutorials'),
+  createData3('Intro to Classes', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/classes', 'Tutorials'),
+  createData3('Object Oriented C#', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop', 'Tutorials'),
+  createData3('Converting Types', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/safely-cast-using-pattern-matching-is-and-as-operators', 'Tutorials'),
+  createData3('Pattern Matching', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/pattern-matching', 'Tutorials'),
+  createData3('Using LINQ to Query Data', 'https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq', 'Tutorials'),
+  createData3('C# Tutorial for Beginners', 'https://docs.microsoft.com/dotnet/csharp/tutorials/?WT.mc_id=dotnet-35129-website', 'Tutorials'),
+  createData3('Mastering C# and .NET', 'https://www.educative.io/courses/mastering-c-sharp-and-dotnet?eid=5082902844932096&utm_campaign=brand_educative&utm_source=google&utm_medium=ppc&utm_content=performance_max&eid=5082902844932096&utm_term=&utm_campaign=%5BNew%5D+Performance+Max&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=18511913007&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjw-eKpBhAbEiwAqFL0msOmIogCXgIBfVwAIMnbtj_DMaG9Vmq4NXt1y-H88MbEw6WioPeyQRoCgYQQAvD_BwE', 'Courses'),
+  createData3('Learn C#', 'https://www.codecademy.com/learn/learn-c-sharp', 'Courses'),
+  createData3('Learn ASP.NET', 'https://www.codecademy.com/learn/learn-asp-net', 'Courses'),
+  createData3('Complete C# Masterclass', 'https://www.udemy.com/course/complete-csharp-masterclass/', 'Courses'),
+  createData3('C# for .NET Developers', 'https://www.coursera.org/learn/c-sharp-for-dot-net', 'Courses'),
+  createData3('Introduction to .NET Core', 'https://www.coursera.org/learn/intro-to-dotnet-core', 'Courses'),
+  createData3('Intro to Programming with C#: Build a Word Guessing Game', 'https://www.coursera.org/projects/introduction-to-programming-with-c-sharp-build-a-word-guessing-game', 'Courses'),
+  createData3('Learn to Code using C# on VS Code', 'https://www.coursera.org/projects/learn-code-csharp-vscode', 'Courses'),
+  createData3('C# Class Development', 'https://www.coursera.org/learn/csharp-class-development', 'Courses')
 ];
 
 // C# - Courses
@@ -945,50 +939,50 @@ const rows39 = [
 
 // C++ - Documentation & Tools
 const rows41 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // C++ - Courses & Tutorials
 const rows42 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('Fundamentals of C++', 'https://www.edx.org/learn/c-programming/ibm-fundamentals-of-c?index=product&objectID=course-251a4878-0711-4a8d-b1a4-38d96c032cc9&webview=false&campaign=Fundamentals+of+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
+  createData3('Object Oriented Implementation Using C++', 'https://www.edx.org/learn/object-oriented-programming/ibm-object-oriented-implementation-using-c?index=product&objectID=course-2d83311b-163c-4829-b6f3-a7085dda90b9&webview=false&campaign=Object+Oriented+Implementation+Using+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
+  createData3('Introduction to C++', 'https://www.edx.org/learn/c-plus-plus/microsoft-introduction-to-c?index=product&objectID=course-72abaeb3-0856-4e89-906a-8b6eef402a1f&webview=false&campaign=Introduction+to+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // C++ - Courses
@@ -1017,50 +1011,50 @@ const rows42 = [
 
 // CSS - Documentation & Tools
 const row44 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // CSS - Courses & Tutorials
 const rows45 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // CSS - Courses
@@ -1089,50 +1083,50 @@ const rows45 = [
 
 // HTML - Documentation & Tools
 const rows47 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // HTML - Courses & Tutorials
 const rows48 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // HTML - Courses
@@ -1161,50 +1155,50 @@ const rows48 = [
 
 // JavaScript - Documentation & Tools
 const rows50 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // JavaScript - Courses & Tutorials
 const rows51 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // JavaScript - Courses
@@ -1233,50 +1227,50 @@ const rows51 = [
 
 // Java - Documentation & Tools
 const rows53 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // Java - Courses & Tutorials
 const row54 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // Java - Courses
@@ -1305,50 +1299,50 @@ const row54 = [
 
 // Python - Documentation & Tools
 const rows56 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // Python - Courses & Tutorials
 const rows57 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // Python - Courses
@@ -1377,50 +1371,50 @@ const rows57 = [
 
 // Rust - Documentation & Tools
 const rows59 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // Rust - Courses & Tutorials
 const rows60 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // Rust - Courses
@@ -1449,50 +1443,50 @@ const rows60 = [
 
 // TypeScript - Documentation & Tools
 const rows62 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // TypeScript - Courses & Tutorials
 const rows63 = [
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
-  createData('', '', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 // TypeScript - Courses
@@ -3155,10 +3149,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows38.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3172,10 +3190,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows38.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -3215,7 +3257,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3230,7 +3272,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3256,7 +3298,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3271,7 +3313,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3316,7 +3358,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3331,7 +3373,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3357,7 +3399,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3372,7 +3414,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3417,7 +3459,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3432,7 +3474,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3458,7 +3500,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3473,7 +3515,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3518,7 +3560,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3533,7 +3575,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3559,7 +3601,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3574,7 +3616,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3619,7 +3661,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3634,7 +3676,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3660,7 +3702,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3675,7 +3717,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3720,7 +3762,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3735,7 +3777,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3761,7 +3803,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3776,7 +3818,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3821,7 +3863,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3836,7 +3878,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3862,7 +3904,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3877,7 +3919,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3922,7 +3964,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3937,7 +3979,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3963,7 +4005,7 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3978,7 +4020,7 @@ const ResourcesComponent = () => {
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>

@@ -1,7 +1,6 @@
 // import './Resources.css'
 import * as React from 'react'
-import { useSelector } from 'react-redux';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -29,7 +28,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { TableVirtuoso } from 'react-virtuoso';
 import './Resources.css'
 
 // Resource Types:
@@ -60,6 +58,10 @@ function createData2(challengeName, link, resourceType, relatedLanguages, diffic
 
 function createData3(resourceName, link, resourceType) {
   return { resourceName, link, resourceType }
+}
+
+function createData4(resourceName, link, relatedLanguages) {
+  return { resourceName, link, relatedLanguages }
 }
 
 const rows1 = [
@@ -567,14 +569,6 @@ const rows18 = [
   createData('Learn MongoDB: Leading NoSQL Database from Scratch', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-mongodb-leading-nosql-database-from-scratch%2F', 'Courses', 'NoSQL')
 ];
 
-// const rows19 = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
 const rows20 = [
   createData('Docker Documentations', 'https://docs.docker.com/', 'Documentation', "All"),
   createData('Docker and Kubernetes: The Complete Guide', 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Docker_v.PROF_la.EN_cc.US_ti.5470&utm_content=deal4584&utm_term=_._ag_82041664964_._ad_622358215405_._kw__._de_c_._dm__._pl__._ti_aud-1888734399789%3Adsa-774930034249_._li_9027373_._pd__._&matchtype=&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NGFY-zjF11NZSjGvGnCfNMvIt8ltibBCd-14EpIe2Mn3yt8NkuqbLxoCLg4QAvD_BwE', 'Courses', "All"),
@@ -679,325 +673,609 @@ const row24 = [
   createData3('A Machine Learning Tutorial with Examples: An Introduction to ML Theory and Its Applications', 'https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer', 'Tutorials')
 ];
 
-// Machine Learning - Documentation
-// const rows25 = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
+// Front End - Services & Tools
 const rows26 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Flexbox Froggy', 'https://flexboxfroggy.com/', 'Practices', 'CSS'),
+  createData('Flexbox Defense', 'https://www.flexboxdefense.com/', 'Practices', 'CSS'),
+  createData('Grid Garden', 'https://cssgridgarden.com/', 'Practices', 'CSS'),
+  createData('Codepen.io', 'https://codepen.io/pen/tour/welcome/start', 'Tools', 'CSS'),
+  createData('Replit', 'https://repl.it/', 'Tools', 'All'),
+  createData('CanIUse', 'https://caniuse.com/', 'Tools', 'All'),
+  createData('30 Seconds of Code', 'https://30secondsofcode.org/', 'Tools', 'All'),
+  createData('Roadmap.sh', 'https://roadmap.sh/', 'Tools', 'All'),
 ];
 
+// Front End - Courses
 const rows27 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('FreeCodeCamp', 'https://freecodecamp.org/', 'All'),
+  createData4('The Complete Front-End Web Development Course', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Ffront-end-web-development%2F', 'HTML, CSS, JavaScript'),
+  createData4('Programming Foundations with JavaScript', 'https://coursera.pxf.io/c/3294490/1164545/14726?u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fduke-programming-web', 'HTML, CSS, JavaScript'),
+  createData4('The Web Developer Bootcamp 2023', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fthe-web-developer-bootcamp%2F', 'HTML, CSS, JavaScript'),
+  createData4('Front End Web Development: Get Started', 'http://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Ffront-end-web-app-html5-javascript-css', 'HTML, CSS, JavaScript'),
+  createData4('Front End Web Development with React', 'https://coursera.pxf.io/c/3294490/1164545/14726?u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Ffront-end-react', 'HTML, CSS, JavaScript'),
+  createData4('Become a Front-End Developer', 'https://www.educative.io/track/beginning-front-end-developer?affiliate_id=5073518643380224', 'HTML, CSS, JavaScript'),
+  createData4('Meta Front-End Developer', 'https://www.coursera.org/professional-certificates/meta-front-end-developer', 'HTML, CSS, JavaScript')
 ];
 
+// Front End - Tutorials
 const rows28 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('JavaScript.info', 'https://javascript.info/', 'JavaScript'),
+  createData4('CSS Tricks', 'https://css-tricks.com/', 'HTML, CSS, JavaScript'),
+  createData4('JavaScript30', 'https://javascript30.com/', 'JavaScript'),
+  createData4('CareerFoundry', 'https://careerfoundry.com/en/tutorials/web-development-for-beginners/', 'HTML, CSS, JavaScript'),
+  createData4('Frontend Web Development: In-Depth Project Tutorial', 'https://www.freecodecamp.org/news/frontend-web-development-in-depth-project-tutorial/', 'HTML, CSS, JavaScript')
 ];
 
+// Front End - Documentation
 const rows29 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Mozilla Developer Network Documentation', 'https://developer.mozilla.org/', 'HTML, CSS, JavaScript'),
+  createData4('HTML Reference Documentation', 'https://htmlreference.io/', 'HTML'),
+  createData4('CSS Reference Documentation', 'https://cssreference.io/', 'CSS'),
+  createData4('Goalkicker', 'https://goalkicker.com/', 'All'),
+  createData4('W3resource', 'https://w3resource.com/', 'All'),
+  createData4('React Documentation', 'https://react.dev/', 'JavaScript'),
+  createData4('Angular Documentation', 'https://angular.io/docs', 'TypeScript, JavaScript'),
+  createData4('Next.js Documentation', 'https://nextjs.org/docs', 'JavaScript')
 ];
 
+// Back End - Services & Tools
 const rows30 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Awesome Nodejs', 'https://github.com/sindresorhus/awesome-nodejs', 'Packages & Utilities', 'JavaScript'),
+  createData('Attacks', 'https://owasp.org/www-community/attacks/', 'Tools', 'All'),
+  createData('Exhaustive Comparison of Database Types', 'https://www.cockroachlabs.com/docs/stable/cockroachdb-in-comparison.html', 'Tools', 'All'),
+  createData('Optimizing MySQL Performance', 'https://www.oreilly.com/library/view/high-performance-mysql/9781449332471/ch01.html', 'Tools', 'SQL'),
+  createData('Deconstructing Graph Based DBs', 'https://neo4j.com/blog/graph-databases-for-beginners-wait-what-do-you-mean-by-graph/', 'Tools', 'All'),
+  createData('Public APIs', 'https://public-apis.io/', 'Tools', 'All'),
+  createData('JSONPlaceholder', 'https://jsonplaceholder.typicode.com/', 'Tools', 'All'),
+  createData('Rest Cookbook', 'https://restcookbook.com/', 'Tools', 'All'),
+  createData('Zero to Hero Guide for Microservices', 'https://martinfowler.com/microservices/', 'Tools', 'All'),
+  createData('Firebase', 'https://firebase.google.com/?gad=1&gclid=CjwKCAjw-eKpBhAbEiwAqFL0mhJbeETDr_fNIIDYBGhSJpSh1LzUl-DtR7GmmfTb3yv8B5evCqdIWRoCMqYQAvD_BwE&gclsrc=aw.ds', 'Tools', 'All'),
+  createData('Back4App', 'https://www.back4app.com/', 'Services', 'All'),
+  createData('Heroku', 'https://www.heroku.com/', 'Services', 'All'),
+  createData('PostmanAPI', 'https://www.postman.com/', 'Services', 'All'),
+  createData('Podcast - The Backend Engineering Show', '', 'Tools', 'All'),
 ];
 
+// Back End - Courses
 const rows31 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('AWS Training', 'https://www.aws.training/Dashboard/', 'All'),
+  createData4('Back-End Application Development with JavaScript', 'https://www.shiksha.com/online-courses/back-end-application-development-with-javascript-course-unofmil7', 'JavaScript'),
+  createData4('Using Python to Interact with the Operating System', 'https://www.shiksha.com/online-courses/using-python-to-interact-with-the-operating-system-course-courl2225', 'Python'),
+  createData4('Communication Design Patterns for Backend Development', 'https://www.freecodecamp.org/news/communication-design-patterns-for-backend-development/', 'All'),
+  createData4('How to Handle File Uploads on the Back End in Node.js and Nuxt', 'https://www.freecodecamp.org/news/handle-file-uploads-on-the-backend-in-node-js-nuxt/', 'All'),
+  createData4('Backend Web Development with Python - Full Course', 'https://www.freecodecamp.org/news/backend-web-development-with-python-full-course/', 'Python'),
+  createData4('Learn Node.js and Express - Free 8-hour Back End Development Course', 'https://www.freecodecamp.org/news/free-8-hour-node-express-course/', 'JavaScript'),
+  createData4('Decentralized Applications Architecture: Back End, Security and Design Patterns', 'https://www.freecodecamp.org/news/how-to-design-a-secure-backend-for-your-decentralized-application-9541b5d8bddb/', 'All')
 ];
 
+// Back End - Tutorials
 const rows32 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Create a React App with a .NET Core Backend', 'https://www.freecodecamp.org/news/create-a-react-app-with-a-dot-net-backend/', 'All'),
+  createData4('How to Build and Deploy a Backend App with Express, Postgres, GitHub, and Heroku', 'https://www.freecodecamp.org/news/how-to-build-a-backend-application/', 'All'),
+  createData4('How to Build a Complete Back End System with Serverless', 'https://www.freecodecamp.org/news/complete-back-end-system-with-serverless/', 'All'),
+  createData4('How to Create the Backend of a Crypto Tracking App Using Swift and Laravel', 'https://www.freecodecamp.org/news/how-to-create-the-backend-of-a-crypto-tracking-app-using-swift-and-laravel-1d9122bc290b/', 'All'),
+  createData4('How to Add a Powerful Search Engine to Your Rails Backend', 'https://www.freecodecamp.org/news/how-to-add-a-powerful-search-engine-to-your-rails-backend-57bced889032/', 'Ruby')
 ];
 
+// Back End - Documentation
 const rows33 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Node Best Practices', 'https://github.com/goldbergyoni/nodebestpractices', 'JavaScript'),
+  createData4('Flask Documentation', 'https://flask.palletsprojects.com/en/3.0.x/', 'Python'),
+  createData4('Express.js Documentation', 'https://expressjs.com/', 'JavaScript'),
+  createData4('Ruby on Rails Documentation', 'https://api.rubyonrails.org/', 'Ruby'),
+  createData4('Django Documentation', 'https://docs.djangoproject.com/en/4.2/', 'Python'),
+  createData4('Laravel Documentation', 'https://laravel.com/docs/10.x/readme', 'PHP'),
+  createData4('CakePHP Documentation', 'https://book.cakephp.org/4/en/index.html', 'PHP'),
+  createData4('Spring Framework Documentation', 'https://docs.spring.io/spring-framework/reference/index.html', 'Java'),
+  createData4('ASP.NET Documentation', 'https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0', 'C#')
 ];
 
+// Game Development - Services & Tools
 const row34 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Unity', 'https://unity.com/pages/unity-pro-buy-now?utm_source=google&utm_medium=cpc&utm_campaign=cc_dd_upr_amer_amer-t1_en_pu_sem-gg_acq_br-pr_2023-01_brand-at1_cc3022_ev-br_id:71700000105927797&utm_content=cc_dd_upr_amer_pu_sem_gg_ev-br_pros_x_npd_cpc_kw_sd_all_x_x_brand_id:58700008262791723&utm_term=unity&&&&&gad=1&gclid=CjwKCAjw-eKpBhAbEiwAqFL0mq_wKjE7HwqiEwl4oDoUJj0tfj4QOpLpNKu4mY22TJXOOYcIUWIQ-RoC1x0QAvD_BwE&gclsrc=aw.ds', 'Tools', 'C#'),
+  createData('Unreal Engine', 'https://www.unrealengine.com/en-US/?utm_source=GoogleSearch&utm_medium=Performance&utm_campaign=17086214833&utm_id=135367635839&utm_term=unreal%20engine&utm_content=646550206948', 'Tools', 'C++'),
+  createData('Adobe Animate CC', 'https://www.adobe.com/products/animate.html', 'Tools', 'All'),
+  createData('2D Assets', 'https://github.com/Kavex/GameDev-Resources#2d-assets', 'Tools', 'All'),
+  createData('3D Assets', 'https://github.com/Kavex/GameDev-Resources#3d-assets', 'Tools', 'All'),
+  createData('Audio Assets', 'https://github.com/Kavex/GameDev-Resources#audio-assets', 'Tools', 'All'),
+  createData('Multiple Graphic Collections', 'https://github.com/Kavex/GameDev-Resources#multiple-graphic-collections', 'Tools', 'All'),
+  createData('2D Engines & Frameworks', 'https://github.com/Kavex/GameDev-Resources#2d-engines-and-frameworks', 'Tools', 'All'),
+  createData('3D Engines & Frameworks', 'https://github.com/Kavex/GameDev-Resources#3d-engines-and-frameworks', 'Tools', 'All'),
+  createData('Game Source Code', 'https://github.com/Kavex/GameDev-Resources#game-source-code', 'Tools', 'All'),
+  createData('Modules & Additional APIs', 'https://github.com/Kavex/GameDev-Resources#modules-and-additional-api', 'Tools', 'All'),
+  createData('Idea Generators', 'https://github.com/Kavex/GameDev-Resources#idea-generators', 'Tools', 'All'),
+  createData('Mechanics', 'https://github.com/Kavex/GameDev-Resources#mechanics', 'Tools', 'All'),
+  createData('Game Development Books', 'https://github.com/Kavex/GameDev-Resources#books', 'Tools', 'All'),
+  createData('Animation Tools', 'https://github.com/Kavex/GameDev-Resources#animation', 'Tools', 'All'),
+  createData('Audio Tools', 'https://github.com/Kavex/GameDev-Resources#audio-tools', 'Tools', 'All'),
+  createData('Bitmap Compression Tools', 'https://github.com/Kavex/GameDev-Resources#bitmap-compression', 'Tools', 'All'),
+  createData('Charas Character Generator', 'http://charas-project.net/index.php', 'Tools', 'All'),
+  createData('Game Design Tools', 'https://github.com/Kavex/GameDev-Resources#design-tools', 'Tools', 'All'),
+  createData('IDEs and Code Editors', 'https://github.com/Kavex/GameDev-Resources#ide-and-editors', 'Tools', 'All'),
+  createData('Modeling Tools', 'https://github.com/Kavex/GameDev-Resources#modeling', 'Tools', 'All'),
+  createData('Pixel Editors', 'https://github.com/Kavex/GameDev-Resources#pixel-editor', 'Tools', 'All'),
+  createData('Spritesheets', 'https://github.com/Kavex/GameDev-Resources#spritesheet', 'Tools', 'All'),
+  createData('Story Design', 'https://github.com/Kavex/GameDev-Resources#story-design', 'Tools', 'All'),
+  createData('Terrain Generators', 'https://github.com/Kavex/GameDev-Resources#terrain-generators', 'Tools', 'All'),
+  createData('Texturing Tools', 'https://github.com/Kavex/GameDev-Resources#texturing', 'Tools', 'All'),
+  createData('Tile/Level Editors', 'https://github.com/Kavex/GameDev-Resources#tilelevel-editors', 'Tools', 'All'),
+  createData('Vector/Image Editors', 'https://github.com/Kavex/GameDev-Resources#vectorimage-editor', 'Tools', 'All')
 ];
 
+// Game Development - Courses
 const rows35 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Animate CC Game Development', 'https://www.pluralsight.com/courses/animate-cc-game-development', 'All'),
+  createData4('How to Start Your Career In Games Development', 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj32_GN_pGCAxXPnGoFHZBRBs8QFnoECBoQAQ&url=https%3A%2F%2Fwww.futurelearn.com%2Fcourses%2Fhow-to-start-your-career-in-games-development&usg=AOvVaw3TTgRuWiBDyIgzLABuLkdQ&opi=89978449', 'All'),
+  createData4('Game Design and Development 1: 2D Shooter', 'https://www.coursera.org/learn/game-design-and-development-1', 'C#'),
+  createData4('2D Game Development with libGDX', 'https://www.udacity.com/course/2d-game-development-with-libgdx--ud405', 'All'),
+  createData4('Unity Game Development: Create 2D and 3D Games with C#', 'https://www.udemy.com/course/devslopes-unity3d/', 'C#'),
+  createData4('Unity Multiplayer Game Development with Node', 'https://www.pluralsight.com/courses/unity-multiplayer-game-dev-node-2454', 'C#, JavaScript'),
+  createData4('Game Development for Modern Platforms', 'https://www.classcentral.com/course/gamedev-platforms-4315', 'All'),
+  createData4('Game Design & Development', 'https://www.classcentral.com/course/game-development-18701', 'C#'),
+  createData4('Unity Learn', 'https://learn.unity.com/', 'C#'),
+  createData4('Unreal Engine 5: The Ultimate Beginner Course', 'https://www.udemy.com/course/unreal-engine-5/', 'C++'),
+  createData4('Unreal Engine 5 (UE5): The Complete Beginner\'s Course', 'https://www.udemy.com/course/unreal-engine-5-beginners-course/', 'C++')
 ];
 
+// Game Development - Tutorials
 const rows36 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Brackeys YouTube Tutorials', 'https://www.youtube.com/@Brackeys', 'All'),
+  createData4('Making Your First FPS in Unity with FPS Microgame', 'https://www.youtube.com/watch?v=jE3ZJ_tCGTo', 'C#'),
+  createData4('How to Make a 2D Game', 'https://www.youtube.com/watch?v=cqd1u_dfrkc', 'C#'),
+  createData4('How to Make Your First Game Today', 'https://www.youtube.com/watch?v=pCBqgREiSUE', 'C#'),
+  createData4('REALTIME LIGHTING in Unity', 'https://www.youtube.com/watch?v=wwm98VdzD8s', 'C#'),
+  createData4('Unity NavMesh Tutorial', 'https://www.youtube.com/watch?v=CHV1ymlw-P8', 'C#'),
+  createData4('How to Make an RPG in Unity', 'https://www.youtube.com/playlist?list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7', 'C#'),
+  createData4('The Unity Tutorial for Complete Beginners', 'https://www.youtube.com/watch?v=XtQMytORBmM&pp=ygUOdW5pdHkgdHV0b3JpYWw%3D', 'C#'),
+  createData4('Unreal Engine 5 Beginner Tutorials', 'https://www.youtube.com/watch?v=XRmn-EYt8wI&list=PLncmXJdh4q88DFCEVuGpOY3AGQwBvoQnh', 'C++'),
+  createData4('3D Game Shaders for Beginners', 'https://github.com/lettier/3d-game-shaders-for-beginners', 'All'),
+  createData4('Simple HTML5 Canvas Game', 'http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/', 'HTML'),
+  createData4('HTML5 Game Development', 'https://www.udacity.com/course/html5-game-development--cs255', 'HTML'),
+  createData4('Pixel Art Tutorial Basics for Beginners', 'http://gasara.deviantart.com/art/Pixel-Art-Tutorial-Basics-for-Beginners-356743783', 'All'),
+  createData4('Interactive 3D Graphics', 'https://www.udacity.com/course/interactive-3d-graphics--cs291', 'All'),
+  createData4('How to Make Game Music with FL Studio', 'https://www.youtube.com/watch?v=pkvx-ipbmVg', 'All'),
+  createData4('Advanced JS: Games & Visualizations', 'https://www.khanacademy.org/computing/cs/programming-games-visualizations', 'JavaScript')
 ];
 
+// Game Development - Documentation
 const rows37 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Unity Documentation', 'https://docs.unity.com/', 'C#'),
+  createData4('Unreal Engine Documentation', 'https://docs.unrealengine.com/5.3/en-US/', 'C++'),
+  createData4('Defold Game Object API Documentation', 'https://defold.com/ref/go/', 'JavaScript'),
+  createData4('Glide Engine Documentation', 'https://cocoatoucher.github.io/Glide/index.html', 'Swift'),
+  createData4('LibGDX Documentation', 'https://libgdx.com/dev/', 'Java'),
+  createData4('PyGame Documentation', 'https://github.com/pygame/pygame', 'Python'),
+  createData4('TileEngine Documentation', 'https://www.tilengine.org/doc/index.html', 'C#, Java, Python'),
+  createData4('Azul3D Documentation', 'https://azul3d.org/doc/install', 'Go'),
+  createData4('Cinder Documentation', 'https://libcinder.org/', 'C++'),
+  createData4('Evergine Documentation', 'https://docs.evergine.com/2023.9.28/', 'C#'),
+  createData4('Godot Documentation', 'https://docs.godotengine.org/en/stable/index.html', 'C, C#, C++')
 ];
 
+// C# - Documentation & Tools
 const rows38 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('C# Documentation', 'https://learn.microsoft.com/en-us/dotnet/csharp/', 'Documentation'),
+  createData3('C# Concepts Documentation', 'https://docs.microsoft.com/dotnet/csharp/programming-guide/?WT.mc_id=dotnet-35129-website', 'Documentation'),
+  createData3('C# Reference Documentation', 'https://docs.microsoft.com/dotnet/csharp/language-reference/?WT.mc_id=dotnet-35129-website', 'Documentation'),
+  createData3('Visual Studio Code', 'https://code.visualstudio.com/', 'Tools'),
+  createData3('MonoDevelop Cross Platform IDE', 'http://www.monodevelop.com/', 'Tools'),
+  createData3('dotPeek .NET Decompiler', 'https://www.jetbrains.com/decompiler/', 'Tools'),
+  createData3('LINQPad Testing Tool', 'http://www.linqpad.net/', 'Tools'),
+  createData3('.NET SDK', 'https://dotnet.microsoft.com/en-us/download/visual-studio-sdks', 'Tools'),
+  createData3('C# on Discord', 'https://aka.ms/csharp-discord', 'Communities & News'),
+  createData3('C# on Stack Overflow', 'https://stackoverflow.com/questions/tagged/c%23', 'Communities & News'),
+  createData3('.NET Developer Community', 'https://dotnet.microsoft.com/platform/community', 'Communities & News'),
+  createData3('The Productive C# Podcast', 'https://podcasters.spotify.com/pod/show/productivecsharp', 'Tools'),
+  createData3('The .NET Core Podcast', 'https://dotnetcore.show/', 'Tools'),
+  createData3('The Azure Podcast', 'https://azpodcast.azurewebsites.net/', 'Tools'),
 ];
 
+// C# - Courses & Tutorials
 const rows39 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('Explore Record Types', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records', 'Tutorials'),
+  createData3('Explore Top Level Statements', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/top-level-statements', 'Tutorials'),
+  createData3('Explore New Patterns', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/patterns-objects', 'Tutorials'),
+  createData3('Write a Custom String Interpolation Handler', 'https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/interpolated-string-handler', 'Tutorials'),
+  createData3('Display Command Line', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/how-to-display-command-line-arguments', 'Tutorials'),
+  createData3('Intro to Classes', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/classes', 'Tutorials'),
+  createData3('Object Oriented C#', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop', 'Tutorials'),
+  createData3('Converting Types', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/safely-cast-using-pattern-matching-is-and-as-operators', 'Tutorials'),
+  createData3('Pattern Matching', 'https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/pattern-matching', 'Tutorials'),
+  createData3('Using LINQ to Query Data', 'https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq', 'Tutorials'),
+  createData3('C# Tutorial for Beginners', 'https://docs.microsoft.com/dotnet/csharp/tutorials/?WT.mc_id=dotnet-35129-website', 'Tutorials'),
+  createData3('Mastering C# and .NET', 'https://www.educative.io/courses/mastering-c-sharp-and-dotnet?eid=5082902844932096&utm_campaign=brand_educative&utm_source=google&utm_medium=ppc&utm_content=performance_max&eid=5082902844932096&utm_term=&utm_campaign=%5BNew%5D+Performance+Max&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=18511913007&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjw-eKpBhAbEiwAqFL0msOmIogCXgIBfVwAIMnbtj_DMaG9Vmq4NXt1y-H88MbEw6WioPeyQRoCgYQQAvD_BwE', 'Courses'),
+  createData3('Learn C#', 'https://www.codecademy.com/learn/learn-c-sharp', 'Courses'),
+  createData3('Learn ASP.NET', 'https://www.codecademy.com/learn/learn-asp-net', 'Courses'),
+  createData3('Complete C# Masterclass', 'https://www.udemy.com/course/complete-csharp-masterclass/', 'Courses'),
+  createData3('C# for .NET Developers', 'https://www.coursera.org/learn/c-sharp-for-dot-net', 'Courses'),
+  createData3('Introduction to .NET Core', 'https://www.coursera.org/learn/intro-to-dotnet-core', 'Courses'),
+  createData3('Intro to Programming with C#: Build a Word Guessing Game', 'https://www.coursera.org/projects/introduction-to-programming-with-c-sharp-build-a-word-guessing-game', 'Courses'),
+  createData3('Learn to Code using C# on VS Code', 'https://www.coursera.org/projects/learn-code-csharp-vscode', 'Courses'),
+  createData3('C# Class Development', 'https://www.coursera.org/learn/csharp-class-development', 'Courses')
 ];
 
-const rows40 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// C++ - Documentation & Tools
 const rows41 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// C++ - Courses & Tutorials
 const rows42 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('Fundamentals of C++', 'https://www.edx.org/learn/c-programming/ibm-fundamentals-of-c?index=product&objectID=course-251a4878-0711-4a8d-b1a4-38d96c032cc9&webview=false&campaign=Fundamentals+of+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
+  createData3('Object Oriented Implementation Using C++', 'https://www.edx.org/learn/object-oriented-programming/ibm-object-oriented-implementation-using-c?index=product&objectID=course-2d83311b-163c-4829-b6f3-a7085dda90b9&webview=false&campaign=Object+Oriented+Implementation+Using+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
+  createData3('Introduction to C++', 'https://www.edx.org/learn/c-plus-plus/microsoft-introduction-to-c?index=product&objectID=course-72abaeb3-0856-4e89-906a-8b6eef402a1f&webview=false&campaign=Introduction+to+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows43 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// CSS - Documentation & Tools
 const row44 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// CSS - Courses & Tutorials
 const rows45 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows46 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// HTML - Documentation & Tools
 const rows47 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// HTML - Courses & Tutorials
 const rows48 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows49 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// JavaScript - Documentation & Tools
 const rows50 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// JavaScript - Courses & Tutorials
 const rows51 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows52 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// Java - Documentation & Tools
 const rows53 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// Java - Courses & Tutorials
 const row54 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows55 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// Python - Documentation & Tools
 const rows56 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// Python - Courses & Tutorials
 const rows57 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows58 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// Rust - Documentation & Tools
 const rows59 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// Rust - Courses & Tutorials
 const rows60 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
-const rows61 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+// TypeScript - Documentation & Tools
 const rows62 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
+// TypeScript - Courses & Tutorials
 const rows63 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-const row64 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
+  createData3('', '', ''),
 ];
 
 const drawerWidth = 240;
@@ -1171,9 +1449,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1252,9 +1527,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1293,9 +1565,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1336,9 +1605,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1377,9 +1643,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1418,9 +1681,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1459,9 +1719,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1576,9 +1833,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1617,9 +1871,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1658,9 +1909,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1739,9 +1987,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1780,9 +2025,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1821,9 +2063,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1862,9 +2101,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1876,23 +2112,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* NoSQL */}
-              {/* <Accordion expanded={expanded === 'panel19'} onChange={handleChange('panel19')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel19bh-content"
-                  id="panel19bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>NoSQL</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Containerization</h4>
@@ -1922,9 +2141,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1963,9 +2179,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2000,7 +2213,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -2009,13 +2221,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2041,7 +2249,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -2050,13 +2257,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2082,7 +2285,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -2091,13 +2293,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2105,23 +2303,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-                {/* Documentation */}
-                {/* <Accordion expanded={expanded === 'panel25'} onChange={handleChange('panel25')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel25bh-content"
-                  id="panel25bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Front-End Development</h4>
@@ -2135,10 +2316,31 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Services & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows26.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2152,10 +2354,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows27.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2169,10 +2390,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows28.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2186,10 +2426,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows29.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2205,10 +2464,31 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Services & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows30.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2222,10 +2502,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows31.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2239,10 +2538,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows32.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2256,10 +2574,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows33.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2275,10 +2612,31 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Services & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row34.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2292,10 +2650,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows35.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2309,10 +2686,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows36.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2326,10 +2722,29 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows37.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2345,13 +2760,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel38bh-content"
                   id="panel38bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows38.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2362,30 +2796,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel39bh-content"
                   id="panel39bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel40'} onChange={handleChange('panel40')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel40bh-content"
-                  id="panel40bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows39.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2398,13 +2834,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel41bh-content"
                   id="panel41bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows41.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2415,30 +2870,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel42bh-content"
                   id="panel42bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel43'} onChange={handleChange('panel43')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel43bh-content"
-                  id="panel43bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows42.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2451,13 +2908,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel44bh-content"
                   id="panel44bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row44.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2468,30 +2944,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel45bh-content"
                   id="panel45bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel46'} onChange={handleChange('panel46')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel46bh-content"
-                  id="panel46bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows45.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2504,13 +2982,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel47bh-content"
                   id="panel47bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows47.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2521,30 +3018,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel48bh-content"
                   id="panel48bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel49'} onChange={handleChange('panel49')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel49bh-content"
-                  id="panel49bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows48.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2557,13 +3056,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel50bh-content"
                   id="panel50bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows50.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2574,30 +3092,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel51bh-content"
                   id="panel51bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel52'} onChange={handleChange('panel52')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel52bh-content"
-                  id="panel52bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows51.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2610,13 +3130,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel53bh-content"
                   id="panel53bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows53.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2627,30 +3166,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel54bh-content"
                   id="panel54bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel55'} onChange={handleChange('panel55')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel55bh-content"
-                  id="panel55bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row54.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2663,13 +3204,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel56bh-content"
                   id="panel56bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows56.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2680,30 +3240,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel57bh-content"
                   id="panel57bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel58'} onChange={handleChange('panel58')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel58bh-content"
-                  id="panel58bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows57.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2716,13 +3278,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel59bh-content"
                   id="panel59bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows59.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2733,30 +3314,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel60bh-content"
                   id="panel60bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel61'} onChange={handleChange('panel61')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel61bh-content"
-                  id="panel61bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows60.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -2769,13 +3352,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel62bh-content"
                   id="panel62bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows62.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2786,30 +3388,32 @@ const ResourcesComponent = () => {
                   aria-controls="panel63bh-content"
                   id="panel63bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses & Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              {/* Continue Learning */}
-              <Accordion expanded={expanded === 'panel64'} onChange={handleChange('panel64')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel64bh-content"
-                  id="panel64bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows63.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>

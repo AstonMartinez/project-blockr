@@ -1,5 +1,4 @@
 import './CreateSet.css'
-import AddIcon from '@mui/icons-material/Add';
 import IndividualQ from './IndividualQ';
 import { useState } from 'react'
 import Textarea from '@mui/joy/Textarea';
@@ -7,7 +6,7 @@ import Input from '@mui/joy/Input';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 import Button from '@mui/joy/Button';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -29,8 +28,6 @@ import { useDispatch } from 'react-redux';
 import { createFlashCardSet } from '../../store/cards';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
 import { logout } from '../../store/session';
 
 const drawerWidth = 240;
@@ -96,7 +93,6 @@ const CreateSet = () => {
     for(let i = 1; i < numCards; i++) {
         cardsArr.push({id: i, front: null, back: null})
     }
-    const [finalCardArr, setFinalCardArr] = useState(cardsArr)
 
     const handleSubmit = async (e) => {
         e.preventDefault()

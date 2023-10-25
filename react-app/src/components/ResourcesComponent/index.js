@@ -1,7 +1,6 @@
 // import './Resources.css'
 import * as React from 'react'
-import { useSelector } from 'react-redux';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -29,7 +28,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { TableVirtuoso } from 'react-virtuoso';
 import './Resources.css'
 
 // Resource Types:
@@ -571,14 +569,6 @@ const rows18 = [
   createData('Learn MongoDB: Leading NoSQL Database from Scratch', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-mongodb-leading-nosql-database-from-scratch%2F', 'Courses', 'NoSQL')
 ];
 
-// const rows19 = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
 const rows20 = [
   createData('Docker Documentations', 'https://docs.docker.com/', 'Documentation', "All"),
   createData('Docker and Kubernetes: The Complete Guide', 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Docker_v.PROF_la.EN_cc.US_ti.5470&utm_content=deal4584&utm_term=_._ag_82041664964_._ad_622358215405_._kw__._de_c_._dm__._pl__._ti_aud-1888734399789%3Adsa-774930034249_._li_9027373_._pd__._&matchtype=&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NGFY-zjF11NZSjGvGnCfNMvIt8ltibBCd-14EpIe2Mn3yt8NkuqbLxoCLg4QAvD_BwE', 'Courses', "All"),
@@ -682,15 +672,6 @@ const row24 = [
   createData3('Machine Learning Tutorial - TutorialsPoint', 'https://www.tutorialspoint.com/machine_learning/index.htm', 'Tutorials'),
   createData3('A Machine Learning Tutorial with Examples: An Introduction to ML Theory and Its Applications', 'https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer', 'Tutorials')
 ];
-
-// Machine Learning - Documentation
-// const rows25 = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
 
 // Front End - Services & Tools
 const rows26 = [
@@ -913,30 +894,6 @@ const rows39 = [
   createData3('C# Class Development', 'https://www.coursera.org/learn/csharp-class-development', 'Courses')
 ];
 
-// C# - Courses
-// const rows40 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
-
 // C++ - Documentation & Tools
 const rows41 = [
   createData3('', '', ''),
@@ -984,30 +941,6 @@ const rows42 = [
   createData3('', '', ''),
   createData3('', '', ''),
 ];
-
-// C++ - Courses
-// const rows43 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
 
 // CSS - Documentation & Tools
 const row44 = [
@@ -1057,30 +990,6 @@ const rows45 = [
   createData3('', '', ''),
 ];
 
-// CSS - Courses
-// const rows46 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
-
 // HTML - Documentation & Tools
 const rows47 = [
   createData3('', '', ''),
@@ -1128,30 +1037,6 @@ const rows48 = [
   createData3('', '', ''),
   createData3('', '', ''),
 ];
-
-// HTML - Courses
-// const rows49 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
 
 // JavaScript - Documentation & Tools
 const rows50 = [
@@ -1201,30 +1086,6 @@ const rows51 = [
   createData3('', '', ''),
 ];
 
-// JavaScript - Courses
-// const rows52 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
-
 // Java - Documentation & Tools
 const rows53 = [
   createData3('', '', ''),
@@ -1272,30 +1133,6 @@ const row54 = [
   createData3('', '', ''),
   createData3('', '', ''),
 ];
-
-// Java - Courses
-// const rows55 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
 
 // Python - Documentation & Tools
 const rows56 = [
@@ -1345,30 +1182,6 @@ const rows57 = [
   createData3('', '', ''),
 ];
 
-// Python - Courses
-// const rows58 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
-
 // Rust - Documentation & Tools
 const rows59 = [
   createData3('', '', ''),
@@ -1417,30 +1230,6 @@ const rows60 = [
   createData3('', '', ''),
 ];
 
-// Rust - Courses
-// const rows61 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
-
 // TypeScript - Documentation & Tools
 const rows62 = [
   createData3('', '', ''),
@@ -1488,30 +1277,6 @@ const rows63 = [
   createData3('', '', ''),
   createData3('', '', ''),
 ];
-
-// TypeScript - Courses
-// const row64 = [
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-//   createData4('', '', ''),
-// ];
 
 const drawerWidth = 240;
 
@@ -1684,9 +1449,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1765,9 +1527,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1806,9 +1565,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1849,9 +1605,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1890,9 +1643,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1931,9 +1681,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -1972,9 +1719,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2089,9 +1833,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2130,9 +1871,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2171,9 +1909,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2252,9 +1987,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2293,9 +2025,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2334,9 +2063,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2375,9 +2101,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2389,23 +2112,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* NoSQL */}
-              {/* <Accordion expanded={expanded === 'panel19'} onChange={handleChange('panel19')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel19bh-content"
-                  id="panel19bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>NoSQL</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Containerization</h4>
@@ -2435,9 +2141,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2476,9 +2179,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2513,7 +2213,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -2522,13 +2221,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2554,7 +2249,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -2563,13 +2257,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2595,7 +2285,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -2604,13 +2293,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2618,23 +2303,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-                {/* Documentation */}
-                {/* <Accordion expanded={expanded === 'panel25'} onChange={handleChange('panel25')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel25bh-content"
-                  id="panel25bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Front-End Development</h4>
@@ -2664,9 +2332,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2695,7 +2360,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -2705,13 +2369,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2736,7 +2396,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -2746,13 +2405,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2777,7 +2432,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -2787,13 +2441,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2830,9 +2480,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -2861,7 +2508,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -2871,13 +2517,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2902,7 +2544,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -2912,13 +2553,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2943,7 +2580,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -2953,13 +2589,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -2996,9 +2628,6 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
@@ -3027,7 +2656,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -3037,13 +2665,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3068,7 +2692,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -3078,13 +2701,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3109,7 +2728,6 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
                         </TableRow>
                       </TableHead>
@@ -3119,13 +2737,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3156,7 +2770,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3165,13 +2778,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3196,23 +2805,18 @@ const ResourcesComponent = () => {
                         <TableRow>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
-                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
                           <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {rows38.map((row) => (
+                        {rows39.map((row) => (
                           <TableRow
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3220,23 +2824,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel40'} onChange={handleChange('panel40')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel40bh-content"
-                  id="panel40bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>C++</h4>
@@ -3257,7 +2844,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3266,13 +2852,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3298,7 +2880,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3307,13 +2888,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3321,23 +2898,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel43'} onChange={handleChange('panel43')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel43bh-content"
-                  id="panel43bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>CSS</h4>
@@ -3358,7 +2918,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3367,13 +2926,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3399,7 +2954,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3408,13 +2962,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3422,23 +2972,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel46'} onChange={handleChange('panel46')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel46bh-content"
-                  id="panel46bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>HTML</h4>
@@ -3459,7 +2992,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3468,13 +3000,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3500,7 +3028,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3509,13 +3036,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3523,23 +3046,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel49'} onChange={handleChange('panel49')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel49bh-content"
-                  id="panel49bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>JavaScript</h4>
@@ -3560,7 +3066,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3569,13 +3074,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3601,7 +3102,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3610,13 +3110,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3624,23 +3120,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel52'} onChange={handleChange('panel52')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel52bh-content"
-                  id="panel52bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Java</h4>
@@ -3661,7 +3140,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3670,13 +3148,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3702,7 +3176,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3711,13 +3184,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3725,23 +3194,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel55'} onChange={handleChange('panel55')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel55bh-content"
-                  id="panel55bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Python</h4>
@@ -3762,7 +3214,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3771,13 +3222,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3803,7 +3250,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3812,13 +3258,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3826,23 +3268,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel58'} onChange={handleChange('panel58')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel58bh-content"
-                  id="panel58bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>Rust</h4>
@@ -3863,7 +3288,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3872,13 +3296,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3904,7 +3324,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3913,13 +3332,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -3927,23 +3342,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel61'} onChange={handleChange('panel61')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel61bh-content"
-                  id="panel61bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
             <div className='resource-section'>
               <h4 style={{"marginLeft": "10px"}}>TypeScript</h4>
@@ -3964,7 +3362,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -3973,13 +3370,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -4005,7 +3398,6 @@ const ResourcesComponent = () => {
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
                           <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
                           <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
-                          {/* <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell> */}
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -4014,13 +3406,9 @@ const ResourcesComponent = () => {
                             key={row.resourceName}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           >
-                            {/* <TableCell component="th" scope="row">
-                              {row.resourceName}
-                            </TableCell> */}
                             <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
                             <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
                             <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
-                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
                           </TableRow>
                         ))}
                       </TableBody>
@@ -4028,23 +3416,6 @@ const ResourcesComponent = () => {
                   </TableContainer>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Continue Learning */}
-              {/* <Accordion expanded={expanded === 'panel64'} onChange={handleChange('panel64')}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel64bh-content"
-                  id="panel64bh-header"
-                >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion> */}
             </div>
           </div>
         </div>

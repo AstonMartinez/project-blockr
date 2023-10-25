@@ -789,252 +789,734 @@ const rows33 = [
   createData4('ASP.NET Documentation', 'https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0', 'C#')
 ];
 
+// Game Development - Services & Tools
 const row34 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Unity', 'https://unity.com/pages/unity-pro-buy-now?utm_source=google&utm_medium=cpc&utm_campaign=cc_dd_upr_amer_amer-t1_en_pu_sem-gg_acq_br-pr_2023-01_brand-at1_cc3022_ev-br_id:71700000105927797&utm_content=cc_dd_upr_amer_pu_sem_gg_ev-br_pros_x_npd_cpc_kw_sd_all_x_x_brand_id:58700008262791723&utm_term=unity&&&&&gad=1&gclid=CjwKCAjw-eKpBhAbEiwAqFL0mq_wKjE7HwqiEwl4oDoUJj0tfj4QOpLpNKu4mY22TJXOOYcIUWIQ-RoC1x0QAvD_BwE&gclsrc=aw.ds', 'Tools', 'C#'),
+  createData('Unreal Engine', 'https://www.unrealengine.com/en-US/?utm_source=GoogleSearch&utm_medium=Performance&utm_campaign=17086214833&utm_id=135367635839&utm_term=unreal%20engine&utm_content=646550206948', 'Tools', 'C++'),
+  createData('Adobe Animate CC', 'https://www.adobe.com/products/animate.html', 'Tools', 'All'),
+  createData('2D Assets', 'https://github.com/Kavex/GameDev-Resources#2d-assets', 'Tools', 'All'),
+  createData('3D Assets', 'https://github.com/Kavex/GameDev-Resources#3d-assets', 'Tools', 'All'),
+  createData('Audio Assets', 'https://github.com/Kavex/GameDev-Resources#audio-assets', 'Tools', 'All'),
+  createData('Multiple Graphic Collections', 'https://github.com/Kavex/GameDev-Resources#multiple-graphic-collections', 'Tools', 'All'),
+  createData('2D Engines & Frameworks', 'https://github.com/Kavex/GameDev-Resources#2d-engines-and-frameworks', 'Tools', 'All'),
+  createData('3D Engines & Frameworks', 'https://github.com/Kavex/GameDev-Resources#3d-engines-and-frameworks', 'Tools', 'All'),
+  createData('Game Source Code', 'https://github.com/Kavex/GameDev-Resources#game-source-code', 'Tools', 'All'),
+  createData('Modules & Additional APIs', 'https://github.com/Kavex/GameDev-Resources#modules-and-additional-api', 'Tools', 'All'),
+  createData('Idea Generators', 'https://github.com/Kavex/GameDev-Resources#idea-generators', 'Tools', 'All'),
+  createData('Mechanics', 'https://github.com/Kavex/GameDev-Resources#mechanics', 'Tools', 'All'),
+  createData('Game Development Books', 'https://github.com/Kavex/GameDev-Resources#books', 'Tools', 'All'),
+  createData('Animation Tools', 'https://github.com/Kavex/GameDev-Resources#animation', 'Tools', 'All'),
+  createData('Audio Tools', 'https://github.com/Kavex/GameDev-Resources#audio-tools', 'Tools', 'All'),
+  createData('Bitmap Compression Tools', 'https://github.com/Kavex/GameDev-Resources#bitmap-compression', 'Tools', 'All'),
+  createData('Charas Character Generator', 'http://charas-project.net/index.php', 'Tools', 'All'),
+  createData('Game Design Tools', 'https://github.com/Kavex/GameDev-Resources#design-tools', 'Tools', 'All'),
+  createData('IDEs and Code Editors', 'https://github.com/Kavex/GameDev-Resources#ide-and-editors', 'Tools', 'All'),
+  createData('Modeling Tools', 'https://github.com/Kavex/GameDev-Resources#modeling', 'Tools', 'All'),
+  createData('Pixel Editors', 'https://github.com/Kavex/GameDev-Resources#pixel-editor', 'Tools', 'All'),
+  createData('Spritesheets', 'https://github.com/Kavex/GameDev-Resources#spritesheet', 'Tools', 'All'),
+  createData('Story Design', 'https://github.com/Kavex/GameDev-Resources#story-design', 'Tools', 'All'),
+  createData('Terrain Generators', 'https://github.com/Kavex/GameDev-Resources#terrain-generators', 'Tools', 'All'),
+  createData('Texturing Tools', 'https://github.com/Kavex/GameDev-Resources#texturing', 'Tools', 'All'),
+  createData('Tile/Level Editors', 'https://github.com/Kavex/GameDev-Resources#tilelevel-editors', 'Tools', 'All'),
+  createData('Vector/Image Editors', 'https://github.com/Kavex/GameDev-Resources#vectorimage-editor', 'Tools', 'All')
 ];
 
+// Game Development - Courses
 const rows35 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Animate CC Game Development', 'https://www.pluralsight.com/courses/animate-cc-game-development', 'All'),
+  createData4('How to Start Your Career In Games Development', 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj32_GN_pGCAxXPnGoFHZBRBs8QFnoECBoQAQ&url=https%3A%2F%2Fwww.futurelearn.com%2Fcourses%2Fhow-to-start-your-career-in-games-development&usg=AOvVaw3TTgRuWiBDyIgzLABuLkdQ&opi=89978449', 'All'),
+  createData4('Game Design and Development 1: 2D Shooter', 'https://www.coursera.org/learn/game-design-and-development-1', 'C#'),
+  createData4('2D Game Development with libGDX', 'https://www.udacity.com/course/2d-game-development-with-libgdx--ud405', 'All'),
+  createData4('Unity Game Development: Create 2D and 3D Games with C#', 'https://www.udemy.com/course/devslopes-unity3d/', 'C#'),
+  createData4('Unity Multiplayer Game Development with Node', 'https://www.pluralsight.com/courses/unity-multiplayer-game-dev-node-2454', 'C#, JavaScript'),
+  createData4('Game Development for Modern Platforms', 'https://www.classcentral.com/course/gamedev-platforms-4315', 'All'),
+  createData4('Game Design & Development', 'https://www.classcentral.com/course/game-development-18701', 'C#'),
+  createData4('Unity Learn', 'https://learn.unity.com/', 'C#'),
+  createData4('Unreal Engine 5: The Ultimate Beginner Course', 'https://www.udemy.com/course/unreal-engine-5/', 'C++'),
+  createData4('Unreal Engine 5 (UE5): The Complete Beginner\'s Course', 'https://www.udemy.com/course/unreal-engine-5-beginners-course/', 'C++')
 ];
 
+// Game Development - Tutorials
 const rows36 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Brackeys YouTube Tutorials', 'https://www.youtube.com/@Brackeys', 'All'),
+  createData4('Making Your First FPS in Unity with FPS Microgame', 'https://www.youtube.com/watch?v=jE3ZJ_tCGTo', 'C#'),
+  createData4('How to Make a 2D Game', 'https://www.youtube.com/watch?v=cqd1u_dfrkc', 'C#'),
+  createData4('How to Make Your First Game Today', 'https://www.youtube.com/watch?v=pCBqgREiSUE', 'C#'),
+  createData4('REALTIME LIGHTING in Unity', 'https://www.youtube.com/watch?v=wwm98VdzD8s', 'C#'),
+  createData4('Unity NavMesh Tutorial', 'https://www.youtube.com/watch?v=CHV1ymlw-P8', 'C#'),
+  createData4('How to Make an RPG in Unity', 'https://www.youtube.com/playlist?list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7', 'C#'),
+  createData4('The Unity Tutorial for Complete Beginners', 'https://www.youtube.com/watch?v=XtQMytORBmM&pp=ygUOdW5pdHkgdHV0b3JpYWw%3D', 'C#'),
+  createData4('Unreal Engine 5 Beginner Tutorials', 'https://www.youtube.com/watch?v=XRmn-EYt8wI&list=PLncmXJdh4q88DFCEVuGpOY3AGQwBvoQnh', 'C++'),
+  createData4('3D Game Shaders for Beginners', 'https://github.com/lettier/3d-game-shaders-for-beginners', 'All'),
+  createData4('Simple HTML5 Canvas Game', 'http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/', 'HTML'),
+  createData4('HTML5 Game Development', 'https://www.udacity.com/course/html5-game-development--cs255', 'HTML'),
+  createData4('Pixel Art Tutorial Basics for Beginners', 'http://gasara.deviantart.com/art/Pixel-Art-Tutorial-Basics-for-Beginners-356743783', 'All'),
+  createData4('Interactive 3D Graphics', 'https://www.udacity.com/course/interactive-3d-graphics--cs291', 'All'),
+  createData4('How to Make Game Music with FL Studio', 'https://www.youtube.com/watch?v=pkvx-ipbmVg', 'All'),
+  createData4('Advanced JS: Games & Visualizations', 'https://www.khanacademy.org/computing/cs/programming-games-visualizations', 'JavaScript')
 ];
 
+// Game Development - Documentation
 const rows37 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('Unity Documentation', 'https://docs.unity.com/', 'C#'),
+  createData4('Unreal Engine Documentation', 'https://docs.unrealengine.com/5.3/en-US/', 'C++'),
+  createData4('Defold Game Object API Documentation', 'https://defold.com/ref/go/', 'JavaScript'),
+  createData4('Glide Engine Documentation', 'https://cocoatoucher.github.io/Glide/index.html', 'Swift'),
+  createData4('LibGDX Documentation', 'https://libgdx.com/dev/', 'Java'),
+  createData4('PyGame Documentation', 'https://github.com/pygame/pygame', 'Python'),
+  createData4('TileEngine Documentation', 'https://www.tilengine.org/doc/index.html', 'C#, Java, Python'),
+  createData4('Azul3D Documentation', 'https://azul3d.org/doc/install', 'Go'),
+  createData4('Cinder Documentation', 'https://libcinder.org/', 'C++'),
+  createData4('Evergine Documentation', 'https://docs.evergine.com/2023.9.28/', 'C#'),
+  createData4('Godot Documentation', 'https://docs.godotengine.org/en/stable/index.html', 'C, C#, C++')
 ];
 
+// C# - Documentation
 const rows38 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// C# - Tutorials
 const rows39 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// C# - Courses
 const rows40 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// C++ - Documentation
 const rows41 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// C++ - Tutorials
 const rows42 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// C++ - Courses
 const rows43 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// CSS - Documentation
 const row44 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// CSS - Tutorials
 const rows45 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// CSS - Courses
 const rows46 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// HTML - Documentation
 const rows47 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// HTML - Tutorials
 const rows48 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// HTML - Courses
 const rows49 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// JavaScript - Documentation
 const rows50 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// JavaScript - Tutorials
 const rows51 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// JavaScript - Courses
 const rows52 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Java - Documentation
 const rows53 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Java - Tutorials
 const row54 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Java - Courses
 const rows55 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Python - Documentation
 const rows56 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Python - Tutorials
 const rows57 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Python - Courses
 const rows58 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Rust - Documentation
 const rows59 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Rust - Tutorials
 const rows60 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// Rust - Courses
 const rows61 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// TypeScript - Documentation
 const rows62 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// TypeScript - Tutorials
 const rows63 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
+// TypeScript - Courses
 const row64 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
+  createData4('', '', ''),
 ];
 
 const drawerWidth = 240;
@@ -2504,10 +2986,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Services & Tools</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {row34.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2521,10 +3027,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Courses</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows35.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2538,10 +3068,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Tutorials</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows36.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -2555,10 +3109,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Documentation</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          {/* <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell> */}
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows37.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                            {/* <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell> */}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>

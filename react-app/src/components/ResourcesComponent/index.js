@@ -563,28 +563,63 @@ const rows18 = [
   createData('Learn MongoDB: Leading NoSQL Database from Scratch', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-mongodb-leading-nosql-database-from-scratch%2F', 'Courses', 'NoSQL')
 ];
 
-const rows19 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+// const rows19 = [
+//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+//   createData('Eclair', 262, 16.0, 24, 6.0),
+//   createData('Cupcake', 305, 3.7, 67, 4.3),
+//   createData('Gingerbread', 356, 16.0, 49, 3.9),
+// ];
 
 const rows20 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Docker Documentations', 'https://docs.docker.com/', 'Documentation', "All"),
+  createData('Docker and Kubernetes: The Complete Guide', 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Docker_v.PROF_la.EN_cc.US_ti.5470&utm_content=deal4584&utm_term=_._ag_82041664964_._ad_622358215405_._kw__._de_c_._dm__._pl__._ti_aud-1888734399789%3Adsa-774930034249_._li_9027373_._pd__._&matchtype=&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NGFY-zjF11NZSjGvGnCfNMvIt8ltibBCd-14EpIe2Mn3yt8NkuqbLxoCLg4QAvD_BwE', 'Courses', "All"),
+  createData('Introduction to Containers w/ Docker, Kubernetes & OpenShift', 'https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift?specialization=ibm-backend-development&utm_medium=sem&utm_source=gg&utm_campaign=B2C_NAMER_ibm-backend-development_ibm_FTCOF_professional-certificates_country-US-country-CA&campaignid=19973760166&adgroupid=146696810063&device=c&keyword=&matchtype=&network=g&devicemodel=&adposition=&creativeid=654910474289&hide_mobile_promo&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NHNLhGDiqWzXY0JqWUC-jQqyWDZXfOdtyyR2Aw_1SEZVxMCx_TehrxoC1TwQAvD_BwE', 'Courses', "All"),
+  createData('Learn Docker by Doing', 'https://www.pluralsight.com/cloud-guru/courses/learn-docker-by-doing?utm_source=google&utm_medium=paid-search&utm_campaign=cloud-transformation&utm_term=ssi-global-acg-core-dsa&utm_content=free-trial&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NJ19T16zpB_p1RQtgHEjJdIPEqBkKVvlGEi6al_QeFE7mr7HK-kgCBoCnGkQAvD_BwE', 'Courses', "All"),
+  createData('Docker for Developers', 'https://www.educative.io/courses/docker-for-developers?utm_campaign=brand_educative&utm_source=google&utm_medium=ppc&utm_content=performance_max&eid=5082902844932096&utm_term=&utm_campaign=%5BNew%5D+Performance+Max&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=18511913007&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NNX5ACX90xOfPOK5zKZhAUxD3qUsLK7mNsFtdEQu8vtSU0agaDCc8xoCKokQAvD_BwE', 'Courses', "All"),
+  createData('Docker Mastery, Docker Swarm Mastery, Docker Mastery for Node.js Projects', 'https://www.bretfisher.com/courses/', 'Courses', "All"),
+  createData('Docker for .NET Apps - On Linux and Windows', 'https://docker4.net/udemy', 'Courses', "All"),
+  createData('Dive Into Docker, Docker for DevOps', 'https://nickjanetakis.com/courses/', 'Courses', "All"),
+  createData('Docker for Java Developers', 'https://www.lynda.com/Docker-tutorials/Docker-Java-developers/576584-2.html', 'Courses', "All"),
+  createData('Docker in Depth', 'https://cloudacademy.com/learning-paths/cloud-academy-docker-in-depth-129/?utm_feeditemid=&utm_device=c&utm_term=&utm_campaign=%5BSearch%5D+DSA+-+All+Website+-+USA&utm_source=google&utm_medium=ppc&hsa_acc=5890858304&hsa_cam=12050150150&hsa_grp=115060577886&hsa_ad=651406236896&hsa_src=g&hsa_tgt=dsa-19959388920&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NOjyrRmHJQmWIfo3OPhK9zS-3EPAl6K5fWqs316Jt0cgY7VU8qn75RoCDbMQAvD_BwE', 'Courses', "All"),
+  createData('Docker and Kubernetes Labs', 'https://collabnix.com/', 'Courses', "All"),
+  createData('Docker for the Absolute Beginner - Hands-On - DevOps', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Flearn-docker%2F&u1=JAVAREVISITED', 'Courses', "All"),
+  createData('Docker - Introducing Docker Essentials, Containers, and More', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdocker-containers%2F&u1=JAVAREVISITED', 'Courses', "All"),
+  createData('Introduction to Docker: Build Your Own Portfolio Site', 'https://coursera.pxf.io/c/3294490/1164545/14726?u=https%3A%2F%2Fwww.coursera.org%2Fprojects%2Fintroduction-to-docker-build-portfolio-site', 'Courses', "All"),
+  createData('Play-By-Play: Docker for Java Developers', 'https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fplay-by-play-docker-java-developers-arun-gupta-michael-hoffman', 'Courses', "All"),
+  createData('The Complete Guide to Running Java in Docker and Kubernetes', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-guide-to-running-java-in-docker-and-kubernetes%2F&u1=JAVAREVISITED', 'Courses', "All"),
+  createData('What is a Container?', 'https://www.docker.com/resources/what-container/', 'Helpful Info', "All"),
+  createData('A Docker Tutorial for Beginners', 'https://docker-curriculum.com/', 'Tutorials', "All"),
+  createData('Docker Essential Training: Installation and Configuration', 'https://linkedin-learning.pxf.io/LPo00L?subId3=blog%2Fbest-docker-cours_amcid-PYxIYAi2sigeei6iIIZl2', 'Courses', "All"),
+  createData('Learning Docker', 'https://linkedin-learning.pxf.io/QOzYYM?subId3=blog%2Fbest-docker-cours_amcid-3UzlFFVO3QJIxQbYYpgpU', 'Courses', "All"),
+  createData('The Docker for DevOps Course: From Development to Production', 'https://click.linksynerghttps//click.linksynergy.com/deeplink?id=SeYHzlfZEmI&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdevops-docker-complete-guide-hands-on-with-practical%2F', 'Courses', 'All')
 ];
 
 const rows21 = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Kubernetes Documentation', 'https://kubernetes.io/docs/home/', 'Documentation', "All"),
+  createData('Docker and Kubernetes: The Complete Guide', 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Docker_v.PROF_la.EN_cc.US_ti.5470&utm_content=deal4584&utm_term=_._ag_82041664964_._ad_622358215405_._kw__._de_c_._dm__._pl__._ti_aud-1888734399789%3Adsa-774930034249_._li_9027373_._pd__._&matchtype=&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NGFY-zjF11NZSjGvGnCfNMvIt8ltibBCd-14EpIe2Mn3yt8NkuqbLxoCLg4QAvD_BwE', 'Courses', "All"),
+  createData('Introduction to Containers w/ Docker, Kubernetes & OpenShift', 'https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift?specialization=ibm-backend-development&utm_medium=sem&utm_source=gg&utm_campaign=B2C_NAMER_ibm-backend-development_ibm_FTCOF_professional-certificates_country-US-country-CA&campaignid=19973760166&adgroupid=146696810063&device=c&keyword=&matchtype=&network=g&devicemodel=&adposition=&creativeid=654910474289&hide_mobile_promo&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NHNLhGDiqWzXY0JqWUC-jQqyWDZXfOdtyyR2Aw_1SEZVxMCx_TehrxoC1TwQAvD_BwE', 'Courses', "All"),
+  createData('Docker and Kubernetes Labs', 'https://collabnix.com/', 'Courses', "All"),
+  createData('Kubernetes 101', 'https://nigelpoulton.com/video-courses', 'Courses', "All"),
+  createData('The Complete Guide to Running Java in Docker and Kubernetes', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-guide-to-running-java-in-docker-and-kubernetes%2F&u1=JAVAREVISITED', 'Courses', "All"),
+  createData('Kubernetes: A Deep Dive', 'https://www.educative.io/courses/the-kubernetes-course?utm_campaign=brand_educative&utm_source=google&utm_medium=ppc&utm_content=performance_max&eid=5082902844932096&utm_term=&utm_campaign=%5BNew%5D+Performance+Max&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=18511913007&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NP1hGeh8bptaRbeiXyve8whabKKhE-y2l47C0taq3acyE-rvL7D7zxoCuiIQAvD_BwE', 'Courses', "All"),
+  createData('The Complete Kubernetes Course', 'https://www.udemy.com/topic/Kubernetes/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Kubernetes_v.NONP_la.EN_cc.US_ti.6472&utm_content=deal4584&utm_term=_._ag_82018078242_._ad_573563325736_._kw_kubernetes%20devops_._de_c_._dm__._pl__._ti_aud-1888734399789:kwd-457994573704_._li_9027373_._pd__._&matchtype=b&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NAI0Ys7rUdxZzX51-NxgI8GRBfQpnx8t7JQcNztrEqAXI82G1BfetRoC_dcQAvD_BwE', 'Courses', "All"),
+  createData('What is a Container?', 'https://www.docker.com/resources/what-container/', 'Helpful Info', "All"),
+  createData('Why (and When) You Should Use Kubernetes', 'https://hackernoon.com/why-and-when-you-should-use-kubernetes-8b50915d97d8', 'Helpful Info', "All"),
+  createData('Understanding the Kubernetes YAML Syntax', 'https://betterprogramming.pub/understanding-kubernetes-yaml-syntax-83359d33f9c2', 'Helpful Info', "All"),
+  createData('Kubernetes Tutorial - Step by Step Introduction to Basic Concepts', 'https://auth0.com/blog/kubernetes-tutorial-step-by-step-introduction-to-basic-concepts/', 'Helpful Info', "All"),
+  createData('Deploying a Kubernetes Cluster with Amazon EKS', 'https://logz.io/blog/amazon-eks-cluster/', 'Tutorials', "All"),
+  createData('Kubernetes as a Service: GKE vs. AKS vs. EKS', 'https://logz.io/blog/kubernetes-as-a-service-gke-aks-eks/', 'Helpful Info', "All"),
+  createData('Quickstart - Create an Azure Kubernetes Service (AKS) Using the Azure Portal', 'https://docs.microsoft.com/bs-latn-ba/azure/aks/kubernetes-walkthrough-portal', 'Tutorial', "All"),
+  createData('Google Kubernetes Engine: Explain Like I\'m Five!', 'https://medium.com/faun/google-kubernetes-engine-explain-like-im-five-1890e550c099', 'Helpful Info', "All"),
+  createData('Comparing Kubernetes Networking Providers: Flannel, Calico, Canal, and Weave', 'https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/', 'Helpful Info', "All"),
+  createData('Kubernetes 101: Pods, Nodes, Containers, and Clusters', 'https://medium.com/google-cloud/kubernetes-101-pods-nodes-containers-and-clusters-c1509e409e16', 'Helpful Info', "All"),
+  createData('Kubernetes Deployment Tutorial with YAML', 'https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-deployment-tutorial-example-yaml.html', 'Tutorials', "All"),
+  createData('What Is a Service Mesh, and Why Do You Need One?', 'https://logz.io/blog/what-is-a-service-mesh-kubernetes-istio/', 'Helpful Info', "All"),
+  createData('Kubernetes - Autoscaling', 'https://www.tutorialspoint.com/kubernetes/kubernetes_autoscaling.htm', 'Tutorials', "All"),
+  createData('Kubernetes Helm 101', 'https://medium.com/dwarves-foundation/kubernetes-helm-101-78f70eeb0d1', 'Helpful Info', "All"),
+  createData('Deploy Your First Scalable PHP/MySQL Web Application in Kubernetes', 'https://medium.com/faun/deploy-your-first-scaleable-php-mysql-web-application-in-kubernetes-33ed7ab66595', 'Tutorial', "All"),
+  createData('A Practical Guide to Kubernetes Logging', 'https://logz.io/blog/a-practical-guide-to-kubernetes-logging/', 'Helpful Info', "All")
 ];
 
 const rows22 = [
@@ -1837,10 +1872,34 @@ const ResourcesComponent = () => {
                   <Typography sx={{ width: '33%', flexShrink: 0 }}>Docker</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows20.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
 
@@ -1851,13 +1910,37 @@ const ResourcesComponent = () => {
                   aria-controls="panel21bh-content"
                   id="panel21bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Svelte</Typography>
+                  <Typography sx={{ width: '33%', flexShrink: 0 }}>Kubernetes</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                    amet egestas eros, vitae egestas augue. Duis vel est augue.
-                  </Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Name</TableCell>
+                          <TableCell sx={{ "width": "150px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Link</TableCell>
+                          <TableCell sx={{ "width": "140px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Resource Type</TableCell>
+                          <TableCell sx={{ "width": "100px", "fontSize": "17px", "fontWeight": "bold" }} align="center">Languages</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows21.map((row) => (
+                          <TableRow
+                            key={row.resourceName}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          >
+                            {/* <TableCell component="th" scope="row">
+                              {row.resourceName}
+                            </TableCell> */}
+                            <TableCell sx={{ "width": "140px", "fontSize": "13px" }} align="center">{row.resourceName}</TableCell>
+                            <TableCell sx={{ "width": "150px", "fontSize": "13px" }} align="center"><a href={row.link} target="_blank" rel="noreferrer noopener">Resource Link</a></TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.resourceType}</TableCell>
+                            <TableCell sx={{ "width": "100px", "fontSize": "13px" }} align="center">{row.relatedLanguages}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </AccordionDetails>
               </Accordion>
             </div>

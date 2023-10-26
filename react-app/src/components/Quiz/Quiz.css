@@ -6,8 +6,6 @@
 #quiz-wrapper {
     display: flex;
     flex-direction: column;
-    /* text-align: center; */
-    /* border: 1px solid red; */
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -16,7 +14,6 @@
 }
 
 #quiz-header > h1 {
-    /* color: purple; */
     font-size: 25px;
 }
 
@@ -31,8 +28,6 @@
     display: flex;
     align-items: center;
     font-size: 16px;
-    /* border: 1px solid blue; */
-    /* justify-content: center; */
 }
 
 .answer-option-wrapper:hover {

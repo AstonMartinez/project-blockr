@@ -1,16 +1,8 @@
 import './DailyPlanner.css';
 import { useState, useEffect } from 'react';
-import sampleTasks from './sampletaskdata';
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
-import { TextField } from '@mui/material';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import Chip from '@mui/material/Chip'
-import Tooltip from '@mui/material/Tooltip'
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -40,74 +32,9 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import EventIcon from '@mui/icons-material/Event';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CrisisAlertIcon from '@mui/icons-material/CrisisAlert';
-import Select from '@mui/joy/Select';
-import Option from '@mui/joy/Option';
 import FormControl from '@mui/joy/FormControl';
-import FormLabel from '@mui/joy/FormLabel';
 import FormHelperText from '@mui/joy/FormHelperText';
-import InfoOutlined from '@mui/icons-material/InfoOutlined';
 import { createTask, getByDate } from '../../store/tasks';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { useHistory } from 'react-router-dom'
-import mainListItems from '../UserDashboard/listItems'
-import PersonIcon from '@mui/icons-material/Person';
-
-const drawerWidth = 240;
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    }),
-  }));
-
-  const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-      '& .MuiDrawer-paper': {
-        position: 'relative',
-        whiteSpace: 'nowrap',
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        boxSizing: 'border-box',
-        ...(!open && {
-          overflowX: 'hidden',
-          transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
-          width: theme.spacing(7),
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9),
-          },
-        }),
-      },
-    }),
-  );
 
 const style = {
     position: 'absolute',
@@ -125,7 +52,6 @@ const DailyPlanner = ({nowDay}) => {
     const dispatch = useDispatch()
     const allTasks = useSelector(state => state.tasks.allTasks)
     const taskArr = Object.values(allTasks).toSorted((start_time, end_time) => start_time - end_time)
-    console.log(taskArr)
     const [startTime, setStartTime] = useState(null)
     const [endTime, setEndTime] = useState(null)
     const [open, setOpen] = React.useState(false);
@@ -178,7 +104,7 @@ const DailyPlanner = ({nowDay}) => {
 
     useEffect(() => {
         dispatch(getByDate(nowDay))
-    }, [dispatch])
+    }, [dispatch, nowDay])
 
     const handleTaskSubmit = async () => {
         if(title === null) {

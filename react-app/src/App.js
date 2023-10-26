@@ -4,17 +4,13 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
-import Navigation from "./components/Navigation";
 import UserDashboard from "./components/UserDashboard";
-import LandingPage from "./components/LandingPage";
 import DailyTrivia from "./components/DailyTrivia";
 import FlashCards from "./components/FlashCards";
 import ResourcesComponent from "./components/ResourcesComponent";
 import Practice from "./components/Practice";
 import WeeklySchedule from "./components/WeeklySchedule";
-import UserProfile from "./components/UserProfile";
 import CardSet from "./components/FlashCards/CardSet";
-import Footer from "./components/Footer";
 import CreateSet from "./components/CreateSet";
 import Quiz from "./components/Quiz";
 import CreateQuiz from "./components/CreateQuiz";
@@ -32,9 +28,6 @@ function App() {
         <Switch>
           <Route exact path ='/quizzes/:quizId'>
             <Quiz />
-          </Route>
-          <Route exact path='/user'>
-            <UserProfile />
           </Route>
           <Route exact path='/practice'>
             <Practice />

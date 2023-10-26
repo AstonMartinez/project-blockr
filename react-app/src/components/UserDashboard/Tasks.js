@@ -1,7 +1,5 @@
-import { useDispatch, useSelector } from "react-redux"
-import { useState, useEffect } from 'react'
-import { getByDate } from "../../store/tasks"
-import Link from '@mui/material/Link';
+import { useSelector } from "react-redux"
+import { useState } from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -57,15 +55,9 @@ const dayConvert = (day) => {
   }
 
 const TaskDisplay = () => {
-    const dispatch = useDispatch()
-
     const [displayType, setTaskDisplayType] = useState('List')
     const currentDay = new Date().toDateString().split(" ")[0]
     const dayOfWeek = dayConvert(currentDay)
-
-    // useEffect(() => {
-    //     dispatch(getByDate(dayConvert(dayOfWeek)))
-    // }, [dispatch])
 
     const allTasks = useSelector(state => state.tasks.allTasks)
     let taskArr = []

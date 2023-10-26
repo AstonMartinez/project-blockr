@@ -1,22 +1,7 @@
-// import './Resources.css'
 import * as React from 'react'
-import { styled } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { useHistory } from 'react-router-dom'
-import mainListItems from '../UserDashboard/listItems'
-import PersonIcon from '@mui/icons-material/Person';
+import NavDrawer from '../NavDrawer';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -28,7 +13,23 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import emailjs from '@emailjs/browser';
 import './Resources.css'
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  borderRadius: '10px',
+  boxShadow: 24,
+  p: 4,
+};
 
 // Resource Types:
 //  - Documentation
@@ -223,9 +224,6 @@ const rows6 = [
   createData('React Project Ideas for Beginners', 'https://themeselection.com/react-project-ideas-for-beginners/', 'Helpful Info', 'JavaScript'),
   createData('React Boilerplate', 'https://themeselection.com/react-boilerplate/', 'Helpful Info', 'JavaScript'),
   createData('The Best 10+ React Developer Tools 2021', 'https://themeselection.com/react-developer-tools/', 'Helpful Info', 'JavaScript')
-  // createData('Learn React', 'https://react.dev/learn', 'Documentation', 'JavaScript'),
-  // createData('Tutorial: Tic-Tac-Toe', 'https://react.dev/learn/tutorial-tic-tac-toe', 'Tutorials', 'JavaScript'),
-  // createData('React API Reference Docs', 'https://react.dev/reference/react', 'Documentation', 'JavaScript'),
   // createData('The Beginner\'s Guide to React', 'https://egghead.io/courses/the-beginner-s-guide-to-react', 'Courses', 'JavaScript'),
   // createData('Epic React', 'https://epicreact.dev/', 'Courses', 'JavaScript'),
   // createData('Learn React: Codecademy', 'https://www.codecademy.com/learn/react-101', 'Courses', 'JavaScript'),
@@ -235,7 +233,6 @@ const rows6 = [
   // createData('React with Redux, React-Router, Hooks, and AuthO', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmodern-react%2F', 'Courses', 'JavaScript'),
   // createData('Build Your First ReactJS Application', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fbuild-your-first-react-js-application%2F', 'Courses', 'JavaScript'),
   // createData('React for Beginners with Hooks - 2023', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Freact-for-beginners-with-hooks-2021%2F', 'Courses', 'JavaScript'),
-  // createData('Build an Online Store Using AWS, React, and Stripe', 'https://youtu.be/JgwI22y_eFA', 'Tutorials', 'JavaScript'),
 ];
 
 const rows7 = [
@@ -658,7 +655,17 @@ const rows23 = [
   createData3('Attention Mechanism', 'https://www.cloudskillsboost.google/course_templates/537', 'Courses'),
   createData3('Transformers & BERT Models', 'https://www.cloudskillsboost.google/course_templates/538', 'Courses'),
   createData3('Create Image Captioning Models', 'https://www.cloudskillsboost.google/course_templates/542', 'Courses'),
-  createData3('Intro to Gen AI Studio', 'https://www.cloudskillsboost.google/course_templates/552', 'Courses')
+  createData3('Intro to Gen AI Studio', 'https://www.cloudskillsboost.google/course_templates/552', 'Courses'),
+  createData3('Machine Learning Fundamentals - Key Concepts, Algorithms, and Python Code Examples', 'https://www.freecodecamp.org/news/machine-learning-handbook/', 'Courses'),
+  createData3('What is Overfitting in Machine Learning', 'https://www.freecodecamp.org/news/what-is-overfitting-machine-learning/', 'Courses'),
+  createData3('The Ethics of AI and ML', 'https://www.freecodecamp.org/news/the-ethics-of-ai-and-ml/', 'Courses'),
+  createData3('Learn Machine Learning and Neural Networks without Frameworks', 'https://www.freecodecamp.org/news/learn-machine-learning-and-neural-networks-without-frameworks/', 'Courses'),
+  createData3('Building Safe AI - Reducing Existential Risks in Machine Learning', 'https://www.freecodecamp.org/news/building-safe-ai-reducing-existential-risks-in-machine-learning/', 'Courses'),
+  createData3('The Difference Between AI and Machine Learning', 'https://www.freecodecamp.org/news/artificial-intelligence-vs-machine-learning/', 'Courses'),
+  createData3('Master Regression Analysis for Machine Learning', 'https://www.freecodecamp.org/news/master-regression-analysis-for-machine-learning/', 'Courses'),
+  createData3('Data-Driven Reality - Exploring the Power of AI, ML, Virtual and Augmented Reality', 'https://www.freecodecamp.org/news/data-driven-reality/', 'Courses'),
+  createData3('Machine Learning for Everybody', 'https://www.freecodecamp.org/news/machine-learning-for-everybody/', 'Courses'),
+  createData3('Top Evaluation Metrics for Regression Problems in Machine Learning', 'https://www.freecodecamp.org/news/evaluation-metrics-for-regression-problems-machine-learning/', 'Courses')
 ];
 
 // Machine Learning - Tutorials
@@ -670,7 +677,23 @@ const row24 = [
   createData3('Python Machine Learning', 'https://www.w3schools.com/python/python_ml_getting_started.asp', 'Tutorials'),
   createData3('Machine Learning Tutorial for Beginners', 'https://www.mygreatlearning.com/blog/machine-learning-tutorial/', 'Tutorials'),
   createData3('Machine Learning Tutorial - TutorialsPoint', 'https://www.tutorialspoint.com/machine_learning/index.htm', 'Tutorials'),
-  createData3('A Machine Learning Tutorial with Examples: An Introduction to ML Theory and Its Applications', 'https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer', 'Tutorials')
+  createData3('A Machine Learning Tutorial with Examples: An Introduction to ML Theory and Its Applications', 'https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer', 'Tutorials'),
+  createData3('How to Build a Large Language Model from Scratch Using Python', 'https://www.freecodecamp.org/news/how-to-build-a-large-language-model-from-scratch-using-python/', 'Tutorials'),
+  createData3('How to Build a Linear Regression Model - Machine Learning Example', 'https://www.freecodecamp.org/news/build-a-linear-regression-model-with-an-example/', 'Tutorials'),
+  createData3('How to Add Two Numbers - The Machine Learning Way', 'https://www.freecodecamp.org/news/how-to-add-two-numbers-using-machine-learning/', 'Tutorials'),
+  createData3('How to Setup a Windows Machine Learning / Deep Learning Using an Nvidia Graphics Card (CUDA)', 'https://www.freecodecamp.org/news/how-to-setup-windows-machine-for-ml-dl-using-nvidia-graphics-card-cuda/', 'Tutorials'),
+  createData3('How to Perform Machine Learning Tasks with Python and SQL', 'https://www.freecodecamp.org/news/machine-learning-with-python-and-sql/', 'Tutorials'),
+  createData3('Code an AlphaZero Machine Learning Algorithm to Play Games', 'https://www.freecodecamp.org/news/code-alphazero-machine-learning-algorithm/', 'Tutorials'),
+  createData3('Machine Learning with Julia - How to Build and Deploy a Trained AI Model as a Web Service', 'https://www.freecodecamp.org/news/machine-learning-using-julia/', 'Tutorials'),
+  createData3('How to Perform Customer Segmentation in Python - Machine Learning Tutorial', 'https://www.freecodecamp.org/news/customer-segmentation-python-machine-learning/', 'Tutorials'),
+  createData3('Gradient Descent - Machine Learning Algorithm Example', 'https://www.freecodecamp.org/news/gradient-descent-machine-learning-algorithm-example/', 'Tutorials'),
+  createData3('How to Build a Machine Learning Model in Rust', 'https://www.freecodecamp.org/news/how-to-build-a-machine-learning-model-in-rust/', 'Tutorials'),
+  createData3('How to Validate Your Machine Learning Models Using TensorFlow Model Analysis', 'https://www.freecodecamp.org/news/how-to-validate-machine-learning-models-with-tensorflow-model-analysis/', 'Tutorials'),
+  createData3('How to Evaluate Machine Learning Models Using TensorBoard with TensorFlow', 'https://www.freecodecamp.org/news/how-to-evaluate-machine-learning-models-using-tensorboard/', 'Tutorials'),
+  createData3('How to Improve Machine Learning Code Quality with Scikit-learn Pipeline and ColumnTransformer', 'https://www.freecodecamp.org/news/machine-learning-pipeline/', 'Tutorials'),
+  createData3('What is Machine Learning? ML Tutorial for Beginners', 'https://www.freecodecamp.org/news/what-is-machine-learning-for-beginners/', 'Tutorials'),
+  createData3('How to Detect Outliers in Machine Learning - 4 Methods for Outlier Detection', 'https://www.freecodecamp.org/news/how-to-detect-outliers-in-machine-learning/', 'Tutorials'),
+  createData3('How to Track Machine Learning Experiments with HarperDB', 'https://www.freecodecamp.org/news/track-machine-learning-experiments-with-harperdb/', 'Tutorials')
 ];
 
 // Front End - Services & Tools
@@ -896,26 +919,14 @@ const rows39 = [
 
 // C++ - Documentation & Tools
 const rows41 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('C++ Documentation', 'https://devdocs.io/cpp/', 'Documentation'),
+  createData3('Visual Studio Code Insiders', 'https://code.visualstudio.com/insiders/', 'Tools'),
+  createData3('Visual Studio Code Insiders Documentation', 'https://code.visualstudio.com/docs', 'Documentation'),
+  createData3('Amazon Web Services (AWS) SDK for C++', 'https://aws.amazon.com/sdk-for-cpp/', 'Tools'),
+  createData3('Code::Blocks IDE', 'https://www.codeblocks.org/', 'Tools'),
+  createData3('Wireshark', 'https://www.wireshark.org/', 'Tools'),
+  createData3('C++ Intellisense', 'https://docs.microsoft.com/en-us/visualstudio/ide/visual-cpp-intellisense?view=vs-2019', 'Tools'),
+  createData3('Tabnine', 'https://www.tabnine.com/', 'Tools')
 ];
 
 // C++ - Courses & Tutorials
@@ -923,483 +934,396 @@ const rows42 = [
   createData3('Fundamentals of C++', 'https://www.edx.org/learn/c-programming/ibm-fundamentals-of-c?index=product&objectID=course-251a4878-0711-4a8d-b1a4-38d96c032cc9&webview=false&campaign=Fundamentals+of+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
   createData3('Object Oriented Implementation Using C++', 'https://www.edx.org/learn/object-oriented-programming/ibm-object-oriented-implementation-using-c?index=product&objectID=course-2d83311b-163c-4829-b6f3-a7085dda90b9&webview=false&campaign=Object+Oriented+Implementation+Using+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
   createData3('Introduction to C++', 'https://www.edx.org/learn/c-plus-plus/microsoft-introduction-to-c?index=product&objectID=course-72abaeb3-0856-4e89-906a-8b6eef402a1f&webview=false&campaign=Introduction+to+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('C++ Tutorial for Complete Beginners', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Ffree-learn-c-tutorial-beginners%2F', 'Tutorials'),
+  createData3('Beginning C++ Programming - From Beginner to Beyond', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fbeginning-c-plus-plus-programming%2F', 'Courses'),
+  createData3('Unreal Engine C++ Developer: Learn C++ and Make Video Games', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Funrealcourse%2F', 'Courses'),
+  createData3('Learn C++ from Scratch', 'https://www.educative.io/courses/learn-cpp-from-scratch?affiliate_id=5073518643380224', 'Courses'),
+  createData3('Learn C++ by Creating', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-to-program-cpp%2F', 'Courses'),
+  createData3('C++, Short and Sweet, Part 1', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fcpp-short-and-sweet%2F', 'Courses'),
+  createData3('C++ Programming Basics', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fc-plus-plus-programming-basics%2F', 'Courses'),
+  createData3('Beginning C++ Templates', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fbeg-cpp-temp%2F', 'Courses'),
+  createData3('C++ for C Programmers', 'https://coursera.pxf.io/c/3294490/1164545/14726?u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fc-plus-plus-a', 'Courses')
 ];
 
 // CSS - Documentation & Tools
 const row44 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Mozilla Developer Network CSS Documentation', 'https://developer.mozilla.org/en-US/docs/Web/CSS', 'Documentation'),
+  createData3('Purge CSS', 'https://www.purgecss.com/', 'Tools'),
+  createData3('PostCSS', 'https://postcss.org/', 'Tools'),
+  createData3('Animista CSS Animations', 'https://animista.net/', 'Tools'),
+  createData3('Koala', 'http://koala-app.com/', 'Tools'),
+  createData3('Sierra Library', 'https://sierra-library.github.io/', 'Tools'),
+  createData3('Bootstrap', 'https://getbootstrap.com/', 'Packages & Utilities'),
+  createData3('Tailwind CSS', 'https://tailwindcss.com/', 'Packages & Utilities'),
+  createData3('Bulma', 'https://bulma.io/', 'Packages & Utilities'),
+  createData3('CSSTidy', 'https://csstidy.sourceforge.net/', 'Tools'),
+  createData3('SCSS Compiler', 'https://codebeautify.org/scss-compiler', 'Tools'),
+  createData3('CSS Doodle', 'https://css-doodle.com/', 'Tools'),
+  createData3('CSS Filters', 'https://www.w3schools.com/cssref/css3_pr_filter.php', 'Tools'),
+  createData3('Gradient Hunt', 'https://gradienthunt.com/', 'Tools'),
+  createData3('CSS Blocks', 'https://css-blocks.com/', 'Tools'),
+  createData3('Scout App', 'https://scout-app.io/', 'Tools'),
+  createData3('CSS Menu Maker', 'https://css3menu.com/', 'Tools'),
+  createData3('EnjoyCSS', 'https://enjoycss.com/', 'Tools'),
+  createData3('CSS Arrow Please!', 'https://cssarrowplease.com/', 'Tools'),
+  createData3('CSSmatic', 'https://www.cssmatic.com/', 'Tools'),
+  createData3('Patternizer and Patternify', 'http://www.patternify.com/', 'Tools'),
+  createData3('CSS Grid', 'https://css-tricks.com/snippets/css/complete-guide-grid/', 'Tools'),
+  createData3('Flexplorer', 'https://bennettfeely.com/flexplorer/', 'Tools'),
+  createData3('Image Effects with CSS', 'https://www.w3schools.com/howto/howto_css_image_effects.asp', 'Tools'),
+  createData3('Bourbon', 'https://www.bourbon.io/', 'Tools'),
+  createData3('The Ultimate CSS Generator', 'https://webcode.tools/generators/css', 'Tools'),
+  createData3('Compass', 'https://rubygems.org/gems/compass/versions/1.0.3', 'Tools'),
+  createData3('Spritemapper', 'https://yostudios.github.io/Spritemapper/', 'Tools'),
 ];
 
 // CSS - Courses & Tutorials
 const rows45 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Complete CSS Megacourse: Beginner to Expert', 'https://www.udemy.com/course/complete-css-megacourse-beginner-to-expert/?utm_source=adwords&utm_medium=udemyads&utm_campaign=WebDesign_v.PROF_la.EN_cc.US_ti.8320&utm_content=deal4584&utm_term=_._ag_83329495674_._ad_532194040469_._kw__._de_c_._dm__._pl__._ti_aud-1748515510702%3Adsa-774930030209_._li_9027373_._pd__._&matchtype=&gad_source=1&gclid=CjwKCAjwnOipBhBQEiwACyGLusNjcv4befQUOQsnFBVmO165zFLhkbmGI4HzZrWiZbqXKb2YTjpj5hoC87sQAvD_BwE', 'Courses'),
+  createData3('HTML and CSS: Creating a Basic Website', 'https://www.pluralsight.com/interactive-courses/html-css-basic-website?utm_source=google&utm_medium=paid-search&utm_campaign=upskilling-and-reskilling&utm_term=ssi-na-us-dynamic&utm_content=free-trial&gad_source=1&gclid=CjwKCAjwnOipBhBQEiwACyGLuoue6ZIfKPoFbElFGlqvR59v6dDKrDuhzBXYmraxYy23hWm5vBgvaBoCIf0QAvD_BwE', 'Tutorials'),
+  createData3('CSS Tutorial - Full Course for Beginners', 'https://www.youtube.com/watch?v=OXGznpKZ_sA', 'Tutorials'),
+  createData3('Flexbox.io', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-1', 'Courses'),
+  createData3('Flexbox Froggy', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-2', 'Practices'),
+  createData3('Interactive Guide to Flexbox', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-3', 'Courses'),
+  createData3('CSS FlexBox', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-4', 'Courses'),
+  createData3('CSS Grids (Net Ninja)', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-7', 'Tutorials'),
+  createData3('CSS Grid (LayoutLand)', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-8', 'Tutorials'),
+  createData3('Creating a Robust Grid System Using subGrid', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-9', 'Tutorials'),
+  createData3('CSS Grid Tutorial: Responsive Design Examples', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-10', 'Tutorials'),
+  createData3('CSS Positioning Tutorial - Relative vs. Absolute vs. Fixed vs. Sticky', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-12', 'Tutorials'),
+  createData3('Position Absolute and Responsive Layouts', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-14', 'Tutorials'),
+  createData3('CSS Quick Cheats', 'https://www.classcentral.com/report/best-css-layout-courses/#anchor-15', 'Tutorials')
 ];
 
 // HTML - Documentation & Tools
 const rows47 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Mozilla Developer Network HTML Documentation', 'https://developer.mozilla.org/en-US/docs/Web/HTML', 'Documentation'),
+  createData3('Codepen.io', 'https://codepen.io/pen/tour/welcome/start', 'Tools'),
+  createData3('CodeSandbox', 'https://codesandbox.io/', 'Tools'),
+  createData3('Atom', 'https://atom.en.softonic.com/', 'Tools'),
+  createData3('Sublime Text', 'https://www.sublimetext.com/', 'Tools'),
+  createData3('Notepad++', 'https://notepad-plus-plus.org/', 'Tools'),
+  createData3('Adobe Dreamweaver CC', 'https://www.adobe.com/creativecloud/business/teams.html?sdid=B16P3W9X&mv=search&ef_id=CjwKCAjwnOipBhBQEiwACyGLuutSMLRqr-aR1yXOd4mTab2NyHC7cssKOjvqz9PO6S_DYKpFwsFyZRoCbccQAvD_BwE:G:s&s_kwcid=AL!3085!3!566814725271!e!!g!!adobe%20dream%20weaver!15482932269!136265039688&gad_source=1', 'Tools'),
+  createData3('Font Dragr', 'http://fontdragr.com/', 'Tools'),
+  createData3('HTML5 Maker', 'http://html5maker.com/#/', 'Tools'),
+  createData3('HTML Kickstart', 'http://www.99lime.com/', 'Tools'),
+  createData3('Initializr', 'http://www.initializr.com/', 'Tools'),
+  createData3('Liveweave', 'http://liveweave.com/', 'Tools'),
+  createData3('Adobe Edge Animate CC', 'https://creative.adobe.com/products/animate', 'Tools'),
+  createData3('Modernizr', 'http://modernizr.com/', 'Tools'),
+  createData3('CrossWalk', 'https://crosswalk-project.org/', 'Tools'),
+  createData3('Patternizer', 'http://patternizer.com/rjam', 'Tools')
 ];
 
 // HTML - Courses & Tutorials
 const rows48 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('HTML and CSS for Beginners - Build a Website & Launch Online', 'https://www.udemy.com/course/html-and-css-for-beginners-crash-course-learn-fast-easy/', 'Courses'),
+  createData3('Learn HTML - For Beginners', 'https://www.udemy.com/course/learn-html-for-beginners/', 'Courses'),
+  createData3('HTML & CSS - Certification Course for Beginners', 'https://www.udemy.com/course/html-css-certification-course-for-beginners-e/', 'Courses'),
+  createData3('Web Design for Beginners: Real World Coding in HTML & CSS', 'https://www.udemy.com/course/web-design-for-beginners-real-world-coding-in-html-css/', 'Courses'),
+  createData3('Mimo HTML Course', 'https://mimo.org/', 'Courses'),
+  createData3('Forms in HTML - How to Build Basic Forms with HTML', 'https://www.freecodecamp.org/news/build-basic-forms-with-html/', 'Tutorials'),
+  createData3('How to Work with Images in HTML - A Beginner\'s Guide', 'https://www.freecodecamp.org/news/how-to-work-with-images-in-html/', 'Courses'),
+  createData3('HTML Lists - Ordered, Unordered and Definition List Examples', 'https://www.freecodecamp.org/news/html-lists-with-examples/', 'Courses'),
+  createData3('How to Create Links in HTML - Tutorial with Examples', 'https://www.freecodecamp.org/news/html-links-explained-with-examples/', 'Tutorials'),
+  createData3('How to Use HTML Elements - Headings, Paragraphs, and Text Formatting Elements Example', 'https://www.freecodecamp.org/news/how-to-use-html-elements/', 'Courses'),
+  createData3('An Introduction to HTML for Beginners', 'https://www.freecodecamp.org/news/introduction-to-html/', 'Courses'),
+  createData3('How to Create Animated Bubbles with HTML5 Canvas and JavaScript', 'https://www.freecodecamp.org/news/how-to-create-animated-bubbles-with-html5-canvas-and-javascript/', 'Tutorials'),
+  createData3('How to Build an Online Image-to-PDF Converter with HTML, CSS, JS, and NodeJS', 'https://www.freecodecamp.org/news/build-an-online-image-to-pdf-converter-with-html-css-js-nodejs/', 'Tutorials'),
+  createData3('How to Write Faster HTML and CSS Code Using Emmet', 'https://www.freecodecamp.org/news/how-to-write-faster-html-and-css-using-emmet/', 'Courses'),
+  createData3('How to Build Error-Free HTML Forms', 'https://www.freecodecamp.org/news/how-to-build-error-free-html-forms/', 'Courses'),
+  createData3('HTML Page Elements - Explained for Beginners', 'https://www.freecodecamp.org/news/html-page-elements/', 'Courses'),
+  createData3('Create a Simple Website with HTML, CSS, and JavaScript', 'https://www.freecodecamp.org/news/create-a-simple-website-with-html-css-javascript/', 'Tutorials'),
+  createData3('Common Causes of Invalid HTML Syntax - and How to Fix Them', 'https://www.freecodecamp.org/news/invalid-html-syntax-examples-and-fixes/', 'Courses'),
+  createData3('How to Upload Files with HTML', 'https://www.freecodecamp.org/news/upload-files-with-html/', 'Courses'),
+  createData3('How to Make a Clickable SVG Map with HTML and CSS', 'https://www.freecodecamp.org/news/how-to-make-clickable-svg-map-html-css/', 'Tutorials')
 ];
 
 // JavaScript - Documentation & Tools
 const rows50 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Mozilla Developer Network JavaScript Documentation', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', 'Documentation'),
+  createData3('React', 'https://react.dev/', 'Packages & Utilities'),
+  createData3('React API Reference Docs', 'https://react.dev/reference/react', 'Documentation'),
+  createData3('Learn React', 'https://react.dev/learn', 'Documentation'),
+  createData3('Express.js', 'https://expressjs.com/', 'Packages & Utilities'),
+  createData3('Angular', 'https://angularjs.org/', 'Packages & Utilities'),
+  createData3('Electron', 'https://electron.atom.io/', 'Tools'),
+  createData3('Gulp', 'https://gulpjs.com/', 'Tools'),
+  createData3('Node Package Manager (NPM)', 'https://www.npmjs.com/', 'Packages & Utilities'),
+  createData3('Webpack', 'https://webpack.js.org/', 'Packages & Utilities'),
+  createData3('ESLint', 'https://eslint.org/', 'Tools'),
+  createData3('Vue.js', 'https://vuejs.org/', 'Packages & Utilities'),
+  createData3('jQuery', 'https://jquery.com/', 'Packages & Utilities')
 ];
 
 // JavaScript - Courses & Tutorials
 const rows51 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Tutorial: Tic-Tac-Toe', 'https://react.dev/learn/tutorial-tic-tac-toe', 'Tutorials'),
+  createData3('Build an Online Store Using AWS, React, and Stripe', 'https://youtu.be/JgwI22y_eFA', 'Tutorials'),
+  createData3('The Complete JavaScript Course 2023: From Zero to Expert', 'https://click.linksynergy.com/deeplink?id=jU79Zysihs4&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-javascript-course%2F&u1=blog%2Fbest-javascript-courses_amcid-bgqlm6PsbrIg6qe2mJOAg', 'Courses'),
+  createData3('Modern JavaScript from the Beginning', 'https://click.linksynergy.com/deeplink?id=jU79Zysihs4&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmodern-javascript-from-the-beginning%2F&u1=blog%2Fbest-javascript-courses_amcid-VVE2sFrsUAUqFBzV7sVz3', 'Courses'),
+  createData3('JavaScript Algorithms and Data Structures', 'https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/', 'Courses'),
+  createData3('Full Stack JavaScript', 'https://www.theodinproject.com/paths/full-stack-javascript', 'Courses'),
+  createData3('Learn JavaScript', 'https://www.pjtra.com/t/TUJGR0lLR0JHRklKSkdCR0ZISk1N?url=https%3A%2F%2Fwww.codecademy.com%2Flearn%2Fintroduction-to-javascript&sid=blog%2Fbest-javascript-courses_amcid-BzVJQVNlIqbPE3QiPgobe', 'Courses'),
+  createData3('The Modern JavaScript Tutorial', 'https://javascript.info/', 'Tutorials'),
+  createData3('Learn JavaScript for Free', 'https://scrimba.com/learn/learnjavascript', 'Courses'),
+  createData3('Mimo JavaScript Course', 'https://mimo.org/', 'Courses'),
+  createData3('Programming Foundations with JavaScript, HTML, and CSS', 'https://imp.i384100.net/c/2890636/1347618/14726?u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fduke-programming-web&partnerpropertyid=2722169&subId3=blog%2Fbest-javascript-c_amcid-BONmseI3eZeOE6PV6zqoz', 'Courses'),
+  createData3('JavaScript - Learn By Doing', 'https://click.linksynergy.com/deeplink?id=jU79Zysihs4&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fjavascript-for-beginners-with-examples%2F&u1=blog%2Fbest-javascript-courses_amcid-spiIiFpEqsOexB2JEI27l', 'Courses'),
+  createData3('The Complete Guide to Modern JavaScript', 'https://click.linksynergy.com/deeplink?id=jU79Zysihs4&mid=47764&murl=https%3A%2F%2Fwww.educative.io%2Fcourses%2Fcomplete-guide-to-modern-javascript&u1=blog%2Fbest-javascript-courses_amcid-qrpA3FOUPlBxVQIm3AZsP', 'Courses'),
+  createData3('Event Bubbling and Event Capturing in JavaScrip - Explained with Examples', 'https://www.freecodecamp.org/news/event-bubbling-and-event-capturing-in-javascript/', 'Courses'),
+  createData3('Web Storage Explained - How to Use localStorage and sessionStorage in JavaScript Projects', 'https://www.freecodecamp.org/news/web-storage-localstorage-vs-sessionstorage-in-javascript/', 'Tutorials'),
+  createData3('How to Code Dark Mode for Google Sheets with Apps Script and JavaScript', 'https://www.freecodecamp.org/news/how-to-code-dark-mode-for-google-sheets/', 'Tutorials'),
+  createData3('How JavaScript String Concatenation Works - The "+" Operator vs the "+=" Operator', 'https://www.freecodecamp.org/news/javascript-string-concatenation/', 'Courses'),
+  createData3('JavaScript Array Handbook', 'https://www.freecodecamp.org/news/javascript-array-handbook/', 'Courses'),
+  createData3('JavaScript Dates - How to Use the DayJS Library to Work with Date and Time in JS', 'https://www.freecodecamp.org/news/javascript-date-time-dayjs/', 'Tutorials'),
+  createData3('JavaScript Functions and Scope - A Beginner\'s Guide', 'https://www.freecodecamp.org/news/javascript-functions-and-scope/', 'Courses'),
+  createData3('JS Date Validations - How to Validate a Date in JavaScript (With Examples)', 'https://www.freecodecamp.org/news/how-to-validate-a-date-in-javascript/', 'Tutorials'),
+  createData3('How to Use the JavaScript at() Array Method', 'https://www.freecodecamp.org/news/javascript-at-method/', 'Tutorials'),
+  createData3('How to Use JavaScript Promises - Callbacks, Async/Await, and Promise Methods Explained', 'https://www.freecodecamp.org/news/javascript-promises-async-await-and-promise-methods/', 'Courses')
 ];
 
 // Java - Documentation & Tools
 const rows53 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Java Documentation', 'https://dev.java/learn/', 'Documentation'),
+  createData3('Site24x7', 'http://guru99.link/recommends-site24x7-javatools', 'Tools'),
+  createData3('ManageEngine Applications Manager', 'http://guru99.link/recommends-java-transaction-monitoring', 'Tools'),
+  createData3('JUnit Testing Tool', 'http://junit.org/junit4/', 'Tools'),
+  createData3('NetBeans IDE', 'https://netbeans.org/downloads/index.html', 'Tools'),
+  createData3('Apache Maven Project Management Tool', 'http://maven.apache.org/download.cgi', 'Tools'),
+  createData3('Mockito', 'http://site.mockito.org/', 'Tools'),
+  createData3('Ehcache Caching Tool', 'http://www.ehcache.org/downloads/', 'Tools'),
+  createData3('VisualVM', 'https://visualvm.github.io/download.html', 'Tools'),
+  createData3('Oracle JDeveloper IDE', 'https://www.oracle.com/tools/downloads/jdeveloper-12c-downloads.html', 'Tools'),
+  createData3('Java Decompiler', 'http://java-decompiler.github.io/', 'Tools'),
+  createData3('Gradle', 'https://gradle.org/', 'Tools'),
+  createData3('Cobertura', 'http://cobertura.github.io/cobertura/', 'Tools'),
+  createData3('Groovy', 'http://groovy-lang.org/download.html', 'Tools'),
+  createData3('Yourkit', 'https://www.yourkit.com/java/profiler/download/', 'Tools'),
+  createData3('Eclipse IDE', 'https://www.eclipse.org/', 'Tools'),
+  createData3('IntelliJ IDEA IDE', 'https://www.jetbrains.com/idea/', 'Tools')
 ];
 
 // Java - Courses & Tutorials
 const row54 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Learn the Basics of Java Programming', 'https://www.freecodecamp.org/news/learn-the-basics-of-java-programming/', 'Courses'),
+  createData3('Understanding Java Internals: Speed and Performance', 'https://www.freecodecamp.org/news/understanding-java-internals-speed-and-performance/', 'Courses'),
+  createData3('Learn Dynamic Programming Techniques in Java', 'https://www.freecodecamp.org/news/learn-dynamic-programming-in-java/', 'Courses'),
+  createData3('String to Array in Java - How to Convert Strings to Arrays', 'https://www.freecodecamp.org/news/string-to-array-in-java-how-to-convert-a-string-to-an-array-in-java/', 'Tutorials'),
+  createData3('Java Data Types and Variables - Explained for Beginners', 'https://www.freecodecamp.org/news/java-data-types-and-variables/', 'Courses'),
+  createData3('How to Set Up Your Java Development Environment', 'https://www.freecodecamp.org/news/how-to-set-up-java-development-environment-a-comprehensive-guide/', 'Tutorials'),
+  createData3('How Number Systems Work in Java - Decimal, Binary, Octal, and Hexadecimal Explained', 'https://www.freecodecamp.org/news/number-systems-in-java/', 'Courses'),
+  createData3('Java Iterator Hashmap - How to Iterate Through a Hashmap with a Loop', 'https://www.freecodecamp.org/news/java-iterator-hashmap-how-to-iterate-through-a-hashmap-with-a-loop/', 'Tutorials'),
+  createData3('Object Oriented Programming Basics - OOP, Classes, and Objects in Java', 'https://www.freecodecamp.org/news/object-oriented-programming-basics-oop-classes-and-objects-in-java/', 'Courses'),
+  createData3('How to Initialize an ArrayList in Java - Declaration with Values', 'https://www.freecodecamp.org/news/how-to-initialize-an-arraylist-in-java-with-values/', 'Tutorials'),
+  createData3('Print Methods in Java - How to Print to the Terminal', 'https://www.freecodecamp.org/news/print-methods-in-java/', 'Tutorials'),
+  createData3('JSONObject.toString() - How to Convert JSON to a String in Java', 'https://www.freecodecamp.org/news/jsonobject-tostring-how-to-convert-json-to-a-string-in-java/', 'Tutorials'),
+  createData3('How to Initialize a Java List - List of String Initialization in Java', 'https://www.freecodecamp.org/news/how-to-initialize-a-java-list/', 'Tutorials'),
+  createData3('Java for Beginners - How to Create Your First "Hello World" Program', 'https://www.freecodecamp.org/news/hello-world-in-java/', 'Tutorials'),
+  createData3('How to Write Unit Tests in Java', 'https://www.freecodecamp.org/news/java-unit-testing/', 'Tutorials'),
+  createData3('Method Overloading vs Method Overriding in Java - What\'s the Difference?', 'https://www.freecodecamp.org/news/method-overloading-and-overriding-in-java/', 'Courses'),
+  createData3('How to Create an Array in Java - Array Declaration Example', 'https://www.freecodecamp.org/news/how-to-create-an-array-in-java/', 'Tutorials'),
+  createData3('Functional Programming in Java', 'https://www.freecodecamp.org/news/functional-programming-in-java/', 'Courses'),
+  createData3('Binary Search in Java - Algorithm Example', 'https://www.freecodecamp.org/news/binary-search-in-java-algorithm-example/', 'Tutorials')
 ];
 
 // Python - Documentation & Tools
 const rows56 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Python Documentation', 'https://docs.python.org/3/', 'Documentation'),
+  createData3('PyCharm IDE', 'https://www.jetbrains.com/pycharm/', 'Tools'),
+  createData3('Pip Package Manager', 'https://pypi.org/project/pip/', 'Packages & Utilities'),
+  createData3('Python Anywhere', 'https://www.pythonanywhere.com/', 'Tools'),
+  createData3('Scikit-Learn Python Library', 'https://scikit-learn.org/stable/', 'Packages & Utilities'),
+  createData3('Sphinx Documentation Generator', 'https://www.sphinx-doc.org/en/master/', 'Tools'),
+  createData3('Keras AI Tool', 'https://keras.io/', 'Tools'),
+  createData3('Selenium', 'https://selenium-python.readthedocs.io/', 'Tools'),
+  createData3('Sublime Text', 'https://www.sublimetext.com/', 'Tools'),
+  createData3('BeautifulSoup Web Scraping Tool', 'https://www.crummy.com/software/BeautifulSoup/bs4/doc/', 'Tools'),
+  createData3('Jupyter Notebook Browser IDE', 'https://jupyter.org/', 'Tools'),
+  createData3('PyTorch', 'https://pytorch.org/', 'Packages & Utilities'),
+  createData3('TensorFlow', 'https://www.tensorflow.org/', 'Packages & Utilities'),
+  createData3('Admin Panels (List)', 'https://github.com/vinta/awesome-python#admin-panels', 'Tools'),
+  createData3('Algorithms and Design Patterns (List)', 'https://github.com/vinta/awesome-python#algorithms-and-design-patterns', 'Tools'),
+  createData3('ASGI Servers (List)', 'https://github.com/vinta/awesome-python#asgi-servers', 'Tools'),
+  createData3('Asynchronous Programming Tools (List)', 'https://github.com/vinta/awesome-python#asynchronous-programming', 'Tools'),
+  createData3('Audio Libraries (List)', 'https://github.com/vinta/awesome-python#audio', 'Packages & Utilities'),
+  createData3('Authentication Tools (List)', 'https://github.com/vinta/awesome-python#authentication', 'Tools'),
+  createData3('Build Tools (List)', 'https://github.com/vinta/awesome-python#build-tools', 'Tools'),
+  createData3('Built-In Class Enhancements (List)', 'https://github.com/vinta/awesome-python#built-in-classes-enhancement', 'Tools'),
+  createData3('Content Management Systems (List)', 'https://github.com/vinta/awesome-python#cms', 'Tools'),
+  createData3('Caching Libraries (List)', 'https://github.com/vinta/awesome-python#caching', 'Packages & Utilities'),
+  createData3('Code Analysis Tools (List)', 'https://github.com/vinta/awesome-python#code-analysis', 'Tools'),
+  createData3('Command Line Interface (CLI) Development Tools (List)', 'https://github.com/vinta/awesome-python#command-line-interface-development', 'Tools'),
+  createData3('CLI Tools (List)', 'https://github.com/vinta/awesome-python#command-line-tools', 'Tools'),
+  createData3('Configuration Libraries (List)', 'https://github.com/vinta/awesome-python#configuration', 'Packages & Utilities'),
+  createData3('Cryptography Packages & Libraries (List)', 'https://github.com/vinta/awesome-python#cryptography', 'Packages & Utilities'),
+  createData3('Data Analysis Tools (List)', 'https://github.com/vinta/awesome-python#data-analysis', 'Tools'),
+  createData3('Data Validation Libraries (List)', 'https://github.com/vinta/awesome-python#data-validation', 'Packages & Utilities'),
+  createData3('Data Visualization Libraries (List)', 'https://github.com/vinta/awesome-python#data-visualization', 'Packages & Utilities'),
+  createData3('Database Drivers (List)', 'https://github.com/vinta/awesome-python#database-drivers', 'Tools'),
+  createData3('Date & Time Libraries (List)', 'https://github.com/vinta/awesome-python#date-and-time', 'Packages & Utilities'),
+  createData3('Debugging Tools (List)', 'https://github.com/vinta/awesome-python#debugging-tools', 'Tools'),
+  createData3('Deep Learning Frameworks (List)', 'https://github.com/vinta/awesome-python#deep-learning', 'Packages & Utilities'),
+  createData3('DevOps Tools (List)', 'https://github.com/vinta/awesome-python#devops-tools', 'Tools'),
+  createData3('Distribution Tools (List)', 'https://github.com/vinta/awesome-python#distribution', 'Tools'),
+  createData3('Editor Plugins and IDEs (List)', 'https://github.com/vinta/awesome-python#editor-plugins-and-ides', 'Tools'),
+  createData3('Email Libraries (List)', 'https://github.com/vinta/awesome-python#email', 'Packages & Utilities'),
+  createData3('Environment Management Libraries (List)', 'https://github.com/vinta/awesome-python#environment-management', 'Packages & Utilities'),
+  createData3('File Libraries (List)', 'https://github.com/vinta/awesome-python#file', 'Packages & Utilities'),
+  createData3('Form Libraries (List)', 'https://github.com/vinta/awesome-python#forms', 'Packages & Utilities'),
+  createData3('Graphical User Interface Libraries (List)', 'https://github.com/vinta/awesome-python#gui-development', 'Packages & Utilities'),
+  createData3('GraphQL Libraries (List)', 'https://github.com/vinta/awesome-python#graphql', 'Packages & Utilities'),
+  createData3('Python Game Development Libraries (List)', 'https://github.com/vinta/awesome-python#game-development', 'Packages & Utilities'),
+  createData3('Geolocation Libraries (List)', 'https://github.com/vinta/awesome-python#geolocation', 'Packages & Utilities'),
+  createData3('HTML Manipulation Libraries (List)', 'https://github.com/vinta/awesome-python#html-manipulation', 'Packages & Utilities'),
+  createData3('Image Processing Libraries (List)', 'https://github.com/vinta/awesome-python#image-processing', 'Packages & Utilities')
 ];
 
 // Python - Courses & Tutorials
 const rows57 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Ultimate Beginner\'s Python Course', 'https://www.freecodecamp.org/news/ultimate-beginners-python-course/', 'Course'),
+  createData3('Beginner\'s Python Tutorial: Pong', 'https://www.freecodecamp.org/news/beginners-python-tutorial-pong/', 'Tutorials'),
+  createData3('Learn Algorithmic Trading Using Python', 'https://www.freecodecamp.org/news/learn-algorithmic-trading-using-python/', 'Courses'),
+  createData3('Machine Learning Fundamentals - Key Concepts, Algorithms, and Python Code Examples', 'https://www.freecodecamp.org/news/machine-learning-handbook/', 'Courses'),
+  createData3('How to Swap the Values of Two Variables Without a Temporary Variable in Python', 'https://www.freecodecamp.org/news/swapping-values-of-two-variables-without-a-temporary-variable-in-python/', 'Tutorials'),
+  createData3('Testing in Python with Pytest', 'https://www.freecodecamp.org/news/testing-in-python-with-pytest/', 'Courses'),
+  createData3('What are Context Managers in Python?', 'https://www.freecodecamp.org/news/context-managers-in-python/', 'Courses'),
+  createData3('Python List Methods Explained in Plain English', 'https://www.freecodecamp.org/news/python-list-methods-explained-in-plain-english/', 'Courses'),
+  createData3('What is Hypothesis Testing? Types and Python Code Example', 'https://www.freecodecamp.org/news/what-is-hypothesis-testing/', 'Courses'),
+  createData3('How to Return Results from a Python Function to Your Program When a Library is Blocking Your Way', 'https://www.freecodecamp.org/news/return-results-from-a-python-function-when-library-is-blocking-the-way/', 'Tutorials'),
+  createData3('Python Requirements.txt - How to Create and Pip Install Requirements.txt in Python', 'https://www.freecodecamp.org/news/python-requirementstxt-explained/', 'Tutorials'),
+  createData3('Object Oriented Programming in Python - Explained in Plain English', 'https://www.freecodecamp.org/news/object-oriented-programming-python/', 'Courses'),
+  createData3('How to Build a Large Language Model from Scratch Using Python', 'https://www.freecodecamp.org/news/how-to-build-a-large-language-model-from-scratch-using-python/', 'Tutorials'),
+  createData3('Harvard CS50\'s Introduction to Artificial Intelligence with Python - Free University Course', 'https://www.freecodecamp.org/news/harvard-cs50s-ai-python-course/', 'Courses'),
+  createData3('The Best Data Structure for Storing Non-Duplicate Items in Python', 'https://www.freecodecamp.org/news/the-best-data-structure-for-storing-non-duplicate-items-in-python/', 'Courses'),
+  createData3('How to Calculate Definite and Indefinite Integrals in Python', 'https://www.freecodecamp.org/news/calculate-definite-indefinite-integrals-in-python/', 'Tutorials'),
+  createData3('Python Project - How to Convert Multiple Images into a Single PDF File', 'https://www.freecodecamp.org/news/convert-multiple-images-into-a-single-pdf-file-with-python/', 'Tutorials'),
+  createData3('Modern Python App Design with ttkbootstrap', 'https://www.freecodecamp.org/news/modern-python-app-design-with-ttkbootstrap/', 'Courses'),
+  createData3('How to Configure Visual Studio Code for Python Development', 'https://www.freecodecamp.org/news/how-to-configure-visual-studio-code-for-python-development/', 'Tutorials'),
+  createData3('How Arrays Work in Python - Array Methods Explained with Code Examples', 'https://www.freecodecamp.org/news/how-arrays-work-in-python/', 'Courses'),
+  createData3('Python Env Vars - How to Get an Environment Variable in Python', 'https://www.freecodecamp.org/news/python-env-vars-how-to-get-an-environment-variable-in-python/', 'Tutorials'),
+  createData3('How to Build a Tiered List Maker with Python', 'https://www.freecodecamp.org/news/python-tier-list-maker/', 'Tutorials')
 ];
 
 // Rust - Documentation & Tools
 const rows59 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Rust Documentation', 'https://www.rust-lang.org/learn', 'Documentation'),
+  createData3('Audio & Music Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#audio-and-music', 'Packages & Utilities'),
+  createData3('Cryptocurrency Tools (List)', 'https://github.com/rust-unofficial/awesome-rust#cryptocurrencies', 'Tools'),
+  createData3('Databases & Database Tools (List)', 'https://github.com/rust-unofficial/awesome-rust#database', 'Tools'),
+  createData3('Graphics Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#graphics', 'Packages & Utilities'),
+  createData3('Image Processing Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#image-processing', 'Packages & Utilities'),
+  createData3('Hyperswitch Payment API', 'https://github.com/juspay/hyperswitch', 'Tools'),
+  createData3('Productivity Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#productivity', 'Packages & Utilities'),
+  createData3('Security Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#security-tools', 'Packages & Utilities'),
+  createData3('Text Editors (List)', 'https://github.com/rust-unofficial/awesome-rust#text-editors', 'Tools'),
+  createData3('Text Processing Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#text-processing', 'Packages & Utilities'),
+  createData3('Utilities (List)', 'https://github.com/rust-unofficial/awesome-rust#utilities', 'Packages & Utilities'),
+  createData3('Video Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#video', 'Packages & Utilities'),
+  createData3('Virtualization Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#virtualization', 'Packages & Utilities'),
+  createData3('Web Server Tools and Libraries (List)', 'https://github.com/rust-unofficial/awesome-rust#web-servers', 'Packages & Utilities'),
+  createData3('Development Tools (List)', 'https://github.com/rust-unofficial/awesome-rust#development-tools', 'Tools'),
+  createData3('Build Systems (List)', 'https://github.com/rust-unofficial/awesome-rust#build-system', 'Tools'),
+  createData3('Debugging Tools (List)', 'https://github.com/rust-unofficial/awesome-rust#debugging', 'Tools'),
+  createData3('Deployment Tools (List)', 'https://github.com/rust-unofficial/awesome-rust#deployment', 'Tools')
 ];
 
 // Rust - Courses & Tutorials
 const rows60 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Rust Project - Create an Authentication Server', 'https://www.freecodecamp.org/news/rust-tutorial-authentication-server/', 'Tutorials'),
+  createData3('Complete Rust Programming Course', 'https://www.freecodecamp.org/news/rust-programming-course-for-beginners/', 'Courses'),
+  createData3('How to Get Started with MongoDB in Rust', 'https://www.freecodecamp.org/news/mongodb-in-rust/', 'Tutorials'),
+  createData3('How to Build a Machine Learning Model in Rust', 'https://www.freecodecamp.org/news/how-to-build-a-machine-learning-model-in-rust/', 'Tutorials'),
+  createData3('What is Unit Testing? How to Perform Unit Tests in Rust', 'https://www.freecodecamp.org/news/unit-testing-in-rust/', 'Tutorials'),
+  createData3('How to Solve Project Euler Problems in Rust', 'https://www.freecodecamp.org/news/project-euler-problems-in-rust/', 'Tutorials'),
+  createData3('How to Implement a Naive Bayes Classifier with Rust', 'https://www.freecodecamp.org/news/implement-naive-bayes-with-rust/', 'Tutorials'),
+  createData3('Learn Rust Programming Course', 'https://www.freecodecamp.org/news/rust-in-replit/', 'Courses'),
+  createData3('Rust Programming Language Tutorial - How to Build a To-Do List App', 'https://www.freecodecamp.org/news/how-to-build-a-to-do-app-with-rust/', 'Tutorials'),
+  createData3('How to Use Rust + WebAssembly to Perform Serverless Machine Learning and Data Visualization in the Cloud', 'https://www.freecodecamp.org/news/rust-webassembly-serverless-tencent-cloud/', 'Tutorials'),
+  createData3('Rust for Beginners - Get Started with the Most Loved Programming Language', 'https://www.freecodecamp.org/news/rust-getting-started-with-the-most-loved-programming-language/', 'Courses'),
+  createData3('How to Learn Rust Without Installing Any Software', 'https://www.freecodecamp.org/news/learn-rust-with-github-actions/', 'Tutorials'),
+  createData3('How to Build Powerful GraphQL Servers with Rust', 'https://www.freecodecamp.org/news/building-powerful-graphql-servers-with-rust/', 'Tutorials'),
+  createData3('How to Go Serverless with Rust and API Gateway', 'https://www.freecodecamp.org/news/going-serverless-with-rust-and-api-gateway-aa5d1502c32e/', 'Tutorials'),
+  createData3('Learn Rust by Building Real Applications', 'https://www.udemy.com/course/rust-fundamentals/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.US&utm_content=deal4584&utm_term=_._ag_81829991707_._ad_532193842025_._kw__._de_c_._dm__._pl__._ti_aud-1888734399789%3Adsa-1007766171312_._li_9027373_._pd__._&matchtype=&gad_source=1&gclid=CjwKCAjwnOipBhBQEiwACyGLusDMxDmlRmID-EgrT_M3grqurcAbEaW5Jm_2nm23a5m7TPbEj8rGEBoChPUQAvD_BwE', 'Courses'),
+  createData3('Rust for Systems Programmers', 'https://github.com/nrc/r4cppp?ref=hackr.io', 'Tutorials'),
+  createData3('Learning Rust with Entirely Too Many Linked Lists', 'http://cglab.ca/~abeinges/blah/too-many-lists/book/README.html?ref=hackr.io', 'Tutorials'),
+  createData3('The Rustonomicon', 'https://doc.rust-lang.org/stable/nomicon/', 'Tutorials'),
+  createData3('A Gentle Introduction to Rust', 'https://stevedonovan.github.io/rust-gentle-intro/', 'Tutorials')
 ];
 
 // TypeScript - Documentation & Tools
 const rows62 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('TypeScript Documentation', 'https://www.typescriptlang.org/docs/', 'Documentation'),
+  createData3('Webpack', 'https://github.com/s-panferov/awesome-typescript-loader', 'Packages & Utilities'),
+  createData3('Gulp', 'https://github.com/ivogabe/gulp-typescript', 'Packages & Utilities'),
+  createData3('Grunt', 'https://github.com/TypeStrong/grunt-ts', 'Packages & Utilities'),
+  createData3('Compiler', 'https://github.com/TypeStrong/ts-node', 'Packages & Utilities'),
+  createData3('Linter', 'https://github.com/palantir/tslint', 'Packages & Utilities'),
+  createData3('Data Structure Libraries and Tools (List)', 'https://github.com/semlinker/awesome-typescript#data-structure', 'Packages & Utilities'),
+  createData3('Database Libraries and Tools (List)', 'https://github.com/semlinker/awesome-typescript#database', 'Packages & Utilities'),
+  createData3('Server Libraries and Tools (List)', 'https://github.com/semlinker/awesome-typescript#server', 'Packages & Utilities'),
+  createData3('IDEs & Plugins (List)', 'https://github.com/semlinker/awesome-typescript#ideplugins', 'Tools')
 ];
 
 // TypeScript - Courses & Tutorials
 const rows63 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Mastering TypeScript - 2023 Edition', 'https://www.udemy.com/course/learn-typescript/?utm_source=adwords&utm_medium=udemyads&utm_campaign=WebDevelopment_Search_la.EN_cc.US_PP_Experiment&utm_content=deal4584&utm_term=_._ag_138827691729_._ad_595066845345_._kw__._de_c_._dm__._pl__._ti_aud-1888734399789%3Adsa-1652654191345_._li_9027373_._pd__._&matchtype=&gad_source=1&gclid=CjwKCAjwnOipBhBQEiwACyGLuswrb3mn7zd7gh8DAN3ue52hoUr5pq04XFLGpxpqZs7d_MMnuYaHLBoCA4MQAvD_BwE', 'Courses'),
+  createData3('How to Use TypeScript Generics with Functional React Components', 'https://www.freecodecamp.org/news/typescript-generics-with-functional-react-components/', 'Tutorials'),
+  createData3('How to Build a Type-Safe Todo App', 'https://www.freecodecamp.org/news/typescript-tutorial-for-react-developers/', 'Tutorials'),
+  createData3('How to Use the TypeScript Satisfies Operator', 'https://www.freecodecamp.org/news/typescript-satisfies-operator/', 'Tutorials'),
+  createData3('How to Build a Shopping Cart with React and TypeScript', 'https://www.freecodecamp.org/news/how-to-build-a-shopping-cart-with-react-and-typescript/', 'Tutorials'),
+  createData3('How to Shuffle an Array of Items Using JavaScript or TypeScript', 'https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/', 'Tutorials'),
+  createData3('How to Build an Image Carousel Component with TypeScript and Styled-Components', 'https://www.freecodecamp.org/news/how-to-build-an-image-carousel-component/', 'Tutorials'),
+  createData3('Build and Deploy a LeetCode Clone with React, NextJS, TypeScript, Tailwind CSS, Firebase', 'https://www.freecodecamp.org/news/build-and-deploy-a-leetcode-clone-with-react-next-js-typescript-tailwind-css-firebase/', 'Tutorials'),
+  createData3('Full Stack Development with Next.js, TypeScript, and AWS', 'https://www.freecodecamp.org/news/full-stack-development-with-next-js-typescript-and-aws/', 'Courses'),
+  createData3('TypeScript in React - How to Manage State with Firebase Cloud Firestore', 'https://www.freecodecamp.org/news/how-to-manage-state-in-react-apps-with-firebase-cloud-firestore/', 'Tutorials'),
+  createData3('Create a Personal Website with Nex.js 13, Sanity.io, TailwindCSS, and TypeScript', 'https://www.freecodecamp.org/news/create-a-personal-website-with-next-js-13-sanity-io-tailwindcss-and-typescript/', 'Tutorials'),
+  createData3('Learn to Code a BuzzFeed Clone in Three Ways (JavaScript, React, TypeScript)', 'https://www.freecodecamp.org/news/learn-how-to-code-a-buzzfeed-clone-in-three-ways/', 'Tutorials'),
+  createData3('How to Use TypeScript in React Apps', 'https://www.freecodecamp.org/news/using-typescript-in-react-apps/', 'Courses'),
+  createData3('Programming in TypeScript - Full Course', 'https://www.freecodecamp.org/news/programming-in-typescript/', 'Courses'),
+  createData3('TypeScript for React Developers - Why TypeScript is Useful and How it Works', 'https://www.freecodecamp.org/news/typescript-for-react-developers/', 'Courses'),
+  createData3('Build a Webshop with Angular, Node.js, TypeScript, & Stripe', 'https://www.freecodecamp.org/news/build-a-webshop-with-angular-node-js-typescript-stripe/', 'Tutorials'),
+  createData3('Angular for Beginners Course + TypeScript', 'https://www.freecodecamp.org/news/angular-for-beginners-course/', 'Courses'),
+  createData3('How to Use TypeScript with GraphQL Using TypeGraphQL', 'https://www.freecodecamp.org/news/how-to-use-typescript-with-graphql/', 'Tutorials'),
+  createData3('How to Use TypeScript - Beginner-Friendly TS Tutorial', 'https://www.freecodecamp.org/news/an-introduction-to-typescript/', 'Tutorials'),
+  createData3('Build a 100 Days of Code Discord Bot with TypeScript, MongoDB, and Discord.js 13', 'https://www.freecodecamp.org/news/build-a-100-days-of-code-discord-bot-with-typescript-mongodb-and-discord-js-13/', 'Tutorials')
 ];
 
-const drawerWidth = 240;
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    }),
-  }));
-
-  const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-      '& .MuiDrawer-paper': {
-        position: 'relative',
-        whiteSpace: 'nowrap',
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        boxSizing: 'border-box',
-        ...(!open && {
-          overflowX: 'hidden',
-          transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
-          width: theme.spacing(7),
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9),
-          },
-        }),
-      },
-    }),
-  );
-
 const ResourcesComponent = () => {
-    const history = useHistory()
-    const [open, setOpen] = React.useState(true);
-    const toggleDrawer = () => {
-        setOpen(!open);
-    };
-
     const [expanded, setExpanded] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const [formEmail, setFormEmail] = React.useState('')
+    const [formResourceName, setFormResourceName] = React.useState('')
+    const [formResourceLink, setFormResourceLink] = React.useState('')
+    const [formResourceType, setFormResourceType] = React.useState('')
+    const [formResourceLanguages, setFormResourceLanguages] = React.useState('')
+
+    const form = React.useRef()
+
+    const submitForm = (e) => {
+      e.preventDefault()
+
+      emailjs.sendForm('service_6t9viah', 'template_zmurbwi', form.current, 'c5YoRG65yaZNI8XIT')
+      .then((result) => {
+        console.log(result.text)
+      }, (error) => {
+        console.log(error.text)
+      }).then(() => {
+        handleClose()
+      })
+    }
 
     const handleChange = (panel) => (event, isExpanded) => {
       setExpanded(isExpanded ? panel : false);
     };
 
     return (
-        // <>
       <Box sx={{ display: 'flex', height: "100vh" }}>
-        <Box sx={{ display: 'flex', height: "100vh" }}>
-          <CssBaseline />
-          <AppBar position="absolute" open={open}>
-            <Toolbar
-              sx={{
-                pr: '24px', // keep right padding when drawer closed
-                backgroundColor: "black"
-              }}
-            >
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                onClick={toggleDrawer}
-                sx={{
-                  marginRight: '36px',
-                  ...(open && { display: 'none' }),
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <img src="https://i.ibb.co/dLgCNcW/projectblockr-shieldonly.png" style={{"height": "50px", "marginRight": "10px"}} alt="projectblockr-shieldonly" />
-              <Typography
-                component="h1"
-                variant="h6"
-                color="inherit"
-                noWrap
-                sx={{ flexGrow: 1 }}
-              >
-                Resources
-              </Typography>
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <IconButton color="inherit">
-                <PersonIcon onClick={() => history.push('/user')} />
-              </IconButton>
-            </Toolbar>
-          </AppBar>
-          <Drawer variant="permanent" open={open}>
-            <Toolbar
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                px: [1],
-              }}
-            >
-              <IconButton onClick={toggleDrawer}>
-                <ChevronLeftIcon />
-              </IconButton>
-            </Toolbar>
-            <Divider />
-            <List component="nav">
-              {mainListItems}
-            </List>
-          </Drawer>
-        </Box>
+          <NavDrawer />
         <Box
           component="main"
           sx={{
@@ -1418,6 +1342,113 @@ const ResourcesComponent = () => {
             <h1>Resources</h1>
           </div>
           <div className='resource-main-content'>
+            <div style={{ "textAlign": "center" }}>
+              <p>Note: This list was created through exhaustive research by the creator. It include both free and paid resources, tools, and courses for a variety of languages and frameworks. The creator is not affiliated with any of the resources, companies, or products listed.</p>
+            </div>
+            <div style={{ "display": "flex", "alignItems": "center", "flexDirection": "column" }}>
+              <p>Have a resource you think should be added?</p>
+              <Button variant='contained' onClick={handleOpen}>Submit Resource</Button>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <form ref={form} onSubmit={submitForm} style={{ "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                    <section>
+                      <h2>Submit a Resource</h2>
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='resource-form-email'>Your Email</label><span style={{ "color": "red" }}>*</span>
+                      </div>
+                      <input
+                        type='email'
+                        name='resource-form-email'
+                        value={formEmail}
+                        onChange={(e) => setFormEmail(e.target.value)}
+                        required
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      />
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='resource-form-res-name'>Resource Name</label><span style={{ "color": "red" }}>*</span>
+                      </div>
+                      <input
+                        name='resource-form-res-name'
+                        value={formResourceName}
+                        onChange={(e) => setFormResourceName(e.target.value)}
+                        required
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      />
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='resource-form-link'>Resource Link</label><span style={{ "color": "red" }}>*</span>
+                      </div>
+                      <input
+                        name='resource-form-link'
+                        value={formResourceLink}
+                        onChange={(e) => setFormResourceLink(e.target.value)}
+                        required
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      />
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='form-related-languages'>Related Languages</label><span style={{ "fontStyle": "italic" }}> optional</span>
+                      </div>
+                      <select
+                        name='form-related-languages'
+                        value={formResourceLanguages}
+                        onChange={(e) => setFormResourceLanguages(e.target.value)}
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      >
+                        <option value='C#'>C#</option>
+                        <option value='C++'>C++</option>
+                        <option value='CSS'>CSS</option>
+                        <option value='HTML'>HTML</option>
+                        <option value='Java'>Java</option>
+                        <option value='JavaScript'>JavaScript</option>
+                        <option value='Python'>Python</option>
+                        <option value='Rust'>Rust</option>
+                        <option value='TypeScript'>TypeScript</option>
+                        <option value='All/General'>All/General</option>
+                        <option value='N/A'>N/A</option>
+                      </select>
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='form-resource-type'>Resource Type</label><span style={{ "fontStyle": "italic" }}> optional</span>
+                      </div>
+                      <select
+                        name='form-resource-type'
+                        value={formResourceType}
+                        onChange={(e) => setFormResourceType(e.target.value)}
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      >
+                        <option value='Community & News'>Community & News</option>
+                        <option value='Courses'>Courses</option>
+                        <option value='Documentation'>Documentation</option>
+                        <option value='Helpful Info'>Helpful Info</option>
+                        <option value='Packages & Utilities'>Packages & Utilities</option>
+                        <option value='Practices'>Practices</option>
+                        <option value='Services'>Services</option>
+                        <option value='Tools'>Tools</option>
+                        <option value='Troubleshooting/Debugging'>Troubleshooting/Debugging</option>
+                        <option value='Tutorials'>Tutorials</option>
+                        <option value='N/A'>N/A</option>
+                      </select>
+                    </section>
+                    <section style={{ "display": "flex", "justifyContent": "center", "margin": "15px 0px" }}>
+                    <Button variant='contained' type='submit'>Submit</Button>
+                    </section>
+                  </form>
+                </Box>
+              </Modal>
+            </div>
             <div>
               <h2 style={{ "borderBottom": "1px solid gray", "paddingBottom": "10px" }}>Topics</h2>
             </div>

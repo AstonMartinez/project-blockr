@@ -13,7 +13,23 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import emailjs from '@emailjs/browser';
 import './Resources.css'
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  borderRadius: '10px',
+  boxShadow: 24,
+  p: 4,
+};
 
 // Resource Types:
 //  - Documentation
@@ -1275,6 +1291,31 @@ const rows63 = [
 
 const ResourcesComponent = () => {
     const [expanded, setExpanded] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const [formEmail, setFormEmail] = React.useState('')
+    const [formResourceName, setFormResourceName] = React.useState('')
+    const [formResourceLink, setFormResourceLink] = React.useState('')
+    const [formResourceType, setFormResourceType] = React.useState('')
+    const [formResourceLanguages, setFormResourceLanguages] = React.useState('')
+
+    const form = React.useRef()
+
+    const submitForm = (e) => {
+      e.preventDefault()
+
+      emailjs.sendForm('service_6t9viah', 'template_zmurbwi', form.current, 'c5YoRG65yaZNI8XIT')
+      .then((result) => {
+        console.log(result.text)
+      }, (error) => {
+        console.log(error.text)
+      }).then(() => {
+        handleClose()
+      })
+    }
 
     const handleChange = (panel) => (event, isExpanded) => {
       setExpanded(isExpanded ? panel : false);
@@ -1301,6 +1342,113 @@ const ResourcesComponent = () => {
             <h1>Resources</h1>
           </div>
           <div className='resource-main-content'>
+            <div style={{ "textAlign": "center" }}>
+              <p>Note: This list was created through exhaustive research by the creator. It include both free and paid resources, tools, and courses for a variety of languages and frameworks. The creator is not affiliated with any of the resources, companies, or products listed.</p>
+            </div>
+            <div style={{ "display": "flex", "alignItems": "center", "flexDirection": "column" }}>
+              <p>Have a resource you think should be added?</p>
+              <Button variant='contained' onClick={handleOpen}>Submit Resource</Button>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <form ref={form} onSubmit={submitForm} style={{ "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                    <section>
+                      <h2>Submit a Resource</h2>
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='resource-form-email'>Your Email</label><span style={{ "color": "red" }}>*</span>
+                      </div>
+                      <input
+                        type='email'
+                        name='resource-form-email'
+                        value={formEmail}
+                        onChange={(e) => setFormEmail(e.target.value)}
+                        required
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      />
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='resource-form-res-name'>Resource Name</label><span style={{ "color": "red" }}>*</span>
+                      </div>
+                      <input
+                        name='resource-form-res-name'
+                        value={formResourceName}
+                        onChange={(e) => setFormResourceName(e.target.value)}
+                        required
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      />
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='resource-form-link'>Resource Link</label><span style={{ "color": "red" }}>*</span>
+                      </div>
+                      <input
+                        name='resource-form-link'
+                        value={formResourceLink}
+                        onChange={(e) => setFormResourceLink(e.target.value)}
+                        required
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      />
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='form-related-languages'>Related Languages</label><span style={{ "fontStyle": "italic" }}> optional</span>
+                      </div>
+                      <select
+                        name='form-related-languages'
+                        value={formResourceLanguages}
+                        onChange={(e) => setFormResourceLanguages(e.target.value)}
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      >
+                        <option value='C#'>C#</option>
+                        <option value='C++'>C++</option>
+                        <option value='CSS'>CSS</option>
+                        <option value='HTML'>HTML</option>
+                        <option value='Java'>Java</option>
+                        <option value='JavaScript'>JavaScript</option>
+                        <option value='Python'>Python</option>
+                        <option value='Rust'>Rust</option>
+                        <option value='TypeScript'>TypeScript</option>
+                        <option value='All/General'>All/General</option>
+                        <option value='N/A'>N/A</option>
+                      </select>
+                    </section>
+                    <section style={{ "width": "250px", "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
+                      <div>
+                        <label htmlFor='form-resource-type'>Resource Type</label><span style={{ "fontStyle": "italic" }}> optional</span>
+                      </div>
+                      <select
+                        name='form-resource-type'
+                        value={formResourceType}
+                        onChange={(e) => setFormResourceType(e.target.value)}
+                        style={{ "width": "250px", "marginBottom": "10px", "height": "30px" }}
+                      >
+                        <option value='Community & News'>Community & News</option>
+                        <option value='Courses'>Courses</option>
+                        <option value='Documentation'>Documentation</option>
+                        <option value='Helpful Info'>Helpful Info</option>
+                        <option value='Packages & Utilities'>Packages & Utilities</option>
+                        <option value='Practices'>Practices</option>
+                        <option value='Services'>Services</option>
+                        <option value='Tools'>Tools</option>
+                        <option value='Troubleshooting/Debugging'>Troubleshooting/Debugging</option>
+                        <option value='Tutorials'>Tutorials</option>
+                        <option value='N/A'>N/A</option>
+                      </select>
+                    </section>
+                    <section style={{ "display": "flex", "justifyContent": "center", "margin": "15px 0px" }}>
+                    <Button variant='contained' type='submit'>Submit</Button>
+                    </section>
+                  </form>
+                </Box>
+              </Modal>
+            </div>
             <div>
               <h2 style={{ "borderBottom": "1px solid gray", "paddingBottom": "10px" }}>Topics</h2>
             </div>

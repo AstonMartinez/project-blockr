@@ -1,4 +1,3 @@
-// import './Resources.css'
 import * as React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -209,9 +208,6 @@ const rows6 = [
   createData('React Project Ideas for Beginners', 'https://themeselection.com/react-project-ideas-for-beginners/', 'Helpful Info', 'JavaScript'),
   createData('React Boilerplate', 'https://themeselection.com/react-boilerplate/', 'Helpful Info', 'JavaScript'),
   createData('The Best 10+ React Developer Tools 2021', 'https://themeselection.com/react-developer-tools/', 'Helpful Info', 'JavaScript')
-  // createData('Learn React', 'https://react.dev/learn', 'Documentation', 'JavaScript'),
-  // createData('Tutorial: Tic-Tac-Toe', 'https://react.dev/learn/tutorial-tic-tac-toe', 'Tutorials', 'JavaScript'),
-  // createData('React API Reference Docs', 'https://react.dev/reference/react', 'Documentation', 'JavaScript'),
   // createData('The Beginner\'s Guide to React', 'https://egghead.io/courses/the-beginner-s-guide-to-react', 'Courses', 'JavaScript'),
   // createData('Epic React', 'https://epicreact.dev/', 'Courses', 'JavaScript'),
   // createData('Learn React: Codecademy', 'https://www.codecademy.com/learn/react-101', 'Courses', 'JavaScript'),
@@ -221,7 +217,6 @@ const rows6 = [
   // createData('React with Redux, React-Router, Hooks, and AuthO', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmodern-react%2F', 'Courses', 'JavaScript'),
   // createData('Build Your First ReactJS Application', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fbuild-your-first-react-js-application%2F', 'Courses', 'JavaScript'),
   // createData('React for Beginners with Hooks - 2023', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Freact-for-beginners-with-hooks-2021%2F', 'Courses', 'JavaScript'),
-  // createData('Build an Online Store Using AWS, React, and Stripe', 'https://youtu.be/JgwI22y_eFA', 'Tutorials', 'JavaScript'),
 ];
 
 const rows7 = [
@@ -882,26 +877,14 @@ const rows39 = [
 
 // C++ - Documentation & Tools
 const rows41 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('C++ Documentation', 'https://devdocs.io/cpp/', 'Documentation'),
+  createData3('Visual Studio Code Insiders', 'https://code.visualstudio.com/insiders/', 'Tools'),
+  createData3('Visual Studio Code Insiders Documentation', 'https://code.visualstudio.com/docs', 'Documentation'),
+  createData3('Amazon Web Services (AWS) SDK for C++', 'https://aws.amazon.com/sdk-for-cpp/', 'Tools'),
+  createData3('Code::Blocks IDE', 'https://www.codeblocks.org/', 'Tools'),
+  createData3('Wireshark', 'https://www.wireshark.org/', 'Tools'),
+  createData3('C++ Intellisense', 'https://docs.microsoft.com/en-us/visualstudio/ide/visual-cpp-intellisense?view=vs-2019', 'Tools'),
+  createData3('Tabnine', 'https://www.tabnine.com/', 'Tools')
 ];
 
 // C++ - Courses & Tutorials
@@ -909,23 +892,15 @@ const rows42 = [
   createData3('Fundamentals of C++', 'https://www.edx.org/learn/c-programming/ibm-fundamentals-of-c?index=product&objectID=course-251a4878-0711-4a8d-b1a4-38d96c032cc9&webview=false&campaign=Fundamentals+of+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
   createData3('Object Oriented Implementation Using C++', 'https://www.edx.org/learn/object-oriented-programming/ibm-object-oriented-implementation-using-c?index=product&objectID=course-2d83311b-163c-4829-b6f3-a7085dda90b9&webview=false&campaign=Object+Oriented+Implementation+Using+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
   createData3('Introduction to C++', 'https://www.edx.org/learn/c-plus-plus/microsoft-introduction-to-c?index=product&objectID=course-72abaeb3-0856-4e89-906a-8b6eef402a1f&webview=false&campaign=Introduction+to+C%2B%2B&source=edX&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Flearn%2Fc-sharp', 'Courses'),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('C++ Tutorial for Complete Beginners', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Ffree-learn-c-tutorial-beginners%2F', 'Tutorials'),
+  createData3('Beginning C++ Programming - From Beginner to Beyond', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Fbeginning-c-plus-plus-programming%2F', 'Courses'),
+  createData3('Unreal Engine C++ Developer: Learn C++ and Make Video Games', 'https://click.linksynergy.com/deeplink?id=JVFxdTr9V80&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2Funrealcourse%2F', 'Courses'),
+  createData3('Learn C++ from Scratch', 'https://www.educative.io/courses/learn-cpp-from-scratch?affiliate_id=5073518643380224', 'Courses'),
+  createData3('Learn C++ by Creating', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Flearn-to-program-cpp%2F', 'Courses'),
+  createData3('C++, Short and Sweet, Part 1', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fcpp-short-and-sweet%2F', 'Courses'),
+  createData3('C++ Programming Basics', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=634352.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fc-plus-plus-programming-basics%2F', 'Courses'),
+  createData3('Beginning C++ Templates', 'https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fbeg-cpp-temp%2F', 'Courses'),
+  createData3('C++ for C Programmers', 'https://coursera.pxf.io/c/3294490/1164545/14726?u=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fc-plus-plus-a', 'Courses')
 ];
 
 // CSS - Documentation & Tools
@@ -1026,8 +1001,8 @@ const rows48 = [
 
 // JavaScript - Documentation & Tools
 const rows50 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('React API Reference Docs', 'https://react.dev/reference/react', 'Documentation'),
+  createData3('Learn React', 'https://react.dev/learn', 'Documentation'),
   createData3('', '', ''),
   createData3('', '', ''),
   createData3('', '', ''),
@@ -1050,8 +1025,8 @@ const rows50 = [
 
 // JavaScript - Courses & Tutorials
 const rows51 = [
-  createData3('', '', ''),
-  createData3('', '', ''),
+  createData3('Tutorial: Tic-Tac-Toe', 'https://react.dev/learn/tutorial-tic-tac-toe', 'Tutorials'),
+  createData3('Build an Online Store Using AWS, React, and Stripe', 'https://youtu.be/JgwI22y_eFA', 'Tutorials'),
   createData3('', '', ''),
   createData3('', '', ''),
   createData3('', '', ''),

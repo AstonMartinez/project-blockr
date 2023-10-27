@@ -61,7 +61,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const NavDrawer = () => {
+const NavDrawer = ({ page }) => {
     const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
@@ -97,11 +97,8 @@ const NavDrawer = () => {
                     noWrap
                     sx={{ flexGrow: 1 }}
                     >
-                    Dashboard
+                    {page}
                     </Typography>
-                    <IconButton color="inherit">
-                        <PersonIcon onClick={() => history.push('/user')} />
-                    </IconButton>
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>

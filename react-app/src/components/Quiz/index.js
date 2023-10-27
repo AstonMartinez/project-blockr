@@ -9,57 +9,58 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import LoadingScreen from '../LoadingScreen'
 import NavDrawer from '../NavDrawer'
+import QuizQuestion from '../DailyTrivia/QuizQuestion'
 
 const Quiz = () => {
     const { quizId } = useParams()
     const dispatch = useDispatch()
     const [toggleRender, setToggleRender] = useState(false)
 
-    const [answer1, setAnswer1] = useState('')
-    const [answer2, setAnswer2] = useState('')
-    const [answer3, setAnswer3] = useState('')
-    const [answer4, setAnswer4] = useState('')
-    const [answer5, setAnswer5] = useState('')
-    const [answer6, setAnswer6] = useState('')
-    const [answer7, setAnswer7] = useState('')
-    const [answer8, setAnswer8] = useState('')
-    const [answer9, setAnswer9] = useState('')
-    const [answer10, setAnswer10] = useState('')
-    const [answer11, setAnswer11] = useState('')
-    const [answer12, setAnswer12] = useState('')
-    const [answer13, setAnswer13] = useState('')
-    const [answer14, setAnswer14] = useState('')
-    const [answer15, setAnswer15] = useState('')
-    const [answer16, setAnswer16] = useState('')
-    const [answer17, setAnswer17] = useState('')
-    const [answer18, setAnswer18] = useState('')
-    const [answer19, setAnswer19] = useState('')
-    const [answer20, setAnswer20] = useState('')
+    // const [answer1, setAnswer1] = useState('')
+    // const [answer2, setAnswer2] = useState('')
+    // const [answer3, setAnswer3] = useState('')
+    // const [answer4, setAnswer4] = useState('')
+    // const [answer5, setAnswer5] = useState('')
+    // const [answer6, setAnswer6] = useState('')
+    // const [answer7, setAnswer7] = useState('')
+    // const [answer8, setAnswer8] = useState('')
+    // const [answer9, setAnswer9] = useState('')
+    // const [answer10, setAnswer10] = useState('')
+    // const [answer11, setAnswer11] = useState('')
+    // const [answer12, setAnswer12] = useState('')
+    // const [answer13, setAnswer13] = useState('')
+    // const [answer14, setAnswer14] = useState('')
+    // const [answer15, setAnswer15] = useState('')
+    // const [answer16, setAnswer16] = useState('')
+    // const [answer17, setAnswer17] = useState('')
+    // const [answer18, setAnswer18] = useState('')
+    // const [answer19, setAnswer19] = useState('')
+    // const [answer20, setAnswer20] = useState('')
 
-    const [status1, setStatus1] = useState('')
-    const [status2, setStatus2] = useState('')
-    const [status3, setStatus3] = useState('')
-    const [status4, setStatus4] = useState('')
-    const [status5, setStatus5] = useState('')
-    const [status6, setStatus6] = useState('')
-    const [status7, setStatus7] = useState('')
-    const [status8, setStatus8] = useState('')
-    const [status9, setStatus9] = useState('')
-    const [status10, setStatus10] = useState('')
-    const [status11, setStatus11] = useState('')
-    const [status12, setStatus12] = useState('')
-    const [status13, setStatus13] = useState('')
-    const [status14, setStatus14] = useState('')
-    const [status15, setStatus15] = useState('')
-    const [status16, setStatus16] = useState('')
-    const [status17, setStatus17] = useState('')
-    const [status18, setStatus18] = useState('')
-    const [status19, setStatus19] = useState('')
-    const [status20, setStatus20] = useState('')
+    // const [status1, setStatus1] = useState('')
+    // const [status2, setStatus2] = useState('')
+    // const [status3, setStatus3] = useState('')
+    // const [status4, setStatus4] = useState('')
+    // const [status5, setStatus5] = useState('')
+    // const [status6, setStatus6] = useState('')
+    // const [status7, setStatus7] = useState('')
+    // const [status8, setStatus8] = useState('')
+    // const [status9, setStatus9] = useState('')
+    // const [status10, setStatus10] = useState('')
+    // const [status11, setStatus11] = useState('')
+    // const [status12, setStatus12] = useState('')
+    // const [status13, setStatus13] = useState('')
+    // const [status14, setStatus14] = useState('')
+    // const [status15, setStatus15] = useState('')
+    // const [status16, setStatus16] = useState('')
+    // const [status17, setStatus17] = useState('')
+    // const [status18, setStatus18] = useState('')
+    // const [status19, setStatus19] = useState('')
+    // const [status20, setStatus20] = useState('')
 
     const [hasSubmitted, setHasSubmitted] = useState(false)
     const [result, setResult] = useState('')
-    const [resStarter, setResStarter] = useState()
+    const [resStarter, setResStarter] = useState('')
 
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -76,211 +77,189 @@ const Quiz = () => {
         }).then(() => {
             setToggleRender(!toggleRender)
         })
-    }, [dispatch, quizId, toggleRender])
+    }, [dispatch])
 
-
-
-    const reset = () => {
-        setHasSubmitted(false)
-        setAnswer1('')
-        setAnswer2('')
-        setAnswer3('')
-        setAnswer4('')
-        setAnswer5('')
-        setAnswer6('')
-        setAnswer7('')
-        setAnswer8('')
-        setAnswer9('')
-        setAnswer10('')
-        setAnswer11('')
-        setAnswer12('')
-        setAnswer13('')
-        setAnswer14('')
-        setAnswer15('')
-        setAnswer16('')
-        setAnswer17('')
-        setAnswer18('')
-        setAnswer19('')
-        setAnswer20('')
-
-        setStatus1('')
-        setStatus2('')
-        setStatus3('')
-        setStatus4('')
-        setStatus5('')
-        setStatus6('')
-        setStatus7('')
-        setStatus8('')
-        setStatus9('')
-        setStatus10('')
-        setStatus11('')
-        setStatus12('')
-        setStatus13('')
-        setStatus14('')
-        setStatus15('')
-        setStatus16('')
-        setStatus17('')
-        setStatus18('')
-        setStatus19('')
-        setStatus20('')
-
-    }
 
     const handleSubmit = () => {
-        let correctCount = 0
-
-        if(answer1.trim().toLowerCase() === qArr[0].solution.trim().toLowerCase()){
-            setStatus1("Correct")
-            correctCount++
-        } else {
-            setStatus1("Incorrect")
+        let numCorrect = 0
+        const userAnswers = document.querySelectorAll('#quiz-user-answer')
+        const solutions = document.querySelectorAll('#quiz-question-solution')
+        for(let i = 0; i < userAnswers.length; i++) {
+            if(userAnswers[i] === solutions[i]) {
+                numCorrect++
+            }
         }
 
-        if(answer2.trim().toLowerCase() === qArr[1].solution.trim().toLowerCase()){
-            setStatus2("Correct")
-            correctCount++
-        } else {
-            setStatus2("Incorrect")
-        }
+        setResult(`${numCorrect}/${quiz.length}`)
+        console.log(`${numCorrect}/${quiz.length}`)
 
-        if(answer3.trim().toLowerCase() === qArr[2].solution.trim().toLowerCase()){
-            setStatus3("Correct")
-            correctCount++
-        } else {
-            setStatus3("Incorrect")
-        }
-
-        if(answer4.trim().toLowerCase() === qArr[3].solution.trim().toLowerCase()){
-            setStatus4("Correct")
-            correctCount++
-        } else {
-            setStatus4("Incorrect")
-        }
-
-        if(answer5.trim().toLowerCase() === qArr[4].solution.trim().toLowerCase()){
-            setStatus5("Correct")
-            correctCount++
-        } else {
-            setStatus5("Incorrect")
-        }
-
-        if(qArr[5] && answer6.trim().toLowerCase() === qArr[5].solution.trim().toLowerCase()){
-            setStatus6("Correct")
-            correctCount++
-        } else {
-            setStatus6("Incorrect")
-        }
-
-        if(qArr[6] && answer7.trim().toLowerCase() === qArr[6].solution.trim().toLowerCase()){
-            setStatus7("Correct")
-            correctCount++
-        } else {
-            setStatus7("Incorrect")
-        }
-
-        if(qArr[7] && answer8.trim().toLowerCase() === qArr[7].solution.trim().toLowerCase()){
-            setStatus8("Correct")
-            correctCount++
-        } else {
-            setStatus8("Incorrect")
-        }
-
-        if(qArr[8] && answer9.trim().toLowerCase() === qArr[8].solution.trim().toLowerCase()){
-            setStatus9("Correct")
-            correctCount++
-        } else {
-            setStatus9("Incorrect")
-        }
-
-        if(qArr[9] && answer10.trim().toLowerCase() === qArr[9].solution.trim().toLowerCase()){
-            setStatus10("Correct")
-            correctCount++
-        } else {
-            setStatus10("Incorrect")
-        }
-
-        if(qArr[10] && answer11.trim().toLowerCase() === qArr[10].solution.trim().toLowerCase()){
-            setStatus11("Correct")
-            correctCount++
-        } else {
-            setStatus11("Incorrect")
-        }
-
-        if(qArr[11] && answer12.trim().toLowerCase() === qArr[11].solution.trim().toLowerCase()){
-            setStatus12("Correct")
-            correctCount++
-        } else {
-            setStatus12("Incorrect")
-        }
-
-        if(qArr[12] && answer13.trim().toLowerCase() === qArr[12].solution.trim().toLowerCase()){
-            setStatus13("Correct")
-            correctCount++
-        } else {
-            setStatus13("Incorrect")
-        }
-
-        if(qArr[13] && answer14.trim().toLowerCase() === qArr[13].solution.trim().toLowerCase()){
-            setStatus14("Correct")
-            correctCount++
-        } else {
-            setStatus14("Incorrect")
-        }
-
-        if(qArr[14] && answer15.trim().toLowerCase() === qArr[14].solution.trim().toLowerCase()){
-            setStatus15("Correct")
-            correctCount++
-        } else {
-            setStatus15("Incorrect")
-        }
-
-        if(qArr[15] && answer16.trim().toLowerCase() === qArr[15].solution.trim().toLowerCase()){
-            setStatus16("Correct")
-            correctCount++
-        } else {
-            setStatus16("Incorrect")
-        }
-
-        if(qArr[16] && answer17.trim().toLowerCase() === qArr[16].solution.trim().toLowerCase()){
-            setStatus17("Correct")
-            correctCount++
-        } else {
-            setStatus17("Incorrect")
-        }
-
-        if(qArr[17] && answer18.trim().toLowerCase() === qArr[17].solution.trim().toLowerCase()){
-            setStatus18("Correct")
-            correctCount++
-        } else {
-            setStatus18("Incorrect")
-        }
-
-        if(qArr[18] && answer19.trim().toLowerCase() === qArr[18].solution.trim().toLowerCase()){
-            setStatus19("Correct")
-            correctCount++
-        } else {
-            setStatus19("Incorrect")
-        }
-
-        if(qArr[19] && answer20.trim().toLowerCase() === qArr[19].solution.trim().toLowerCase()){
-            setStatus20("Correct")
-            correctCount++
-        } else {
-            setStatus20("Incorrect")
-        }
-
-        setResult(`${correctCount} / ${qArr.length}`)
-        if(correctCount === qArr.length) {
+        if(numCorrect === qArr.length) {
             setResStarter("Amazing!")
-        } else if (correctCount > Math.floor(qArr.length / 2)) {
+        } else if (numCorrect > Math.floor(qArr.length / 2)) {
             setResStarter("Great job!")
-        } else if (correctCount < Math.floor(qArr.length / 2 && correctCount > 0)) {
+        } else if (numCorrect < Math.floor(qArr.length / 2 && numCorrect > 0)) {
             setResStarter("Solid effort!")
         } else {
             setResStarter("Ouch! Try again.")
         }
+
+
         setHasSubmitted(true)
         return
+
+        // if(answer1.trim().toLowerCase() === qArr[0].solution.trim().toLowerCase()){
+        //     setStatus1("Correct")
+        //     correctCount++
+        // } else {
+        //     setStatus1("Incorrect")
+        // }
+
+        // if(answer2.trim().toLowerCase() === qArr[1].solution.trim().toLowerCase()){
+        //     setStatus2("Correct")
+        //     correctCount++
+        // } else {
+        //     setStatus2("Incorrect")
+        // }
+
+        // if(answer3.trim().toLowerCase() === qArr[2].solution.trim().toLowerCase()){
+        //     setStatus3("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus3("Incorrect")
+    //     }
+
+    //     if(answer4.trim().toLowerCase() === qArr[3].solution.trim().toLowerCase()){
+    //         setStatus4("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus4("Incorrect")
+    //     }
+
+    //     if(answer5.trim().toLowerCase() === qArr[4].solution.trim().toLowerCase()){
+    //         setStatus5("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus5("Incorrect")
+    //     }
+
+    //     if(qArr[5] && answer6.trim().toLowerCase() === qArr[5].solution.trim().toLowerCase()){
+    //         setStatus6("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus6("Incorrect")
+    //     }
+
+    //     if(qArr[6] && answer7.trim().toLowerCase() === qArr[6].solution.trim().toLowerCase()){
+    //         setStatus7("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus7("Incorrect")
+    //     }
+
+    //     if(qArr[7] && answer8.trim().toLowerCase() === qArr[7].solution.trim().toLowerCase()){
+    //         setStatus8("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus8("Incorrect")
+    //     }
+
+    //     if(qArr[8] && answer9.trim().toLowerCase() === qArr[8].solution.trim().toLowerCase()){
+    //         setStatus9("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus9("Incorrect")
+    //     }
+
+    //     if(qArr[9] && answer10.trim().toLowerCase() === qArr[9].solution.trim().toLowerCase()){
+    //         setStatus10("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus10("Incorrect")
+    //     }
+
+    //     if(qArr[10] && answer11.trim().toLowerCase() === qArr[10].solution.trim().toLowerCase()){
+    //         setStatus11("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus11("Incorrect")
+    //     }
+
+    //     if(qArr[11] && answer12.trim().toLowerCase() === qArr[11].solution.trim().toLowerCase()){
+    //         setStatus12("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus12("Incorrect")
+    //     }
+
+    //     if(qArr[12] && answer13.trim().toLowerCase() === qArr[12].solution.trim().toLowerCase()){
+    //         setStatus13("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus13("Incorrect")
+    //     }
+
+    //     if(qArr[13] && answer14.trim().toLowerCase() === qArr[13].solution.trim().toLowerCase()){
+    //         setStatus14("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus14("Incorrect")
+    //     }
+
+    //     if(qArr[14] && answer15.trim().toLowerCase() === qArr[14].solution.trim().toLowerCase()){
+    //         setStatus15("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus15("Incorrect")
+    //     }
+
+    //     if(qArr[15] && answer16.trim().toLowerCase() === qArr[15].solution.trim().toLowerCase()){
+    //         setStatus16("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus16("Incorrect")
+    //     }
+
+    //     if(qArr[16] && answer17.trim().toLowerCase() === qArr[16].solution.trim().toLowerCase()){
+    //         setStatus17("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus17("Incorrect")
+    //     }
+
+    //     if(qArr[17] && answer18.trim().toLowerCase() === qArr[17].solution.trim().toLowerCase()){
+    //         setStatus18("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus18("Incorrect")
+    //     }
+
+    //     if(qArr[18] && answer19.trim().toLowerCase() === qArr[18].solution.trim().toLowerCase()){
+    //         setStatus19("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus19("Incorrect")
+    //     }
+
+    //     if(qArr[19] && answer20.trim().toLowerCase() === qArr[19].solution.trim().toLowerCase()){
+    //         setStatus20("Correct")
+    //         correctCount++
+    //     } else {
+    //         setStatus20("Incorrect")
+    //     }
+
+    //     setResult(`${correctCount} / ${qArr.length}`)
+    //     if(correctCount === qArr.length) {
+    //         setResStarter("Amazing!")
+    //     } else if (correctCount > Math.floor(qArr.length / 2)) {
+    //         setResStarter("Great job!")
+    //     } else if (correctCount < Math.floor(qArr.length / 2 && correctCount > 0)) {
+    //         setResStarter("Solid effort!")
+    //     } else {
+    //         setResStarter("Ouch! Try again.")
+    //     }
+    //     setHasSubmitted(true)
+    //     return
+    // }
     }
 
     const quiz = useSelector(state => state.quizzes.singleQuiz)
@@ -297,7 +276,7 @@ const Quiz = () => {
 
     return(
         <Box sx={{ display: 'flex' }}>
-            <NavDrawer />
+            <NavDrawer page={'Trivia'} />
         <Box component="main"
           sx={{
             backgroundColor: (theme) =>
@@ -320,7 +299,12 @@ const Quiz = () => {
                     <h1>{quiz?.title}</h1>
                 </section>
                 <section>
-                <div className='question-holder'>
+                {qArr?.length > 0 && qArr.map((q) => (
+                    <>
+                        <QuizQuestion hasSubmitted={hasSubmitted} key={q.id} questionData={q} />
+                    </>
+                    ))}
+                {/* <div className='question-holder'>
                     <label htmlFor={`q-1`}>1. {qArr[0]?.question}</label>
                     {hasSubmitted && (
                         <div>
@@ -377,9 +361,9 @@ const Quiz = () => {
                                 <span className='incorrect-text'>Solution: {qArr[0].solution}</span>
                             </div>
                         ) : ''}
-                    </div>
+                    </div> */}
 
-                    <div className='question-holder'>
+                    {/* <div className='question-holder'>
                     <label htmlFor={`q-2`}>2. {qArr[1]?.question}</label>
                     {hasSubmitted && (
                         <div>
@@ -436,9 +420,9 @@ const Quiz = () => {
                                 <span className='incorrect-text'>Solution: {qArr[1].solution}</span>
                             </div>
                         ) : ''}
-                    </div>
+                    </div> */}
 
-                    <div className='question-holder'>
+                    {/* <div className='question-holder'>
                     <label htmlFor={`q-3`}>3. {qArr[2]?.question}</label>
                     {hasSubmitted && (
                         <div>
@@ -495,9 +479,9 @@ const Quiz = () => {
                                 <span className='incorrect-text'>Solution: {qArr[2].solution}</span>
                             </div>
                         ) : ''}
-                    </div>
+                    </div> */}
 
-                    <div className='question-holder'>
+                    {/* <div className='question-holder'>
                     <label htmlFor={`q-4`}>4. {qArr[3]?.question}</label>
                     {hasSubmitted && (
                         <div>
@@ -554,9 +538,9 @@ const Quiz = () => {
                                 <span className='incorrect-text'>Solution: {qArr[4].solution}</span>
                             </div>
                         ) : ''}
-                    </div>
+                    </div> */}
 
-                    <div className='question-holder'>
+                    {/* <div className='question-holder'>
                     <label htmlFor={`q-5`}>5. {qArr[4]?.question}</label>
                     {hasSubmitted && (
                         <div>
@@ -674,9 +658,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[6] ? (
+            {/* {qArr[6] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-7`}>7. {qArr[6]?.question}</label>
                 {hasSubmitted && (
@@ -735,9 +719,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[7] ? (
+            {/* {qArr[7] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-8`}>8. {qArr[7]?.question}</label>
                 {hasSubmitted && (
@@ -796,9 +780,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[8] ? (
+            {/* {qArr[8] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-9`}>9. {qArr[8]?.question}</label>
                 {hasSubmitted && (
@@ -857,9 +841,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[9] ? (
+            {/* {qArr[9] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-10`}>10. {qArr[9]?.question}</label>
                 {hasSubmitted && (
@@ -918,10 +902,10 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
 
-    {qArr[10] ? (
+    {/* {qArr[10] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-11`}>11. {qArr[10]?.question}</label>
                 {hasSubmitted && (
@@ -980,9 +964,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[11] ? (
+            {/* {qArr[11] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-12`}>12. {qArr[11]?.question}</label>
                 {hasSubmitted && (
@@ -1102,9 +1086,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[13] ? (
+            {/* {qArr[13] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-14`}>14. {qArr[13]?.question}</label>
                 {hasSubmitted && (
@@ -1220,12 +1204,12 @@ const Quiz = () => {
                     )}
                     {hasSubmitted && status15 === "Incorrect" ? (<span className='incorrect-text'>Solution: {qArr[14].solution}</span>) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
 
 
 
-    {qArr[15] ? (
+    {/* {qArr[15] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-16`}>16. {qArr[15]?.question}</label>
                 {hasSubmitted && (
@@ -1346,9 +1330,9 @@ const Quiz = () => {
                         </div>
                     ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
 
-            {qArr[17] ? (
+            {/* {qArr[17] ? (
                 <div className='question-holder'>
                 <label htmlFor={`q-18`}>18. {qArr[17]?.question}</label>
                 {hasSubmitted && (
@@ -1528,15 +1512,15 @@ const Quiz = () => {
                         </div>
                         ) : ''}
                 </div>
-                    ) : ''}
+                    ) : ''} */}
                 </section>
-                <section>
+                <section style={{ "display": "flex", "justifyContent": "center", "margin": "50px 0px 20px 0px" }}>
                     <Button variant="contained" onClick={handleSubmit}>Submit</Button>
                 </section>
                 {hasSubmitted && (
                     <section>
                         <h2>{resStarter} You got {result} correct!</h2>
-                        <button onClick={reset}>Take Quiz Again?</button>
+                        {/* <button onClick={reset}>Take Quiz Again?</button> */}
                     </section>
                 )}
                 </section>

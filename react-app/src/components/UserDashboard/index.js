@@ -120,7 +120,7 @@ export default function UserDashboard() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
-        <NavDrawer />
+        <NavDrawer page={'Dashboard'} />
         <Box
           component="main"
           sx={{

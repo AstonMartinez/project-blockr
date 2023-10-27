@@ -14,6 +14,8 @@ import CardSet from "./components/FlashCards/CardSet";
 import CreateSet from "./components/CreateSet";
 import Quiz from "./components/Quiz";
 import CreateQuiz from "./components/CreateQuiz";
+import LandingPage from "./components/LandingPage";
+import TopBar from "./components/LandingPage/TopBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -64,6 +66,10 @@ function App() {
           </Route>
           <Route exact path='/sets/:setId'>
             <CardSet />
+          </Route>
+          <Route exact path='/test'>
+            <TopBar />
+            <LandingPage />
           </Route>
         </Switch>
       )}

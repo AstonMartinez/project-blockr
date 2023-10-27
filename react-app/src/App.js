@@ -68,7 +68,7 @@ function App() {
             <CardSet />
           </Route>
           <Route exact path='/test'>
-            <TopBar />
+            {/* <TopBar /> */}
             <LandingPage />
           </Route>
         </Switch>

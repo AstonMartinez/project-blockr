@@ -1304,12 +1304,21 @@ const ResourcesComponent = () => {
 
     const form = React.useRef()
 
+    const reset = () => {
+      setFormEmail('')
+      setFormResourceName('')
+      setFormResourceType('')
+      setFormResourceLink('')
+      setFormResourceLanguages('')
+      return
+    }
+
     const submitForm = (e) => {
       e.preventDefault()
 
       emailjs.sendForm('service_6t9viah', 'template_zmurbwi', form.current, 'c5YoRG65yaZNI8XIT')
       .then((result) => {
-        console.log(result.text)
+        reset()
       }, (error) => {
         console.log(error.text)
       }).then(() => {

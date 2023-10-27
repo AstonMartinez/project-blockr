@@ -37,6 +37,53 @@ def get_all_public():
         result[quiz.id] = quiz_dict
     return result
 
+@quiz_routes.route('/quizzes/all')
+def get_all_available_quizzes():
+    result = {}
+    public_quizzes = TriviaQuiz.query.filter(TriviaQuiz.status == "Public").all()
+    user_quizzes = TriviaQuiz.query.filter(TriviaQuiz.user_id == current_user.id).all()
+
+    for quiz in public_quizzes:
+        quiz_dict = quiz.to_dict()
+        result[quiz.id] = quiz_dict
+
+    for quiz in user_quizzes:
+        quiz_dict = quiz.to_dict()
+        if not result[quiz.id]:
+            result[quiz.id] = quiz_dict
+    return result
+
+@quiz_routes.route('/quizzes/user-quizzes')
+def get_user_quizzes():
+    result = {}
+    quizzes = TriviaQuiz.query.filter(TriviaQuiz.user_id == current_user.id).all()
+
+    for quiz in quizzes:
+        quiz_dict = quiz.to_dict()
+        result[quiz.id] = quiz_dict
+
+    return result
+
+@quiz_routes.route('/quizzes/<category>')
+def get_by_category(category):
+    result = {}
+    quizzes = TriviaQuiz.query.filter(TriviaQuiz.category == category).all()
+
+    for quiz in quizzes:
+        quiz_dict = quiz.to_dict()
+        result[quiz.id] = quiz_dict
+
+    return result
+
+@quiz_routes.route('/quizzes/<int:id>/delete', methods=["DELETE"])
+def delete_quiz(id):
+    quiz = TriviaQuiz.query.get(id)
+    quiz_dict = quiz.to_dict()
+
+    db.session.delete(quiz)
+    db.session.commit()
+    return quiz_dict
+
 
 @quiz_routes.route('/quizzes/<int:id>')
 def get_by_quiz_id(id):

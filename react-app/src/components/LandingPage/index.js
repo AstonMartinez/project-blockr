@@ -9,9 +9,9 @@ const LandingPage = () => {
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
 
-    // if(sessionUser) {
-    //     history.push('/dashboard')
-    // }
+    if(sessionUser) {
+        history.push('/dashboard')
+    }
 
     return (
         <>

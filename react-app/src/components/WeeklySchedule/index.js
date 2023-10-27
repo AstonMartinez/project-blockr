@@ -17,7 +17,7 @@ const WeeklySchedule = () => {
     return (
         <>
         <Box sx={{ display: 'flex' }}>
-          <NavDrawer />
+          <NavDrawer page={'Schedule'} />
 
 <Box component="main"
   sx={{

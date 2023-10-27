@@ -1,48 +1,30 @@
-import './LandingPage.css';
+// import './LandingPage.css';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import './TopBar.css'
 
 const LandingPage = () => {
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
+
+    // if(sessionUser) {
+    //     history.push('/dashboard')
+    // }
+
     let landingPageContent
 
-    if(sessionUser) {
-        landingPageContent = (
-            <div>
-                <div>
-                    <button>My Dashboard</button>
-                </div>
-                <div>
-                    <button>Trivia</button>
-                </div>
-                <div>
-                    <h2>My Study Stats</h2>
-                    <div></div>
-                </div>
-            </div>
-        )
-    } else {
-        landingPageContent = (
-            <div>
-                <div>
-                    <button onClick={() => history.push('/login')}>Log In</button>
-                </div>
-                <div>
-                    <button onClick={() => history.push('/signup')}>Sign Up</button>
-                </div>
-            </div>
-        )
-    }
     return (
-        <div>
-            <div>
-                <h1>Welcome to ProjectBlockr!</h1>
+        <>
+            <div id='topbar'></div>
+            <div style={{ "backgroundColor": "black", "height": "100vh", "paddingTop": "20px", "display": "flex", "alignItems": "center", "flexDirection": "column" }}>
+                <div>
+                    <h1 style={{ "color": "white", "fontFamily": "Roboto Condensed, sans-serif" }}>Welcome to ProjectBlockr!</h1>
+                </div>
+                <section>
+                    <img src="https://i.ibb.co/0BKnXzX/projectblockrlogo.png" alt="projectblockrlogo" style={{"border": "0"}} />
+                </section>
             </div>
-            <section>
-                {landingPageContent}
-            </section>
-        </div>
+        </>
     )
 }
 

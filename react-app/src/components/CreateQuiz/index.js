@@ -82,7 +82,7 @@ const CreateQuiz = () => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <NavDrawer />
+            <NavDrawer page={'Trivia'} />
             <Box
                 component="main"
                 sx={{

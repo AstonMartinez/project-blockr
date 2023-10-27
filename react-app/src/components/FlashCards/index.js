@@ -28,7 +28,7 @@ const FlashCards = () => {
 
   return (
       <Box sx={{ display: 'flex'}}>
-        <NavDrawer />
+        <NavDrawer page={'Flash Cards'} />
       <Box component="main"
           sx={{
             backgroundColor: (theme) =>

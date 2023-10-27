@@ -1323,7 +1323,7 @@ const ResourcesComponent = () => {
 
     return (
       <Box sx={{ display: 'flex', height: "100vh" }}>
-          <NavDrawer />
+          <NavDrawer page={'Resources'} />
         <Box
           component="main"
           sx={{

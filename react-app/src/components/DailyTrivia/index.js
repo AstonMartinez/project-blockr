@@ -20,7 +20,7 @@ const DailyTrivia = () => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <NavDrawer />
+            <NavDrawer page={'Trivia'} />
             <Box component="main"
             sx={{
                 backgroundColor: (theme) =>

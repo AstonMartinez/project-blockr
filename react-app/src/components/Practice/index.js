@@ -96,7 +96,7 @@ const Practice = () => {
     return (
         <>
             <Box sx={{ display: 'flex', height: "100vh" }}>
-              <NavDrawer />
+              <NavDrawer page={'Practice'} />
             <Box component="main"
           sx={{
             backgroundColor: (theme) =>

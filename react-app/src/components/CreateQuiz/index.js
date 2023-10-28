@@ -60,24 +60,25 @@ const CreateQuiz = () => {
             title: title,
             description: description,
             category: category,
-            status: status,
-            length: numQuestions
+            status: status
         }
 
         const questionInfo = { questions: resArr }
 
-        dispatch(createNewQuiz(quizInfo))
-        .then(async(res) => {
-          await fetch(`/api/quizzes/${res.id}/add`, {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(questionInfo)
-          })
-        }).then(() => {
-            history.push('/trivia')
-        })
+        console.log(quizInfo)
+
+        // dispatch(createNewQuiz(quizInfo))
+        // .then(async(res) => {
+        //   await fetch(`/api/quizzes/${res.id}/add`, {
+        //     method: "POST",
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(questionInfo)
+        //   })
+        // }).then(() => {
+        //     history.push('/trivia')
+        // })
     }
 
     return (
@@ -106,7 +107,9 @@ const CreateQuiz = () => {
                                     <div>
                                         <label htmlFor='title' id='quiz-title-label'>Title</label><span style={{ "color": "red" }}>*</span>
                                     </div>
-                                    <input id='quiz-title-input' sx={{"width": "300px", marginBottom: "10px"}}
+                                    <input
+                                        id='quiz-title-input'
+                                        style={{"width": "300px", marginBottom: "10px"}}
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
                                         required
@@ -116,37 +119,46 @@ const CreateQuiz = () => {
                                     <div>
                                         <label htmlFor='description' id='quiz-desc-label'>Description</label><span style={{ "color": "red" }}>*</span>
                                     </div>
-                                    <textarea id='quiz-desc-input' sx={{"height": "100px", "width": "300px"}}
+                                    <textarea id='quiz-desc-input'
+                                        style={{"height": "100px", "width": "300px", "paddingTop": "12px" }}
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
                                         required
                                     />
                                 </section>
                             </section>
-                            <section id='fc-cat-select'>
+                            <section id='fc-cat-select' style={{ "marginBottom": "10px" }}>
                                 <label id='quiz-cat-label'>Category</label>
-                                <Select defaultValue="General" onChange={(e) => setCategory(e.target.value)} sx={{"width": "300px"}}>
-                                    <Option value="Angular">Angular</Option>
-                                    <Option value="C#">C#</Option>
-                                    <Option value="C++">C++</Option>
-                                    <Option value="General">General</Option>
-                                    <Option value="Java">Java</Option>
-                                    <Option value="JavaScript">JavaScript</Option>
-                                    <Option value="NextJS">NextJS</Option>
-                                    <Option value="Python">Python</Option>
-                                    <Option value="React">React</Option>
-                                    <Option value="Rust">Rust</Option>
-                                    <Option value="Svelte">Svelte</Option>
-                                    <Option value="TypeScript">TypeScript</Option>
-                                    <Option value="Other">Other</Option>
-                                </Select>
+                                <select
+                                    className='create-quiz-select-field'
+                                    value={category}
+                                    onChange={(e) => setCategory(e.target.value)}
+                                >
+                                    <option value="Angular">Angular</option>
+                                    <option value="C#">C#</option>
+                                    <option value="C++">C++</option>
+                                    <option value="General">General</option>
+                                    <option value="Java">Java</option>
+                                    <option value="JavaScript">JavaScript</option>
+                                    <option value="NextJS">NextJS</option>
+                                    <option value="Python">Python</option>
+                                    <option value="React">React</option>
+                                    <option value="Rust">Rust</option>
+                                    <option value="Svelte">Svelte</option>
+                                    <option value="TypeScript">TypeScript</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </section>
-                            <section id='fc-cat-select'>
+                            <section id='fc-cat-select' style={{ "marginBottom": "10px" }}>
                                 <label className='create-fc-set-label'>Status</label>
-                                <Select defaultValue="Public" onChange={(e) => setStatus(e.target.value)} sx={{"width": "300px"}}>
-                                    <Option value="Public">Public</Option>
-                                    <Option value="Private">Private</Option>
-                                </Select>
+                                <select
+                                    className='create-quiz-select-field'
+                                    value={status}
+                                    onChange={(e) => setStatus(e.target.value)}
+                                >
+                                    <option value="Public">Public</option>
+                                    <option value="Private">Private</option>
+                                </select>
                             </section>
                             <section id='fc-num-select'>
                                 <label htmlFor='num-cards' id='quiz-hw-mny-label'>How Many Questions?</label>

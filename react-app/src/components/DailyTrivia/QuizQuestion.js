@@ -1,25 +1,24 @@
 import { useState } from 'react';
 
-const QuizQuestion = ({ questionData, hasSubmitted }) => {
+const QuizQuestion = ({ questionData, hasSubmitted, key }) => {
     const [answer, setAnswer] = useState('')
     // console.log(questionData)
     return (
         <>
             <div className='question-holder'>
-            <label htmlFor={`question`}>{questionData?.question}</label>
+            <label htmlFor={`question-${questionData.id}`}>{questionData?.question}</label>
             {hasSubmitted && questionData.solution === answer ? (
-                <p>Correct</p>
+                <p style={{ "color": "green" }}>Correct</p>
             ) : ''}
             {hasSubmitted && questionData.solution !== answer ? (
                 <>
-                    <p>Incorrect</p>
-                    {/* <p>Your answer: {answer}</p> */}
+                    <p style={{ "color": "red" }}>Incorrect</p>
                     <p>Solution: {questionData.solution}</p>
                 </>
             ) : ''}
                 <section className='answer-option-wrapper'>
                     <input
-                        name={`question`}
+                        name={`question-${questionData.id}`}
                         type="radio"
                         value={questionData?.answer_one}
                         onChange={(e) => setAnswer(e.target.value)}
@@ -27,7 +26,7 @@ const QuizQuestion = ({ questionData, hasSubmitted }) => {
                 </section>
                 <section className='answer-option-wrapper'>
                     <input
-                        name={`question`}
+                        name={`question-${questionData.id}`}
                         type="radio"
                         value={questionData?.answer_two}
                         onChange={(e) => setAnswer(e.target.value)}
@@ -36,7 +35,7 @@ const QuizQuestion = ({ questionData, hasSubmitted }) => {
                 {questionData?.answer_three !== null && (
                     <section className='answer-option-wrapper'>
                         <input
-                        name={`question`}
+                        name={`question-${questionData.id}`}
                         type="radio"
                         value={questionData?.answer_three}
                         onChange={(e) => setAnswer(e.target.value)}
@@ -47,7 +46,7 @@ const QuizQuestion = ({ questionData, hasSubmitted }) => {
                 {questionData?.answer_four !== null && (
                     <section className='answer-option-wrapper'>
                         <input
-                        name={`question`}
+                        name={`question-${questionData.id}`}
                         type="radio"
                         value={questionData?.answer_four}
                         onChange={(e) => setAnswer(e.target.value)}

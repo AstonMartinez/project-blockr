@@ -6,8 +6,20 @@ from flask_login import current_user, login_user, logout_user, login_required
 from datetime import datetime
 from app.api.auth_routes import validation_errors_to_error_messages
 from sqlalchemy import and_
+from sqlalchemy import asc
 
 study_session_routes = Blueprint('study_sessions', __name__)
+
+@study_session_routes.route('/current/recent')
+def get_recent_sessions():
+    result = {}
+    sessions = StudySession.query.filter(StudySession.user_id == current_user.id).limit(10).all()
+
+    for sess in sessions:
+        session_dict = sess.to_dict()
+        result[sess.id] = session_dict
+    return result
+
 
 @study_session_routes.route('/current/all')
 def get_user_sessions():

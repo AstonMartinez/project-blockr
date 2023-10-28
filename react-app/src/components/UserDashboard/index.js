@@ -8,11 +8,12 @@ import { useHistory } from 'react-router-dom'
 import Footer from '../Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar'
-import { fetchMaterials } from '../../store/materials';
 import { getByDate } from '../../store/tasks';
 import TaskDisplay from './Tasks';
-import { NavLink } from 'react-router-dom';
 import NavDrawer from '../NavDrawer';
+import MaterialsDisplay from './Materials';
+import StudySessionDisplay from './StudySessionDisplay';
+
 
 const dayConvert = (day) => {
   if(day === 'Mon') {
@@ -37,83 +38,16 @@ const defaultTheme = createTheme();
 export default function UserDashboard() {
   const dispatch = useDispatch()
   const history = useHistory()
-  const allMaterials = useSelector(state => state.materials.allMaterials)
   const sessionUser = useSelector(state => state.session.user)
 
   if(!sessionUser) {
     history.push('/login')
   }
 
-  const userCards = allMaterials.cards
-  const userQuizzes = allMaterials.quizzes
-
   const currentDay = new Date().toDateString().split(" ")[0]
   const dayOfWeek = dayConvert(currentDay)
 
-  let materialsDisplay
-
-  if(!userCards && !userQuizzes) {
-    materialsDisplay = (
-      <>
-        <h3>Looks like you haven't added any materials!</h3>
-        <button>Create flash cards</button>
-        <button>Create quiz</button>
-      </>
-    )
-  }
-
-  if(userCards && !userQuizzes) {
-    materialsDisplay = (
-      <>
-        <h4>Flash Cards:</h4>
-        <div style={{ "display": "flex", "flexDirection": "column", "flexWrap": "wrap", "height": "200px", "alignItems": "center" }}>
-          {Object.values(userCards).map((set) => (
-            <div style={{ "display": "flex" }}>
-              <p className='materials-list-item'><NavLink exact to={`/sets/${set.id}`}>{set.title}</NavLink></p>
-            </div>
-          ))}
-        </div>
-      </>
-    )
-  } else if ((!userCards) && userQuizzes) {
-    materialsDisplay = (
-      <>
-        <h4>Quizzes</h4>
-        <div style={{ "display": "flex", "flexDirection": "column", "flexWrap": "wrap", "height": "200px", "alignItems": "center" }}>
-          {Object.values(userQuizzes).map((quiz) => (
-            <div style={{ "display": "flex" }}>
-              <p className='materials-list-item'><NavLink exact to={`/quizzes/${quiz.id}`}>{quiz.title}</NavLink></p>
-            </div>
-          ))}
-        </div>
-      </>
-    )
-  } else if(userCards && userQuizzes) {
-    materialsDisplay = (
-      <div style={{ "textAlign": "center" }}>
-        <h4>Flash Cards</h4>
-        <div style={{ "display": "flex", "flexDirection": "column", "flexWrap": "wrap", "height": "200px", "alignItems": "center" }}>
-          {Object.values(userCards).map((set) => (
-            <div style={{ "display": "flex" }}>
-              <p className='materials-list-item'><NavLink exact to={`/sets/${set.id}`}>{set.title}</NavLink></p>
-            </div>
-          ))}
-        </div>
-        <div style={{ "border": "0.5px solid lightgray" }}></div>
-        <h4>Quizzes</h4>
-        <div style={{ "display": "flex", "flexDirection": "column", "flexWrap": "wrap", "height": "200px", "alignItems": "center" }}>
-          {Object.values(userQuizzes).map((quiz) => (
-            <div style={{ "display": "flex" }}>
-              <p className='materials-list-item'><NavLink exact to={`/quizzes/${quiz.id}`}>{quiz.title}</NavLink></p>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
-
     React.useEffect(() => {
-      dispatch(fetchMaterials())
       dispatch(getByDate(dayOfWeek))
     }, [dispatch, dayOfWeek])
 
@@ -184,8 +118,13 @@ export default function UserDashboard() {
                 </Paper>
               </Grid>
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  {materialsDisplay}
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', "textAlign": "center" }}>
+                  <StudySessionDisplay />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', "textAlign": "center" }}>
+                  <MaterialsDisplay />
                 </Paper>
               </Grid>
             </Grid>

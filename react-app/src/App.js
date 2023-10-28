@@ -15,7 +15,6 @@ import CreateSet from "./components/CreateSet";
 import Quiz from "./components/Quiz";
 import CreateQuiz from "./components/CreateQuiz";
 import LandingPage from "./components/LandingPage";
-import TopBar from "./components/LandingPage/TopBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,7 +49,7 @@ function App() {
             <DailyTrivia />
           </Route>
           <Route exact path='/'>
-            <UserDashboard />
+            <LandingPage />
           </Route>
           <Route exact path='/dashboard'>
             <UserDashboard />
@@ -67,9 +66,8 @@ function App() {
           <Route exact path='/sets/:setId'>
             <CardSet />
           </Route>
-          <Route exact path='/test'>
-            <TopBar />
-            <LandingPage />
+          <Route exact path='/dashboard'>
+            <UserDashboard />
           </Route>
         </Switch>
       )}

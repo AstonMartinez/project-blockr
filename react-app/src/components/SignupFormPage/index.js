@@ -137,15 +137,18 @@ export default function SignupFormPage() {
             >
               Sign Up
             </Button>
+              {errors.length > 0 && errors.map((err) => (
+                  <p style={{color: "red", textAlign: "center"}}>{err}</p>
+                ))}
             <Grid container justifyContent="flex-end">
-              <Grid item>
-                {errors.length > 0 ? (<p>{errors}</p>) : ''}
-              </Grid>
-              <Grid item>
+              <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
+
                 <Link href="#" variant="body2">
                   Already have an account? Sign in
                 </Link>
-              </Grid>
+              </Box>
+              {/* <Grid item>
+              </Grid> */}
             </Grid>
           </Box>
         </Box>

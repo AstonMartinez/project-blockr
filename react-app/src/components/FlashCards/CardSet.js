@@ -25,7 +25,7 @@ const CardSet = () => {
     const [numCorrect, setNumCorrect] = useState(0)
     const [numIncorrect, setNumIncorrect] = useState(0)
     const [outOf, setOutOf] = useState(0)
-    const [startTime, setStartTime] = useState(null)
+    const [startTime, setStartTime] = useState(new Date())
     if(isLoaded && currSetQs) {
         currSetArr = Object.values(currSetQs)
     }
@@ -65,7 +65,7 @@ const CardSet = () => {
 
         const timeSpentStr = `${hours} hours, ${minutes} minutes, ${seconds} seconds`
         const category = currSet?.category
-        // const final = Math.floor(timeElapsed / 1000)
+
         const studySession = {
             num_correct: numCorrect,
             num_incorrect: numIncorrect,
@@ -74,6 +74,8 @@ const CardSet = () => {
             session_type: "Flashcards",
             category: category
         }
+
+        console.log(studySession)
         await dispatch(createNewSession(studySession))
         setHasSubmitted(true)
         return

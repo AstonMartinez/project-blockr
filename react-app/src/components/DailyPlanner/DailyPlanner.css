@@ -84,11 +84,13 @@
 
 .task-input-label {
     font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
     margin-top: 10px;
 }
 
 .task-input {
     margin: 10px 0;
+    width: 300px;
 }
 
 #task-submit-cont {

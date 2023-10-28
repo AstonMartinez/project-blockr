@@ -37,7 +37,6 @@ def seed_users():
         user_id=1,
         title="General I",
         description="General programming trivia",
-        length=20,
         category="General",
         status="Public"
     )
@@ -46,7 +45,6 @@ def seed_users():
         user_id=1,
         title="General II",
         description="General programming trivia",
-        length=20,
         category="General",
         status="Public"
     )
@@ -55,7 +53,6 @@ def seed_users():
         user_id=1,
         title="General III",
         description="General programming trivia",
-        length=20,
         category="General",
         status="Public"
     )
@@ -64,7 +61,6 @@ def seed_users():
         user_id=1,
         title="General IV",
         description="General programming trivia",
-        length=20,
         category="General",
         status="Public"
     )
@@ -73,7 +69,6 @@ def seed_users():
         user_id=1,
         title="Angular I",
         description="Angular trivia",
-        length=20,
         category="Angular",
         status="Public"
     )
@@ -82,7 +77,6 @@ def seed_users():
         user_id=1,
         title="C++ I",
         description="C++ trivia",
-        length=20,
         category="C++",
         status="Public"
     )
@@ -91,7 +85,6 @@ def seed_users():
         user_id=1,
         title="C# I",
         description="C# trivia",
-        length=20,
         category="C#",
         status="Public"
     )
@@ -100,7 +93,6 @@ def seed_users():
         user_id=1,
         title="JavaScript I",
         description="JavaScript trivia",
-        length=20,
         category="JavaScript",
         status="Public"
     )
@@ -109,7 +101,6 @@ def seed_users():
         user_id=1,
         title="Java I",
         description="Java trivia",
-        length=20,
         category="Java",
         status="Public"
     )
@@ -118,7 +109,6 @@ def seed_users():
         user_id=1,
         title="Next.js I",
         description="Next.js trivia",
-        length=20,
         category="Next.js",
         status="Public"
     )
@@ -127,7 +117,6 @@ def seed_users():
         user_id=1,
         title="Python I",
         description="Python trivia",
-        length=20,
         category="Python",
         status="Public"
     )
@@ -136,7 +125,6 @@ def seed_users():
         user_id=1,
         title="React I",
         description="React trivia",
-        length=20,
         category="React",
         status="Public"
     )
@@ -145,7 +133,6 @@ def seed_users():
         user_id=1,
         title="Rust I",
         description="Rust trivia",
-        length=20,
         category="Rust",
         status="Public"
     )
@@ -154,7 +141,6 @@ def seed_users():
         user_id=1,
         title="Svelte I",
         description="Svelte trivia",
-        length=20,
         category="Svelte",
         status="Public"
     )
@@ -163,7 +149,6 @@ def seed_users():
         user_id=1,
         title="TypeScript I",
         description="TypeScript trivia",
-        length=20,
         category="TypeScript",
         status="Public"
     )
@@ -172,7 +157,6 @@ def seed_users():
         user_id=1,
         title="SQL I",
         description="SQL trivia",
-        length=20,
         category="SQL",
         status="Public"
     )

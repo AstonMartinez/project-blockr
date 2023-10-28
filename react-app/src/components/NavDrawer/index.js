@@ -10,8 +10,6 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { useHistory } from 'react-router-dom'
-import PersonIcon from '@mui/icons-material/Person';
 import MainListItems from './ListItems';
 import Box from '@mui/material/Box';
 
@@ -62,7 +60,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const NavDrawer = ({ page }) => {
-    const history = useHistory()
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);

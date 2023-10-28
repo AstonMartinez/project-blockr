@@ -6,14 +6,36 @@ import { useDispatch } from "react-redux";
 import { getByDate } from "../../store/tasks";
 import NavDrawer from "../NavDrawer";
 
+
+const dayConvert = (day) => {
+    if(day === 'Mon') {
+      return 'Monday'
+    } else if(day === 'Tue') {
+      return 'Tuesday'
+    } else if(day === 'Wed') {
+      return 'Wednesday'
+    } else if(day === 'Thu') {
+      return 'Thursday'
+    } else if(day === 'Fri') {
+      return 'Friday'
+    } else if(day === 'Sat') {
+      return 'Saturday'
+    } else if(day === 'Sun') {
+      return 'Sunday'
+    }
+  }
+
 const WeeklySchedule = () => {
     const dispatch = useDispatch()
 
-    const [currDay, setCurrDay] = React.useState("Monday")
+    const currentDay = new Date().toDateString().split(" ")[0]
+    const dayOfWeek = dayConvert(currentDay)
+    const [selectedDay, setSelectedDay] = React.useState(dayOfWeek)
+
 
     React.useEffect(() => {
-        dispatch(getByDate(currDay))
-    }, [dispatch, currDay])
+        dispatch(getByDate(dayOfWeek))
+    }, [dispatch, dayOfWeek])
     return (
         <>
         <Box sx={{ display: 'flex' }}>
@@ -35,36 +57,36 @@ const WeeklySchedule = () => {
             </div>
             <section className='day-of-week'>
                 <span className='weekday' id='monday' onClick={() => {
-                    setCurrDay("Monday")
-                    dispatch(getByDate("Monday"))
+                    setSelectedDay("Monday")
+                    dispatch(getByDate(selectedDay))
                 }}>Monday</span>
                 <span className='weekday' id='tuesday' onClick={() => {
-                    setCurrDay("Tuesday")
-                    dispatch(getByDate("Tuesday"))
+                    setSelectedDay("Tuesday")
+                    dispatch(getByDate(selectedDay))
                 }}>Tuesday</span>
                 <span className='weekday' id='wednesday' onClick={() => {
-                    setCurrDay("Wednesday")
-                    dispatch(getByDate("Wednesday"))
+                    setSelectedDay("Wednesday")
+                    dispatch(getByDate(selectedDay))
                 }}>Wednesday</span>
                 <span className='weekday' id='thursday' onClick={() => {
-                    setCurrDay("Thursday")
-                    dispatch(getByDate("Thursday"))
+                    setSelectedDay("Thursday")
+                    dispatch(getByDate(selectedDay))
                 }}>Thursday</span>
                 <span className='weekday' id='friday' onClick={() => {
-                    setCurrDay("Friday")
-                    dispatch(getByDate("Friday"))
+                    setSelectedDay("Friday")
+                    dispatch(getByDate(selectedDay))
                 }}>Friday</span>
                 <span className='weekday' id='saturday' onClick={() => {
-                    setCurrDay("Saturday")
-                    dispatch(getByDate("Saturday"))
+                    setSelectedDay("Saturday")
+                    dispatch(getByDate(selectedDay))
                 }}>Saturday</span>
                 <span className='weekday' id='sunday' onClick={() => {
-                    setCurrDay("Sunday")
-                    dispatch(getByDate("Sunday"))
+                    setSelectedDay("Sunday")
+                    dispatch(getByDate(selectedDay))
                 }}>Sunday</span>
             </section>
             <section className='planners-wrapper'>
-                <DailyPlanner id={1} nowDay={currDay} />
+                <DailyPlanner id={1} nowDay={selectedDay} />
             </section>
         </div>
   </Box>

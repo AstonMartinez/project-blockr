@@ -30,6 +30,7 @@ import EventIcon from '@mui/icons-material/Event';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CrisisAlertIcon from '@mui/icons-material/CrisisAlert';
 import Typography from '@mui/material/Typography';
+import parseTime from "../DailyPlanner/timefunctions";
 import './UserDashboard.css'
 
 function createData(title, startTime, endTime) {
@@ -121,17 +122,20 @@ const TaskDisplay = () => {
         mainContent = (
             <>
                 <Title>Today's Date: {dayOfWeek} {new Date().getMonth()}/{new Date().getDate()}/{new Date().getFullYear()}</Title>
+                {!taskArr.length > 0 && (
+                    <h3>You don't currently have any tasks for today!</h3>
+                )}
                 <Timeline position="alternate">
                     {taskArr && taskArr.map(task => (
                         <>
                             <TimelineItem>
                                 <TimelineOppositeContent
-                                    sx={{ m: 'auto 0' }}
+                                    sx={{ m: 'auto 0', width: "200px" }}
                                     align="right"
                                     variant='body2'
                                     color={task.color}
                                 >
-                                    {task.start_time} - {task.end_time}
+                                    {parseTime(task.start_time, task.end_time)}
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
                                     <TimelineDot sx={{backgroundColor: `${task.color}`}}>
@@ -190,7 +194,9 @@ const TaskDisplay = () => {
                                     <Typography variant="h6" component="span">
                                         {task.title}
                                     </Typography>
-                                    <Typography>{task.description}</Typography>
+                                    <Typography>
+                                        {task.description}
+                                    </Typography>
                                 </TimelineContent>
                             </TimelineItem>
                         </>

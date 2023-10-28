@@ -10,7 +10,6 @@ class TriviaQuiz(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
     title = db.Column(db.String(500), nullable=False)
     description = db.Column(db.String(500))
-    length = db.Column(db.Integer, nullable=False)
     category = db.Column(db.String(500))
     status = db.Column(db.String(200), nullable=False)
 
@@ -20,7 +19,6 @@ class TriviaQuiz(db.Model):
             'user_id': self.user_id,
             'title': self.title,
             'description': self.description,
-            'length': self.length,
-            'category': self.length,
+            'category': self.category,
             'status': self.status
         }

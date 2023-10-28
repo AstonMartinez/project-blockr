@@ -72,7 +72,6 @@ const DailyTrivia = () => {
 
     React.useEffect(() => {
         dispatch(fetchAllPublic())
-
     }, [dispatch, allQuizzes])
 
 

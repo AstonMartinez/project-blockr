@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import LoadingScreen from '../LoadingScreen'
 import NavDrawer from '../NavDrawer'
 import QuizQuestion from '../DailyTrivia/QuizQuestion'
+import { createNewSession } from '../../store/studySessions'
 
 const Quiz = () => {
     const { quizId } = useParams()
@@ -21,6 +22,8 @@ const Quiz = () => {
     const [resStarter, setResStarter] = useState('')
 
     const [isLoaded, setIsLoaded] = useState(false)
+
+    const startTime = new Date()
 
     useEffect(() => {
         dispatch(fetchSingleQuiz(quizId))
@@ -37,46 +40,77 @@ const Quiz = () => {
         })
     }, [dispatch])
 
+    const quiz = useSelector(state => state.quizzes.singleQuiz)
+    const questions = useSelector(state => state.questions.allQuestions)
+    const qArr = Object.values(questions)
 
     const handleSubmit = () => {
         let numCorrect = 0
+
         const userAnswers = document.querySelectorAll('#quiz-user-answer')
         const solutions = document.querySelectorAll('#quiz-question-solution')
         for(let i = 0; i < userAnswers.length; i++) {
-            if(userAnswers[i] === solutions[i]) {
+            if(userAnswers[i].value === solutions[i].value) {
                 numCorrect++
             }
         }
+        const hourNum = 60 * 60000
+        const minuteNum = 60000
+        const secondNum = 1000
+        let hours
+        let minutes
+        let seconds
 
-        setResult(`${numCorrect}/${quiz.length}`)
-        console.log(`${numCorrect}/${quiz.length}`)
+        const timeElapsed = new Date() - startTime
+        if(timeElapsed > hourNum) {
+            hours = Math.floor(timeElapsed / hourNum)
+            const timeLeft = timeElapsed - (hourNum * hours)
+            minutes = Math.floor(timeLeft / minuteNum)
+            const newTimeLeft = timeLeft - (minuteNum * minutes)
+            seconds = Math.floor(newTimeLeft / secondNum)
+        } else {
+            hours = 0
+            if(timeElapsed > minuteNum) {
+                minutes = Math.floor(timeElapsed / minuteNum)
+                const timeLeft = timeElapsed - (minuteNum * minutes)
+                seconds = Math.floor(timeLeft / secondNum)
+            } else {
+                minutes = 0
+                seconds = Math.floor(timeElapsed / secondNum)
+            }
+        }
 
-        if(numCorrect === qArr.length) {
+        const timeSpentStr = `${hours} hours, ${minutes} minutes, ${seconds} seconds`
+        const category = quiz?.category
+        const quizLength = qArr.length
+        const numIncorrect = quizLength - numCorrect
+
+        const studySession = {
+            num_correct: numCorrect,
+            num_incorrect: numIncorrect,
+            out_of: quizLength,
+            time_spent: timeSpentStr,
+            session_type: "Quizzes",
+            category: category
+        }
+
+        dispatch(createNewSession(studySession))
+
+        setResult(`${numCorrect}/${quizLength}`)
+
+        if(numCorrect === quizLength) {
             setResStarter("Amazing!")
-        } else if (numCorrect > Math.floor(qArr.length / 2)) {
+        } else if (numCorrect > Math.floor(quizLength / 2)) {
             setResStarter("Great job!")
-        } else if (numCorrect < Math.floor(qArr.length / 2 && numCorrect > 0)) {
+        } else if (numCorrect < Math.floor(quizLength / 2 && numCorrect > 0)) {
             setResStarter("Solid effort!")
         } else {
             setResStarter("Ouch! Try again.")
         }
 
-
         setHasSubmitted(true)
         return
     }
-
-    const quiz = useSelector(state => state.quizzes.singleQuiz)
-    const questions = useSelector(state => state.questions.allQuestions)
-    const qArr = Object.values(questions)
-
-    const incorrectText = (
-        <span style={{"color": "red"}}>Incorrect</span>
-    )
-
-    const correctText = (
-        <span style={{"color": "green"}}>Correct</span>
-    )
 
     return(
         <Box sx={{ display: 'flex' }}>
@@ -113,9 +147,8 @@ const Quiz = () => {
                     <Button variant="contained" onClick={handleSubmit}>Submit</Button>
                 </section>
                 {hasSubmitted && (
-                    <section>
+                    <section style={{ "display": "flex", "justifyContent": "center" }}>
                         <h2>{resStarter} You got {result} correct!</h2>
-                        {/* <button onClick={reset}>Take Quiz Again?</button> */}
                     </section>
                 )}
                 </section>

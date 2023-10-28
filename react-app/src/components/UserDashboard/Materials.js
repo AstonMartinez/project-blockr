@@ -25,7 +25,7 @@ const MaterialsDisplay = () => {
                 {!userCards ? (
                     <div>
                         <h3>You haven't made any flash cards yet!</h3>
-                        <Button variant="contained" onClick={() => history.push('/sets/new')}>Create Set</Button>
+                        <button onClick={() => history.push('/sets/new')}>Create Set</button>
                     </div>
                 ) : (
                     <div style={{ "display": "flex", "flexDirection": "column", "flexWrap": "wrap", "height": "200px", "alignItems": "center" }}>
@@ -43,7 +43,7 @@ const MaterialsDisplay = () => {
                 {!userQuizzes ? (
                     <div>
                         <h3>You haven't made any quizzes yet!</h3>
-                        <Button variant="contained" onClick={() => history.push('/trivia/new')}>Create Quiz</Button>
+                        <button onClick={() => history.push('/trivia/new')}>Create Quiz</button>
                     </div>
                 ) : (
                     <div style={{ "display": "flex", "flexDirection": "column", "flexWrap": "wrap", "height": "200px", "alignItems": "center", "textAlign": "center" }}>

@@ -13,7 +13,7 @@ study_session_routes = Blueprint('study_sessions', __name__)
 @study_session_routes.route('/current/recent')
 def get_recent_sessions():
     result = {}
-    sessions = StudySession.query.filter(StudySession.user_id == current_user.id).limit(10).order_by(asc(StudySession.date)).all()
+    sessions = StudySession.query.filter(StudySession.user_id == current_user.id).limit(10).all()
 
     for sess in sessions:
         session_dict = sess.to_dict()

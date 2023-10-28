@@ -182,8 +182,10 @@ export default function LoginFormPage() {
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In
-                {errors.length > 0 ? (<p>{errors}</p>) : ''}
               </Button>
+                {errors.length > 0 && errors.map((err) => (
+                  <p style={{color: "red"}}>{err}</p>
+                ))}
               {/* <Grid item xs> */}
                     <Button
                     type="submit"

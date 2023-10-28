@@ -12,6 +12,7 @@ import { getByDate } from '../../store/tasks';
 import TaskDisplay from './Tasks';
 import NavDrawer from '../NavDrawer';
 import MaterialsDisplay from './Materials';
+import StudySessionDisplay from './StudySessionDisplay';
 
 
 const dayConvert = (day) => {
@@ -114,6 +115,11 @@ export default function UserDashboard() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <TaskDisplay />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', "textAlign": "center" }}>
+                  <StudySessionDisplay />
                 </Paper>
               </Grid>
               <Grid item xs={12}>

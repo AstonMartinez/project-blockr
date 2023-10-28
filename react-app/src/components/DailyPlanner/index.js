@@ -36,17 +36,20 @@ import FormControl from '@mui/joy/FormControl';
 import FormHelperText from '@mui/joy/FormHelperText';
 import { createTask, getByDate } from '../../store/tasks';
 import parseTime from './timefunctions';
+import Divider from '@mui/material/Divider';
 
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 800,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    display: 'flex',
+    flexDirection: 'column'
   };
 
 const DailyPlanner = ({nowDay}) => {
@@ -173,384 +176,391 @@ const DailyPlanner = ({nowDay}) => {
         }
 
         setHasSubmitted(true)
-        dispatch(getByDate('Monday'))
+        dispatch(getByDate(nowDay))
         handleClose()
     }
 
     return (
         <div id='user-timeline-container'>
             <div style={{"marginTop": "70px"}}>
-                <div style={{ "width": "100%", "display": "flex", "justifyContent": "center" }}>
-                    <Button variant="contained" onClick={handleOpen}>Add a Task</Button>
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                        sx={{height: "80%", marginTop: "70px"}}
-                    >
-                        <Box sx={style}>
-                            <FormControl error={title === null && hasSubmitted ? true : false}>
-                                <label style={{"fontSize": "12px"}}  className='task-input-label'>Task Title:</label>
-                                <Input
-                                    className='task-input'
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
-                                    placeholder="e.g., Practice C#"
-                                />
-                                {titleError && (
-                                    <FormHelperText className='error-text'>
-                                        {titleError}
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-                            <FormControl error={description === null && hasSubmitted ? true : false}>
-                                <label style={{"fontSize": "12px"}} className='task-input-label'>Task Description:</label>
-                                <Input
-                                    className='task-input'
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    placeholder="e.g., freecodecamp course"
-                                />
-                                {descriptionError !== null && (
-                                    <FormHelperText className='error-text'>
-                                        {descriptionError}
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-                            <FormControl sx={{margin: "10px 0"}} error={day === null && hasSubmitted ? true : false}>
-                                <label style={{"fontSize": "12px"}}  className='task-input-label'>Day:</label>
-                                <Input
-                                    className='task-input'
-                                    value={day}
-                                    onChange={(e) => setDay(e.target.value)}
-                                    placeholder="e.g., Monday"
-                                />
-                                {dayError !== null && (
-                                    <FormHelperText className='error-text'>
-                                        {dayError}
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-                            <label style={{"fontSize": "12px"}}  id='task-color-label' className='task-input-label'>Task Color:</label>
-                            <Input className='task-input' type="color" value={color} onChange={(e) => setColor(e.target.value)} />
-                            <label style={{"fontSize": "12px"}}  className='task-input-label'>Task Icon:</label>
-                            <Box sx={{marginTop: "15px", marginBottom: "15px"}}>
-                                <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
-                                    <FastfoodIcon className={`task-icon icon-${iconOneActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("food")
-                                        setIconOneActive(true)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <LaptopMacIcon className={`task-icon icon-${iconTwoActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("laptop")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(true)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <RepeatIcon className={`task-icon icon-${iconThreeActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("repeat")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(true)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <HotelIcon className={`task-icon icon-${iconFourActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("hotel")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(true)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                </Box>
-                                <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
-                                    <GroupsIcon className={`task-icon icon-${iconFiveActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("groups")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(true)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <FitnessCenterIcon className={`task-icon icon-${iconSixActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("fitness")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(true)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <HealthAndSafetyIcon className={`task-icon icon-${iconSevenActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("health")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(true)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <CallIcon className={`task-icon icon-${iconEightActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("call")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(true)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                </Box>
-                                <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
-                                    <CakeIcon className={`task-icon icon-${iconNineActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("cake")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(true)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <CodeIcon className={`task-icon icon-${iconTenActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("code")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(true)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <LightModeIcon className={`task-icon icon-${iconElevenActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("morning")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(true)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <BedtimeIcon className={`task-icon icon-${iconTwelveActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("evening")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(true)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                </Box>
-                                <Box sx={{width: "300px", display: "flex", justifyContent: "space-between"}}>
-                                    <AutoAwesomeIcon className={`task-icon icon-${iconThirteenActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("sparkle")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(true)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <EventIcon className={`task-icon icon-${iconFourteenActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("event")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(true)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <AccountTreeIcon className={`task-icon icon-${iconFifteenActive}`} fontSize="medium" onClick={() => {
-                                        setIcon("tree")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(true)
-                                        setIconSixteenActive(false)
-                                    }} />
-                                    <CrisisAlertIcon className={`task-icon icon-${iconSixteenActive}`} fontSize='small' onClick={() => {
-                                        setIcon("alert")
-                                        setIconOneActive(false)
-                                        setIconTwoActive(false)
-                                        setIconThreeActive(false)
-                                        setIconFourActive(false)
-                                        setIconFiveActive(false)
-                                        setIconSixActive(false)
-                                        setIconSevenActive(false)
-                                        setIconEightActive(false)
-                                        setIconNineActive(false)
-                                        setIconTenActive(false)
-                                        setIconElevenActive(false)
-                                        setIconTwelveActive(false)
-                                        setIconThirteenActive(false)
-                                        setIconFourteenActive(false)
-                                        setIconFifteenActive(false)
-                                        setIconSixteenActive(true)
-                                    }} />
-                                </Box>
+            <div style={{ "width": "100%", "display": "flex", "justifyContent": "center" }}>
+        <Button variant="contained" onClick={handleOpen}>Add a Task</Button>
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            sx={{height: "80%", marginTop: "70px"}}
+        >
+            <Box sx={style}>
+                <Box sx={{ display: 'flex', height: '100%' }}>
+                    <Box sx={{ width: '50%' }}>
+                        <FormControl error={title === null && hasSubmitted ? true : false}>
+                            <label className='task-input-label'>Task Title:</label>
+                            <Input
+                                className='task-input'
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                                placeholder="e.g., Practice C#"
+                            />
+                            {titleError && (
+                                <FormHelperText className='error-text'>
+                                    {titleError}
+                                </FormHelperText>
+                            )}
+                        </FormControl>
+                        <FormControl error={description === null && hasSubmitted ? true : false}>
+                            <label className='task-input-label'>Task Description:</label>
+                            <Input
+                                className='task-input'
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="e.g., freecodecamp course"
+                            />
+                            {descriptionError !== null && (
+                                <FormHelperText className='error-text'>
+                                    {descriptionError}
+                                </FormHelperText>
+                            )}
+                        </FormControl>
+                        <FormControl sx={{margin: "10px 0"}} error={day === null && hasSubmitted ? true : false}>
+                            <label className='task-input-label'>Day:</label>
+                            <Input
+                                className='task-input'
+                                value={day}
+                                onChange={(e) => setDay(e.target.value)}
+                                placeholder="e.g., Monday"
+                            />
+                            {dayError !== null && (
+                                <FormHelperText className='error-text'>
+                                    {dayError}
+                                </FormHelperText>
+                            )}
+                        </FormControl>
+                        <label id='task-color-label' className='task-input-label'>Task Color:</label>
+                        <Input className='task-input' type="color" value={color} onChange={(e) => setColor(e.target.value)} />
+                    </Box>
+                    <Divider orientation='vertical' flexItem />
+                    <Box sx={{width: '50%', 'padding': '0 15px', 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'space-between'}}>
+                        <label className='task-input-label'>Task Icon:</label>
+                        <Box sx={{ 'height': "138px", 'marginBottom': '0', 'paddingBottom': '0', 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'space-between'}}>
+
+                        <Box sx={{width: "350px", display: "flex", justifyContent: "space-between", height: '35px', padding: '8px 13px 0 13px'}}>
+                            <FastfoodIcon className={`task-icon icon-${iconOneActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("food")
+                                    setIconOneActive(true)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <LaptopMacIcon className={`task-icon icon-${iconTwoActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("laptop")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(true)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <RepeatIcon className={`task-icon icon-${iconThreeActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("repeat")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(true)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <HotelIcon className={`task-icon icon-${iconFourActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("hotel")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(true)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
                             </Box>
+                            <Box sx={{width: "350px", display: "flex", justifyContent: "space-between", height: '35px', padding: '8px 13px 0 13px'}}>
+                                <GroupsIcon className={`task-icon icon-${iconFiveActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("groups")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(true)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <FitnessCenterIcon className={`task-icon icon-${iconSixActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("fitness")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(true)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <HealthAndSafetyIcon className={`task-icon icon-${iconSevenActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("health")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(true)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <CallIcon className={`task-icon icon-${iconEightActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("call")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(true)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                            </Box>
+                            <Box sx={{width: "350px", display: "flex", justifyContent: "space-between", height: '35px', padding: '8px 13px 0 13px'}}>
+                                <CakeIcon className={`task-icon icon-${iconNineActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("cake")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(true)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <CodeIcon className={`task-icon icon-${iconTenActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("code")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(true)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <LightModeIcon className={`task-icon icon-${iconElevenActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("morning")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(true)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <BedtimeIcon className={`task-icon icon-${iconTwelveActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("evening")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(true)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                            </Box>
+                            <Box sx={{width: "350px", display: "flex", justifyContent: "space-between", height: '35px', padding: '8px 13px 0 13px'}}>
+                                <AutoAwesomeIcon className={`task-icon icon-${iconThirteenActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("sparkle")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(true)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <EventIcon className={`task-icon icon-${iconFourteenActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("event")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(true)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <AccountTreeIcon className={`task-icon icon-${iconFifteenActive}`} fontSize="medium" onClick={() => {
+                                    setIcon("tree")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(true)
+                                    setIconSixteenActive(false)
+                                }} />
+                                <CrisisAlertIcon className={`task-icon icon-${iconSixteenActive}`} fontSize='small' onClick={() => {
+                                    setIcon("alert")
+                                    setIconOneActive(false)
+                                    setIconTwoActive(false)
+                                    setIconThreeActive(false)
+                                    setIconFourActive(false)
+                                    setIconFiveActive(false)
+                                    setIconSixActive(false)
+                                    setIconSevenActive(false)
+                                    setIconEightActive(false)
+                                    setIconNineActive(false)
+                                    setIconTenActive(false)
+                                    setIconElevenActive(false)
+                                    setIconTwelveActive(false)
+                                    setIconThirteenActive(false)
+                                    setIconFourteenActive(false)
+                                    setIconFifteenActive(false)
+                                    setIconSixteenActive(true)
+                                }} />
+                            </Box>
+                        </Box>
+                        <Box sx={{'paddingBottom': '0', 'marginTop': '8px'}}>
                             <FormControl error={startTime === null && hasSubmitted ? true : false}>
-                                <label style={{"fontSize": "10px"}}  className='task-input-label'>Choose a Start Time:</label>
+                                <label className='task-input-label'>Choose a Start Time:</label>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <TimeField value={startTime} onChange={(newValue) => setStartTime(newValue)} />
                                 </LocalizationProvider>
@@ -571,12 +581,18 @@ const DailyPlanner = ({nowDay}) => {
                                     </FormHelperText>
                                 )}
                             </FormControl>
-                            <Box id='task-submit-cont'>
-                                <Button className='task-submit-btn' onClick={handleTaskSubmit} sx={{height: "20px"}} type="submit" variant="contained">Submit</Button>
-                            </Box>
                         </Box>
-                    </Modal>
-                </div>
+                    </Box>
+                </Box>
+                <Box sx={{ margin: '12px 0' }}>
+                    <Divider />
+                </Box>
+                <Box sx={{height: '50px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
+                    <Button className='task-submit-btn' onClick={handleTaskSubmit} type="submit" variant="contained">Submit</Button>
+                </Box>
+            </Box>
+        </Modal>
+    </div>
             </div>
             <div>
                 {!taskArr.length > 0 && (

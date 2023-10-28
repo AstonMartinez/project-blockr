@@ -110,8 +110,8 @@ const TaskDisplay = () => {
                         {taskRows.map((row) => (
                             <TableRow>
                                 <TableCell>{row.title}</TableCell>
-                                <TableCell>{row.startTime}</TableCell>
-                                <TableCell>{row.endTime}</TableCell>
+                                <TableCell>{row.startTime.split(":")[1] === "0" ? (row.startTime.split(":")[0] + ":00") : (row.startTime)}</TableCell>
+                                <TableCell>{row.endTime.split(":")[1] === "0" ? (row.endTime.split(":")[0] + ":00") : (row.endTime)}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

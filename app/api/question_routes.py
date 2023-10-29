@@ -37,9 +37,10 @@ def create_quiz_questions(id):
 @question_routes.route('/<int:id>/delete', methods=["DELETE"])
 def delete_q(id):
     question = TriviaQuestion.query.get(id)
+    question_dict = question.to_dict()
     db.session.delete(question)
     db.session.commit()
-    return {}
+    return question_dict
 
 @question_routes.route('/<int:id>/update', methods=["PUT"])
 def update_q(id):

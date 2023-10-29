@@ -80,16 +80,18 @@ def update_set(id):
 card_routes.route('/sets/<int:id>/delete', methods=["DELETE"])
 def delete_set(id):
     card_set = CardSets.query.get(id)
+    set_dict = card_set.to_dict()
     db.session.delete(card_set)
     db.session.commit()
-    return {}
+    return set_dict
 
 @card_routes.route('/sets/cards/<int:id>/delete', methods=["DELETE"])
 def delete_card(id):
     card = CardQuestion.query.get(id)
+    card_dict = card.to_dict()
     db.session.delete(card)
     db.session.commit()
-    return {}
+    return card_dict
 
 @card_routes.route('/sets/cards/<int:id>/update', methods=["PUT"])
 def update_card(id):

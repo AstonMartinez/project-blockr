@@ -74,6 +74,13 @@ def get_by_category(category):
 
     return result
 
+@quiz_routes.route('/quizzes/<int:id>/delete', methods=["DELETE"])
+def delete_quiz(id):
+    quiz = TriviaQuiz.query.get(id)
+    db.session.delete(quiz)
+    db.session.commit()
+    return {}
+
 @quiz_routes.route('/quizzes/<int:id>/update', methods=["PUT"])
 def update_quiz(id):
     quiz = TriviaQuiz.query.get(id)

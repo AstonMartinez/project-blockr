@@ -37,6 +37,9 @@ export const updateQuiz = (id, quizData) => async (dispatch) => {
             const data = await response.json()
             dispatch(updateQ(data))
             return data
+        } else {
+            const errors = await response.json()
+            return errors
         }
     } catch (error) {
         const errors = (error && error.json) ? await error.json() : { message: error.toString() }
@@ -56,6 +59,9 @@ export const deleteQuizQ = (id) => async (dispatch) => {
             const data = await response.json()
             dispatch(deleteQ(data))
             return data
+        } else {
+            const errors = await response.json()
+            return errors
         }
     } catch (error) {
         const errors = (error && error.json) ? await error.json() : { message: error.toString() }

@@ -5,6 +5,14 @@ const GET_USER_QUIZZES = '/quizzes/user'
 const GET_ALL_AVAILABLE = '/quizzes/available'
 const GET_BY_CATEGORY = '/quizzes/byCategory'
 const DELETE_QUIZ = '/quizzes/deleteQuiz'
+const UPDATE_QUIZ = '/quizzes/updateQuiz'
+
+const updateQuiz = (data) => {
+    return {
+        type: UPDATE_QUIZ,
+        payload: data,
+    }
+}
 
 const user = (data) => {
     return {
@@ -52,6 +60,30 @@ const deleteQuiz = (data) => {
     return {
         type: DELETE_QUIZ,
         payload: data,
+    }
+}
+
+export const updateUserQuiz = (id, quizData) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/trivia/quizzes/${id}/update`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(quizData)
+        })
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(updateQuiz(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
     }
 }
 
@@ -219,6 +251,10 @@ const quizReducer = (state = initialState, action) => {
         case DELETE_QUIZ:
             newState = Object.assign({ ...state })
             delete newState.allQuizzes[action.payload]
+            return newState
+        case UPDATE_QUIZ:
+            newState = Object.assign({ ...state })
+            newState.singleQuiz = action.payload
             return newState
         default:
             return state

@@ -61,6 +61,50 @@ def get_single_set(id):
         return set_dict
     return {}
 
+@card_routes.route('/sets/<int:id>/update', methods=["PUT"])
+def update_set(id):
+    card_set = CardSets.query.get(id)
+    title = request.json['title']
+    description = request.json['description']
+    status = request.json['status']
+    category = request.json['category']
+
+    card_set.title = title
+    card_set.description = description
+    card_set.status = status
+    card_set.category = category
+
+    db.session.commit()
+    return card_set.to_dict()
+
+card_routes.route('/sets/<int:id>/delete', methods=["DELETE"])
+def delete_set(id):
+    card_set = CardSets.query.get(id)
+    set_dict = card_set.to_dict()
+    db.session.delete(card_set)
+    db.session.commit()
+    return set_dict
+
+@card_routes.route('/sets/cards/<int:id>/delete', methods=["DELETE"])
+def delete_card(id):
+    card = CardQuestion.query.get(id)
+    card_dict = card.to_dict()
+    db.session.delete(card)
+    db.session.commit()
+    return card_dict
+
+@card_routes.route('/sets/cards/<int:id>/update', methods=["PUT"])
+def update_card(id):
+    card = CardQuestion.query.get(id)
+    front = request.json['front']
+    back = request.json['back']
+
+    card.front = front
+    card.back = back
+
+    db.session.commit()
+    return card.to_dict()
+
 
 @card_routes.route('/sets')
 def get_sets():

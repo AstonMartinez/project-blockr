@@ -1,6 +1,22 @@
 const GET_SETS = '/cards/getAllSets'
 const GET_SINGLE_SET = '/cards/getOne'
 const CREATE_SET = '/cards/create'
+const DELETE_SET = '/cards/deleteSet'
+const UPDATE_SET = '/cards/updateSet'
+
+const deleteSet = (data) => {
+    return {
+        type: DELETE_SET,
+        payload: data,
+    }
+}
+
+const updateSet = (data) => {
+    return {
+        type: UPDATE_SET,
+        payload: data,
+    }
+}
 
 const getAllSets = (data) => {
     return {
@@ -20,6 +36,53 @@ const create = (data) => {
     return {
         type: CREATE_SET,
         payload: data,
+    }
+}
+
+export const updateUserSet = (id, setData) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/sets/${id}/update`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(setData)
+        })
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(updateSet(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
+    }
+}
+
+export const deleteUserSet = (id) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/sets/${id}/delete`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(deleteSet(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
     }
 }
 
@@ -96,6 +159,14 @@ const cardsReducer = (state = initialState, action) => {
         case CREATE_SET:
             newState = Object.assign({ ...state })
             newState.singleSet = action.payload
+            return newState
+        case UPDATE_SET:
+            newState = Object.assign({ ...state })
+            newState.singleSet = action.payload
+            return newState
+        case DELETE_SET:
+            newState = Object.assign({ ...state })
+            delete newState.allSets[action.payload]
             return newState
         default:
             return state

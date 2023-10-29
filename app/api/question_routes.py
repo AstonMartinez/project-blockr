@@ -34,6 +34,25 @@ def create_quiz_questions(id):
     db.session.commit()
     return {}
 
+@question_routes.route('/<int:id>/update', methods=["PUT"])
+def update_q(id):
+    question = TriviaQuestion.query.get(id)
+    q = request.json['question']
+    a1 = request.json['answer_one']
+    a2 = request.json['answer_two']
+    a3 = request.json['answer_three']
+    a4 = request.json['answer_four']
+    s = request.json['solution']
+    question.question = q
+    question.answer_one = a1
+    question.answer_two = a2
+    question.answer_three = a3
+    question.answer_four = a4
+    question.solution = s
+
+    db.session.commit()
+    return question.to_dict()
+
 
 @question_routes.route('/<int:id>/all')
 def get_qs(id):

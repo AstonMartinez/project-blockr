@@ -18,10 +18,7 @@ const FlashCards = () => {
   const allSets = useSelector(state => state.cards.allSets)
 
   useEffect(() => {
-    dispatch(getCardSets()).then(() => {
-      console.log(allSets)
-    })
-
+    dispatch(getCardSets())
   }, [dispatch, allSets])
 
   const setsArr = Object.values(allSets)

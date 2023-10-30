@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -133,8 +133,10 @@ const QuizMenu = ({ quiz, filter }) => {
                 <MenuItem onClick={handleModalOpen}>
                     <DeleteForeverIcon sx={{ marginRight: "10px" }} /> Delete
                 </MenuItem>
-                <MenuItem>
-                    <SystemUpdateAltIcon sx={{ marginRight: "10px" }} /> Update
+                <MenuItem sx={{ display: 'flex', 'alignItems': 'center' }}>
+                    <NavLink exact to={`/trivia/${quiz.id}/update`} style={{ 'color': 'white', 'textDecoration': 'none' }}>
+                        <SystemUpdateAltIcon sx={{ marginRight: "10px", 'marginTop': '2px' }} /> Update
+                    </NavLink>
                 </MenuItem>
             </Menu>
         </div>

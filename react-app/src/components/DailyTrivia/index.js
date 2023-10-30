@@ -15,7 +15,8 @@ const DailyTrivia = () => {
 
     const [filter, setFilter] = React.useState('All Public')
 
-    const handleChange = () => {
+    const handleChange = (filter) => {
+        console.log('hitting change func')
         if(filter === "All Quizzes") {
             dispatch(fetchAllAvailable())
             return
@@ -23,6 +24,7 @@ const DailyTrivia = () => {
             dispatch(fetchAllPublic())
             return
         } else if (filter === "My Quizzes") {
+            console.log("hitting correct filter option")
             dispatch(fetchUserQuizzes())
             return
         } else if (filter === "General Knowledge Quizzes") {
@@ -32,7 +34,7 @@ const DailyTrivia = () => {
             dispatch(fetchByCategory("Angular"))
             return
         } else if (filter === "C# Quizzes") {
-            dispatch(fetchByCategory("C#"))
+            dispatch(fetchByCategory("CSharp"))
             return
         } else if (filter === "C++ Quizzes") {
             dispatch(fetchByCategory("C++"))
@@ -103,7 +105,7 @@ const DailyTrivia = () => {
                             value={filter}
                             onChange={(e) => {
                                 setFilter(e.target.value)
-                                handleChange()
+                                handleChange(e.target.value)
                             }}
                             sx={{ width: "300px", backgroundColor: "white" }}
                         >

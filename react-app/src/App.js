@@ -15,6 +15,7 @@ import CreateSet from "./components/CreateSet";
 import Quiz from "./components/Quiz";
 import CreateQuiz from "./components/CreateQuiz";
 import LandingPage from "./components/LandingPage";
+import UpdateQuiz from "./components/UpdateQuiz";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route exact path='/schedule'>
             <WeeklySchedule />
+          </Route>
+          <Route exact path='/trivia/:quizId/update'>
+            <UpdateQuiz />
           </Route>
           <Route exact path='/trivia/new'>
             <CreateQuiz />

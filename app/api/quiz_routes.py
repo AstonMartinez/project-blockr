@@ -98,15 +98,6 @@ def update_quiz(id):
     db.session.commit()
     return quiz.to_dict()
 
-@quiz_routes.route('/quizzes/<int:id>/delete', methods=["DELETE"])
-def delete_quiz(id):
-    quiz = TriviaQuiz.query.get(id)
-    quiz_dict = quiz.to_dict()
-
-    db.session.delete(quiz)
-    db.session.commit()
-    return quiz_dict
-
 
 @quiz_routes.route('/quizzes/<int:id>')
 def get_by_quiz_id(id):

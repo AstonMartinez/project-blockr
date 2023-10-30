@@ -159,7 +159,7 @@ const QuizMenu = ({ quiz, filter }) => {
                             handleQuizDelete(quiz.id)
                             return
                         }}>Yes, Delete</Button>
-                        <Button variant='contained' sx={{ backgroundColor: "green" }} onClick={handleModalClose}>No, keep</Button>
+                        <Button variant='contained' sx={{ backgroundColor: "green" }} onClick={handleModalClose}>No, Keep</Button>
                     </div>
                 </Box>
             </Modal>

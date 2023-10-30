@@ -53,10 +53,131 @@ const SetMenu = ({ set, filter }) => {
 
         } else if (filter === "My Sets") {
 
+        } else if (filter === "General Knowledge Sets") {
+
+        } else if (filter === "Angular Sets") {
+
+        } else if (filter === "C# Sets") {
+
+        } else if (filter === "C++ Sets") {
+
+        } else if (filter === "JavaScript Sets") {
+
+        } else if (filter === "Java Sets") {
+
+        } else if (filter === "Next.js Sets") {
+
+        } else if (filter === "Python Sets") {
+
+        } else if (filter === "React Sets") {
+
+        } else if (filter === "Rust Sets") {
+
+        } else if (filter === "Svelte Sets") {
+
+        } else if (filter === "TypeScript Sets") {
+
+        } else if (filter === "SQL Sets") {
+
         }
+        handleModalClose()
+        return
     }
+
+    return (
+        <>
+            <div>
+                <IconButton
+                    aria-label="more"
+                    id='long-button'
+                    aria-controls={open ? 'long-menu' : undefined}
+                    aria-expanded={open ? 'true' : undefined}
+                    aria-haspopup="true"
+                    onClick={handleClick}
+                >
+                    <MoreVertIcon />
+                </IconButton>
+                <Menu
+                    id='long-menu'
+                    MenuListProps={{
+                        'aria-labelledby': 'long-button'
+                    }}
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                        style: {
+                            maxHeight: ITEM_HEIGHT * 4.5,
+                            width: '15ch',
+                            backgroundColor: '#1e1e1e',
+                            color: "white"
+                        },
+                    }}
+                >
+                    <MenuItem onClick={handleModalOpen}>
+                        <DeleteForeverIcon sx={{ marginRight: '10px' }} /> Delete
+                    </MenuItem>
+                    <MenuItem sx={{ display: 'flex', alignItems: 'center' }}>
+                        <NavLink exact to={`/trivia/${set.id}/update`} style={{ 'color': 'white', 'textDecoration': 'none' }}>
+                            <SystemUpdateAltIcon sx={{ marginRight: '10px', marginTop: '2px' }} /> Update
+                        </NavLink>
+                    </MenuItem>
+                </Menu>
+            </div>
+            {modalOpen && (
+                <Modal
+                    open={modalOpen}
+                    onClose={handleModalClose}
+                    aria-labelledby='delete-modal-title'
+                    aria-describedby='delete-modal-description'
+                >
+                    <Box sx={style}>
+                        <Typography variant="h5" component='h2'>
+                            Confirm Delete
+                        </Typography>
+                        <Typography component="p">
+                            Are you sure you want to delete this set?
+                        </Typography>
+                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px 0' }}>
+                            <Button variant="contained" sx={{ backgroundColor: 'darkred' }} onClick={() => {
+                                handleSetDelete(set.id)
+                                return
+                            }}>Yes, Delete</Button>
+                            <Button variant="contained" sx={{ backgroundColor: "green" }} onClick={handleModalClose}>No, Keep</Button>
+                        </div>
+                    </Box>
+                </Modal>
+            )}
+        </>
+    )
 }
 
-const SetCard = () => {
+const SetCard = ({ set, filter }) => {
+    const history = useHistory()
+    const sessionUser = useSelector(state => state.session.user)
 
+    return (
+        <>
+            <div className='single-set-info-card' style={{ zIndex: "0" }}>
+                {sessionUser && sessionUser.id === set.creator_id ? (
+                    <div className='set-controls-holder-notempty'>
+                        <SetMenu set={set} filter={filter} />
+                    </div>
+                ) : (
+                    <div className='set-controls-holder-empty'></div>
+                )}
+                <div>
+                    <h3>{set?.title}</h3>
+                    <span>{set?.description}</span>
+                </div>
+                <div style={{ 'margin': '10px 0' }}>
+                    <Button variant='contained' sx={{ backgroundColor: 'purple' }} onClick={() => {
+                        history.push(`/sets/${set.id}`)
+                    }}>Study Set</Button>
+                </div>
+            </div>
+        </>
+    )
 }
+
+export default SetCard;

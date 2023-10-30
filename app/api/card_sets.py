@@ -106,12 +106,51 @@ def update_card(id):
     return card.to_dict()
 
 
-@card_routes.route('/sets')
-def get_sets():
-    sets = CardSets.query.all()
+@card_routes.route('/sets/public')
+def get_all_public():
+    sets = CardSets.query.filter(CardSets.status == "Public").all()
     result = {}
     if sets:
         for singleset in sets:
             set_dict = singleset.to_dict()
             result[singleset.id] = set_dict
+    return result
+
+@card_routes.route('/sets/all')
+def get_all_available_sets():
+    result = {}
+    public_sets = CardSets.query.filter(CardSets.status == "Public").all()
+    user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
+
+    for card_set in public_sets:
+        set_dict = card_set.to_dict()
+        result[card_set.id] = set_dict
+
+    for card_set in user_sets:
+        set_dict = card_set.to_dict()
+        if not result[card_set.id]:
+            result[card_set.id] = set_dict
+
+    return result
+
+@card_routes.route('/sets/user-sets')
+def get_user_sets():
+    result = {}
+    user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
+
+    for card_set in user_sets:
+        set_dict = card_set.to_dict()
+        result[card_set.id] = set_dict
+
+    return result
+
+@card_routes.route('/sets/<category>')
+def get_by_category(category):
+    result = {}
+    cat_sets = CardSets.query.filter(CardSets.category == category).all()
+
+    for card_set in cat_sets:
+        set_dict = card_set.to_dict()
+        result[card_set.id] = set_dict
+
     return result

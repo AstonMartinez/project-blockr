@@ -96,7 +96,7 @@ const TaskDisplay = () => {
         )
     } else if(allTasks && displayType === 'List') {
         mainContent = (
-            <>
+            <div id="task-display-wrapper">
                 <Title>Today's Date: {dayOfWeek} {new Date().getMonth()}/{new Date().getDate()}/{new Date().getFullYear()}</Title>
                 <Table size="small">
                     <TableHead>
@@ -116,7 +116,7 @@ const TaskDisplay = () => {
                         ))}
                     </TableBody>
                 </Table>
-            </>
+            </div>
         )
     } else if(allTasks && displayType === 'Timeline') {
         mainContent = (

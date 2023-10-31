@@ -19,7 +19,7 @@ const MaterialsDisplay = () => {
     }, [dispatch])
 
     return (
-        <>
+        <div id='materials-display-wrapper'>
             <div>
                 <Title>My Flash Cards</Title>
                 {!userCards ? (
@@ -55,7 +55,7 @@ const MaterialsDisplay = () => {
                     </div>
                 )}
             </div>
-        </>
+        </div>
     )
 
 }

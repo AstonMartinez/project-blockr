@@ -118,11 +118,11 @@ export default function UserDashboard() {
                 </Paper>
               </Grid>
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', "textAlign": "center" }}>
+                <Paper id='study-sess-paper' sx={{ p: 2, display: 'flex', flexDirection: 'column', "textAlign": "center" }}>
                   <StudySessionDisplay />
                 </Paper>
               </Grid>
-              <Grid item xs={12}>
+              <Grid id='materials-paper' item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', "textAlign": "center" }}>
                   <MaterialsDisplay />
                 </Paper>

@@ -13,6 +13,7 @@ import Link from '@mui/material/Link';
 import { logout } from '../../store/session';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 
 const MainListItems = () => {
   const dispatch = useDispatch()
@@ -66,6 +67,14 @@ const MainListItems = () => {
         </ListItemIcon>
         <ListItemText primary="Resources" />
         </ListItemButton>
+    </Link>
+    <Link href="/news" style={{"textDecoration": "none", "color": "black"}}>
+      <ListItemButton>
+        <ListItemIcon>
+          <NewspaperIcon />
+      </ListItemIcon>
+      <ListItemText primary="News" />
+    </ListItemButton>
     </Link>
     <ListItemButton onClick={() => {
       dispatch(logout()).then(() => {

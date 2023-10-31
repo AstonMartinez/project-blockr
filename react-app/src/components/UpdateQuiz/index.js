@@ -113,6 +113,7 @@ const UpdateQuiz = () => {
                     flexGrow: 1,
                     height: '100vh',
                     overflow: 'auto',
+                    marginTop: '70px'
             }}
             >
                 <div id='update-quiz-wrapper'>
@@ -160,7 +161,7 @@ const UpdateQuiz = () => {
                                     )}
                                 </section>
                             </section>
-                            <section id='quiz-cat-select'>
+                            <section id='update-quiz-cat-select'>
                                 <label id='quiz-cat-label'>Category</label>
                                 {!editingQuizInfo && (
                                     <p>{quizData.category}</p>
@@ -189,7 +190,7 @@ const UpdateQuiz = () => {
                                     </select>
                                 )}
                             </section>
-                            <section id='quiz-cat-select'>
+                            <section id='update-quiz-cat-select'>
                                 <label className='update-quiz-stat-label'>Status</label>
                                 {!editingQuizInfo && (
                                     <p>{quizData.status}</p>

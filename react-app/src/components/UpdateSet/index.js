@@ -99,18 +99,16 @@ const UpdateSet = () => {
                     flexGrow: 1,
                     height: '100vh',
                     overflow: 'auto',
+                    marginTop: '70px'
                 }}
             >
-                {toggleRender === false && (
-                    <LoadingScreen />
-                )}
                 <div id='update-set-wrapper'>
-                    <div>
-                        <h1>Update Set</h1>
+                    <div style={{display: 'flex', 'justifyContent': 'center'}}>
+                        <h1 id='update-set-header' style={{textAlign: 'center'}}>Update Set</h1>
                     </div>
                     <div>
                         <div>
-                            <section id='update-set-info'>
+                            <section id='update-quiz-info'>
                                 <div style={{display: 'flex', alignItems: 'center'}}>
                                     <h2>Set Info</h2> <CreateIcon sx={{marginLeft: '5px'}} onClick={() => setEditingSetInfo(true)} />
                                 </div>
@@ -132,8 +130,8 @@ const UpdateSet = () => {
                                         />
                                     )}
                                 </section>
-                                <section>
-                                    <div style={{textAlign: 'center'}}>
+                                <section id='update-quiz-desc'>
+                                    <div>
                                         <label htmlFor='description' id='set-desc-label'>Description</label><span style={{ "color": "red" }}>*</span>
                                     </div>
                                     {!editingSetInfo && (
@@ -149,15 +147,15 @@ const UpdateSet = () => {
                                     )}
                                 </section>
                             </section>
-                            <section id='quiz-cat-select' style={{marginTop: '10px'}}>
-                                <label id='set-cat-label'>Category</label>
+                            <section id='update-set-category-section' style={{display: 'flex', 'flexDirection': 'column', alignItems: 'center'}}>
+                                <label id='quiz-cat-label' style={{margin: '0 auto'}}>Category</label>
                                 {!editingSetInfo && (
                                     <p>{setData.category}</p>
                                 )}
                                 {editingSetInfo && (
                                     <select
-                                        className='update-quiz-select-field'
-                                        defaultValue={setData?.category}
+                                        className='create-quiz-select-field'
+                                        defaultValue={setData.category}
                                         value={category}
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
@@ -178,16 +176,16 @@ const UpdateSet = () => {
                                     </select>
                                 )}
                             </section>
-                            <section id='set-cat-select' style={{marginTop: '10px'}}>
-                                <label className='set-update-stat-label'>Status</label>
+                            <section id='update-set-category-section' style={{display: 'flex', 'flexDirection': 'column', alignItems: 'center'}}>
+                                <label className='update-quiz-stat-label'>Status</label>
                                 {!editingSetInfo && (
                                     <p>{setData.status}</p>
                                 )}
                                 {editingSetInfo && (
                                     <select
                                         className='update-quiz-select-field'
+                                        defaultValue={setData.status}
                                         value={status}
-                                        defaultValue={setData?.status}
                                         onChange={(e) => setStatus(e.target.value)}
                                     >
                                         <option value="Public">Public</option>
@@ -203,8 +201,10 @@ const UpdateSet = () => {
                                     </>
                                 )}
                             </section>
-                            <section id='set-qs-inputs'>
-                                <h2 style={{ textAlign: 'center' }}>Current Cards</h2>
+                            <section id='quiz-qs-inputs'>
+                                <div id='update-set-curr-cards' style={{display: 'flex', justifyContent: 'center'}}>
+                                    <h2>Current Cards</h2>
+                                </div>
                                 <section id='all-cards'>
                                     <div style={{paddingLeft: '30px'}}>
                                         {questionsArr.length > 0 && questionsArr.map(card => (
@@ -229,7 +229,7 @@ const UpdateSet = () => {
                                         onChange={(e) => setNumCards(e.target.value)}
                                     />
                                 </section>
-                                <section>
+                                <section id='update-set-add-cards'>
                                     <div style={{paddingLeft: '30px'}}>
                                         {cardArr.map(card => (
                                             <>
@@ -237,7 +237,7 @@ const UpdateSet = () => {
                                             </>
                                         ))}
                                     </div>
-                                    <div id='update-quiz-submit'>
+                                    <div id='update-set-add-cards-submit'>
                                         {numCards > 0 && (
                                             <Button variant="contained" onClick={handleAddCards}>Save New Cards</Button>
                                         )}
@@ -247,7 +247,7 @@ const UpdateSet = () => {
                             <section>
                                 {submitError && (<p style={{ 'color': 'red' }}>{submitError}</p>)}
                             </section>
-                            <section id='update-quiz-submit'>
+                            <section id='update-set-submit'>
                                 <Button variant="contained" onClick={() => {
                                     history.push(`/flashcards`)
                                 }}>Done Editing</Button>

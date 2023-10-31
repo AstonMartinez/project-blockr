@@ -69,8 +69,8 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
     }
 
     return (
-        <div id='question-card-wrapper'>
-            <section id='question-input-holder'>
+        <div id='update-question-card-wrapper'>
+            <section id='update-question-input-holder'>
                 <label className='create-quiz-card-label'>Question</label>
                 <textarea
                     id='update-question-text'
@@ -81,7 +81,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                 />
             </section>
             <section id='question-answer-opt-holder'>
-                <div id='answer-opt-top' className='answer-opt-row'>
+                <div id='answer-opt-top' className='update-answer-opt-row'>
                     <div className='right-wrong-icon-holder'>
                         <CloseIcon sx={{color: solution !== answerOne ? "red" : "gray"}} />
                         <CheckCircleOutlineIcon sx={{color: solution === answerOne ? "green" : "gray", marginRight: "10px"}} onClick={() => {
@@ -95,7 +95,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                     <div>
                         <textarea
                             id='update-ans-opt-1'
-                            className='create-quiz-card-textarea left-outer'
+                            className='update-quiz-card-textarea left-outer'
                             value={answerOne}
                             placeholder="Option one"
                             onChange={(e) => setAnswerOne(e.target.value)}
@@ -105,7 +105,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                     <div>
                         <textarea
                             id='update-ans-opt-2'
-                            className='create-quiz-card-textarea right-outer'
+                            className='update-quiz-card-textarea right-outer'
                             value={answerTwo}
                             placeholder="Option two"
                             onChange={(e) => setAnswerTwo(e.target.value)}
@@ -123,7 +123,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                         <CloseIcon sx={{color: solution !== answerTwo ? "red" : "gray"}} />
                     </div>
                 </div>
-                <div id='answer-opt-bottom' className='answer-opt-row'>
+                <div id='answer-opt-bottom' className='update-answer-opt-row'>
                     <div className='right-wrong-icon-holder'>
                         <CheckCircleOutlineIcon sx={{color: solution === answerThree ? "green" : "gray", marginLeft: "10px"}} onClick={() => {
                             if(isEditing) {
@@ -137,7 +137,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                     <div>
                         <textarea
                             id='update-ans-opt-3'
-                            className='create-quiz-card-textarea left-outer'
+                            className='update-quiz-card-textarea left-outer'
                             value={answerThree}
                             onChange={(e) => setAnswerThree(e.target.value)}
                             placeholder="Option three"
@@ -147,7 +147,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                     <div>
                         <textarea
                             id='update-ans-opt-4'
-                            className='create-quiz-card-textarea right-outer'
+                            className='update-quiz-card-textarea right-outer'
                             value={answerFour}
                             placeholder='Option four'
                             onChange={(e) => setAnswerFour(e.target.value)}
@@ -166,7 +166,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                     </div>
                 </div>
             </section>
-            <section id='card-solution-holder'>
+            <section id='update-card-solution-holder'>
                 <span style={{ 'fontWeight': 'bold' }}>Solution: </span>
                 <input id='update-solutions' style={{ 'border': 'none', 'textAlign': 'center', 'fontSize': '15px' }} value={solution} disabled='true'></input>
             </section>

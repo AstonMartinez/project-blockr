@@ -8,9 +8,9 @@ const ArticlePreview = ({ article }) => {
             <div>
                 <h3>{newTitle}</h3>
             </div>
-            <div>
+            <div id='news-auth-date'>
                 <span>By: {article.author}</span>
-                <span style={{marginLeft: "20px"}}>Date: {article.published.split(" ")[0]}</span>
+                <span id='news-date-span'>Date: {article.published.split(" ")[0]}</span>
             </div>
             <div>
                 {article.description !== "" ? (

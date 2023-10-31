@@ -85,7 +85,7 @@ def seed_users():
         user_id=1,
         title="C# I",
         description="C# trivia",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -158,6 +158,222 @@ def seed_users():
         title="SQL I",
         description="SQL trivia",
         category="SQL",
+        status="Public"
+    )
+
+    quiz17 = TriviaQuiz(
+        user_id=2,
+        title="Web Development Fundamentals",
+        description="See how well you know the basics of web development",
+        category="General",
+        status="Public"
+    )
+
+    quiz18 = TriviaQuiz(
+        user_id=2,
+        title="Game Development Fundamentals",
+        description="See how well you know the basics of game development",
+        category="General",
+        status="Public"
+    )
+
+    quiz19 = TriviaQuiz(
+        user_id=3,
+        title="Machine Learning Fundamentals",
+        description="See how well you know the basics of machine learning",
+        category="General",
+        status="Public"
+    )
+
+    quiz19q1 = TriviaQuestion(
+        quiz_id=19,
+        question="What is the main goal of supervised learning in machine learning?",
+        answer_one="To train a model on labeled data and make predictions on new, unseen data",
+        answer_two="To create self-learning, unsupervised AI systems",
+        answer_three="To optimize algorithms for maximum speed",
+        answer_four="To generate random data for testing purposes",
+        solution="To train a model on labeled data and make predictions on new, unseen data",
+        category="General",
+        status="Public"
+    )
+
+    quiz19q2 = TriviaQuestion(
+        quiz_id=19,
+        question="Which machine learning algorithm is often used for classification tasks and based on probability theory?",
+        answer_one="k-Nearest Neighbors (k-NN)",
+        answer_two="Support Vector Machine(SVM)",
+        answer_three="Decision Tree",
+        answer_four="Naive Bayes",
+        solution="Naive Bayes",
+        category="General",
+        status="Public"
+    )
+
+    quiz19q3 = TriviaQuestion(
+        quiz_id=19,
+        question="In unsupervised learning, what is the primary objective of clustering algorithms?",
+        answer_one="To predict future values",
+        answer_two="To reduce the dimensionality of data",
+        answer_three="To group similar data points together",
+        answer_four="To optimize model hyperparameters",
+        solution="To group similar data points together",
+        category="General",
+        status="Public"
+    )
+
+    quiz19q4 = TriviaQuestion(
+        quiz_id=19,
+        question="What is the role of a loss function in training a machine learning model?",
+        answer_one="To ensure the accuracy of the model's predictions",
+        answer_two="To control the learning rate of the model",
+        answer_three="To prevent overfitting by reducing model complexity",
+        answer_four="To calculate the gradient of the loss for gradient descent",
+        solution="To calculate the gradient of the loss for gradient descent",
+        category="General",
+        status="Public"
+    )
+
+    quiz19q5 = TriviaQuestion(
+        quiz_id=19,
+        question="Which library is widely used for implementing deep learning models and neural networks?",
+        answer_one="NumPy",
+        answer_two="Matplotlib",
+        answer_three="TensorFlow",
+        answer_four="SciKit-learn",
+        solution="TensorFlow",
+        category="General",
+        status="Public"
+    )
+
+    quiz18q1 = TriviaQuestion(
+        quiz_id=18,
+        question='What is the primary purpose of a game engine in game development?',
+        answer_one='Creating 3D models',
+        answer_two='Managing player input',
+        answer_three='Handling game physics and rendering',
+        answer_four='Writing game storylines',
+        solution='Handling game physics and rendering',
+        category='General',
+        status="Public"
+    )
+
+    quiz18q2 = TriviaQuestion(
+        quiz_id=18,
+        question='In game development, what is a "sprite"?',
+        answer_one='A type of character class',
+        answer_two='A type of projectile weapon',
+        answer_three='A 2D image or animation used in games',
+        answer_four='A special power-up',
+        solution='A 2D image or animation used in games',
+        category='General',
+        status="Public"
+    )
+
+    quiz18q3 = TriviaQuestion(
+        quiz_id=18,
+        question='Which programming language is commonly used for game development with the Unity game engine?',
+        answer_one='Java',
+        answer_two='C#',
+        answer_three='Python',
+        answer_four='Ruby',
+        solution='C#',
+        category='General',
+        status="Public"
+    )
+
+    quiz18q4 = TriviaQuestion(
+        quiz_id=18,
+        question='What is a "hitbox" in the context of game development?',
+        answer_one='A box of ammunition',
+        answer_two='The main menu of a game',
+        answer_three='An invisible area that registers collisions and interactions',
+        answer_four='A power-up that grants extra lives',
+        solution='An invisible area that registers collisions and interactions',
+        category='General',
+        status="Public"
+    )
+
+    quiz18q5 = TriviaQuestion(
+        quiz_id=18,
+        question='What is the purpose of a game design document (GDD) in game development?',
+        answer_one='To describe the technical details of the game\'s code',
+        answer_two='To outline the marketing strategy for the game',
+        answer_three='To document the game\'s concept, mechanics and development plan',
+        answer_four='To provide a list of potential bugs and glitches',
+        solution='To document the game\'s concept, mechanics and development plan',
+        category='General',
+        status="Public"
+    )
+
+    quiz17q1 = TriviaQuestion(
+        quiz_id=17,
+        question="What does HTTP stand for in web development?",
+        answer_one="HyperText Transfer Protocol",
+        answer_two="Highly Technical Transfer Process",
+        answer_three="Hypertext Transfer Page",
+        answer_four="Hyperlink Text Transmission",
+        solution="HyperText Transfer Protocol",
+        category="General",
+        status="Public"
+    )
+
+    quiz17q2 = TriviaQuestion(
+        quiz_id=17,
+        question="What does HTML stand for in the context of web development?",
+        answer_one="HyperText Markup Language",
+        answer_two="High-Level Text Language",
+        answer_three="Hyperlink and Text Markup Language",
+        answer_four="HyperText Markup Language",
+        solution="HyperText Markup Language",
+        category="General",
+        status="Public"
+    )
+
+    quiz17q3 = TriviaQuestion(
+        quiz_id=17,
+        question="Which programming language is commonly used for client-side scripting in web development?",
+        answer_one="Python",
+        answer_two="JavaScript",
+        answer_three="Ruby",
+        answer_four="C++",
+        solution="JavaScript",
+        category="General",
+        status="Public"
+    )
+
+    quiz17q4 = TriviaQuestion(
+        quiz_id=17,
+        question="What is the purpose of CSS (Cascading Style Sheets) in web development?",
+        answer_one="To define the structure and content of a webpage",
+        answer_two="To manage the server-side logic of a website",
+        answer_three="To style and format the visual presentation of a webpage",
+        answer_four="To create and manage databases for a website",
+        solution="To style and format the visual presentation of a webpage",
+        category="General",
+        status="Public"
+    )
+
+    quiz17q5 = TriviaQuestion(
+        quiz_id=17,
+        question="Which HTTP status code indicates a successful request in web development?",
+        answer_one="200 OK",
+        answer_two="404 Not Found",
+        answer_three="500 Internal Server Error",
+        answer_four="302 Found",
+        solution="200 OK",
+        category="General",
+        status="Public"
+    )
+
+    quiz17q6 = TriviaQuestion(
+        quiz_id=17,
+        question="What is the purpose of a responsive web design?",
+        answer_one="To make the website load faster",
+        answer_two="To ensure compatibility with Internet Explorer",
+        answer_three="To adapt the layout and content to different screen sizes and devices",
+        answer_four="To encrypt user data for security",
+        solution="To adapt the layout and content to different screen sizes and devices",
+        category="General",
         status="Public"
     )
 
@@ -661,7 +877,7 @@ def seed_users():
         answer_three="C Sharp",
         answer_four="Coding Style",
         solution="C Sharp",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -673,7 +889,7 @@ def seed_users():
         answer_three="`var`",
         answer_four="`static`",
         solution="`readonly`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -685,7 +901,7 @@ def seed_users():
         answer_three="To define class properties",
         answer_four="To declare variables",
         solution=" To include namespaces in your C# code",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -697,7 +913,7 @@ def seed_users():
         answer_three=".csfile",
         answer_four=".csharpcode",
         solution=".cs",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -709,7 +925,7 @@ def seed_users():
         answer_three="`int`",
         answer_four="`char`",
         solution="`int`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -721,7 +937,7 @@ def seed_users():
         answer_three="A variable that cannot be changed",
         answer_four="A static variable",
         solution="A variable with an unknown data type",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -733,7 +949,7 @@ def seed_users():
         answer_three="`protected`",
         answer_four="`internal`",
         solution="`public`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -745,7 +961,7 @@ def seed_users():
         answer_three="Encapsulation",
         answer_four="Abstraction",
         solution="Inheritance",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -757,7 +973,7 @@ def seed_users():
         answer_three="It allows the member to be accessed without creating an instance of the class",
         answer_four="It enforces thread safety for the member",
         solution="It allows the member to be accessed without creating an instance of the class",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -769,7 +985,7 @@ def seed_users():
         answer_three="`int`",
         answer_four="`bool`",
         solution="`char`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -781,7 +997,7 @@ def seed_users():
         answer_three="`!=`",
         answer_four="`equals()`",
         solution="`==`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -793,7 +1009,7 @@ def seed_users():
         answer_three="It defines the try part of the statement”",
         answer_four="It specifies the data type of the catch block",
         solution="It always gets executed, whether an exception is thrown or not",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -805,7 +1021,7 @@ def seed_users():
         answer_three="`Array`",
         answer_four="`Queue`",
         solution="`Dictionary`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -817,7 +1033,7 @@ def seed_users():
         answer_three="To create background threads",
         answer_four="To write asynchronous code and manage asynchronous operations",
         solution="To write asynchronous code and manage asynchronous operations",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -829,7 +1045,7 @@ def seed_users():
         answer_three="To declare a constant property",
         answer_four="To indicate a read-only property",
         solution="To define methods that get and set the property value",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -841,7 +1057,7 @@ def seed_users():
         answer_three="To store and manipulate data",
         answer_four="To declare properties and events",
         solution="To define a blueprint for a class, specifying its fields and methods",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -853,7 +1069,7 @@ def seed_users():
         answer_three="`protected`",
         answer_four="`internal`",
         solution="`internal`",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -865,7 +1081,7 @@ def seed_users():
         answer_three="`do-while` loop",
         answer_four="`foreach` loop",
         solution="`foreach` loop",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -877,7 +1093,7 @@ def seed_users():
         answer_three="To handle exceptions and prevent program crashes",
         answer_four="To create asynchronous methods",
         solution="To handle exceptions and prevent program crashes",
-        category="C#",
+        category="CSharp",
         status="Public"
     )
 
@@ -4075,7 +4291,7 @@ def seed_users():
         title="Basic C#",
         description="Sharpen your C# knowledge",
         status="Public",
-        category="C#"
+        category="CSharp"
     )
 
     javaCards = CardSets(
@@ -4132,6 +4348,210 @@ def seed_users():
         description="Sharpen your TypeScript knowledge",
         status="Public",
         category="TypeScript"
+    )
+
+    webDevCards = CardSets(
+        creator_id=2,
+        title="Basic Web Development",
+        description="Sharpen your web development knowledge",
+        status="Public",
+        category="General"
+    )
+
+    gameDevCards = CardSets(
+        creator_id=2,
+        title="Basic Game Development",
+        description="Sharpen your game development knowledge",
+        status="Public",
+        category="General"
+    )
+
+    machineLearningCards = CardSets(
+        creator_id=3,
+        title="Basic Machine Learning",
+        description="Sharpen your machine learning knowledge",
+        status="Public",
+        category="General"
+    )
+
+    wd1 = CardQuestion(
+        set_id=12,
+        front="Explain the concept of 'HTML' in web development",
+        back="HTML (Hypertext Markup Language) is the standard markup language used to create the structure of web pages. It defines the elements and their layout, such as headings, paragraphs, links, and images."
+    )
+
+    wd2 = CardQuestion(
+        set_id=12,
+        front="Describe the purpose of CSS in web development",
+        back="CSS (Cascading Style Sheets) is used to control the visual presentation and layout of web pages. It specifies how HTML elements should be displayed, including colors, fonts, spacing, and more."
+    )
+
+    wd3 = CardQuestion(
+        set_id=12,
+        front="What is 'JavaScript' in web development, and what role does it play?",
+        back="JavaScript is a programming language used to make web pages interactive. It enables dynamic behavior, such as handling user input, modifying the DOM, and interacting with web servers."
+    )
+
+    wd4 = CardQuestion(
+        set_id=12,
+        front="Explain the purpose HTTP in web development",
+        back="HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the world wide web. It is used for requesting and transmitting web resources, such as HTML pages, images, and scripts"
+    )
+
+    wd5 = CardQuestion(
+        set_id=12,
+        front="Define the term 'Responsive Web Design'",
+        back="Responsive Web Design is an approach that ensures web pages adapt to different screen sizes and devices. It aims to provide a consistent user experience on both desktop and mobile devices."
+    )
+
+    wd6 = CardQuestion(
+        set_id=12,
+        front="What is 'Web Hosting' in the context of web development?",
+        back="Web hosting is the service of providing storage and access to websites on the internet. Hosting companies store website files on servers, making them accessible to users worldwide."
+    )
+
+    wd7 = CardQuestion(
+        set_id=12,
+        front="What is the purpose of a 'Content Management System (CMS)' in web development?",
+        back="A CMS is software that allows users to create, manage, and publish digital content, such as websites and blogs, without requiring extensive technical knowledge."
+    )
+
+    wd8 = CardQuestion(
+        set_id=12,
+        front="Explain the concept of 'Search Engine Optimization (SEO)' in web development",
+        back="SEO is the practice of optimizing a website's content and structure to improve its visibility in search engine results, ultimately increasing organic (non-paid) traffic"
+    )
+
+    wd9 = CardQuestion(
+        set_id=12,
+        front="What is 'Front-End Development'?",
+        back="Front-end development involves creating the user interface and user experience of a website. It includes working with HTML, CSS, and JavaScript to build the client-side of web applications."
+    )
+
+    wd10 = CardQuestion(
+        set_id=12,
+        front="Describe 'Back-End Development' in web development",
+        back="Back-end development focuses on the server-side of web applications. It involves handling data, databases, server logic, and ensuring the application's functionality."
+    )
+
+    gd1 = CardQuestion(
+        set_id=13,
+        front="What is a 'Game Engine' in game development?",
+        back="A game engine is a software framework that provides the core functionality for game development, including rendering, physics, sound, and scripting"
+    )
+
+    gd2 = CardQuestion(
+        set_id=13,
+        front="Explain the concept of 'Game Mechanics' in game development",
+        back="Game mechanics refer to the rules, interactions, and systems that define how a game is played, including player actions, objectives, and challenges"
+    )
+
+    gd3 = CardQuestion(
+        set_id=13,
+        front="What is a 'Level Design' in game development, and why is it important?",
+        back="Level design involves creating game levels or environments, determining their layout, challenges, and pacing. It is crucial for providing engaging and enjoyable gameplay experiences"
+    )
+
+    gd4 = CardQuestion(
+        set_id=13,
+        front="Describe the role of 'AI' (Artificial Intelligence) in games",
+        back="AI in games is responsible for creating intelligent and adaptive behavior for non-player characters (NPCs) and opponents, making the game world feel dynamic and challenging"
+    )
+
+    gd5 = CardQuestion(
+        set_id=13,
+        front="What is 'Game Testing', and why is it essential in game development?",
+        back="Game testing involves identifying and fixing bugs, glitches, and playability issues in a game. It is crucial to ensure a smooth and enjoyable gaming experience"
+    )
+
+    gd6 = CardQuestion(
+        set_id=13,
+        front="What is 'Storyboarding' in the context of game development?",
+        back="Storyboarding involves creating a visual outline or sequence of events in a game's narrative, helping to plan and visualize the game's story and progression"
+    )
+
+    gd7 = CardQuestion(
+        set_id=13,
+        front="Explain the concept of 'Shader' in game development",
+        back="Shaders are programs used to control the visual appearance of objects in a game, including their colors, lighting, and special effects"
+    )
+
+    gd8 = CardQuestion(
+        set_id=13,
+        front="What is 'Texture Mapping' in 3D game development?",
+        back="Texture mapping is the process of applying 2D images (textures) to 3D objects to give them a realistic appearance in games"
+    )
+
+    gd9 = CardQuestion(
+        set_id=13,
+        front="Describe the role of a 'Game Designer' in game development",
+        back="A game designer is responsible for creating the game's concept, gameplay, and mechanics, as well as designing levels and defining the overall player experience"
+    )
+
+    gd10 = CardQuestion(
+        set_id=13,
+        front="What is 'Monetization' in mobile game development?",
+        back="Monetization in mobile game development refers to the methods and strategies used to generate revenue from the game, such as in-app purchases, ads, or paid downloads"
+    )
+
+    ml1 = CardQuestion(
+        set_id=14,
+        front="What is 'Machine Learning'?",
+        back="Machine Learning is a subfield of artificial intelligence that focuses on the development of algorithms and models that enable computers to learn from and make predictions or decisions based on data"
+    )
+
+    ml2 = CardQuestion(
+        set_id=14,
+        front="Explain the difference between 'Supervised Learning' and 'Unsupervised Learning' in machine learning",
+        back="Supervised learning involves training a model on labeled data with known outcomes, while unsupervised learning deals with unlabeled data and discovering patterns or structures within the data"
+    )
+
+    ml3 = CardQuestion(
+        set_id=14,
+        front="What is 'Overfitting' in machine learning, and how can it be prevented?",
+        back="Overfitting occurs when a model performs well on the training data but poorly on unseen data. It can be prevented by using techniques like cross-validation and regularization"
+    )
+
+    ml4 = CardQuestion(
+        set_id=14,
+        front="Describe the 'Bias-Variance Tradeoff' in machine learning",
+        back="The bias-variance tradeoff represents the balance between a model's ability to fit the training data (low bias, high variance) and its ability to generalize to unseen data (low variance, high bias)"
+    )
+
+    ml5 = CardQuestion(
+        set_id=14,
+        front="What is the purpose of 'Feature Engineering' in machine learning?",
+        back="Feature engineering involves selecting, transforming, or creating relevant features from the input data to improve a model's performance"
+    )
+
+    ml6 = CardQuestion(
+        set_id=14,
+        front="Explain 'Cross-Validation' in machine learning",
+        back="Cross-validation is a technique used to assess a model's performance by splitting the data into multiple subsets, training and testing the model on different subsets to evaluate its generalization"
+    )
+
+    ml7 = CardQuestion(
+        set_id=14,
+        front="What is a 'Confusion Matrix' in the context of classification problems?",
+        back="A confusion matrix is a table used to evaluate the performance of a classification model by comparing the predicted and actual class labels"
+    )
+
+    ml8 = CardQuestion(
+        set_id=14,
+        front="Describe the 'Gradient Descent' optimization algorithm in machine learning",
+        back="Gradient descent is an iterative optimization algorithm used to minimize the loss function of a machine learning model by adjusting its parameters"
+    )
+
+    ml9 = CardQuestion(
+        set_id=14,
+        front="What is the purpose of 'Ensemble Learning' in machine learning?",
+        back="Ensemble learning combines multiple machine learning models to improve overall predictive performance, reducing the risk of overfitting and increasing accuracy"
+    )
+
+    ml10 = CardQuestion(
+        set_id=14,
+        front="Explain the concept of 'Reinforcement Learning' in machine learning",
+        back="Reinforcement learning is a subfield of machine learning where an agent learns to make a sequence of decisions by interacting with an environment and receiving rewards or penalties"
     )
 
     js1 = CardQuestion(
@@ -5143,7 +5563,7 @@ def seed_users():
     )
 
     db.session.add_all([demo, marnie, bobbie])
-    db.session.add_all([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13, quiz14, quiz15, quiz16])
+    db.session.add_all([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13, quiz14, quiz15, quiz16, quiz17, quiz18, quiz19])
     db.session.add_all([gk1tq1, gk1tq2, gk1tq3, gk1tq4, gk1tq5, gk1tq6, gk1tq7, gk1tq8, gk1tq9, gk1tq10,
                         gk1tq11, gk1tq12, gk1tq13, gk1tq14, gk1tq15, gk1tq16, gk1tq17, gk1tq18, gk1tq19, gk1tq20,
                         gk2tq1, gk2tq2, gk2tq3, gk2tq4, gk2tq5, gk2tq6, gk2tq7, gk2tq8, gk2tq9, gk2tq10,
@@ -5171,8 +5591,11 @@ def seed_users():
                         sqltq1, sqltq2, sqltq3, sqltq4, sqltq5, sqltq6, sqltq7, sqltq8, sqltq9, sqltq10,
                         sqltq11, sqltq12, sqltq13, sqltq14, sqltq15, sqltq16, sqltq17, sqltq18, sqltq19, sqltq20,
                         tstq1, tstq2, tstq3, tstq4, tstq5, tstq6, tstq7, tstq8, tstq9, tstq10,
-                        tstq11, tstq12, tstq13, tstq14, tstq15, tstq16, tstq17, tstq18, tstq19, tstq20])
-    db.session.add_all([javaScriptCards, pythonCards, reactCards, cSharpCards, javaCards, cPlusPlusCards, angularCards, nextJSCards, rustCards, typeScriptCards, svelteCards])
+                        tstq11, tstq12, tstq13, tstq14, tstq15, tstq16, tstq17, tstq18, tstq19, tstq20,
+                        quiz17q1, quiz17q2, quiz17q3, quiz17q4, quiz17q5, quiz17q6,
+                        quiz18q1, quiz18q2, quiz18q3, quiz18q4, quiz18q5,
+                        quiz19q1, quiz19q2, quiz19q3, quiz19q4, quiz19q5])
+    db.session.add_all([javaScriptCards, pythonCards, reactCards, cSharpCards, javaCards, cPlusPlusCards, angularCards, nextJSCards, rustCards, typeScriptCards, svelteCards, webDevCards, gameDevCards, machineLearningCards])
     db.session.add_all([js1, js2, js3, js4, js5, js6, js7, js8, js9, js10,
                         js11, js12, js13, js14, js15, js16, js17, js18, js19, js20, js21, js22,
                         py1, py2, py3, py4, py5, py6, py7, py8, py9, py10, py11, py12,
@@ -5184,7 +5607,10 @@ def seed_users():
                         ne1, ne2, ne3, ne4, ne5, ne6, ne7, ne8, ne9, ne10, ne11, ne12, ne13, ne14, ne15,
                         ru1, ru2, ru3, ru4, ru5, ru6, ru7, ru8, ru9, ru10, ru11, ru12, ru13, ru14, ru15,
                         sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10, sv11, sv12, sv13, sv14, sv15,
-                        ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts10, ts11, ts12, ts13, ts14, ts15])
+                        ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts10, ts11, ts12, ts13, ts14, ts15,
+                        wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9, wd10,
+                        gd1, gd2, gd3, gd4, gd5, gd6, gd7, gd8, gd9, gd10,
+                        ml1, ml2, ml3, ml4, ml5, ml6, ml7, ml8, ml9, ml10])
     db.session.add(task1)
 
 

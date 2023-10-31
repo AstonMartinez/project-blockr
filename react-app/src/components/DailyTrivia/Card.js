@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -45,59 +45,61 @@ const QuizMenu = ({ quiz, filter }) => {
     const handleModalClose = () => setModalOpen(false)
 
     const handleQuizDelete = (quizId) => {
-        dispatch(deleteUserQuiz(quizId))
+        dispatch(deleteUserQuiz(quizId)).then(() => {
 
-        if(filter === "All Quizzes") {
-            dispatch(fetchAllAvailable())
+                    if(filter === "All Quizzes") {
+                        dispatch(fetchAllAvailable())
 
-        } else if (filter === "All Public") {
-            dispatch(fetchAllPublic())
+                    } else if (filter === "All Public") {
+                        dispatch(fetchAllPublic())
 
-        } else if (filter === "My Quizzes") {
-            dispatch(fetchUserQuizzes())
+                    } else if (filter === "My Quizzes") {
+                        dispatch(fetchUserQuizzes())
 
-        } else if (filter === "General Knowledge Quizzes") {
-            dispatch(fetchByCategory("General"))
+                    } else if (filter === "General Knowledge Quizzes") {
+                        dispatch(fetchByCategory("General"))
 
-        } else if (filter === "Angular Quizzes") {
-            dispatch(fetchByCategory("Angular"))
+                    } else if (filter === "Angular Quizzes") {
+                        dispatch(fetchByCategory("Angular"))
 
-        } else if (filter === "C# Quizzes") {
-            dispatch(fetchByCategory("C#"))
+                    } else if (filter === "C# Quizzes") {
+                        dispatch(fetchByCategory("C#"))
 
-        } else if (filter === "C++ Quizzes") {
-            dispatch(fetchByCategory("C++"))
+                    } else if (filter === "C++ Quizzes") {
+                        dispatch(fetchByCategory("C++"))
 
-        } else if (filter === "JavaScript Quizzes") {
-            dispatch(fetchByCategory("JavaScript"))
+                    } else if (filter === "JavaScript Quizzes") {
+                        dispatch(fetchByCategory("JavaScript"))
 
-        } else if (filter === "Java Quizzes") {
-            dispatch(fetchByCategory("Java"))
+                    } else if (filter === "Java Quizzes") {
+                        dispatch(fetchByCategory("Java"))
 
-        } else if (filter === "Next.js Quizzes") {
-            dispatch(fetchByCategory("Next.js"))
+                    } else if (filter === "Next.js Quizzes") {
+                        dispatch(fetchByCategory("Next.js"))
 
-        } else if (filter === "Python Quizzes") {
-            dispatch(fetchByCategory("Python"))
+                    } else if (filter === "Python Quizzes") {
+                        dispatch(fetchByCategory("Python"))
 
-        } else if (filter === "React Quizzes") {
-            dispatch(fetchByCategory("React"))
+                    } else if (filter === "React Quizzes") {
+                        dispatch(fetchByCategory("React"))
 
-        } else if (filter === "Rust Quizzes") {
-            dispatch(fetchByCategory("Rust"))
+                    } else if (filter === "Rust Quizzes") {
+                        dispatch(fetchByCategory("Rust"))
 
-        } else if (filter === "Svelte Quizzes") {
-            dispatch(fetchByCategory("Svelte"))
+                    } else if (filter === "Svelte Quizzes") {
+                        dispatch(fetchByCategory("Svelte"))
 
-        } else if (filter === "TypeScript Quizzes") {
-            dispatch(fetchByCategory("TypeScript"))
+                    } else if (filter === "TypeScript Quizzes") {
+                        dispatch(fetchByCategory("TypeScript"))
 
-        } else if (filter === "SQL Quizzes") {
-            dispatch(fetchByCategory("SQL"))
+                    } else if (filter === "SQL Quizzes") {
+                        dispatch(fetchByCategory("SQL"))
 
-        }
-        handleModalClose()
-        return
+                    }
+                    handleModalClose()
+                    return
+
+        })
     }
 
     return (
@@ -133,8 +135,10 @@ const QuizMenu = ({ quiz, filter }) => {
                 <MenuItem onClick={handleModalOpen}>
                     <DeleteForeverIcon sx={{ marginRight: "10px" }} /> Delete
                 </MenuItem>
-                <MenuItem>
-                    <SystemUpdateAltIcon sx={{ marginRight: "10px" }} /> Update
+                <MenuItem sx={{ display: 'flex', 'alignItems': 'center' }}>
+                    <NavLink exact to={`/trivia/${quiz.id}/update`} style={{ 'color': 'white', 'textDecoration': 'none' }}>
+                        <SystemUpdateAltIcon sx={{ marginRight: "10px", 'marginTop': '2px' }} /> Update
+                    </NavLink>
                 </MenuItem>
             </Menu>
         </div>
@@ -157,7 +161,7 @@ const QuizMenu = ({ quiz, filter }) => {
                             handleQuizDelete(quiz.id)
                             return
                         }}>Yes, Delete</Button>
-                        <Button variant='contained' sx={{ backgroundColor: "green" }} onClick={handleModalClose}>No, keep</Button>
+                        <Button variant='contained' sx={{ backgroundColor: "green" }} onClick={handleModalClose}>No, Keep</Button>
                     </div>
                 </Box>
             </Modal>

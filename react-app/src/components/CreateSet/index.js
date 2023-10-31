@@ -50,7 +50,6 @@ const CreateSet = () => {
 
         dispatch(createFlashCardSet(setInfo))
         .then(async(res) => {
-          console.log(res.id)
           const response = await fetch(`/api/cards/sets/${res.id}/add`, {
             method: "POST",
             headers: {
@@ -106,7 +105,7 @@ const CreateSet = () => {
                   <label className='create-fc-set-label'>Category</label>
                   <Select defaultValue="General" onChange={(e) => setCategory(e.target.value)} sx={{"width": "300px"}}>
                     <Option value="Angular">Angular</Option>
-                    <Option value="C#">C#</Option>
+                    <Option value="CSharp">C#</Option>
                     <Option value="C++">C++</Option>
                     <Option value="General">General</Option>
                     <Option value="Java">Java</Option>

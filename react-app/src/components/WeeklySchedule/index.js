@@ -51,7 +51,7 @@ const WeeklySchedule = () => {
     height: '100vh',
     overflow: 'auto',
   }}>
-            <div id='user-dashboard-wrapper'>
+            <div id='user-dashboard-wrapper' style={{marginTop: "70px"}}>
             <div id='dashboard-header'>
                 <h1>Weekly Overview</h1>
             </div>

@@ -3,6 +3,38 @@ const GET_SINGLE_SET = '/cards/getOne'
 const CREATE_SET = '/cards/create'
 const DELETE_SET = '/cards/deleteSet'
 const UPDATE_SET = '/cards/updateSet'
+const GET_ALL_AVAILABLE = '/cards/available'
+const GET_USER_SETS = '/cards/userCards'
+const GET_BY_CATEGORY = '/cards/byCategory'
+const GET_INFO_ONLY = '/cards/infoOnly'
+
+const infoOnly = (data) => {
+    return {
+        type: GET_INFO_ONLY,
+        payload: data,
+    }
+}
+
+const available = (data) => {
+    return {
+        type: GET_ALL_AVAILABLE,
+        payload: data,
+    }
+}
+
+const userCards = (data) => {
+    return {
+        type: GET_USER_SETS,
+        payload: data,
+    }
+}
+
+const byCategory = (data) => {
+    return {
+        type: GET_BY_CATEGORY,
+        payload: data,
+    }
+}
 
 const deleteSet = (data) => {
     return {
@@ -39,9 +71,82 @@ const create = (data) => {
     }
 }
 
+export const fetchQuizInfoOnly = (id) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/cards/sets/${id}/info-only`)
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(infoOnly(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
+    }
+}
+
+export const fetchSetByCategory = (category) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/cards/sets/${category}`)
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(byCategory(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
+    }
+}
+
+export const fetchUserSets = () => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/cards/sets/user-sets`)
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(userCards(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
+    }
+}
+
+export const fetchAvailableSets = () => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/cards/sets/all`)
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(available(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
+    }
+}
+
 export const updateUserSet = (id, setData) => async (dispatch) => {
     try {
-        const response = await fetch(`/api/sets/${id}/update`, {
+        const response = await fetch(`/api/cards/sets/${id}/update`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -65,7 +170,7 @@ export const updateUserSet = (id, setData) => async (dispatch) => {
 
 export const deleteUserSet = (id) => async (dispatch) => {
     try {
-        const response = await fetch(`/api/sets/${id}/delete`, {
+        const response = await fetch(`/api/cards/sets/${id}/delete`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,7 +193,7 @@ export const deleteUserSet = (id) => async (dispatch) => {
 
 export const getCardSets = () => async (dispatch) => {
     try {
-        const response = await fetch(`/api/cards/sets`)
+        const response = await fetch(`/api/cards/sets/public`)
         if(response.ok) {
             const data = await response.json()
             dispatch(getAllSets(data))
@@ -167,6 +272,22 @@ const cardsReducer = (state = initialState, action) => {
         case DELETE_SET:
             newState = Object.assign({ ...state })
             delete newState.allSets[action.payload]
+            return newState
+        case GET_ALL_AVAILABLE:
+            newState = Object.assign({ ...state })
+            newState.allSets = action.payload
+            return newState
+        case GET_USER_SETS:
+            newState = Object.assign({ ...state })
+            newState.allSets = action.payload
+            return newState
+        case GET_BY_CATEGORY:
+            newState = Object.assign({ ...state })
+            newState.allSets = action.payload
+            return newState
+        case GET_INFO_ONLY:
+            newState = Object.assign({ ...state })
+            newState.singleSet = action.payload
             return newState
         default:
             return state

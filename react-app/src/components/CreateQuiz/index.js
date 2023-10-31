@@ -1,7 +1,5 @@
 import './CreateQuiz.css'
 import { useState } from 'react'
-import Select from '@mui/joy/Select';
-import Option from '@mui/joy/Option';
 import Button from '@mui/joy/Button';
 import Box from '@mui/material/Box';
 import { useHistory } from 'react-router-dom'
@@ -65,20 +63,18 @@ const CreateQuiz = () => {
 
         const questionInfo = { questions: resArr }
 
-        console.log(quizInfo)
-
-        // dispatch(createNewQuiz(quizInfo))
-        // .then(async(res) => {
-        //   await fetch(`/api/quizzes/${res.id}/add`, {
-        //     method: "POST",
-        //     headers: {
-        //       'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(questionInfo)
-        //   })
-        // }).then(() => {
-        //     history.push('/trivia')
-        // })
+        dispatch(createNewQuiz(quizInfo))
+        .then(async(res) => {
+          await fetch(`/api/quizzes/${res.id}/add`, {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(questionInfo)
+          })
+        }).then(() => {
+            history.push('/trivia')
+        })
     }
 
     return (
@@ -102,7 +98,7 @@ const CreateQuiz = () => {
                     <div>
                         <div>
                             <section id='create-fc-info'>
-                                <h2>Set Info</h2>
+                                <h2>Quiz Info</h2>
                                 <section style={{ "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "10px" }}>
                                     <div>
                                         <label htmlFor='title' id='quiz-title-label'>Title</label><span style={{ "color": "red" }}>*</span>
@@ -135,7 +131,7 @@ const CreateQuiz = () => {
                                     onChange={(e) => setCategory(e.target.value)}
                                 >
                                     <option value="Angular">Angular</option>
-                                    <option value="C#">C#</option>
+                                    <option value="CSharp">C#</option>
                                     <option value="C++">C++</option>
                                     <option value="General">General</option>
                                     <option value="Java">Java</option>
@@ -146,6 +142,7 @@ const CreateQuiz = () => {
                                     <option value="Rust">Rust</option>
                                     <option value="Svelte">Svelte</option>
                                     <option value="TypeScript">TypeScript</option>
+                                    <option value="SQL">SQL</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </section>

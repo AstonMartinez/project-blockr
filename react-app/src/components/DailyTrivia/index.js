@@ -2,12 +2,13 @@ import './DailyTrivia.css';
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
-import { useHistory } from 'react-router-dom'
+import { useHistory, NavLink } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import { fetchAllAvailable, fetchAllPublic, fetchByCategory, fetchUserQuizzes } from '../../store/quiz';
 import NavDrawer from '../NavDrawer';
 import Select from '@mui/material/Select';
 import QuizCard from './Card';
+import CreateIcon from '@mui/icons-material/Create';
 
 const DailyTrivia = () => {
     const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const DailyTrivia = () => {
 
     const [filter, setFilter] = React.useState('All Public')
 
-    const handleChange = () => {
+    const handleChange = (filter) => {
         if(filter === "All Quizzes") {
             dispatch(fetchAllAvailable())
             return
@@ -32,7 +33,7 @@ const DailyTrivia = () => {
             dispatch(fetchByCategory("Angular"))
             return
         } else if (filter === "C# Quizzes") {
-            dispatch(fetchByCategory("C#"))
+            dispatch(fetchByCategory("CSharp"))
             return
         } else if (filter === "C++ Quizzes") {
             dispatch(fetchByCategory("C++"))
@@ -71,8 +72,56 @@ const DailyTrivia = () => {
     const quizArr = Object.values(allQuizzes)
 
     React.useEffect(() => {
-        dispatch(fetchAllPublic())
-    }, [dispatch, allQuizzes])
+        if(filter === "All Quizzes") {
+            dispatch(fetchAllAvailable())
+
+        } else if (filter === "All Public") {
+            dispatch(fetchAllPublic())
+
+        } else if (filter === "My Quizzes") {
+            dispatch(fetchUserQuizzes())
+
+        } else if (filter === "General Knowledge Quizzes") {
+            dispatch(fetchByCategory("General"))
+
+        } else if (filter === "Angular Quizzes") {
+            dispatch(fetchByCategory("Angular"))
+
+        } else if (filter === "C# Quizzes") {
+            dispatch(fetchByCategory("CSharp"))
+
+        } else if (filter === "C++ Quizzes") {
+            dispatch(fetchByCategory("C++"))
+
+        } else if (filter === "JavaScript Quizzes") {
+            dispatch(fetchByCategory("JavaScript"))
+
+        } else if (filter === "Java Quizzes") {
+            dispatch(fetchByCategory("Java"))
+
+        } else if (filter === "Next.js Quizzes") {
+            dispatch(fetchByCategory("Next.js"))
+
+        } else if (filter === "Python Quizzes") {
+            dispatch(fetchByCategory("Python"))
+
+        } else if (filter === "React Quizzes") {
+            dispatch(fetchByCategory("React"))
+
+        } else if (filter === "Rust Quizzes") {
+            dispatch(fetchByCategory("Rust"))
+
+        } else if (filter === "Svelte Quizzes") {
+            dispatch(fetchByCategory("Svelte"))
+
+        } else if (filter === "TypeScript Quizzes") {
+            dispatch(fetchByCategory("TypeScript"))
+
+        } else if (filter === "SQL Quizzes") {
+            dispatch(fetchByCategory("SQL"))
+
+        }
+    }, [dispatch])
 
 
     return (
@@ -93,9 +142,11 @@ const DailyTrivia = () => {
                         <h1>Trivia Quizzes</h1>
                     </div>
                     <div>
-                        <Button variant='contained' onClick={() => {
-                            history.push('/trivia/new')
-                        }}>Create Quiz</Button>
+                        <NavLink exact to='/trivia/new'>
+                            <Button variant='contained' size="medium">
+                                <CreateIcon sx={{"marginRight": "5px"}} />Create Quiz
+                            </Button>
+                        </NavLink>
                     </div>
                     <div style={{ "margin": "30px 0px" }}>
                         <Select
@@ -103,7 +154,7 @@ const DailyTrivia = () => {
                             value={filter}
                             onChange={(e) => {
                                 setFilter(e.target.value)
-                                handleChange()
+                                handleChange(e.target.value)
                             }}
                             sx={{ width: "300px", backgroundColor: "white" }}
                         >

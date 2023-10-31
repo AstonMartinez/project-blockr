@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const QuizQuestion = ({ questionData, hasSubmitted, key }) => {
     const [answer, setAnswer] = useState('')
-    // console.log(questionData)
     return (
         <>
             <div className='question-holder'>

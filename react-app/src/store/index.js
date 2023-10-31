@@ -7,6 +7,7 @@ import taskReducer from './tasks';
 import quizReducer from './quiz';
 import questionReducer from './triviaQuestions';
 import materialsReducer from './materials';
+import flashCardReducer from './indivCard';
 
 const rootReducer = combineReducers({
   session,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   quizzes: quizReducer,
   questions: questionReducer,
   materials: materialsReducer,
+  indivCards: flashCardReducer
 });
 
 

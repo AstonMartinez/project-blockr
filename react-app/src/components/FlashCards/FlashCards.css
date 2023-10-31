@@ -1,3 +1,37 @@
+@media screen and (max-width: 414px) {
+    #fc-arrows-holder {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #fc-card-holder {
+        width: 340px;
+        min-height: 200px;
+    }
+}
+
+@media screen and (min-width: 415px) {
+    #fc-arrows-holder {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #fc-card-holder {
+        width: 500px;
+        min-height: 200px;
+    }
+}
+
 .fc-set-wrapper {
     border: 1px solid black;
     flex-grow: 1;
@@ -22,8 +56,6 @@
 
 #flash-card-page-wrapper {
     font-family: 'Roboto Condensed', sans-serif;
-    width: 155vh;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,11 +72,6 @@
 
 }
 
-#fc-card-holder {
-    width: 500px;
-    min-height: 200px;
-}
-
 #flsh-crd {
     border: 1px solid blue;
     display: flex;
@@ -57,15 +84,7 @@
     align-self: center;
 }
 
-#fc-arrows-holder {
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    display: flex;
-    width: 40%;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 #start-button-wrap {
     width: 300px;
@@ -81,4 +100,24 @@
     flex-direction: column;
     margin-top: 30px;
     text-align: center;
+}
+
+.single-set-info-card {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 300px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.set-controls-holder-notempty {
+    display: flex;
+    justify-content: flex-end;
+    height: 20px;
+}
+
+.set-controls-holder-empty {
+    height: 20px;
 }

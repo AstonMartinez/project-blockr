@@ -1,9 +1,36 @@
-.day-of-week {
-    display: flex;
-    margin-left: 30px;
-    justify-content: space-around;
-    margin-bottom: 15px;
-    font-size: 18px;
+@media screen and (max-width: 414px) {
+    .day-of-week {
+        display: flex;
+        width: 280px;
+        height: 250px;
+        flex-direction: column;
+        /* margin-left: 30px; */
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: -20px;
+        font-size: 18px;
+    }
+
+    .weekday {
+        margin-left: 75px;
+        text-align: center;
+        width: 110px;
+        border: 1px solid black;
+    }
+}
+
+@media screen and (min-width: 415px) {
+    .day-of-week {
+        display: flex;
+        margin-left: 30px;
+        justify-content: space-around;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .weekday {
+        width: 4%;
+    }
 }
 
 #user-dashboard-wrapper {
@@ -13,10 +40,6 @@
 #dashboard-header {
     display: flex;
     justify-content: center;
-}
-
-.weekday {
-    width: 4%;
 }
 
 .planners-wrapper {

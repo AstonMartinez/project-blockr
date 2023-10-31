@@ -85,6 +85,9 @@ const WeeklySchedule = () => {
                     dispatch(getByDate(selectedDay))
                 }}>Sunday</span>
             </section>
+            <section style={{display: 'flex', justifyContent: 'center', marginBottom: '-20px'}}>
+              <h2>{selectedDay}</h2>
+            </section>
             <section className='planners-wrapper'>
                 <DailyPlanner id={1} nowDay={selectedDay} />
             </section>

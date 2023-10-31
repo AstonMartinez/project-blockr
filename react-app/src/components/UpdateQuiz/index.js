@@ -1,5 +1,5 @@
 import './UpdateQuiz.css';
-import Button from '@mui/joy/Button';
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useHistory, useParams } from 'react-router-dom'
 import * as React from 'react';
@@ -9,6 +9,7 @@ import NavDrawer from '../NavDrawer';
 import { getByQuizId } from '../../store/triviaQuestions';
 import { fetchSingleQuiz, updateUserQuiz } from '../../store/quiz';
 import IndividualQuestion from '../CreateQuiz/IndividualQA';
+import CreateIcon from '@mui/icons-material/Create';
 
 const UpdateQuiz = () => {
     const dispatch = useDispatch()
@@ -20,22 +21,26 @@ const UpdateQuiz = () => {
 
     const questionArr = Object.values(quizQuestions)
     const qArr = []
-
-    const startingTitle = quizData.title
-    const startingDescription = quizData.description
-    const startingCategory = quizData.category
-    const startingStatus = quizData.status
-
+    const [editingQuizInfo, setEditingQuizInfo] = React.useState(false)
     const [numQuestions, setNumQuestions] = React.useState(0)
-    const [title, setTitle] = React.useState(startingTitle)
-    const [description, setDescription] = React.useState(startingDescription)
-    const [category, setCategory] = React.useState(startingCategory)
-    const [status, setStatus] = React.useState(startingStatus)
+    const [title, setTitle] = React.useState(quizData.title)
+    const [description, setDescription] = React.useState(quizData.description)
+    const [category, setCategory] = React.useState(quizData.category)
+    const [status, setStatus] = React.useState(quizData.status)
     const [submitError, setSubmitError] = React.useState('')
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+    const handleChangeQuizInfo = async () => {
+        const quizInfo = {
+            title: title,
+            description: description,
+            category: category,
+            status: status
+        }
 
+        dispatch(updateUserQuiz(quizInfo))
+    }
+
+    const handleAddQuestions = async () => {
         const allQuestions = document.querySelectorAll('#question-text')
         const firstOptions = document.querySelectorAll('#ans-opt-1')
         const secondOptions = document.querySelectorAll('#ans-opt-2')
@@ -77,17 +82,10 @@ const UpdateQuiz = () => {
                 body: JSON.stringify(questionInfo)
             })
         }
+    }
 
-        const quizInfo = {
-            title: title,
-            description: description,
-            category: category,
-            status: status
-        }
-
-        dispatch(updateUserQuiz(quizInfo)).then(() => {
-            history.push('/trivia')
-        })
+    const handleSubmit = async (e) => {
+        e.preventDefault()
 
     }
 
@@ -124,64 +122,97 @@ const UpdateQuiz = () => {
                     <div>
                         <div>
                             <section id='update-quiz-info'>
-                                <h2>Quiz Info</h2>
+                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                    <h2>Quiz Info</h2> <CreateIcon sx={{marginLeft: '5px'}} onClick={() => setEditingQuizInfo(true)} />
+                                </div>
                                 <section id='update-quiz-sec-1'>
                                     <div>
                                         <label htmlFor='title' id='quiz-title-label'>Title</label><span style={{ "color": "red" }}>*</span>
                                     </div>
-                                    <input
-                                        id='quiz-title-input'
-                                        style={{ 'width': '300px', 'marginBottom': '10px' }}
-                                        value={title}
-                                        onChange={(e) => setTitle(e.target.value)}
-                                        required
-                                    />
+                                    {!editingQuizInfo && (
+                                        <p>{quizData.title}</p>
+                                    )}
+                                    {editingQuizInfo && (
+                                        <input
+                                            id='quiz-title-input'
+                                            style={{ 'width': '300px', 'marginBottom': '10px' }}
+                                            defaultValue={quizData.title}
+                                            value={title}
+                                            onChange={(e) => setTitle(e.target.value)}
+                                            required
+                                        />
+                                    )}
                                 </section>
                                 <section id='update-quiz-desc'>
                                     <div>
                                         <label htmlFor='description' id='quiz-desc-label'>Description</label><span style={{ "color": "red" }}>*</span>
                                     </div>
-                                    <textarea id='quiz-desc-input'
-                                        value={description}
-                                        onChange={(e) => setDescription(e.target.value)}
-                                        required
-                                    />
+                                    {!editingQuizInfo && (
+                                        <p>{quizData.description}</p>
+                                    )}
+                                    {editingQuizInfo && (
+                                        <textarea id='quiz-desc-input'
+                                            defaultValue={quizData.description}
+                                            value={description}
+                                            onChange={(e) => setDescription(e.target.value)}
+                                            required
+                                        />
+                                    )}
                                 </section>
                             </section>
                             <section id='quiz-cat-select'>
                                 <label id='quiz-cat-label'>Category</label>
-                                <select
-                                    className='create-quiz-select-field'
-                                    defaultValue={category}
-                                    value={category}
-                                    onChange={(e) => setCategory(e.target.value)}
-                                >
-                                    <option value="Angular">Angular</option>
-                                    <option value="CSharp">C#</option>
-                                    <option value="C++">C++</option>
-                                    <option value="General">General</option>
-                                    <option value="Java">Java</option>
-                                    <option value="JavaScript">JavaScript</option>
-                                    <option value="NextJS">NextJS</option>
-                                    <option value="Python">Python</option>
-                                    <option value="React">React</option>
-                                    <option value="Rust">Rust</option>
-                                    <option value="Svelte">Svelte</option>
-                                    <option value="TypeScript">TypeScript</option>
-                                    <option value="SQL">SQL</option>
-                                    <option value="Other">Other</option>
-                                </select>
+                                {!editingQuizInfo && (
+                                    <p>{quizData.category}</p>
+                                )}
+                                {editingQuizInfo && (
+                                    <select
+                                        className='create-quiz-select-field'
+                                        defaultValue={quizData.category}
+                                        value={category}
+                                        onChange={(e) => setCategory(e.target.value)}
+                                    >
+                                        <option value="Angular">Angular</option>
+                                        <option value="CSharp">C#</option>
+                                        <option value="C++">C++</option>
+                                        <option value="General">General</option>
+                                        <option value="Java">Java</option>
+                                        <option value="JavaScript">JavaScript</option>
+                                        <option value="NextJS">NextJS</option>
+                                        <option value="Python">Python</option>
+                                        <option value="React">React</option>
+                                        <option value="Rust">Rust</option>
+                                        <option value="Svelte">Svelte</option>
+                                        <option value="TypeScript">TypeScript</option>
+                                        <option value="SQL">SQL</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                )}
                             </section>
                             <section id='quiz-cat-select'>
                                 <label className='update-quiz-stat-label'>Status</label>
-                                <select
-                                    className='update-quiz-select-field'
-                                    value={status}
-                                    onChange={(e) => setStatus(e.target.value)}
-                                >
-                                    <option value="Public">Public</option>
-                                    <option value="Private">Private</option>
-                                </select>
+                                {!editingQuizInfo && (
+                                    <p>{quizData.status}</p>
+                                )}
+                                {editingQuizInfo && (
+                                    <select
+                                        className='update-quiz-select-field'
+                                        defaultValue={quizData.status}
+                                        value={status}
+                                        onChange={(e) => setStatus(e.target.value)}
+                                    >
+                                        <option value="Public">Public</option>
+                                        <option value="Private">Private</option>
+                                    </select>
+                                )}
+                            </section>
+                            <section style={{display: 'flex', justifyContent: 'space-around', width: '250px', margin: '15px auto'}}>
+                                {editingQuizInfo && (
+                                    <>
+                                        <Button variant="contained" onClick={handleChangeQuizInfo}>Save Changes</Button>
+                                        <Button variant="contained" onClick={() => setEditingQuizInfo(false)}>Cancel</Button>
+                                    </>
+                                )}
                             </section>
                             <section id='quiz-qs-inputs'>
                                 <h2 style={{ textAlign: 'center' }}>Current Questions</h2>
@@ -218,12 +249,21 @@ const UpdateQuiz = () => {
                                         ))}
                                     </div>
                                 </section>
+                                <section>
+                                    <div id='update-quiz-submit'>
+                                        {numQuestions > 0 && (
+                                            <Button variant="contained" onClick={handleAddQuestions}>Save New Questions</Button>
+                                        )}
+                                    </div>
+                                </section>
                             </section>
                             <section>
                                 {submitError && (<p style={{ 'color': 'red' }}>{submitError}</p>)}
                             </section>
                             <section id='update-quiz-submit'>
-                                <Button size="md" onClick={handleSubmit}>Submit</Button>
+                                <Button size="md" variant='contained' onClick={() => {
+                                    history.push('/trivia')
+                                }}>Done Editing</Button>
                             </section>
                         </div>
                     </div>

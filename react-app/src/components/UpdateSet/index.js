@@ -58,9 +58,7 @@ const UpdateSet = () => {
             status: status
         }
 
-        dispatch(updateUserSet(setId, setInfo)).then(() => {
-            history.push(`/flashcards/${setId}`)
-        })
+        dispatch(updateUserSet(setId, setInfo))
     }
 
     const handleAddCards = async () => {
@@ -200,7 +198,7 @@ const UpdateSet = () => {
                             <section style={{display: 'flex', justifyContent: 'space-around', width: '250px', margin: '15px auto'}}>
                                 {editingSetInfo && (
                                     <>
-                                        <Button variant="contained">Save Changes</Button>
+                                        <Button variant="contained" onClick={handleChangeSetInfo}>Save Changes</Button>
                                         <Button variant="contained" onClick={() => setEditingSetInfo(false)}>Cancel</Button>
                                     </>
                                 )}
@@ -241,7 +239,7 @@ const UpdateSet = () => {
                                     </div>
                                     <div id='update-quiz-submit'>
                                         {numCards > 0 && (
-                                            <Button variant="contained">Save New Cards</Button>
+                                            <Button variant="contained" onClick={handleAddCards}>Save New Cards</Button>
                                         )}
                                     </div>
                                 </section>

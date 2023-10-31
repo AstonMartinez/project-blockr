@@ -141,7 +141,7 @@ def get_all_available_sets():
 @card_routes.route('/sets/user-sets')
 def get_user_sets():
     result = {}
-    user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
+    user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id)
 
     for card_set in user_sets:
         set_dict = card_set.to_dict()

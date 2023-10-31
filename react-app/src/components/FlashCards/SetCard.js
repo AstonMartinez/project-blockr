@@ -45,59 +45,61 @@ const SetMenu = ({ set, filter }) => {
     const handleModalClose = () => setModalOpen(false)
 
     const handleSetDelete = (setId) => {
-        dispatch(deleteUserSet(setId))
+        dispatch(deleteUserSet(setId)).then(() => {
 
-        if(filter === "All Sets") {
-            dispatch(fetchAvailableSets())
+            if(filter === "All Sets") {
+                dispatch(fetchAvailableSets())
+                return
+            } else if (filter === "All Public") {
+                dispatch(getCardSets())
+                return
+            } else if (filter === "My Sets") {
+                dispatch(fetchUserSets())
+                return
+            } else if (filter === "General Knowledge Sets") {
+                dispatch(fetchSetByCategory("General"))
+                return
+            } else if (filter === "Angular Sets") {
+                dispatch(fetchSetByCategory("Angular"))
+                return
+            } else if (filter === "C# Sets") {
+                dispatch(fetchSetByCategory("CSharp"))
+                return
+            } else if (filter === "C++ Sets") {
+                dispatch(fetchSetByCategory("C++"))
+                return
+            } else if (filter === "JavaScript Sets") {
+                dispatch(fetchSetByCategory("JavaScript"))
+                return
+            } else if (filter === "Java Sets") {
+                dispatch(fetchSetByCategory("Java"))
+                return
+            } else if (filter === "Next.js Sets") {
+                dispatch(fetchSetByCategory("Next.js"))
+                return
+            } else if (filter === "Python Sets") {
+                dispatch(fetchSetByCategory("Python"))
+                return
+            } else if (filter === "React Sets") {
+                dispatch(fetchSetByCategory("React"))
+                return
+            } else if (filter === "Rust Sets") {
+                dispatch(fetchSetByCategory("Rust"))
+                return
+            } else if (filter === "Svelte Sets") {
+                dispatch(fetchSetByCategory("Svelte"))
+                return
+            } else if (filter === "TypeScript Sets") {
+                dispatch(fetchSetByCategory("Svelte"))
+                return
+            } else if (filter === "SQL Sets") {
+                dispatch(fetchSetByCategory("SQL"))
+                return
+            }
+            handleModalClose()
             return
-        } else if (filter === "All Public") {
-            dispatch(getCardSets())
-            return
-        } else if (filter === "My Sets") {
-            dispatch(fetchUserSets())
-            return
-        } else if (filter === "General Knowledge Sets") {
-            dispatch(fetchSetByCategory("General"))
-            return
-        } else if (filter === "Angular Sets") {
-            dispatch(fetchSetByCategory("Angular"))
-            return
-        } else if (filter === "C# Sets") {
-            dispatch(fetchSetByCategory("CSharp"))
-            return
-        } else if (filter === "C++ Sets") {
-            dispatch(fetchSetByCategory("C++"))
-            return
-        } else if (filter === "JavaScript Sets") {
-            dispatch(fetchSetByCategory("JavaScript"))
-            return
-        } else if (filter === "Java Sets") {
-            dispatch(fetchSetByCategory("Java"))
-            return
-        } else if (filter === "Next.js Sets") {
-            dispatch(fetchSetByCategory("Next.js"))
-            return
-        } else if (filter === "Python Sets") {
-            dispatch(fetchSetByCategory("Python"))
-            return
-        } else if (filter === "React Sets") {
-            dispatch(fetchSetByCategory("React"))
-            return
-        } else if (filter === "Rust Sets") {
-            dispatch(fetchSetByCategory("Rust"))
-            return
-        } else if (filter === "Svelte Sets") {
-            dispatch(fetchSetByCategory("Svelte"))
-            return
-        } else if (filter === "TypeScript Sets") {
-            dispatch(fetchSetByCategory("Svelte"))
-            return
-        } else if (filter === "SQL Sets") {
-            dispatch(fetchSetByCategory("SQL"))
-            return
-        }
-        handleModalClose()
-        return
+        })
+
     }
 
     return (

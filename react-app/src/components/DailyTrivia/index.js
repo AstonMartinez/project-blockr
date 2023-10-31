@@ -72,8 +72,56 @@ const DailyTrivia = () => {
     const quizArr = Object.values(allQuizzes)
 
     React.useEffect(() => {
-        dispatch(fetchAllPublic())
-    }, [dispatch, allQuizzes])
+        if(filter === "All Quizzes") {
+            dispatch(fetchAllAvailable())
+
+        } else if (filter === "All Public") {
+            dispatch(fetchAllPublic())
+
+        } else if (filter === "My Quizzes") {
+            dispatch(fetchUserQuizzes())
+
+        } else if (filter === "General Knowledge Quizzes") {
+            dispatch(fetchByCategory("General"))
+
+        } else if (filter === "Angular Quizzes") {
+            dispatch(fetchByCategory("Angular"))
+
+        } else if (filter === "C# Quizzes") {
+            dispatch(fetchByCategory("CSharp"))
+
+        } else if (filter === "C++ Quizzes") {
+            dispatch(fetchByCategory("C++"))
+
+        } else if (filter === "JavaScript Quizzes") {
+            dispatch(fetchByCategory("JavaScript"))
+
+        } else if (filter === "Java Quizzes") {
+            dispatch(fetchByCategory("Java"))
+
+        } else if (filter === "Next.js Quizzes") {
+            dispatch(fetchByCategory("Next.js"))
+
+        } else if (filter === "Python Quizzes") {
+            dispatch(fetchByCategory("Python"))
+
+        } else if (filter === "React Quizzes") {
+            dispatch(fetchByCategory("React"))
+
+        } else if (filter === "Rust Quizzes") {
+            dispatch(fetchByCategory("Rust"))
+
+        } else if (filter === "Svelte Quizzes") {
+            dispatch(fetchByCategory("Svelte"))
+
+        } else if (filter === "TypeScript Quizzes") {
+            dispatch(fetchByCategory("TypeScript"))
+
+        } else if (filter === "SQL Quizzes") {
+            dispatch(fetchByCategory("SQL"))
+
+        }
+    }, [dispatch])
 
 
     return (

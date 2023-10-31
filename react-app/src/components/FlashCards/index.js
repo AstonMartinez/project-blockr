@@ -18,7 +18,6 @@ import SetCard from './SetCard';
 const FlashCards = () => {
   const dispatch = useDispatch()
   const history = useHistory()
-  const allSets = useSelector(state => state.cards.allSets)
 
   const [filter, setFilter] = React.useState('All Public')
 
@@ -66,7 +65,7 @@ const FlashCards = () => {
       dispatch(fetchSetByCategory("Svelte"))
       return
   } else if (filter === "TypeScript Sets") {
-      dispatch(fetchSetByCategory("Svelte"))
+      dispatch(fetchSetByCategory("TypeScript"))
       return
   } else if (filter === "SQL Sets") {
       dispatch(fetchSetByCategory("SQL"))
@@ -75,11 +74,60 @@ const FlashCards = () => {
   return
 }
 
-  useEffect(() => {
-    dispatch(getCardSets())
-  }, [dispatch, allSets])
+const allSets = useSelector(state => state.cards.allSets)
+const setsArr = Object.values(allSets)
 
-  const setsArr = Object.values(allSets)
+useEffect(() => {
+  if(filter === "All Sets") {
+    dispatch(fetchAvailableSets())
+
+} else if (filter === "All Public") {
+    dispatch(getCardSets())
+
+} else if (filter === "My Sets") {
+    dispatch(fetchUserSets())
+
+} else if (filter === "General Knowledge Sets") {
+    dispatch(fetchSetByCategory("General"))
+
+} else if (filter === "Angular Sets") {
+    dispatch(fetchSetByCategory("Angular"))
+
+} else if (filter === "C# Sets") {
+    dispatch(fetchSetByCategory("CSharp"))
+
+} else if (filter === "C++ Sets") {
+    dispatch(fetchSetByCategory("C++"))
+
+} else if (filter === "JavaScript Sets") {
+    dispatch(fetchSetByCategory("JavaScript"))
+
+} else if (filter === "Java Sets") {
+    dispatch(fetchSetByCategory("Java"))
+
+} else if (filter === "Next.js Sets") {
+    dispatch(fetchSetByCategory("Next.js"))
+
+} else if (filter === "Python Sets") {
+    dispatch(fetchSetByCategory("Python"))
+
+} else if (filter === "React Sets") {
+    dispatch(fetchSetByCategory("React"))
+
+} else if (filter === "Rust Sets") {
+    dispatch(fetchSetByCategory("Rust"))
+
+} else if (filter === "Svelte Sets") {
+    dispatch(fetchSetByCategory("Svelte"))
+
+} else if (filter === "TypeScript Sets") {
+    dispatch(fetchSetByCategory("TypeScript"))
+} else if (filter === "SQL") {
+  dispatch(fetchSetByCategory("SQL"))
+}
+
+}, [dispatch])
+
 
   return (
       <Box sx={{ display: 'flex'}}>
@@ -113,26 +161,27 @@ const FlashCards = () => {
                   setFilter(e.target.value)
                   handleChange(e.target.value)
                 }}
+
               >
                 <optgroup label="By Visibility">
-                  <option value="All Quizzes">All Sets</option>
+                  <option value="All Sets">All Sets</option>
                   <option value="All Public">All Public</option>
-                  <option value="My Quizzes">My Sets</option>
+                  <option value="My Sets">My Sets</option>
                 </optgroup>
                 <optgroup label="By Topic">
-                  <option value="General Knowledge Quizzes">General Knowledge Sets</option>
-                  <option value="Angular Quizzes">Angular Sets</option>
-                  <option value="C# Quizzes">C# Sets</option>
-                  <option value="C++ Quizzes">C++ Sets</option>
-                  <option value="JavaScript Quizzes">JavaScript Sets</option>
-                  <option value="Java Quizzes">Java Sets</option>
-                  <option value="Next.js Quizzes">Next.js Sets</option>
-                  <option value="Python Quizzes">Python Sets</option>
-                  <option value="React Quizzes">React Sets</option>
-                  <option value="Rust Quizzes">Rust Sets</option>
-                  <option value="Svelte Quizzes">Svelte Sets</option>
-                  <option value="TypeScript Quizzes">TypeScript Sets</option>
-                  <option value="SQL Quizzes">SQL Sets</option>
+                  <option value="General Knowledge Sets">General Knowledge Sets</option>
+                  <option value="Angular Sets">Angular Sets</option>
+                  <option value="C# Sets">C# Sets</option>
+                  <option value="C++ Sets">C++ Sets</option>
+                  <option value="JavaScript Sets">JavaScript Sets</option>
+                  <option value="Java Sets">Java Sets</option>
+                  <option value="Next.js Sets">Next.js Sets</option>
+                  <option value="Python Sets">Python Sets</option>
+                  <option value="React Sets">React Sets</option>
+                  <option value="Rust Sets">Rust Sets</option>
+                  <option value="Svelte Sets">Svelte Sets</option>
+                  <option value="TypeScript Sets">TypeScript Sets</option>
+                  <option value="SQL Sets">SQL Sets</option>
                 </optgroup>
               </Select>
             </div>

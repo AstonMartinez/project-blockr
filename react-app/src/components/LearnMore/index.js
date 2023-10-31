@@ -2,7 +2,11 @@ import './LearnMore.css'
 
 const LearnMore = () => {
     return (
-        <div></div>
+        <div>
+            <section>
+                <h1>So What Can You Do On Project Blockr?</h1>
+            </section>
+        </div>
     )
 }
 

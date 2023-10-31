@@ -18,6 +18,8 @@ import LandingPage from "./components/LandingPage";
 import UpdateQuiz from "./components/UpdateQuiz";
 import UpdateSet from "./components/UpdateSet";
 import NewsPage from "./components/News";
+import AboutUs from "./components/AboutUs";
+import LearnMore from "./components/LearnMore";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +34,12 @@ function App() {
         <Switch>
           <Route exact path ='/quizzes/:quizId'>
             <Quiz />
+          </Route>
+          <Route exact path='/learn-more'>
+            <LearnMore />
+          </Route>
+          <Route exact path='/about'>
+            <AboutUs />
           </Route>
           <Route exact path='/news'>
             <NewsPage />

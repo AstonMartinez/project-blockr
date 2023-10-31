@@ -14,11 +14,11 @@ const LandingPage = () => {
     }
 
     return (
-        <>
+        <div id='landing-page-wrapper'>
             <TopBar />
             <div id='topbar'></div>
             <div id='landing-page-outer'>
-                <div style={{ "marginBottom": "0" }}>
+                <div id='landing-page-welcome' style={{ "marginBottom": "0" }}>
                     <h1 style={{ "marginBottom": "0" }}>Welcome to ProjectBlockr!</h1>
                 </div>
                 <section id='lp-logo-holder'>
@@ -43,7 +43,7 @@ const LandingPage = () => {
                         }}>Get Started</Button>
                 </section>
             </div>
-        </>
+        </div>
     )
 }
 

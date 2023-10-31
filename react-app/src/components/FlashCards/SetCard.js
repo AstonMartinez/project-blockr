@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import { deleteUserSet } from '../../store/cards';
+import { deleteUserSet, fetchAvailableSets, fetchUserSets, fetchSetByCategory, getCardSets } from '../../store/cards';
 
 const ITEM_HEIGHT = 48;
 
@@ -48,37 +48,53 @@ const SetMenu = ({ set, filter }) => {
         dispatch(deleteUserSet(setId))
 
         if(filter === "All Sets") {
-
+            dispatch(fetchAvailableSets())
+            return
         } else if (filter === "All Public") {
-
+            dispatch(getCardSets())
+            return
         } else if (filter === "My Sets") {
-
+            dispatch(fetchUserSets())
+            return
         } else if (filter === "General Knowledge Sets") {
-
+            dispatch(fetchSetByCategory("General"))
+            return
         } else if (filter === "Angular Sets") {
-
+            dispatch(fetchSetByCategory("Angular"))
+            return
         } else if (filter === "C# Sets") {
-
+            dispatch(fetchSetByCategory("CSharp"))
+            return
         } else if (filter === "C++ Sets") {
-
+            dispatch(fetchSetByCategory("C++"))
+            return
         } else if (filter === "JavaScript Sets") {
-
+            dispatch(fetchSetByCategory("JavaScript"))
+            return
         } else if (filter === "Java Sets") {
-
+            dispatch(fetchSetByCategory("Java"))
+            return
         } else if (filter === "Next.js Sets") {
-
+            dispatch(fetchSetByCategory("Next.js"))
+            return
         } else if (filter === "Python Sets") {
-
+            dispatch(fetchSetByCategory("Python"))
+            return
         } else if (filter === "React Sets") {
-
+            dispatch(fetchSetByCategory("React"))
+            return
         } else if (filter === "Rust Sets") {
-
+            dispatch(fetchSetByCategory("Rust"))
+            return
         } else if (filter === "Svelte Sets") {
-
+            dispatch(fetchSetByCategory("Svelte"))
+            return
         } else if (filter === "TypeScript Sets") {
-
+            dispatch(fetchSetByCategory("Svelte"))
+            return
         } else if (filter === "SQL Sets") {
-
+            dispatch(fetchSetByCategory("SQL"))
+            return
         }
         handleModalClose()
         return
@@ -118,7 +134,7 @@ const SetMenu = ({ set, filter }) => {
                         <DeleteForeverIcon sx={{ marginRight: '10px' }} /> Delete
                     </MenuItem>
                     <MenuItem sx={{ display: 'flex', alignItems: 'center' }}>
-                        <NavLink exact to={`/trivia/${set.id}/update`} style={{ 'color': 'white', 'textDecoration': 'none' }}>
+                        <NavLink exact to={`/sets/${set.id}/update`} style={{ 'color': 'white', 'textDecoration': 'none' }}>
                             <SystemUpdateAltIcon sx={{ marginRight: '10px', marginTop: '2px' }} /> Update
                         </NavLink>
                     </MenuItem>

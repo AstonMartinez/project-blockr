@@ -2,12 +2,13 @@ import './DailyTrivia.css';
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
-import { useHistory } from 'react-router-dom'
+import { useHistory, NavLink } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import { fetchAllAvailable, fetchAllPublic, fetchByCategory, fetchUserQuizzes } from '../../store/quiz';
 import NavDrawer from '../NavDrawer';
 import Select from '@mui/material/Select';
 import QuizCard from './Card';
+import CreateIcon from '@mui/icons-material/Create';
 
 const DailyTrivia = () => {
     const dispatch = useDispatch()
@@ -16,7 +17,6 @@ const DailyTrivia = () => {
     const [filter, setFilter] = React.useState('All Public')
 
     const handleChange = (filter) => {
-        console.log('hitting change func')
         if(filter === "All Quizzes") {
             dispatch(fetchAllAvailable())
             return
@@ -24,7 +24,6 @@ const DailyTrivia = () => {
             dispatch(fetchAllPublic())
             return
         } else if (filter === "My Quizzes") {
-            console.log("hitting correct filter option")
             dispatch(fetchUserQuizzes())
             return
         } else if (filter === "General Knowledge Quizzes") {
@@ -95,9 +94,11 @@ const DailyTrivia = () => {
                         <h1>Trivia Quizzes</h1>
                     </div>
                     <div>
-                        <Button variant='contained' onClick={() => {
-                            history.push('/trivia/new')
-                        }}>Create Quiz</Button>
+                        <NavLink exact to='/trivia/new'>
+                            <Button variant='contained' size="medium">
+                                <CreateIcon sx={{"marginRight": "5px"}} />Create Quiz
+                            </Button>
+                        </NavLink>
                     </div>
                     <div style={{ "margin": "30px 0px" }}>
                         <Select

@@ -82,3 +82,23 @@
     margin-top: 30px;
     text-align: center;
 }
+
+.single-set-info-card {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 300px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.set-controls-holder-notempty {
+    display: flex;
+    justify-content: flex-end;
+    height: 20px;
+}
+
+.set-controls-holder-empty {
+    height: 20px;
+}

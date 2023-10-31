@@ -119,7 +119,7 @@ const UpdateQuiz = () => {
             >
                 <div id='update-quiz-wrapper'>
                     <div>
-                        <h1>Update a Quiz</h1>
+                        <h1>Update Quiz</h1>
                     </div>
                     <div>
                         <div>

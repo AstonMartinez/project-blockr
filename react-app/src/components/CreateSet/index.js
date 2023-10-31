@@ -50,7 +50,6 @@ const CreateSet = () => {
 
         dispatch(createFlashCardSet(setInfo))
         .then(async(res) => {
-          console.log(res.id)
           const response = await fetch(`/api/cards/sets/${res.id}/add`, {
             method: "POST",
             headers: {

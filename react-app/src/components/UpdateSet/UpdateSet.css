@@ -1,0 +1,20 @@
+#update-set-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#update-set-info {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#update-set-sec-1, #update-set-desc, #set-cat-select {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

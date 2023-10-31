@@ -7,6 +7,11 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 card_routes = Blueprint('cards', __name__)
 
+@card_routes.route('/sets/<int:id>/info-only')
+def get_only_info(id):
+    card_set = CardSets.query.get(id)
+    return card_set.to_dict()
+
 @card_routes.route('/sets/new', methods=["POST"])
 def create_set():
     title = request.json['title']

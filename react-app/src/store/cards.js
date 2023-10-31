@@ -6,6 +6,14 @@ const UPDATE_SET = '/cards/updateSet'
 const GET_ALL_AVAILABLE = '/cards/available'
 const GET_USER_SETS = '/cards/userCards'
 const GET_BY_CATEGORY = '/cards/byCategory'
+const GET_INFO_ONLY = '/cards/infoOnly'
+
+const infoOnly = (data) => {
+    return {
+        type: GET_INFO_ONLY,
+        payload: data,
+    }
+}
 
 const available = (data) => {
     return {
@@ -60,6 +68,24 @@ const create = (data) => {
     return {
         type: CREATE_SET,
         payload: data,
+    }
+}
+
+export const fetchQuizInfoOnly = (id) => async (dispatch) => {
+    try {
+        const response = await fetch(`/api/cards/sets/${id}/info-only`)
+
+        if (response.ok) {
+            const data = await response.json()
+            dispatch(infoOnly(data))
+            return data
+        } else {
+            const errors = await response.json()
+            return errors
+        }
+    } catch (error) {
+        const errors = (error && error.json) ? await error.json() : { message: error.toString() }
+        return errors
     }
 }
 
@@ -258,6 +284,10 @@ const cardsReducer = (state = initialState, action) => {
         case GET_BY_CATEGORY:
             newState = Object.assign({ ...state })
             newState.allSets = action.payload
+            return newState
+        case GET_INFO_ONLY:
+            newState = Object.assign({ ...state })
+            newState.singleSet = action.payload
             return newState
         default:
             return state

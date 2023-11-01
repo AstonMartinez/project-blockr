@@ -34,6 +34,9 @@ def seed_users():
         password='password'
     )
 
+    db.session.add_all([demo, marnie, bobbie])
+    db.session.commit()
+
     quiz1 = TriviaQuiz(
         user_id=1,
         title="General I",
@@ -185,6 +188,10 @@ def seed_users():
         category="General",
         status="Public"
     )
+
+    db.session.add_all([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10,
+                        quiz11, quiz12, quiz13, quiz14, quiz15, quiz16, quiz17, quiz18, quiz19])
+    db.session.commit()
 
     quiz19q1 = TriviaQuestion(
         quiz_id=19,
@@ -4263,6 +4270,40 @@ def seed_users():
         status="Public"
     )
 
+    db.session.add_all([gk1tq1, gk1tq2, gk1tq3, gk1tq4, gk1tq5, gk1tq6, gk1tq7, gk1tq8, gk1tq9, gk1tq10,
+                        gk1tq11, gk1tq12, gk1tq13, gk1tq14, gk1tq15, gk1tq16, gk1tq17, gk1tq18, gk1tq19, gk1tq20,
+                        gk2tq1, gk2tq2, gk2tq3, gk2tq4, gk2tq5, gk2tq6, gk2tq7, gk2tq8, gk2tq9, gk2tq10,
+                        gk2tq11, gk2tq12, gk2tq13, gk2tq14, gk2tq15, gk2tq16, gk2tq17, gk2tq18, gk2tq19, gk2tq20,
+                        gk3tq1, gk3tq2, gk3tq3, gk3tq4, gk3tq5, gk3tq6, gk3tq7, gk3tq8, gk3tq9, gk3tq10,
+                        gk3tq11, gk3tq12, gk3tq13, gk3tq14, gk3tq15, gk3tq16, gk3tq17, gk3tq18, gk3tq19, gk3tq20,
+                        gk4tq1, gk4tq2, gk4tq3, gk4tq4, gk4tq5, gk4tq6, gk4tq6, gk4tq7, gk4tq8, gk4tq9, gk4tq10,
+                        gk4tq11, gk4tq12, gk4tq13, gk4tq14, gk4tq15, gk4tq16, gk4tq17, gk4tq18, gk4tq19, gk4tq20,
+                        antq1, antq2, antq3, antq4, antq5, antq6, antq7, antq8, antq9, antq10,
+                        antq11, antq12, antq13, antq14, antq15, antq16, antq17, antq18, antq19, antq20,
+                        cpptq1, cpptq2, cpptq3, cpptq4, cpptq5, cpptq6, cpptq7, cpptq8, cpptq9, cpptq10,
+                        cpptq1, cpptq12, cpptq13, cpptq14, cpptq15, cpptq16, cpptq17, cpptq18, cpptq19, cpptq20,
+                        cshtq1, cshtq2, cshtq3, cshtq4, cshtq5, cshtq6, cshtq7, cshtq8, cshtq9, cshtq10,
+                        cshtq11, cshtq12, cshtq13, cshtq14, cshtq15, cshtq16, cshtq17, cshtq18, cshtq19, cshtq20,
+                        jstq1, jstq2, jstq3, jstq4, jstq5, jstq6, jstq7, jstq8, jstq9, jstq10,
+                        jstq11, jstq12, jstq13, jstq14, jstq15, jstq16, jstq17, jstq18, jstq19, jstq20,
+                        jatq1, jatq2, jatq3, jatq4, jatq5, jatq6, jatq7, jatq8, jatq9, jatq10,
+                        jatq11, jatq12, jatq13, jatq14, jatq15, jatq16, jatq17, jatq18, jatq19, jatq20,
+                        retq1, retq2, retq3, retq4, retq5, retq6, retq7, retq8, retq9, retq10,
+                        retq11, retq12, retq13, retq14, retq15, retq16, retq17, retq18, retq19, retq20,
+                        rutq1, rutq2, rutq3, rutq4, rutq5,rutq6, rutq7, rutq8, rutq9, rutq10,
+                        rutq11, rutq12, rutq13, rutq14, rutq15, rutq16, rutq17, rutq18, rutq19, rutq20,
+                        svtq1, svtq2, svtq3, svtq4, svtq5, svtq6, svtq7, svtq8, svtq9, svtq10,
+                        svtq11, svtq12, svtq13, svtq14, svtq15, svtq16, svtq17, svtq18, svtq19, svtq20,
+                        sqltq1, sqltq2, sqltq3, sqltq4, sqltq5, sqltq6, sqltq7, sqltq8, sqltq9, sqltq10,
+                        sqltq11, sqltq12, sqltq13, sqltq14, sqltq15, sqltq16, sqltq17, sqltq18, sqltq19, sqltq20,
+                        tstq1, tstq2, tstq3, tstq4, tstq5, tstq6, tstq7, tstq8, tstq9, tstq10,
+                        tstq11, tstq12, tstq13, tstq14, tstq15, tstq16, tstq17, tstq18, tstq19, tstq20,
+                        quiz17q1, quiz17q2, quiz17q3, quiz17q4, quiz17q5, quiz17q6,
+                        quiz18q1, quiz18q2, quiz18q3, quiz18q4, quiz18q5,
+                        quiz19q1, quiz19q2, quiz19q3, quiz19q4, quiz19q5])
+
+    db.session.commit()
+
     javaScriptCards = CardSets(
         creator_id=1,
         title="Basic JavaScript",
@@ -4374,6 +4415,10 @@ def seed_users():
         status="Public",
         category="General"
     )
+
+    db.session.add_all([javaScriptCards, pythonCards, reactCards, cSharpCards, javaCards, cPlusPlusCards, angularCards,
+                        nextJSCards, rustCards, typeScriptCards, svelteCards, webDevCards, gameDevCards, machineLearningCards])
+    db.session.commit()
 
     wd1 = CardQuestion(
         set_id=12,
@@ -5551,6 +5596,23 @@ def seed_users():
         back="Type assertions allow you to tell the compiler that you know more about the type of a value than it does"
     )
 
+    db.session.add_all([js1, js2, js3, js4, js5, js6, js7, js8, js9, js10,
+                        js11, js12, js13, js14, js15, js16, js17, js18, js19, js20, js21, js22,
+                        py1, py2, py3, py4, py5, py6, py7, py8, py9, py10, py11, py12,
+                        re1, re2, re3, re4, re5, re6, re7, re8, re9, re10, re11, re12, re13,
+                        cs1, cs2, cs3, cs4, cs5, cs6, cs7, cs8, cs9, cs10, cs11, cs12, cs13, cs14, cs15,
+                        ja1, ja2, ja3, ja4, ja5, ja6, ja7, ja8, ja9, ja10, ja11, ja12, ja13, ja14,
+                        cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14, cp15,
+                        an1, an2, an3, an4, an5, an6, an7, an8, an9, an10, an11, an12, an13, an14, an15,
+                        ne1, ne2, ne3, ne4, ne5, ne6, ne7, ne8, ne9, ne10, ne11, ne12, ne13, ne14, ne15,
+                        ru1, ru2, ru3, ru4, ru5, ru6, ru7, ru8, ru9, ru10, ru11, ru12, ru13, ru14, ru15,
+                        sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10, sv11, sv12, sv13, sv14, sv15,
+                        ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts10, ts11, ts12, ts13, ts14, ts15,
+                        wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9, wd10,
+                        gd1, gd2, gd3, gd4, gd5, gd6, gd7, gd8, gd9, gd10,
+                        ml1, ml2, ml3, ml4, ml5, ml6, ml7, ml8, ml9, ml10])
+    db.session.commit()
+
     task1 = Task(
         user_id=1,
         title="Breakfast",
@@ -6090,6 +6152,13 @@ def seed_users():
         color="#c203fc",
     )
 
+    db.session.add_all([task1, task2, task3, task4, task5, task6, task7, task8, task9, task10,
+                        task11, task12, task13, task14, task15, task16, task17, task18, task19, task20,
+                        task21, task22, task23, task24, task25, task26, task27, task28, task29, task30,
+                        task31, task32, task33, task34, task35, task36, task37, task38, task39, task40,
+                        task41, task42, task43, task44, task45, task46, task47, task48, task49])
+    db.session.commit()
+
     ss1 = StudySession(
         user_id=1,
         num_correct=8,
@@ -6123,63 +6192,7 @@ def seed_users():
         category="Python"
     )
 
-    db.session.add_all([demo, marnie, bobbie])
-    db.session.add_all([quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quiz11, quiz12, quiz13, quiz14, quiz15, quiz16, quiz17, quiz18, quiz19])
-    db.session.add_all([gk1tq1, gk1tq2, gk1tq3, gk1tq4, gk1tq5, gk1tq6, gk1tq7, gk1tq8, gk1tq9, gk1tq10,
-                        gk1tq11, gk1tq12, gk1tq13, gk1tq14, gk1tq15, gk1tq16, gk1tq17, gk1tq18, gk1tq19, gk1tq20,
-                        gk2tq1, gk2tq2, gk2tq3, gk2tq4, gk2tq5, gk2tq6, gk2tq7, gk2tq8, gk2tq9, gk2tq10,
-                        gk2tq11, gk2tq12, gk2tq13, gk2tq14, gk2tq15, gk2tq16, gk2tq17, gk2tq18, gk2tq19, gk2tq20,
-                        gk3tq1, gk3tq2, gk3tq3, gk3tq4, gk3tq5, gk3tq6, gk3tq7, gk3tq8, gk3tq9, gk3tq10,
-                        gk3tq11, gk3tq12, gk3tq13, gk3tq14, gk3tq15, gk3tq16, gk3tq17, gk3tq18, gk3tq19, gk3tq20,
-                        gk4tq1, gk4tq2, gk4tq3, gk4tq4, gk4tq5, gk4tq6, gk4tq6, gk4tq7, gk4tq8, gk4tq9, gk4tq10,
-                        gk4tq11, gk4tq12, gk4tq13, gk4tq14, gk4tq15, gk4tq16, gk4tq17, gk4tq18, gk4tq19, gk4tq20,
-                        antq1, antq2, antq3, antq4, antq5, antq6, antq7, antq8, antq9, antq10,
-                        antq11, antq12, antq13, antq14, antq15, antq16, antq17, antq18, antq19, antq20,
-                        cpptq1, cpptq2, cpptq3, cpptq4, cpptq5, cpptq6, cpptq7, cpptq8, cpptq9, cpptq10,
-                        cpptq1, cpptq12, cpptq13, cpptq14, cpptq15, cpptq16, cpptq17, cpptq18, cpptq19, cpptq20,
-                        cshtq1, cshtq2, cshtq3, cshtq4, cshtq5, cshtq6, cshtq7, cshtq8, cshtq9, cshtq10,
-                        cshtq11, cshtq12, cshtq13, cshtq14, cshtq15, cshtq16, cshtq17, cshtq18, cshtq19, cshtq20,
-                        jstq1, jstq2, jstq3, jstq4, jstq5, jstq6, jstq7, jstq8, jstq9, jstq10,
-                        jstq11, jstq12, jstq13, jstq14, jstq15, jstq16, jstq17, jstq18, jstq19, jstq20,
-                        jatq1, jatq2, jatq3, jatq4, jatq5, jatq6, jatq7, jatq8, jatq9, jatq10,
-                        jatq11, jatq12, jatq13, jatq14, jatq15, jatq16, jatq17, jatq18, jatq19, jatq20,
-                        retq1, retq2, retq3, retq4, retq5, retq6, retq7, retq8, retq9, retq10,
-                        retq11, retq12, retq13, retq14, retq15, retq16, retq17, retq18, retq19, retq20,
-                        rutq1, rutq2, rutq3, rutq4, rutq5,rutq6, rutq7, rutq8, rutq9, rutq10,
-                        rutq11, rutq12, rutq13, rutq14, rutq15, rutq16, rutq17, rutq18, rutq19, rutq20,
-                        svtq1, svtq2, svtq3, svtq4, svtq5, svtq6, svtq7, svtq8, svtq9, svtq10,
-                        svtq11, svtq12, svtq13, svtq14, svtq15, svtq16, svtq17, svtq18, svtq19, svtq20,
-                        sqltq1, sqltq2, sqltq3, sqltq4, sqltq5, sqltq6, sqltq7, sqltq8, sqltq9, sqltq10,
-                        sqltq11, sqltq12, sqltq13, sqltq14, sqltq15, sqltq16, sqltq17, sqltq18, sqltq19, sqltq20,
-                        tstq1, tstq2, tstq3, tstq4, tstq5, tstq6, tstq7, tstq8, tstq9, tstq10,
-                        tstq11, tstq12, tstq13, tstq14, tstq15, tstq16, tstq17, tstq18, tstq19, tstq20,
-                        quiz17q1, quiz17q2, quiz17q3, quiz17q4, quiz17q5, quiz17q6,
-                        quiz18q1, quiz18q2, quiz18q3, quiz18q4, quiz18q5,
-                        quiz19q1, quiz19q2, quiz19q3, quiz19q4, quiz19q5])
-    db.session.add_all([javaScriptCards, pythonCards, reactCards, cSharpCards, javaCards, cPlusPlusCards, angularCards, nextJSCards, rustCards, typeScriptCards, svelteCards, webDevCards, gameDevCards, machineLearningCards])
-    db.session.add_all([js1, js2, js3, js4, js5, js6, js7, js8, js9, js10,
-                        js11, js12, js13, js14, js15, js16, js17, js18, js19, js20, js21, js22,
-                        py1, py2, py3, py4, py5, py6, py7, py8, py9, py10, py11, py12,
-                        re1, re2, re3, re4, re5, re6, re7, re8, re9, re10, re11, re12, re13,
-                        cs1, cs2, cs3, cs4, cs5, cs6, cs7, cs8, cs9, cs10, cs11, cs12, cs13, cs14, cs15,
-                        ja1, ja2, ja3, ja4, ja5, ja6, ja7, ja8, ja9, ja10, ja11, ja12, ja13, ja14,
-                        cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14, cp15,
-                        an1, an2, an3, an4, an5, an6, an7, an8, an9, an10, an11, an12, an13, an14, an15,
-                        ne1, ne2, ne3, ne4, ne5, ne6, ne7, ne8, ne9, ne10, ne11, ne12, ne13, ne14, ne15,
-                        ru1, ru2, ru3, ru4, ru5, ru6, ru7, ru8, ru9, ru10, ru11, ru12, ru13, ru14, ru15,
-                        sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10, sv11, sv12, sv13, sv14, sv15,
-                        ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts10, ts11, ts12, ts13, ts14, ts15,
-                        wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9, wd10,
-                        gd1, gd2, gd3, gd4, gd5, gd6, gd7, gd8, gd9, gd10,
-                        ml1, ml2, ml3, ml4, ml5, ml6, ml7, ml8, ml9, ml10])
-    db.session.add_all([task1, task2, task3, task4, task5, task6, task7, task8, task9, task10,
-                        task11, task12, task13, task14, task15, task16, task17, task18, task19, task20,
-                        task21, task22, task23, task24, task25, task26, task27, task28, task29, task30,
-                        task31, task32, task33, task34, task35, task36, task37, task38, task39, task40,
-                        task41, task42, task43, task44, task45, task46, task47, task48, task49])
-
     db.session.add_all([ss1, ss2, ss3])
-
     db.session.commit()
 
 

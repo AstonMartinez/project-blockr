@@ -1,3 +1,52 @@
+@media screen and (max-width: 415px) {
+
+    #add-task-modal-box {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        border: 2px solid #000;
+        box-shadow: 24;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        height: 650px;
+        overflow-y: auto;
+    }
+
+    #add-task-box-2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #add-task-submit-holder, #update-delete-task-buttons {
+        justify-self: flex-end;
+        margin-top: 90px;
+    }
+
+    #create-task-divider {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 416px) {
+
+    #add-task-modal-box {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        border: 2px solid #000;
+        box-shadow: 24;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .fifteen-min-span {
     min-height: 40px;
     width: 100px;
@@ -104,18 +153,4 @@
 
 #task-color-label {
     margin: 5px 0;
-}
-
-#task-modal-wrapper {
-    position: fixed;
-    top: 40%;
-    left: 30%;
-    z-index: 12000;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: white;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: space-around;
 }

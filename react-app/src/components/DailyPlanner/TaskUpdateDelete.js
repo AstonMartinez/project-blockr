@@ -25,6 +25,8 @@ import FormControl from '@mui/joy/FormControl';
 import FormHelperText from '@mui/joy/FormHelperText';
 import { useDispatch } from 'react-redux';
 import { createTask, getByDate } from '../../store/tasks';
+import Modal from '@mui/material/Modal';
+import { updateUserTask, deleteUserTask } from '../../store/tasks';
 
 const style = {
     position: 'absolute',
@@ -42,11 +44,7 @@ const style = {
 
 const TaskEditModal = ({ task, onClose, nowDay }) => {
     const dispatch = useDispatch()
-    const [isEditing, setIsEditing] = useState(false)
-
-    const handleClose = () => {
-        onClose()
-    };
+    console.log(task.id)
 
     const [title, setTitle] = useState(task.title)
     const [description, setDescription] = useState(task.description)
@@ -61,37 +59,6 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
             return true
         }
         return
-        // else if (icon === 'laptop') {
-        //     setIconTwoActive(true)
-        // } else if (icon === 'repeat') {
-        //     setIconThreeActive(true)
-        // } else if (icon === 'hotel') {
-        //     setIconFourActive(true)
-        // } else if (icon === 'groups') {
-        //     setIconFiveActive(true)
-        // } else if (icon === 'fitness') {
-        //     setIconSixActive(true)
-        // } else if (icon === 'health') {
-        //     setIconSevenActive(true)
-        // } else if (icon === 'call') {
-        //     setIconEightActive(true)
-        // } else if (icon === 'cake') {
-        //     setIconNineActive(true)
-        // } else if (icon === 'code') {
-        //     setIconTenActive(true)
-        // } else if (icon === 'morning') {
-        //     setIconElevenActive(true)
-        // } else if (icon === 'evening') {
-        //     setIconTwelveActive(true)
-        // } else if (icon === 'sparkle') {
-        //     setIconThirteenActive(true)
-        // } else if (icon === 'event') {
-        //     setIconFourteenActive(true)
-        // } else if (icon === 'tree') {
-        //     setIconFifteenActive(true)
-        // } else if (icon === 'alert') {
-        //     setIconSixteenActive(true)
-        // }
     }
 
     const [iconOneActive, setIconOneActive] = useState(determineActive(task.icon, 'food'))
@@ -118,6 +85,14 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
     const [startTimeError, setStartTimeError] = useState(null)
     const [endTimeError, setEndTimeError] = useState(null)
     const [iconError, setIconError] = useState(null)
+
+    const [open, setOpen] = useState(true)
+
+    const handleTaskDelete = async () => {
+        await dispatch(deleteUserTask(task.id))
+        await dispatch(getByDate(nowDay))
+        onClose()
+    }
 
     const handleTaskSubmit = async () => {
         if(title === null) {
@@ -171,7 +146,7 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
             const endHour = endDate.getHours()
             const endMinutes = endDate.getMinutes()
 
-            const newTask = {
+            const updatedTask = {
                 title: title,
                 description: description,
                 icon: icon,
@@ -181,19 +156,30 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
                 color: color
             }
 
-            await dispatch(createTask(newTask))
+            await dispatch(updateUserTask(task.id, updatedTask))
+            await dispatch(getByDate(nowDay))
+            setHasSubmitted(true)
+            onClose()
+            return
         }
 
-        setHasSubmitted(true)
-        dispatch(getByDate(nowDay))
-        handleClose()
     }
 
     return (
         <div id='task-modal-wrapper'>
+                    <Modal
+            open={open}
+            onClose={onClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            sx={{height: "80%", marginTop: "70px"}}
+        >
 
-<Box sx={style}>
-                <Box sx={{ display: 'flex', height: '100%' }}>
+<Box id='add-task-modal-box' sx={{ bgcolor: 'background.paper' }}>
+    <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+        <Button onClick={onClose}>X</Button>
+    </div>
+                <Box id='add-task-box-2' sx={{ display: 'flex', height: '100%' }}>
                     <Box sx={{ width: '50%' }}>
                         <FormControl error={title === null && hasSubmitted ? true : false}>
                             <label className='task-input-label'>Task Title:</label>
@@ -240,7 +226,7 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
                         <label id='task-color-label' className='task-input-label'>Task Color:</label>
                         <Input className='task-input' type="color" value={color} onChange={(e) => setColor(e.target.value)} />
                     </Box>
-                    <Divider orientation='vertical' flexItem />
+                    <Divider id='create-task-divider' orientation='vertical' flexItem />
                     <Box sx={{width: '50%', 'padding': '0 15px', 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'space-between'}}>
                         <label className='task-input-label'>Task Icon:</label>
                         <Box sx={{ 'height': "138px", 'marginBottom': '0', 'paddingBottom': '0', 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'space-between'}}>
@@ -585,12 +571,12 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
                     </Box>
                 </Box>
                 <Box sx={{ margin: '12px 0' }}>
-                    <Divider />
+                    <Divider id='create-task-divider' />
                 </Box>
-                <Box sx={{height: '50px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
+                <Box id='update-delete-task-buttons' sx={{height: '50px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
                     {/* <Button className='task-submit-btn' onClick={handleTaskSubmit} type="submit" variant="contained">Submit</Button> */}
-                    <Button sx={{marginRight: '10px'}} variant="contained">Edit Task</Button>
-                    <Button variant="contained">Delete Task</Button>
+                    <Button sx={{marginRight: '10px'}} variant="contained" onClick={handleTaskSubmit}>Submit Edits</Button>
+                    <Button variant="contained" onClick={handleTaskDelete}>Delete Task</Button>
                 </Box>
             </Box>
             {/* <section style={{display: 'flex', justifyContent: 'flex-end'}}>
@@ -677,7 +663,7 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
                     </section>
                 </div>
             </div> */}
-
+            </Modal>
         </div>
     )
 }

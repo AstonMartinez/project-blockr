@@ -20,29 +20,29 @@ def delete_task(id):
 
 @task_routes.route('/<int:id>/update', methods=["PUT"])
 def update_task(id):
-    form = UpdateTaskForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        task = Task.query.get(id)
-        title = request.json['title']
-        description = request.json['description']
-        day = request.json['day']
-        icon = request.json['icon']
-        color = request.json['color']
-        start_time = request.json['start_time']
-        end_time = request.json['end_time']
+    # form = UpdateTaskForm()
+    # form['csrf_token'].data = request.cookies['csrf_token']
+    # if form.validate_on_submit():
+    task = Task.query.get(id)
+    title = request.json['title']
+    description = request.json['description']
+    day = request.json['day']
+    icon = request.json['icon']
+    color = request.json['color']
+    start_time = request.json['start_time']
+    end_time = request.json['end_time']
 
-        task['title'] = title
-        task['description'] = description
-        task['day'] = day
-        task['icon'] = icon
-        task['color'] = color
-        task['start_time'] = start_time
-        task['end_time'] = end_time
+    task.title = title
+    task.description = description
+    task.day = day
+    task.icon = icon
+    task.color = color
+    task.start_time = start_time
+    task.end_time = end_time
 
-        db.session.commit()
+    db.session.commit()
 
-    return {'errors': validation_errors_to_error_messages(form.errors)}
+    return task.to_dict()
 
 
 @task_routes.route('/new', methods=["POST"])

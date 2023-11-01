@@ -9,7 +9,7 @@ const LearnMore = () => {
             <TopBar />
             <div id='learn-more-wrapper'>
                 <div id='topbar'></div>
-                <section style={{textAlign: 'center'}}>
+                <section id='lm-header-holder' style={{textAlign: 'center'}}>
                     <h1 id='lm-header'>So What Can You Do On Project Blockr?</h1>
                 </section>
                 <section style={{"display": 'flex', 'flexDirection': 'column', alignItems: 'center'}}>
@@ -17,7 +17,7 @@ const LearnMore = () => {
                         <h2>User Dashboard</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px', alignItems: 'space-around', marginBottom: '20px'}}>
-                        <div style={{display: 'flex', marginBottom: '40px'}}>
+                        <div className='lm-ud-sect sect-switch-1' style={{marginBottom: '40px'}}>
                             <div className='lm-row-half lm-row-img-left'>
                                 <img id='lm-img-1' src="https://i.ibb.co/1Gz4KQT/Screenshot-2023-10-31-at-6-06-20-PM.png" alt="Screenshot-2023-10-31-at-6-06-20-PM" border="0" />
                             </div>
@@ -25,7 +25,7 @@ const LearnMore = () => {
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Intuitive Navigation</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>Our website boasts an intuitive navigation menu, meticulously designed
                                         to simplify your experience. Whether you're starting your day or
                                         embarking on a learning adventure, the menu offers seamless access to
@@ -40,12 +40,12 @@ const LearnMore = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect sect-switch-2'>
                             <div className='lm-row-half lm-row-text'>
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Task Overview</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         In our user dashboard, we've introduced a powerful "Task Overview" feature that
                                         empowers you to manage your day with precision. Whether you prefer a quick glance
@@ -57,12 +57,12 @@ const LearnMore = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className='lm-row-half lm-row-img-right'>
+                            <div className='lm-row-half lm-row-img-right' id='lm-double-img-holder'>
                                 <img id='lm-img-2' src="https://i.ibb.co/YTRDpMx/Screenshot-2023-10-31-at-9-09-20-PM.png" alt="Screenshot-2023-10-31-at-9-09-20-PM" border="0" />
                                 <img id='lm-img-3' src="https://i.ibb.co/x5zFsmG/Screenshot-2023-10-31-at-9-06-50-PM.png" alt="Screenshot-2023-10-31-at-9-06-50-PM" border="0" />
                             </div>
                         </div>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect sect-switch-1'>
                             <div className='lm-row-half lm-row-img-left'>
                                 <img id='lm-img-4' src="https://i.ibb.co/fNzW7JX/Screenshot-2023-10-31-at-9-04-50-PM.png" alt="Screenshot-2023-10-31-at-9-04-50-PM" border="0" />
                             </div>
@@ -70,7 +70,7 @@ const LearnMore = () => {
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Study Sessions Overview</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         Our user dashboard offers a powerful "Recent Study Sessions" feature, providing you with
                                         insightful snapshots of your learning journey. With this tool, you can easily track and
@@ -84,12 +84,12 @@ const LearnMore = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect sect-switch-2'>
                             <div className='lm-row-half lm-row-text'>
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Study Materials Overview</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         For a personalized and streamlined learning experience, our user dashboard includes the "My Study Materials"
                                         feature, a handy tool that keeps your custom content within reach. This feature provides you with an organized
@@ -107,20 +107,20 @@ const LearnMore = () => {
                     </div>
                 </section>
                 <div id='about-divider'></div>
-                <section>
+                <section id='lm-sect-sched'>
                     <div style={{textAlign: 'center'}}>
                         <h2>Schedule</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px', alignItems: 'space-around'}}>
-                        <div style={{display: 'flex'}}>
-                            <div className='lm-row-half lm-row-img-left'>
+                        <div className='lm-ud-sect sched-sect sect-switch-1' style={{display: 'flex'}}>
+                            <div className='lm-row-half lm-row-img-left' id='lm-sched'>
                                 <img id='lm-img-6' src="https://i.ibb.co/w6Krntd/Screenshot-2023-10-31-at-6-08-57-PM.png" alt="Screenshot-2023-10-31-at-6-08-57-PM" border="0" />
                             </div>
                             <div className='lm-row-half lm-row-text'>
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Customizable Timeline View of Daily Tasks</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         Our "Schedule" page is your daily companion, providing a clear and dynamic timeline view of your tasks. It's not
                                         just about organization; it's about empowerment. With this feature, you have the flexibility to effortlessly add,
@@ -135,17 +135,17 @@ const LearnMore = () => {
                     </div>
                 </section>
                 <div id='about-divider'></div>
-                <section>
+                <section id='lm-sect-sched'>
                     <div style={{textAlign: 'center'}}>
                         <h2>Trivia</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px', alignItems: 'space-around'}}>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect triv-sect sect-switch-2' style={{display: 'flex'}}>
                             <div className='lm-row-half lm-row-text'>
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Create & Take Quizzes</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         Dive into the world of knowledge with our "Trivia" page, a treasure trove of learning opportunities. Here,
                                         you can easily filter and access a wide variety of quizzes, covering a range of topics to challenge and
@@ -157,19 +157,19 @@ const LearnMore = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className='lm-row-half lm-row-img-right'>
+                            <div className='lm-row-half lm-row-img-right' id='lm-trivia'>
                                 <img id='lm-img-7' src="https://i.ibb.co/BKk12Wd/Screenshot-2023-10-31-at-6-07-51-PM.png" alt="Screenshot-2023-10-31-at-6-07-51-PM" border="0" />
                             </div>
                         </div>
                     </div>
                 </section>
                 <div id='about-divider'></div>
-                <section>
+                <section id='lm-sect-sched'>
                     <div style={{textAlign: 'center'}}>
                         <h2>Flash Cards</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px', alignItems: 'space-around'}}>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect fc-sect' style={{display: 'flex'}}>
                             <div className='lm-row-half lm-row-img-left'>
                                 <img id='lm-img-8' src="https://i.ibb.co/cFbXJ3S/Screenshot-2023-10-31-at-6-08-46-PM.png" alt="Screenshot-2023-10-31-at-6-08-46-PM" border="0" />
                             </div>
@@ -177,7 +177,7 @@ const LearnMore = () => {
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Create & Study Flash Cards</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         Unleash the power of flash cards with our dedicated "Flash Cards" page, your gateway to efficient and effective
                                         learning. Explore a wide array of flash card sets with ease, designed to cater to various subjects and topics.
@@ -193,17 +193,17 @@ const LearnMore = () => {
                     </div>
                 </section>
                 <div id='about-divider'></div>
-                <section>
+                <section id='lm-sect-sched'>
                     <div style={{textAlign: 'center'}}>
                         <h2>Practice</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px', alignItems: 'space-around'}}>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect prac-sect sect-switch-2' style={{display: 'flex'}}>
                             <div className='lm-row-half lm-row-text'>
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Practice Coding In Your Browser</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         At our "Practice" page, we empower you to sharpen your coding skills in the programming language or framework of
                                         your choice. With a rich selection of options, including C#, C++, JavaScript, Java, React.js, Next.js, Angular,
@@ -222,12 +222,12 @@ const LearnMore = () => {
                     </div>
                 </section>
                 <div id='about-divider'></div>
-                <section>
+                <section id='lm-sect-sched'>
                     <div style={{textAlign: 'center'}}>
                         <h2>Resources</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px', alignItems: 'space-around'}}>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect rsrcs-sect' style={{display: 'flex'}}>
                             <div className='lm-row-half lm-row-img-left'>
                                 <img id='lm-img-10' src="https://i.ibb.co/r3Vh7Pk/Screenshot-2023-10-31-at-6-08-36-PM.png" alt="Screenshot-2023-10-31-at-6-08-36-PM" border="0" />
                             </div>
@@ -235,7 +235,7 @@ const LearnMore = () => {
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Hundreds of Comprehensive Resources</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         Our "Resources" page is your ultimate gateway to a world of knowledge. With an extensive collection of tools,
                                         guides, tutorials, courses, and documentation, we've curated an extensive library covering a wide range of
@@ -251,17 +251,17 @@ const LearnMore = () => {
                     </div>
                 </section>
                 <div id='about-divider'></div>
-                <section>
+                <section id='lm-sect-sched'>
                     <div style={{textAlign: 'center'}}>
                         <h2>News</h2>
                     </div>
                     <div style={{"display": 'flex', 'flexDirection': 'column', padding: '10px 100px 50px 100px', alignItems: 'space-around'}}>
-                        <div style={{display: 'flex'}}>
+                        <div className='lm-ud-sect news-sect sect-switch-2' style={{display: 'flex'}}>
                             <div className='lm-row-half lm-row-text'>
                                 <div style={{textAlign: 'center'}}>
                                     <h3>Programming News Articles</h3>
                                 </div>
-                                <div style={{textAlign: 'justify'}}>
+                                <div className='lm-paragraph-holder'>
                                     <p>
                                         Our "News" page is your go-to source for staying up-to-date with the latest programming-related developments.
                                         By harnessing the power of the Currents API, we bring you real-time programming news articles that keep you

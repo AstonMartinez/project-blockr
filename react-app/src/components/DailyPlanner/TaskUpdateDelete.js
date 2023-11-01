@@ -1,25 +1,3 @@
-import './DailyPlanner.css';
-import { useState, useEffect } from 'react';
-import * as React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Box from '@mui/material/Box'
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
-import { TimeField } from '@mui/x-date-pickers/TimeField';import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import Input from '@mui/joy/Input';
 import GroupsIcon from '@mui/icons-material/Groups';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
@@ -32,12 +10,21 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import EventIcon from '@mui/icons-material/Event';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CrisisAlertIcon from '@mui/icons-material/CrisisAlert';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
+import HotelIcon from '@mui/icons-material/Hotel';
+import RepeatIcon from '@mui/icons-material/Repeat';
+import { useState } from 'react';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
+import Box from '@mui/material/Box'
+import { TimeField } from '@mui/x-date-pickers/TimeField';import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import Input from '@mui/joy/Input';
 import FormControl from '@mui/joy/FormControl';
 import FormHelperText from '@mui/joy/FormHelperText';
+import { useDispatch } from 'react-redux';
 import { createTask, getByDate } from '../../store/tasks';
-import parseTime from './timefunctions';
-import Divider from '@mui/material/Divider';
-import TaskEditModal from './TaskUpdateDelete';
 
 const style = {
     position: 'absolute',
@@ -53,34 +40,77 @@ const style = {
     flexDirection: 'column'
   };
 
-const DailyPlanner = ({nowDay}) => {
+const TaskEditModal = ({ task, onClose, nowDay }) => {
     const dispatch = useDispatch()
-    const allTasks = useSelector(state => state.tasks.allTasks)
-    const taskArr = Object.values(allTasks).toSorted((start_time, end_time) => start_time - end_time)
-    const [startTime, setStartTime] = useState(null)
-    const [endTime, setEndTime] = useState(null)
-    const [open, setOpen] = React.useState(false);
-    const [title, setTitle] = useState(null)
-    const [description, setDescription] = useState(null)
-    const [color, setColor] = useState('')
-    const [icon, setIcon] = useState(null)
-    const [day, setDay] = useState(null)
-    const [iconOneActive, setIconOneActive] = useState(false)
-    const [iconTwoActive, setIconTwoActive] = useState(false)
-    const [iconThreeActive, setIconThreeActive] = useState(false)
-    const [iconFourActive, setIconFourActive] = useState(false)
-    const [iconFiveActive, setIconFiveActive] = useState(false)
-    const [iconSixActive, setIconSixActive] = useState(false)
-    const [iconSevenActive, setIconSevenActive] = useState(false)
-    const [iconEightActive, setIconEightActive] = useState(false)
-    const [iconNineActive, setIconNineActive] = useState(false)
-    const [iconTenActive, setIconTenActive] = useState(false)
-    const [iconElevenActive, setIconElevenActive] = useState(false)
-    const [iconTwelveActive, setIconTwelveActive] = useState(false)
-    const [iconThirteenActive, setIconThirteenActive] = useState(false)
-    const [iconFourteenActive, setIconFourteenActive] = useState(false)
-    const [iconFifteenActive, setIconFifteenActive] = useState(false)
-    const [iconSixteenActive, setIconSixteenActive] = useState(false)
+    const [isEditing, setIsEditing] = useState(false)
+
+    const handleClose = () => {
+        onClose()
+    };
+
+    const [title, setTitle] = useState(task.title)
+    const [description, setDescription] = useState(task.description)
+    const [day, setDay] = useState(task.day)
+    const [startTime, setStartTime] = useState(task.start_time)
+    const [endTime, setEndTime] = useState(task.end_time)
+    const [icon, setIcon] = useState(task.icon)
+    const [color, setColor] = useState(task.color)
+
+    const determineActive = (icon, option) => {
+        if(icon === option) {
+            return true
+        }
+        return
+        // else if (icon === 'laptop') {
+        //     setIconTwoActive(true)
+        // } else if (icon === 'repeat') {
+        //     setIconThreeActive(true)
+        // } else if (icon === 'hotel') {
+        //     setIconFourActive(true)
+        // } else if (icon === 'groups') {
+        //     setIconFiveActive(true)
+        // } else if (icon === 'fitness') {
+        //     setIconSixActive(true)
+        // } else if (icon === 'health') {
+        //     setIconSevenActive(true)
+        // } else if (icon === 'call') {
+        //     setIconEightActive(true)
+        // } else if (icon === 'cake') {
+        //     setIconNineActive(true)
+        // } else if (icon === 'code') {
+        //     setIconTenActive(true)
+        // } else if (icon === 'morning') {
+        //     setIconElevenActive(true)
+        // } else if (icon === 'evening') {
+        //     setIconTwelveActive(true)
+        // } else if (icon === 'sparkle') {
+        //     setIconThirteenActive(true)
+        // } else if (icon === 'event') {
+        //     setIconFourteenActive(true)
+        // } else if (icon === 'tree') {
+        //     setIconFifteenActive(true)
+        // } else if (icon === 'alert') {
+        //     setIconSixteenActive(true)
+        // }
+    }
+
+    const [iconOneActive, setIconOneActive] = useState(determineActive(task.icon, 'food'))
+    const [iconTwoActive, setIconTwoActive] = useState(determineActive(task.icon, 'laptop'))
+    const [iconThreeActive, setIconThreeActive] = useState(determineActive(task.icon, 'repeat'))
+    const [iconFourActive, setIconFourActive] = useState(determineActive(task.icon, 'hotel'))
+    const [iconFiveActive, setIconFiveActive] = useState(determineActive(task.icon, 'groups'))
+    const [iconSixActive, setIconSixActive] = useState(determineActive(task.icon, 'fitness'))
+    const [iconSevenActive, setIconSevenActive] = useState(determineActive(task.icon, 'health'))
+    const [iconEightActive, setIconEightActive] = useState(determineActive(task.icon, 'call'))
+    const [iconNineActive, setIconNineActive] = useState(determineActive(task.icon, 'cake'))
+    const [iconTenActive, setIconTenActive] = useState(determineActive(task.icon, 'code'))
+    const [iconElevenActive, setIconElevenActive] = useState(determineActive(task.icon, 'morning'))
+    const [iconTwelveActive, setIconTwelveActive] = useState(determineActive(task.icon, 'evening'))
+    const [iconThirteenActive, setIconThirteenActive] = useState(determineActive(task.icon, 'sparkle'))
+    const [iconFourteenActive, setIconFourteenActive] = useState(determineActive(task.icon, 'event'))
+    const [iconFifteenActive, setIconFifteenActive] = useState(determineActive(task.icon, 'tree'))
+    const [iconSixteenActive, setIconSixteenActive] = useState(determineActive(task.icon, 'alert'))
+
     const [dayError, setDayError] = useState(null)
     const [titleError, setTitleError] = useState(null)
     const [descriptionError, setDescriptionError] = useState(null)
@@ -88,31 +118,6 @@ const DailyPlanner = ({nowDay}) => {
     const [startTimeError, setStartTimeError] = useState(null)
     const [endTimeError, setEndTimeError] = useState(null)
     const [iconError, setIconError] = useState(null)
-
-    const [selectedTask, setSelectedTask] = useState(null)
-    const [openTaskModal, setOpenTaskModal] = useState(false)
-
-    function compare( a, b ) {
-        const startSplitA = a.start_time.split(":")
-        const startSplitB = b.start_time.split(":")
-        if ( Number(startSplitA[0]) < Number(startSplitB[0])){
-          return -1;
-        }
-        if ( Number(startSplitA[0]) > Number(startSplitB[0]) ){
-          return 1;
-        }
-        return 0;
-      }
-
-      taskArr.sort(compare)
-
-
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
-    useEffect(() => {
-        dispatch(getByDate(nowDay))
-    }, [dispatch, nowDay])
 
     const handleTaskSubmit = async () => {
         if(title === null) {
@@ -185,18 +190,9 @@ const DailyPlanner = ({nowDay}) => {
     }
 
     return (
-        <div id='user-timeline-container'>
-            <div style={{"marginTop": "70px"}}>
-            <div style={{ "width": "100%", "display": "flex", "justifyContent": "center" }}>
-        <Button variant="contained" onClick={handleOpen}>Add a Task</Button>
-        <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            sx={{height: "80%", marginTop: "70px"}}
-        >
-            <Box sx={style}>
+        <div id='task-modal-wrapper'>
+
+<Box sx={style}>
                 <Box sx={{ display: 'flex', height: '100%' }}>
                     <Box sx={{ width: '50%' }}>
                         <FormControl error={title === null && hasSubmitted ? true : false}>
@@ -564,7 +560,7 @@ const DailyPlanner = ({nowDay}) => {
                         </Box>
                         <Box sx={{'paddingBottom': '0', 'marginTop': '8px'}}>
                             <FormControl error={startTime === null && hasSubmitted ? true : false}>
-                                <label className='task-input-label'>Choose a Start Time:</label>
+                                <label className='task-input-label'>Start Time:</label>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <TimeField value={startTime} onChange={(newValue) => setStartTime(newValue)} />
                                 </LocalizationProvider>
@@ -575,7 +571,7 @@ const DailyPlanner = ({nowDay}) => {
                                 )}
                             </FormControl>
                             <FormControl error={endTime === null && hasSubmitted ? true : false}>
-                            <label className='task-input-label'>Choose an End Time:</label>
+                            <label className='task-input-label'>End Time:</label>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <TimeField value={endTime} onChange={(newValue) => setEndTime(newValue)} />
                                 </LocalizationProvider>
@@ -592,108 +588,98 @@ const DailyPlanner = ({nowDay}) => {
                     <Divider />
                 </Box>
                 <Box sx={{height: '50px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
-                    <Button className='task-submit-btn' onClick={handleTaskSubmit} type="submit" variant="contained">Submit</Button>
+                    {/* <Button className='task-submit-btn' onClick={handleTaskSubmit} type="submit" variant="contained">Submit</Button> */}
+                    <Button sx={{marginRight: '10px'}} variant="contained">Edit Task</Button>
+                    <Button variant="contained">Delete Task</Button>
                 </Box>
             </Box>
-        </Modal>
-    </div>
-            </div>
-            <div>
-                {!taskArr.length > 0 && (
-                    <h3>You don't currently have any tasks for today!</h3>
-                )}
-                <Timeline position="alternate">
-                    {taskArr && taskArr.map(task => (
-                        <>
-                            <TimelineItem>
-                                <TimelineOppositeContent
-                                    sx={{ m: 'auto 0', width: "200px" }}
-                                    align="right"
-                                    variant='body2'
-                                    color={'black'}
-                                >
-                                    {parseTime(task.start_time, task.end_time)}
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot sx={{backgroundColor: `${task.color}`}} onClick={() => {
-                                        setSelectedTask(task)
-                                        setOpenTaskModal(true)
-                                        }}>
-                                        {task.icon === "food" && (
-                                            <FastfoodIcon />
-                                        )}
-                                        {task.icon === "laptop" && (
-                                            <LaptopMacIcon />
-                                        )}
-                                        {task.icon === "repeat" && (
-                                            <RepeatIcon />
-                                        )}
-                                        {task.icon === "hotel" && (
-                                            <HotelIcon />
-                                        )}
-                                        {task.icon === "group" && (
-                                            <GroupsIcon />
-                                        )}
-                                        {task.icon === "fitness" && (
-                                            <FitnessCenterIcon />
-                                        )}
-                                        {task.icon === "health" && (
-                                            <HealthAndSafetyIcon />
-                                        )}
-                                        {task.icon === "call" && (
-                                            <CallIcon />
-                                        )}
-                                        {task.icon === "cake" && (
-                                            <CakeIcon />
-                                        )}
-                                        {task.icon === "code" && (
-                                            <CodeIcon />
-                                        )}
-                                        {task.icon === "morning" && (
-                                            <LightModeIcon />
-                                        )}
-                                        {task.icon === "evening" && (
-                                            <BedtimeIcon />
-                                        )}
-                                        {task.icon === "sparkle" && (
-                                            <AutoAwesomeIcon />
-                                        )}
-                                        {task.icon === "event" && (
-                                            <EventIcon />
-                                        )}
-                                        {task.icon === "tree" && (
-                                            <AccountTreeIcon />
-                                        )}
-                                        {task.icon === "alert" && (
-                                            <CrisisAlertIcon />
-                                        )}
-                                    </TimelineDot>
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <Typography variant="h6" component="span">
-                                        {task.title}
-                                    </Typography>
-                                    <Typography>
-                                        {task.description}
-                                    </Typography>
-                                </TimelineContent>
-                            </TimelineItem>
-                        </>
-                    ))}
-                </Timeline>
-            </div>
-            {openTaskModal && (
-                <TaskEditModal
-                    task={selectedTask}
-                    onClose={() => {
-                        setSelectedTask(null)
-                        setOpenTaskModal(false)
-                    }}
-                />
-            )}
+            {/* <section style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <Button>X</Button>
+            </section>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <div style={{paddingRight: '100px'}}>
+                    <section>
+                        <h3>Task Title</h3>
+                        {isEditing && (
+                            <input />
+                        )}
+                        <p>{task.title}</p>
+                    </section>
+                    <section>
+                        <h3>Description</h3>
+                        <p>{task.description}</p>
+                    </section>
+                    <section>
+                        <h3>Day</h3>
+                        <p>{task.day}</p>
+                    </section>
+                </div>
+                <Divider variant='vertical' flexItem />
+                <div>
+                    <section>
+                        <h3>Start Time</h3>
+                        <p>{task.start_time}</p>
+                    </section>
+                    <section>
+                        <h3>End Time</h3>
+                        <p>{task.end_time}</p>
+                    </section>
+                    <section>
+                        <h3>Icon</h3>
+                            {task.icon === "food" && (
+                                <FastfoodIcon />
+                            )}
+                            {task.icon === "laptop" && (
+                                <LaptopMacIcon />
+                            )}
+                            {task.icon === "repeat" && (
+                                <RepeatIcon />
+                            )}
+                            {task.icon === "hotel" && (
+                                <HotelIcon />
+                            )}
+                            {task.icon === "group" && (
+                                <GroupsIcon />
+                            )}
+                            {task.icon === "fitness" && (
+                                <FitnessCenterIcon />
+                            )}
+                            {task.icon === "health" && (
+                                <HealthAndSafetyIcon />
+                            )}
+                            {task.icon === "call" && (
+                                <CallIcon />
+                            )}
+                            {task.icon === "cake" && (
+                                <CakeIcon />
+                            )}
+                            {task.icon === "code" && (
+                                <CodeIcon />
+                            )}
+                            {task.icon === "morning" && (
+                                <LightModeIcon />
+                            )}
+                            {task.icon === "evening" && (
+                                <BedtimeIcon />
+                            )}
+                            {task.icon === "sparkle" && (
+                                <AutoAwesomeIcon />
+                            )}
+                            {task.icon === "event" && (
+                                <EventIcon />
+                            )}
+                            {task.icon === "tree" && (
+                                <AccountTreeIcon />
+                            )}
+                            {task.icon === "alert" && (
+                                <CrisisAlertIcon />
+                            )}
+                    </section>
+                </div>
+            </div> */}
+
         </div>
     )
 }
 
-export default DailyPlanner;
+export default TaskEditModal;

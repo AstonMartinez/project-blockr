@@ -102,8 +102,7 @@ const AboutUs = () => {
                     </div>
                     <p>
                         If you have any questions, suggestions, or just want to reach out, feel free to contact me at
-                        astonmartinezengineering@gmail.com. You can also find me on
-                        <a className='socials-link' href="https://github.com/AstonMartinez">GitHub</a> and <a className='socials-link' href='https://www.linkedin.com/in/aston-martinez-0716/'>LinkedIn</a>,
+                        astonmartinezengineering@gmail.com. You can also find me on <a className='socials-link' href="https://github.com/AstonMartinez">GitHub</a> and <a className='socials-link' href='https://www.linkedin.com/in/aston-martinez-0716/'>LinkedIn</a>,
                         or view my other projects on my <a className='socials-link' href="https://astons-portfolio.netlify.app/">portfolio</a>!
                     </p>
                 </section>

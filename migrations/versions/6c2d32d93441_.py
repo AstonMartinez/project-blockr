@@ -52,7 +52,6 @@ def upgrade():
     sa.Column('date_created', sa.DateTime(), nullable=False),
     sa.Column('session_type', sa.String(length=200), nullable=False),
     sa.Column('category', sa.String(length=200), nullable=False),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('tasks',

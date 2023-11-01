@@ -71,7 +71,7 @@ const TaskEditModal = ({ task, onClose, nowDay }) => {
     const [endTimeError, setEndTimeError] = useState(null)
     const [iconError, setIconError] = useState(null)
 
-    const [open] = true
+    const [open, setOpen] = useState(true)
 
     const handleTaskDelete = async () => {
         await dispatch(deleteUserTask(task.id))

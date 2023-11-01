@@ -9,11 +9,18 @@ card_routes = Blueprint('cards', __name__)
 
 @card_routes.route('/sets/<int:id>/info-only')
 def get_only_info(id):
+    """
+    Returns the title, description, category, and status for a set of flash cards
+    """
     card_set = CardSets.query.get(id)
     return card_set.to_dict()
 
 @card_routes.route('/sets/new', methods=["POST"])
+@login_required
 def create_set():
+    """
+    Creates a new set of flash cards
+    """
     title = request.json['title']
     description = request.json['description']
     category = request.json['category']
@@ -34,7 +41,11 @@ def create_set():
     return new_set_dict
 
 @card_routes.route('/sets/<int:id>/add', methods=["POST"])
+@login_required
 def create_cards(id):
+    """
+    Adds new flash cards to an existing set
+    """
     cards = request.json['cards']
 
     for card in cards:
@@ -54,6 +65,9 @@ def create_cards(id):
 
 @card_routes.route('/<int:id>')
 def get_single_set(id):
+    """
+    Retrieves the title, description, category, status, and cards for a flash card set.
+    """
     card_set = CardSets.query.get(id)
     q_dict = {}
     if card_set:
@@ -67,7 +81,11 @@ def get_single_set(id):
     return {}
 
 @card_routes.route('/sets/<int:id>/update', methods=["PUT"])
+@login_required
 def update_set(id):
+    """
+    Updates the details of an existing flash card set.
+    """
     card_set = CardSets.query.get(id)
     title = request.json['title']
     description = request.json['description']
@@ -83,7 +101,11 @@ def update_set(id):
     return card_set.to_dict()
 
 card_routes.route('/sets/<int:id>/delete', methods=["DELETE"])
+@login_required
 def delete_set(id):
+    """
+    Deletes an existing set of flash cards
+    """
     card_set = CardSets.query.get(id)
     set_dict = card_set.to_dict()
     db.session.delete(card_set)
@@ -91,7 +113,11 @@ def delete_set(id):
     return set_dict
 
 @card_routes.route('/sets/cards/<int:id>/delete', methods=["DELETE"])
+@login_required
 def delete_card(id):
+    """
+    Deletes an individual flash card from an existing set.
+    """
     card = CardQuestion.query.get(id)
     card_dict = card.to_dict()
     db.session.delete(card)
@@ -99,7 +125,11 @@ def delete_card(id):
     return card_dict
 
 @card_routes.route('/sets/cards/<int:id>/update', methods=["PUT"])
+@login_required
 def update_card(id):
+    """
+    Updates an individual flash card from an existing set.
+    """
     card = CardQuestion.query.get(id)
     front = request.json['front']
     back = request.json['back']
@@ -113,6 +143,9 @@ def update_card(id):
 
 @card_routes.route('/sets/public')
 def get_all_public():
+    """
+    Retrieves all existing flash card sets with a status of "Public".
+    """
     sets = CardSets.query.filter(CardSets.status == "Public").all()
     result = {}
     if sets:
@@ -122,7 +155,11 @@ def get_all_public():
     return result
 
 @card_routes.route('/sets/all')
+@login_required
 def get_all_available_sets():
+    """
+    Retrieves all flash card sets with a status of "Public", as well as the current user's custom flash card sets.
+    """
     result = {}
     public_sets = CardSets.query.filter(CardSets.status == "Public").all()
     user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
@@ -139,7 +176,11 @@ def get_all_available_sets():
     return result
 
 @card_routes.route('/sets/user-sets')
+@login_required
 def get_user_sets():
+    """
+    Retrieves only the flash card sets that the current user has created.
+    """
     result = {}
     user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
 
@@ -151,6 +192,9 @@ def get_user_sets():
 
 @card_routes.route('/sets/<category>')
 def get_by_category(category):
+    """
+    Retrieves all flash card sets with a category that matches the indicated category.
+    """
     result = {}
     cat_sets = CardSets.query.filter(CardSets.category == category).all()
 

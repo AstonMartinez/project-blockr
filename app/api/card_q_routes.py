@@ -7,7 +7,11 @@ from app.forms.new_flashcard import UpdateCardForm
 card_q_routes = Blueprint('card_qs', __name__)
 
 @card_q_routes.route('/<int:id>/update', methods=["PUT"])
+@login_required
 def update_flash_card(id):
+    """
+    Updates an individual flash card.
+    """
     card = CardQuestion.query.get(id)
     form = UpdateCardForm()
 
@@ -24,7 +28,11 @@ def update_flash_card(id):
     return card.to_dict()
 
 @card_q_routes.route('/<int:id>/delete', methods=["DELETE"])
+@login_required
 def delete_flash_card(id):
+    """
+    Deletes an individual flash card.
+    """
     card = CardQuestion.query.get(id)
     card_dict = card.to_dict()
 
@@ -34,6 +42,9 @@ def delete_flash_card(id):
 
 @card_q_routes.route('/sets/<int:id>/cards')
 def get_cards_by_quiz_id(id):
+    """
+    Retrieves all flash cards belonging to the indicated set.
+    """
     result = {}
     cards = CardQuestion.query.filter(CardQuestion.set_id == id).all()
 
@@ -45,5 +56,8 @@ def get_cards_by_quiz_id(id):
 
 @card_q_routes.route('/<int:id>')
 def get_single_card(id):
+    """
+    Retrieves a single flash card.
+    """
     card = CardQuestion.query.get(id)
     return card.to_dict()

@@ -1,11 +1,16 @@
 from flask import Blueprint, request
 from app.models import db
 from app.models.trivia_questions import TriviaQuestion
+from flask_login import login_required
 
 question_routes = Blueprint('questions', __name__)
 
 @question_routes.route('/<int:id>/add', methods=["POST"])
+@login_required
 def create_quiz_questions(id):
+    """
+    Creates a new question for an existing quiz.
+    """
     questions = request.json['questions']
 
     for q in questions:
@@ -33,7 +38,11 @@ def create_quiz_questions(id):
     return {}
 
 @question_routes.route('/<int:id>/delete', methods=["DELETE"])
+@login_required
 def delete_q(id):
+    """
+    Deletes a question from an existing quiz.
+    """
     question = TriviaQuestion.query.get(id)
     question_dict = question.to_dict()
     db.session.delete(question)
@@ -41,7 +50,11 @@ def delete_q(id):
     return question_dict
 
 @question_routes.route('/<int:id>/update', methods=["PUT"])
+@login_required
 def update_q(id):
+    """
+    Updates a question from an existing quiz.
+    """
     question = TriviaQuestion.query.get(id)
     q = request.json['question']
     a1 = request.json['answer_one']
@@ -62,6 +75,9 @@ def update_q(id):
 
 @question_routes.route('/<int:id>/all')
 def get_qs(id):
+    """
+    Retrieves all questions that belong to a particular set.
+    """
     result = {}
     questions = TriviaQuestion.query.filter(TriviaQuestion.quiz_id == id).all()
     for q in questions:

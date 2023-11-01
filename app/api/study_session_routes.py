@@ -10,7 +10,11 @@ from sqlalchemy import and_
 study_session_routes = Blueprint('study_sessions', __name__)
 
 @study_session_routes.route('/current/recent')
+@login_required
 def get_recent_sessions():
+    """
+    Retrieves the current user's 10 most recent study sessions.
+    """
     result = {}
     sessions = StudySession.query.filter(StudySession.user_id == current_user.id).limit(10).all()
 
@@ -21,7 +25,11 @@ def get_recent_sessions():
 
 
 @study_session_routes.route('/current/all')
+@login_required
 def get_user_sessions():
+    """
+    Retrieves all study sessions belonging to the current user.
+    """
     user_sessions = StudySession.query.filter(StudySession.user_id == current_user.id)
     result = {}
     if user_sessions:
@@ -30,7 +38,11 @@ def get_user_sessions():
     return result
 
 @study_session_routes.route('/current/<category>')
+@login_required
 def get_session_by_category(category):
+    """
+    Retrieves all study sessions matching the indicated category.
+    """
     user_sessions = StudySession.query.filter(and_(StudySession.category == category, StudySession.user_id == current_user.id))
     result = {}
     if user_sessions:
@@ -39,7 +51,11 @@ def get_session_by_category(category):
     return result
 
 @study_session_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
 def delete_study_session(id):
+    """
+    Deletes an existing study session.
+    """
     session = StudySession.query.get(id)
     if session:
         db.session.delete(session)
@@ -47,7 +63,11 @@ def delete_study_session(id):
     return session.to_dict()
 
 @study_session_routes.route('/new', methods=["POST"])
+@login_required
 def new_study_session():
+    """
+    Creates a new study session.
+    """
     form = NewStudySessionForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():

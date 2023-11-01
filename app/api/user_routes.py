@@ -7,7 +7,11 @@ from app.models.trivia_quiz import TriviaQuiz
 user_routes = Blueprint('users', __name__)
 
 @user_routes.route('/materials')
+@login_required
 def get_user_materials():
+    """
+    Retrieves all quizzes and flash cards created by the current user.
+    """
     all_cards = {}
     all_quizzes = {}
     result = {}

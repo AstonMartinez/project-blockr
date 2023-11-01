@@ -8,8 +8,8 @@ class CardQuestion(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     set_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("card_sets.id")), nullable=False)
-    front = db.Column(db.String(100))
-    back = db.Column(db.String(100))
+    front = db.Column(db.String(1000))
+    back = db.Column(db.String(1000))
 
     set = db.relationship('CardSets', back_populates='questions')
 

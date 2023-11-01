@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 41e3b8d09d7e
+Revision ID: 8fe41e30d0d6
 Revises:
-Create Date: 2023-11-01 15:15:10.019254
+Create Date: 2023-11-01 15:43:18.213517
 
 """
 from alembic import op
@@ -14,7 +14,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '41e3b8d09d7e'
+revision = '8fe41e30d0d6'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,7 +32,16 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email')
     )
-
+    op.create_table('card_sets',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('creator_id', sa.Integer(), nullable=False),
+    sa.Column('title', sa.String(length=100), nullable=True),
+    sa.Column('description', sa.String(length=100), nullable=True),
+    sa.Column('status', sa.String(length=100), nullable=True),
+    sa.Column('category', sa.String(length=100), nullable=True),
+    sa.ForeignKeyConstraint(['creator_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
     op.create_table('study_sessions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
@@ -43,16 +52,7 @@ def upgrade():
     sa.Column('date_created', sa.DateTime(), nullable=False),
     sa.Column('session_type', sa.String(length=200), nullable=False),
     sa.Column('category', sa.String(length=200), nullable=False),
-    sa.PrimaryKeyConstraint('id')
-    )
-    op.create_table('card_sets',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('creator_id', sa.Integer(), nullable=False),
-    sa.Column('title', sa.String(length=100), nullable=True),
-    sa.Column('description', sa.String(length=100), nullable=True),
-    sa.Column('status', sa.String(length=100), nullable=True),
-    sa.Column('category', sa.String(length=100), nullable=True),
-    sa.ForeignKeyConstraint(['creator_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('tasks',
@@ -100,8 +100,8 @@ def upgrade():
     op.create_table('card_questions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('set_id', sa.Integer(), nullable=False),
-    sa.Column('front', sa.String(length=100), nullable=True),
-    sa.Column('back', sa.String(length=100), nullable=True),
+    sa.Column('front', sa.String(length=1000), nullable=True),
+    sa.Column('back', sa.String(length=1000), nullable=True),
     sa.ForeignKeyConstraint(['set_id'], ['card_sets.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -138,7 +138,7 @@ def downgrade():
     op.drop_table('user_stats')
     op.drop_table('trivia_quizzes')
     op.drop_table('tasks')
-    op.drop_table('card_sets')
     op.drop_table('study_sessions')
+    op.drop_table('card_sets')
     op.drop_table('users')
     # ### end Alembic commands ###

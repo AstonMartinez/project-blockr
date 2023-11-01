@@ -69,6 +69,7 @@ const IndividualFlashCard = ({ setId, cardId, cardData }) => {
                     value={front}
                     onChange={(e) => setFront(e.target.value)}
                     disabled={isEditing ? false : true}
+                    required
                 />
             </div>
             <div style={{ 'display': 'flex', 'flexDirection': 'column' }}>
@@ -81,6 +82,7 @@ const IndividualFlashCard = ({ setId, cardId, cardData }) => {
                     value={back}
                     onChange={(e) => setBack(e.target.value)}
                     disabled={isEditing ? false : true}
+                    required
                 />
             </div>
             <div>

@@ -1,7 +1,6 @@
-from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from flask import Blueprint, request
+from app.models import db
 from app.models.card_questions import CardQuestion
-from app.models.card_sets import CardSets
 from flask_login import current_user, login_user, logout_user, login_required
 from app.forms.new_flashcard import UpdateCardForm
 

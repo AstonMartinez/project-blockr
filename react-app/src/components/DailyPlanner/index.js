@@ -39,20 +39,6 @@ import parseTime from './timefunctions';
 import Divider from '@mui/material/Divider';
 import TaskEditModal from './TaskUpdateDelete';
 
-const style = {
-    position: 'absolute',
-    top: '60%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 800,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-    display: 'flex',
-    flexDirection: 'column'
-  };
-
 const DailyPlanner = ({nowDay}) => {
     const dispatch = useDispatch()
     const allTasks = useSelector(state => state.tasks.allTasks)

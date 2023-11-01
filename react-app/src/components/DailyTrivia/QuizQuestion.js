@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const QuizQuestion = ({ questionData, hasSubmitted, key }) => {
+const QuizQuestion = ({ questionData, hasSubmitted }) => {
     const [answer, setAnswer] = useState('')
     return (
         <>

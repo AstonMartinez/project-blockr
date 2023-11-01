@@ -1,13 +1,10 @@
-from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from flask import Blueprint, request
+from app.models import db
 from app.models.task import Task
 from app.forms.new_task_form import NewTaskForm
-from app.forms.update_task_form import UpdateTaskForm
-from flask_login import current_user, login_user, logout_user, login_required
-from datetime import datetime
+from flask_login import current_user, login_required
 from app.api.auth_routes import validation_errors_to_error_messages
 from sqlalchemy import and_
-from datetime import time
 
 task_routes = Blueprint('tasks', __name__)
 

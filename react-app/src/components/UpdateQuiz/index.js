@@ -84,13 +84,6 @@ const UpdateQuiz = () => {
         }
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-
-    }
-
-
-
     for(let i = 0; i < numQuestions; i++) {
         qArr.push({id: i, front: null, back: null})
     }

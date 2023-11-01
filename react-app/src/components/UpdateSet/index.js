@@ -11,7 +11,6 @@ import { fetchQuizInfoOnly } from '../../store/cards';
 import { fetchFullSet } from '../../store/indivCard';
 import { updateUserSet } from '../../store/cards';
 import IndividualQ from '../CreateSet/IndividualQ';
-import LoadingScreen from '../LoadingScreen';
 import CreateIcon from '@mui/icons-material/Create';
 
 const UpdateSet = () => {
@@ -43,6 +42,7 @@ const UpdateSet = () => {
     const [category, setCategory] = useState(setData.category)
     const [status, setStatus] = useState(setData.status)
     const [submitError, setSubmitError] = React.useState('')
+    const [backendError, setBackendError] = useState('')
 
     const initialTitle = setData.title
 
@@ -51,6 +51,9 @@ const UpdateSet = () => {
     }
 
     const handleChangeSetInfo = async () => {
+        if(!title || !description || !category || !status) {
+            setSubmitError('Please check that you\'ve provided a title, description, category, and status!')
+        }
         const setInfo = {
             title: title,
             description: description,
@@ -83,6 +86,11 @@ const UpdateSet = () => {
                 },
                 body: JSON.stringify(cardInfo)
             })
+
+            if(!response.ok) {
+                const error = await response.json()
+                setBackendError(error)
+            }
         }
     }
 
@@ -194,6 +202,13 @@ const UpdateSet = () => {
                                 )}
                             </section>
                             <section style={{display: 'flex', justifyContent: 'space-around', width: '250px', margin: '15px auto'}}>
+                                {submitError && (
+                                    <p style={{ color: 'red' }}>{submitError}</p>
+                                )}
+                                {backendError && (
+                                    <p style={{ color: 'red' }}>{backendError}</p>
+                                )}
+
                                 {editingSetInfo && (
                                     <>
                                         <Button variant="contained" onClick={handleChangeSetInfo}>Save Changes</Button>

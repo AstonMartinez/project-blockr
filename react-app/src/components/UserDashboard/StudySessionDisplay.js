@@ -81,7 +81,7 @@ const StudySessionDisplay = () => {
     }, [dispatch])
 
     return (
-        <div style={{"textAlign": "left"}}>
+        <div style={{"textAlign": "left"}} id='study-sess-disp-wrap'>
             <Title>My Recent Study Sessions</Title>
             {!sessions ? (
                 <h3>You haven't completed any study sessions yet!</h3>

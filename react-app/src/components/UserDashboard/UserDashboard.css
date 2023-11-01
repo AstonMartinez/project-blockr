@@ -1,3 +1,23 @@
+@media screen and (max-width: 415px) {
+    #study-sess-disp-wrap,
+    #materials-display-wrapper,
+    #study-sess-paper,
+    #materials-paper {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 416px) {
+    #study-sess-disp-wrap {
+        visibility: visible;
+    }
+
+    #materials-display-wrapper {
+        visibility: visible;
+    }
+}
+
 .db-task-disp-buttons {
     background-color: transparent;
     border: none;

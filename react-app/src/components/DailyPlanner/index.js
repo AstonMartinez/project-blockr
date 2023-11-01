@@ -606,7 +606,7 @@ const DailyPlanner = ({nowDay}) => {
                                     sx={{ m: 'auto 0', width: "200px" }}
                                     align="right"
                                     variant='body2'
-                                    color={task.color}
+                                    color={'black'}
                                 >
                                     {parseTime(task.start_time, task.end_time)}
                                 </TimelineOppositeContent>

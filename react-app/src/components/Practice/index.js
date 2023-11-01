@@ -3,6 +3,7 @@ import { useState } from 'react'
 import * as React from 'react'
 import Box from '@mui/material/Box';
 import NavDrawer from '../NavDrawer';
+import './Practice.css'
 
 const Practice = () => {
     const [codeType, setCodeType] = useState(null)
@@ -153,6 +154,9 @@ const Practice = () => {
                     </div>
                 </section>
                 <section>
+                    {!codeType && (
+                        <h3 style={{textAlign: 'center', marginTop: '50px', color: 'purple'}}>Choose a language to begin</h3>
+                    )}
                     {repl}
                 </section>
             </div>

@@ -5,8 +5,9 @@ from app.models.card_questions import CardQuestion
 from app.models.user_stats import UserStats
 from app.models.trivia_quiz import TriviaQuiz
 from app.models.task import Task
+from app.models.study_session import StudySession
 from sqlalchemy.sql import text
-from datetime import time
+from datetime import time, datetime
 
 
 # Adds a demo user, you can add other users here if you want
@@ -5552,14 +5553,574 @@ def seed_users():
 
     task1 = Task(
         user_id=1,
-        title="Sample task",
-        description="testing, testing, 1 2 3...",
+        title="Breakfast",
+        description="w/ Jenny",
+        icon="food",
+        day="Monday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task2 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
         icon="group",
         day="Monday",
-        start_time="10:00",
-        end_time="10:30",
-        color="#ababab",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
 
+    task3 = Task(
+        user_id=1,
+        title="Job Applications",
+        description="Goal: 10 apps",
+        icon="laptop",
+        day="Monday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task4 = Task(
+        user_id=1,
+        title="Practice C#",
+        description="Goal: 1 hour",
+        icon="code",
+        day="Monday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task5 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ the diner",
+        icon="food",
+        day="Monday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task6 = Task(
+        user_id=1,
+        title="Study",
+        description="Flash cards",
+        icon="alert",
+        day="Monday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task7 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Monday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    task8 = Task(
+        user_id=1,
+        title="Breakfast",
+        description="w/ Katie",
+        icon="food",
+        day="Tuesday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task9 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
+        icon="group",
+        day="Tuesday",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
+
+    task10 = Task(
+        user_id=1,
+        title="Project",
+        description="Finish feature 1",
+        icon="code",
+        day="Tuesday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task11 = Task(
+        user_id=1,
+        title="Appointment",
+        description="w/ Dr. Joe",
+        icon="event",
+        day="Tuesday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task12 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ home",
+        icon="food",
+        day="Tuesday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task13 = Task(
+        user_id=1,
+        title="Study",
+        description="Quizzes",
+        icon="alert",
+        day="Tuesday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task14 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Tuesday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    task15 = Task(
+        user_id=1,
+        title="Breakfast",
+        description="w/ Jenny",
+        icon="food",
+        day="Wednesday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task16 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
+        icon="group",
+        day="Wednesday",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
+
+    task17 = Task(
+        user_id=1,
+        title="Job Applications",
+        description="Goal: 10 apps",
+        icon="laptop",
+        day="Wednesday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task18 = Task(
+        user_id=1,
+        title="Practice C#",
+        description="Goal: 1 hour",
+        icon="code",
+        day="Wednesday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task19 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ the diner",
+        icon="food",
+        day="Wednesday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task20 = Task(
+        user_id=1,
+        title="Study",
+        description="Flash cards",
+        icon="alert",
+        day="Wednesday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task21 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Wednesday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    task22 = Task(
+        user_id=1,
+        title="Breakfast",
+        description="w/ Katie",
+        icon="food",
+        day="Thursday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task23 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
+        icon="group",
+        day="Thursday",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
+
+    task24 = Task(
+        user_id=1,
+        title="Project",
+        description="Finish feature 1",
+        icon="code",
+        day="Thursday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task25 = Task(
+        user_id=1,
+        title="Appointment",
+        description="w/ Dr. Joe",
+        icon="event",
+        day="Thursday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task26 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ home",
+        icon="food",
+        day="Thursday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task27 = Task(
+        user_id=1,
+        title="Study",
+        description="Quizzes",
+        icon="alert",
+        day="Thursday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task28 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Thursday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    task29 = Task(
+        user_id=1,
+        title="Breakfast",
+        description="w/ Jenny",
+        icon="food",
+        day="Friday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task30 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
+        icon="group",
+        day="Friday",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
+
+    task31 = Task(
+        user_id=1,
+        title="Job Applications",
+        description="Goal: 10 apps",
+        icon="laptop",
+        day="Friday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task32 = Task(
+        user_id=1,
+        title="Practice C#",
+        description="Goal: 1 hour",
+        icon="code",
+        day="Friday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task33 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ the diner",
+        icon="food",
+        day="Friday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task34 = Task(
+        user_id=1,
+        title="Study",
+        description="Flash cards",
+        icon="alert",
+        day="Friday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task35 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Friday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    task36 = Task(
+        user_id=1,
+        title="Breakfast",
+        description="w/ Katie",
+        icon="food",
+        day="Saturday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task37 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
+        icon="group",
+        day="Saturday",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
+
+    task38 = Task(
+        user_id=1,
+        title="Project",
+        description="Finish feature 1",
+        icon="code",
+        day="Saturday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task39 = Task(
+        user_id=1,
+        title="Appointment",
+        description="w/ Dr. Joe",
+        icon="event",
+        day="Saturday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task40 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ home",
+        icon="food",
+        day="Saturday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task41 = Task(
+        user_id=1,
+        title="Study",
+        description="Quizzes",
+        icon="alert",
+        day="Saturday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task42 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Saturday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    task43 = Task(
+        user_id=1,
+        title="Breakfast",
+        description="w/ Katie",
+        icon="food",
+        day="Sunday",
+        start_time="8:00",
+        end_time="9:00",
+        color="#fc4503",
+    )
+
+    task44 = Task(
+        user_id=1,
+        title="Standups",
+        description="on Zoom",
+        icon="group",
+        day="Sunday",
+        start_time="9:00",
+        end_time="9:30",
+        color="#fc9d03",
+    )
+
+    task45 = Task(
+        user_id=1,
+        title="Project",
+        description="Finish feature 1",
+        icon="code",
+        day="Sunday",
+        start_time="9:30",
+        end_time="10:30",
+        color="#fceb03",
+    )
+
+    task46 = Task(
+        user_id=1,
+        title="Appointment",
+        description="w/ Dr. Joe",
+        icon="event",
+        day="Sunday",
+        start_time="10:30",
+        end_time="11:30",
+        color="#56fc03",
+    )
+
+    task47 = Task(
+        user_id=1,
+        title="Lunch",
+        description="@ home",
+        icon="food",
+        day="Sunday",
+        start_time="11:30",
+        end_time="12:30",
+        color="#0335fc",
+    )
+
+    task48 = Task(
+        user_id=1,
+        title="Study",
+        description="Quizzes",
+        icon="alert",
+        day="Sunday",
+        start_time="12:30",
+        end_time="13:00",
+        color="#6703fc",
+    )
+
+    task49 = Task(
+        user_id=1,
+        title="DS&A",
+        description="Leetcode",
+        icon="tree",
+        day="Sunday",
+        start_time="13:00",
+        end_time="14:00",
+        color="#c203fc",
+    )
+
+    ss1 = StudySession(
+        user_id=1,
+        num_correct=8,
+        num_incorrect=2,
+        out_of=10,
+        time_spent="0 hours, 45 minutes, 25 seconds",
+        date_created=datetime.now(),
+        session_type="Flash Cards",
+        category="General"
+    )
+
+    ss2 = StudySession(
+        user_id=1,
+        num_correct=12,
+        num_incorrect=3,
+        out_of=15,
+        time_spent="0 hours, 30 minutes, 50 seconds",
+        date_created=datetime.now(),
+        session_type="Quizzes",
+        category="JavaScript"
+    )
+
+    ss3 = StudySession(
+        user_id=1,
+        num_correct=20,
+        num_incorrect=0,
+        out_of=20,
+        time_spent="1 hours, 5 minutes, 05 seconds",
+        date_created=datetime.now(),
+        session_type="Flash Cards",
+        category="Python"
     )
 
     db.session.add_all([demo, marnie, bobbie])
@@ -5611,8 +6172,13 @@ def seed_users():
                         wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9, wd10,
                         gd1, gd2, gd3, gd4, gd5, gd6, gd7, gd8, gd9, gd10,
                         ml1, ml2, ml3, ml4, ml5, ml6, ml7, ml8, ml9, ml10])
-    db.session.add(task1)
+    db.session.add_all([task1, task2, task3, task4, task5, task6, task7, task8, task9, task10,
+                        task11, task12, task13, task14, task15, task16, task17, task18, task19, task20,
+                        task21, task22, task23, task24, task25, task26, task27, task28, task29, task30,
+                        task31, task32, task33, task34, task35, task36, task37, task38, task39, task40,
+                        task41, task42, task43, task44, task45, task46, task47, task48, task49])
 
+    db.session.add_all([ss1, ss2, ss3])
 
     db.session.commit()
 

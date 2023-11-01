@@ -115,47 +115,45 @@ const Quiz = () => {
     return(
         <Box sx={{ display: 'flex' }}>
             <NavDrawer page={'Trivia'} />
-        <Box component="main"
-          sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
-            marginTop: "70px"
-          }}>
-        <div id='quiz-wrapper'>
-            {!isLoaded && (
-                <LoadingScreen />
-            )}
-            {isLoaded && qArr !== undefined && (
-                <section>
-
-                <section id='quiz-header'>
-                    <h1>{quiz?.title}</h1>
-                </section>
-                <section>
-                {qArr?.length > 0 && qArr.map((q) => (
-                    <>
-                        <QuizQuestion hasSubmitted={hasSubmitted} key={q.id} questionData={q} />
-                    </>
-                    ))}
-                </section>
-                <section style={{ "display": "flex", "justifyContent": "center", "margin": "50px 0px 20px 0px" }}>
-                    <Button variant="contained" onClick={handleSubmit}>Submit</Button>
-                </section>
-                {hasSubmitted && (
-                    <section style={{ "display": "flex", "justifyContent": "center" }}>
-                        <h2>{resStarter} You got {result} correct!</h2>
-                    </section>
-                )}
-                </section>
-             )}
-
-        </div>
-          </Box>
+            <Box component="main"
+            sx={{
+                backgroundColor: (theme) =>
+                theme.palette.mode === 'light'
+                    ? theme.palette.grey[100]
+                    : theme.palette.grey[900],
+                flexGrow: 1,
+                height: '100vh',
+                overflow: 'auto',
+                marginTop: "70px"
+            }}>
+                <div id='quiz-wrapper'>
+                    {!isLoaded && (
+                        <LoadingScreen />
+                    )}
+                    {isLoaded && qArr !== undefined && (
+                        <section>
+                            <section id='quiz-header'>
+                                <h1>{quiz?.title}</h1>
+                            </section>
+                            <section>
+                                {qArr?.length > 0 && qArr.map((q) => (
+                                    <>
+                                        <QuizQuestion hasSubmitted={hasSubmitted} key={q.id} questionData={q} />
+                                    </>
+                                ))}
+                            </section>
+                            <section style={{ "display": "flex", "justifyContent": "center", "margin": "50px 0px 20px 0px" }}>
+                                <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+                            </section>
+                            {hasSubmitted && (
+                                <section style={{ "display": "flex", "justifyContent": "center" }}>
+                                    <h2>{resStarter} You got {result} correct!</h2>
+                                </section>
+                            )}
+                        </section>
+                    )}
+                </div>
+            </Box>
         </Box>
     )
 

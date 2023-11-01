@@ -1319,8 +1319,6 @@ const ResourcesComponent = () => {
       emailjs.sendForm('service_6t9viah', 'template_zmurbwi', form.current, 'c5YoRG65yaZNI8XIT')
       .then((result) => {
         reset()
-      }, (error) => {
-        console.log(error.text)
       }).then(() => {
         handleClose()
       })

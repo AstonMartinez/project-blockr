@@ -2,7 +2,7 @@ import './DailyTrivia.css';
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
-import { useHistory, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import { fetchAllAvailable, fetchAllPublic, fetchByCategory, fetchUserQuizzes } from '../../store/quiz';
 import NavDrawer from '../NavDrawer';
@@ -12,7 +12,6 @@ import CreateIcon from '@mui/icons-material/Create';
 
 const DailyTrivia = () => {
     const dispatch = useDispatch()
-    const history = useHistory()
 
     const [filter, setFilter] = React.useState('All Public')
 
@@ -121,7 +120,7 @@ const DailyTrivia = () => {
             dispatch(fetchByCategory("SQL"))
 
         }
-    }, [dispatch])
+    }, [dispatch, filter])
 
 
     return (
@@ -183,7 +182,7 @@ const DailyTrivia = () => {
                     <section>
                         <div id='quiz-options-holder'>
                             {quizArr.length && quizArr.map(q => (
-                                <QuizCard quiz={q} filter={filter} />
+                                <QuizCard key={q.id} quiz={q} filter={filter} />
                             ))}
                         </div>
                     </section>

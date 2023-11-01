@@ -1,12 +1,8 @@
 import './FlashCards.css'
-import Card from '@mui/material/Card'
 import * as React from 'react'
 import Box from '@mui/material/Box';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardSets, fetchAvailableSets, fetchUserSets, fetchSetByCategory } from '../../store/cards';
@@ -17,7 +13,6 @@ import SetCard from './SetCard';
 
 const FlashCards = () => {
   const dispatch = useDispatch()
-  const history = useHistory()
 
   const [filter, setFilter] = React.useState('All Public')
 
@@ -126,7 +121,7 @@ useEffect(() => {
   dispatch(fetchSetByCategory("SQL"))
 }
 
-}, [dispatch])
+}, [dispatch, filter])
 
 
   return (
@@ -188,7 +183,7 @@ useEffect(() => {
             <section id='fc-options-holder'>
               <div id='quiz-options-holder'>
                 {setsArr.length && setsArr.map(set => (
-                  <SetCard set={set} filter={filter} />
+                  <SetCard key={set.id} set={set} filter={filter} />
                 ))}
               </div>
             </section>

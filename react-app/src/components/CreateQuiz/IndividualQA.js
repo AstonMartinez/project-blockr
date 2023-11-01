@@ -19,6 +19,7 @@ const IndividualQuestion = () => {
                     value={question}
                     placeholder="Question (i.e., 2 + 2 = ?)"
                     onChange={(e) => setQuestion(e.target.value)}
+                    required
                 />
             </section>
             <section id='question-answer-opt-holder'>
@@ -34,6 +35,7 @@ const IndividualQuestion = () => {
                             value={answerOne}
                             placeholder="Option one"
                             onChange={(e) => setAnswerOne(e.target.value)}
+                            required
                         />
                     </div>
                     <div>
@@ -43,6 +45,7 @@ const IndividualQuestion = () => {
                             value={answerTwo}
                             placeholder="Option two"
                             onChange={(e) => setAnswerTwo(e.target.value)}
+                            required
                         />
                     </div>
                     <div className='right-wrong-icon-holder'>
@@ -81,7 +84,7 @@ const IndividualQuestion = () => {
             </section>
             <section id='card-solution-holder'>
                 <span style={{ "fontWeight": "bold" }}>Solution: </span>
-                <input id='solutions' style={{ "border": "none", "textAlign": "center", "fontSize": "15px" }} value={solution} disabled="true"></input>
+                <input id='solutions' style={{ "border": "none", "textAlign": "center", "fontSize": "15px" }} value={solution} disabled="true" required></input>
             </section>
         </div>
     )

@@ -9,24 +9,26 @@ import LoadingScreen from "../LoadingScreen";
 const NewsPage = () => {
     const [newsData, setNewsData] = useState('')
     const [loaded, setLoaded] = useState(false)
+    const [fetchError, setFetchError] = useState('')
 
     const fetchNews = async () => {
 
-        const response = await fetch('https://api.currentsapi.services/v1/search?keywords=Programming&language=en&apiKey=04_KVypNdOPrQN72jq6kWvw5lnxzUWYKHvh2lFknQfKXzKM3')
+        const response = await fetch('https://api.currentsapi.services/v1/search?keywords=Programming&language=en&apiKey=04_KVypNdOPrQN72jq6kWvw5lnxzUWYKHvh2lFknQfKXzKM3',
+        {
+            method: "GET",
+            mode: 'no-cors'
+        })
 
         if(response.ok) {
             const data = await response.json()
             setNewsData(data.news)
             setLoaded(true)
+            return
+        } else {
+            setFetchError("Oopsies! Currents News API experienced a server issue during fetching. Check back later!")
+            setLoaded(true)
+            return
         }
-
-        // const response = await fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=69a664a8204544579e5d5b80d11a8ccc')
-        // if (response.ok) {
-        //     const data = await response.json()
-        //     setNewsData(data.articles)
-        //     setLoaded(true)
-        //     console.log(newsData)
-        // }
     }
 
     useEffect(() => {
@@ -56,7 +58,10 @@ const NewsPage = () => {
                         <h1>What's Happening In Tech</h1>
                     </div>
                     <div>
-                        {loaded && newsData?.map(article => (
+                        {fetchError && (
+                            <h3>{fetchError}</h3>
+                        )}
+                        {(!fetchError && loaded) && newsData?.map(article => (
                             <ArticlePreview article={article} />
                         ))}
                     </div>

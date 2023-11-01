@@ -1,5 +1,5 @@
-from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from flask import Blueprint, request
+from app.models import db
 from app.models.card_sets import CardSets
 from app.models.card_questions import CardQuestion
 from app.forms.new_card_set import NewCardSetForm
@@ -141,7 +141,7 @@ def get_all_available_sets():
 @card_routes.route('/sets/user-sets')
 def get_user_sets():
     result = {}
-    user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id)
+    user_sets = CardSets.query.filter(CardSets.creator_id == current_user.id).all()
 
     for card_set in user_sets:
         set_dict = card_set.to_dict()

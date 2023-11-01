@@ -1,13 +1,10 @@
-from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from flask import Blueprint, request
+from app.models import db
 from app.models.task import Task
 from app.forms.new_task_form import NewTaskForm
-from app.forms.update_task_form import UpdateTaskForm
-from flask_login import current_user, login_user, logout_user, login_required
-from datetime import datetime
+from flask_login import current_user, login_required
 from app.api.auth_routes import validation_errors_to_error_messages
 from sqlalchemy import and_
-from datetime import time
 
 task_routes = Blueprint('tasks', __name__)
 
@@ -20,29 +17,29 @@ def delete_task(id):
 
 @task_routes.route('/<int:id>/update', methods=["PUT"])
 def update_task(id):
-    form = UpdateTaskForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        task = Task.query.get(id)
-        title = request.json['title']
-        description = request.json['description']
-        day = request.json['day']
-        icon = request.json['icon']
-        color = request.json['color']
-        start_time = request.json['start_time']
-        end_time = request.json['end_time']
+    # form = UpdateTaskForm()
+    # form['csrf_token'].data = request.cookies['csrf_token']
+    # if form.validate_on_submit():
+    task = Task.query.get(id)
+    title = request.json['title']
+    description = request.json['description']
+    day = request.json['day']
+    icon = request.json['icon']
+    color = request.json['color']
+    start_time = request.json['start_time']
+    end_time = request.json['end_time']
 
-        task['title'] = title
-        task['description'] = description
-        task['day'] = day
-        task['icon'] = icon
-        task['color'] = color
-        task['start_time'] = start_time
-        task['end_time'] = end_time
+    task.title = title
+    task.description = description
+    task.day = day
+    task.icon = icon
+    task.color = color
+    task.start_time = start_time
+    task.end_time = end_time
 
-        db.session.commit()
+    db.session.commit()
 
-    return {'errors': validation_errors_to_error_messages(form.errors)}
+    return task.to_dict()
 
 
 @task_routes.route('/new', methods=["POST"])

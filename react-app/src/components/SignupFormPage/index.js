@@ -30,8 +30,6 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function SignupFormPage() {
@@ -147,8 +145,6 @@ export default function SignupFormPage() {
                   Already have an account? Sign in
                 </Link>
               </Box>
-              {/* <Grid item>
-              </Grid> */}
             </Grid>
           </Box>
         </Box>

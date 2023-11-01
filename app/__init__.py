@@ -10,7 +10,6 @@ from .api.auth_routes import auth_routes
 from .api.card_sets import card_routes
 from .api.question_routes import question_routes
 from .api.quiz_routes import quiz_routes
-from .api.user_stats_routes import stats_routes
 from .api.study_session_routes import study_session_routes
 from .api.task_routes import task_routes
 from .api.card_q_routes import card_q_routes
@@ -38,7 +37,6 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(card_routes, url_prefix='/api/cards')
 app.register_blueprint(quiz_routes, url_prefix='/api/trivia')
 app.register_blueprint(question_routes, url_prefix='/api/quizzes')
-app.register_blueprint(stats_routes, url_prefix='/api/stats')
 app.register_blueprint(study_session_routes, url_prefix='/api/study')
 app.register_blueprint(task_routes, url_prefix='/api/tasks')
 app.register_blueprint(card_q_routes, url_prefix='/api/flashCards')

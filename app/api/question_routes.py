@@ -1,8 +1,6 @@
-from flask import Blueprint, jsonify, session, request
-from app.models import User, db
-from app.models.trivia_quiz import TriviaQuiz
+from flask import Blueprint, request
+from app.models import db
 from app.models.trivia_questions import TriviaQuestion
-from flask_login import current_user, login_user, logout_user, login_required
 
 question_routes = Blueprint('questions', __name__)
 

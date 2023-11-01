@@ -37,20 +37,7 @@ import FormHelperText from '@mui/joy/FormHelperText';
 import { createTask, getByDate } from '../../store/tasks';
 import parseTime from './timefunctions';
 import Divider from '@mui/material/Divider';
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 800,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-    display: 'flex',
-    flexDirection: 'column'
-  };
+import TaskEditModal from './TaskUpdateDelete';
 
 const DailyPlanner = ({nowDay}) => {
     const dispatch = useDispatch()
@@ -87,6 +74,9 @@ const DailyPlanner = ({nowDay}) => {
     const [startTimeError, setStartTimeError] = useState(null)
     const [endTimeError, setEndTimeError] = useState(null)
     const [iconError, setIconError] = useState(null)
+
+    const [selectedTask, setSelectedTask] = useState(null)
+    const [openTaskModal, setOpenTaskModal] = useState(false)
 
     function compare( a, b ) {
         const startSplitA = a.start_time.split(":")
@@ -192,8 +182,8 @@ const DailyPlanner = ({nowDay}) => {
             aria-describedby="modal-modal-description"
             sx={{height: "80%", marginTop: "70px"}}
         >
-            <Box sx={style}>
-                <Box sx={{ display: 'flex', height: '100%' }}>
+            <Box id='add-task-modal-box' sx={{bgcolor: 'background.paper'}}>
+                <Box id='add-task-box-2' sx={{ display: 'flex', height: '100%' }}>
                     <Box sx={{ width: '50%' }}>
                         <FormControl error={title === null && hasSubmitted ? true : false}>
                             <label className='task-input-label'>Task Title:</label>
@@ -240,7 +230,7 @@ const DailyPlanner = ({nowDay}) => {
                         <label id='task-color-label' className='task-input-label'>Task Color:</label>
                         <Input className='task-input' type="color" value={color} onChange={(e) => setColor(e.target.value)} />
                     </Box>
-                    <Divider orientation='vertical' flexItem />
+                    <Divider id='create-task-divider' orientation='vertical' flexItem />
                     <Box sx={{width: '50%', 'padding': '0 15px', 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'space-between'}}>
                         <label className='task-input-label'>Task Icon:</label>
                         <Box sx={{ 'height': "138px", 'marginBottom': '0', 'paddingBottom': '0', 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'space-between'}}>
@@ -560,7 +550,7 @@ const DailyPlanner = ({nowDay}) => {
                         </Box>
                         <Box sx={{'paddingBottom': '0', 'marginTop': '8px'}}>
                             <FormControl error={startTime === null && hasSubmitted ? true : false}>
-                                <label className='task-input-label'>Choose a Start Time:</label>
+                                <label className='task-input-label'>Start Time:</label>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <TimeField value={startTime} onChange={(newValue) => setStartTime(newValue)} />
                                 </LocalizationProvider>
@@ -571,7 +561,7 @@ const DailyPlanner = ({nowDay}) => {
                                 )}
                             </FormControl>
                             <FormControl error={endTime === null && hasSubmitted ? true : false}>
-                            <label className='task-input-label'>Choose an End Time:</label>
+                            <label className='task-input-label'>End Time:</label>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <TimeField value={endTime} onChange={(newValue) => setEndTime(newValue)} />
                                 </LocalizationProvider>
@@ -585,9 +575,9 @@ const DailyPlanner = ({nowDay}) => {
                     </Box>
                 </Box>
                 <Box sx={{ margin: '12px 0' }}>
-                    <Divider />
+                    <Divider id='create-task-divider' />
                 </Box>
-                <Box sx={{height: '50px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
+                <Box id='add-task-submit-holder' sx={{height: '50px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
                     <Button className='task-submit-btn' onClick={handleTaskSubmit} type="submit" variant="contained">Submit</Button>
                 </Box>
             </Box>
@@ -611,7 +601,10 @@ const DailyPlanner = ({nowDay}) => {
                                     {parseTime(task.start_time, task.end_time)}
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot sx={{backgroundColor: `${task.color}`}}>
+                                    <TimelineDot sx={{backgroundColor: `${task.color}`}} onClick={() => {
+                                        setSelectedTask(task)
+                                        setOpenTaskModal(true)
+                                        }}>
                                         {task.icon === "food" && (
                                             <FastfoodIcon />
                                         )}
@@ -676,6 +669,16 @@ const DailyPlanner = ({nowDay}) => {
                     ))}
                 </Timeline>
             </div>
+            {openTaskModal && (
+                <TaskEditModal
+                    task={selectedTask}
+                    nowDay={nowDay}
+                    onClose={() => {
+                        // setSelectedTask(null)
+                        setOpenTaskModal(false)
+                    }}
+                />
+            )}
         </div>
     )
 }

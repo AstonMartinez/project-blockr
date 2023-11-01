@@ -75,7 +75,6 @@ const CardSet = () => {
             category: category
         }
 
-        // console.log(studySession)
         await dispatch(createNewSession(studySession))
         setHasSubmitted(true)
         return

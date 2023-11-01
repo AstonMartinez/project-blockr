@@ -3,7 +3,6 @@ import { NavLink, useHistory } from "react-router-dom";
 import { fetchMaterials } from '../../store/materials';
 import { useDispatch, useSelector } from "react-redux";
 import Title from './Title';
-import Button from "@mui/joy/Button";
 
 const MaterialsDisplay = () => {
     const history = useHistory()

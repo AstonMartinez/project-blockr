@@ -78,6 +78,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                     placeholder="Question (i.e., 2 + 2 = ?)"
                     onChange={(e) => setQuestion(e.target.value)}
                     disabled={isEditing ? false : true}
+                    required
                 />
             </section>
             <section id='question-answer-opt-holder'>
@@ -100,6 +101,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                             placeholder="Option one"
                             onChange={(e) => setAnswerOne(e.target.value)}
                             disabled={isEditing ? false : true}
+                            required
                         />
                     </div>
                     <div>
@@ -110,6 +112,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
                             placeholder="Option two"
                             onChange={(e) => setAnswerTwo(e.target.value)}
                             disabled={isEditing ? false : true}
+                            required
                         />
                     </div>
                     <div className='right-wrong-icon-holder'>
@@ -168,7 +171,7 @@ const UpdateIndividualQA = ({ quizId, questionData }) => {
             </section>
             <section id='update-card-solution-holder'>
                 <span style={{ 'fontWeight': 'bold' }}>Solution: </span>
-                <input id='update-solutions' style={{ 'border': 'none', 'textAlign': 'center', 'fontSize': '15px' }} value={solution} disabled='true'></input>
+                <input id='update-solutions' style={{ 'border': 'none', 'textAlign': 'center', 'fontSize': '15px' }} value={solution} disabled='true' required></input>
             </section>
             <section>
                 <Button variant='contained' onClick={deleteQuestion}>Delete Question</Button>

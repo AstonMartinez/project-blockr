@@ -14,6 +14,7 @@ const IndividualQ = () => {
                     name='front'
                     value={front}
                     onChange={(e) => setFront(e.target.value)}
+                    required
                 />
             </div>
             <div style={{ "display": "flex", "flexDirection": "column" }}>
@@ -25,6 +26,7 @@ const IndividualQ = () => {
                     name='back'
                     value={back}
                     onChange={(e) => setBack(e.target.value)}
+                    required
                 />
             </div>
         </section>

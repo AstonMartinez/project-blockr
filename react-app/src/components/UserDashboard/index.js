@@ -48,7 +48,7 @@ export default function UserDashboard() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [editingBio, setEditingBio] = React.useState(sessionUser.bio)
+  const [editingBio, setEditingBio] = React.useState(sessionUser?.bio)
 
   if(!sessionUser) {
     history.push('/login')

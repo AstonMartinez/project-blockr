@@ -106,10 +106,7 @@ export default function LoginFormPage() {
   };
 
   const handleDemoLogin = async () => {
-    const data = await dispatch(login("demo@aa.io", "password"))
-    if (data) {
-      setErrors(data)
-    }
+    await dispatch(login("demo@aa.io", "password"))
   }
 
   return (

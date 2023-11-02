@@ -1,10 +1,22 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import User
+from app.models import db, User
 from app.models.card_sets import CardSets
 from app.models.trivia_quiz import TriviaQuiz
 
 user_routes = Blueprint('users', __name__)
+
+@user_routes.route('/bio/edit', methods=["PUT"])
+@login_required
+def edit_user_bio():
+    user = User.query.get(current_user.id)
+
+    if user:
+        new_bio = request.json['bio']
+        user.bio = new_bio
+        db.session.commit()
+
+    return user.to_dict()
 
 @user_routes.route('/materials')
 @login_required

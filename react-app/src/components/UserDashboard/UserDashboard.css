@@ -6,6 +6,10 @@
         display: none;
         visibility: hidden;
     }
+
+    #edit-bio-cont {
+
+    }
 }
 
 @media screen and (min-width: 416px) {
@@ -16,6 +20,55 @@
     #materials-display-wrapper {
         visibility: visible;
     }
+
+    #edit-bio-cont {
+        font-family: 'Roboto Condensed', sans-serif;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        border: 2px solid #000;
+        box-shadow: 24;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        overflow-y: auto;
+        text-align: center;
+        color: white;
+        border: 5px solid transparent;
+        border-image: linear-gradient(to bottom right,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+        );
+        border-image-slice: 1;
+        border-radius: 5px;
+    }
+
+}
+
+#db-bio-input {
+    width: 300px;
+    height: 200px;
+    resize: none;
+    padding: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    border: .5px solid lightgray;
+}
+
+#bio-textarea-div {
+    margin-bottom: 5px;
 }
 
 .db-task-disp-buttons {

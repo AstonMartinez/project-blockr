@@ -13,7 +13,11 @@ import TaskDisplay from './Tasks';
 import NavDrawer from '../NavDrawer';
 import MaterialsDisplay from './Materials';
 import StudySessionDisplay from './StudySessionDisplay';
-
+import CreateIcon from '@mui/icons-material/Create';
+import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
+import Input from '@mui/joy/Input';
+import { editUserBio } from '../../store/session';
 
 const dayConvert = (day) => {
   if(day === 'Mon') {
@@ -40,6 +44,12 @@ export default function UserDashboard() {
   const history = useHistory()
   const sessionUser = useSelector(state => state.session.user)
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const [editingBio, setEditingBio] = React.useState(sessionUser.bio)
+
   if(!sessionUser) {
     history.push('/login')
   }
@@ -50,6 +60,13 @@ export default function UserDashboard() {
     React.useEffect(() => {
       dispatch(getByDate(dayOfWeek))
     }, [dispatch, dayOfWeek])
+
+  const handleBioEdit = async () => {
+    const bioData = { bio: editingBio }
+    dispatch(editUserBio(bioData))
+    handleClose()
+    return
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -106,7 +123,38 @@ export default function UserDashboard() {
                       </div>
                       <div style={{ "height": "98%", "borderLeft": "1px solid lightgray" }}></div>
                       <div style={{ "width": "48%", "height": "28vh", "maxHeight": "200px", "overflow": "auto" }}>
-                        <h5>About Me:</h5>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                          <h5>About Me:</h5>
+                          <Button onClick={handleOpen}>
+                            <CreateIcon sx={{height: '18px'}} />
+                          </Button>
+                          <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                            sx={{height: "80%", marginTop: "70px"}}
+                          >
+                            <Box id='edit-bio-cont' sx={{bgcolor: 'black'}}>
+                              <div>
+                                <div>
+                                  <h2>Edit or Add Bio</h2>
+                                </div>
+                                <div id='bio-textarea-div'>
+                                  <textarea
+                                    id='db-bio-input'
+                                    value={editingBio}
+                                    onChange={(e) => setEditingBio(e.target.value)}
+                                    placeholder="Add your bio here..."
+                                  />
+                                </div>
+                                <div>
+                                  <Button sx={{bgcolor: 'purple'}} variant="contained" onClick={handleBioEdit}>Submit</Button>
+                                </div>
+                              </div>
+                            </Box>
+                          </Modal>
+                        </div>
                         <p style={{ "fontSize": "14px" }}>{sessionUser?.bio}</p>
                       </div>
                     </div>

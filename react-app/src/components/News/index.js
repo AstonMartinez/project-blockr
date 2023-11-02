@@ -13,19 +13,16 @@ const NewsPage = () => {
 
     const fetchNews = async () => {
 
-        const response = await fetch('https://api.currentsapi.services/v1/search?keywords=Programming&language=en&apiKey=04_KVypNdOPrQN72jq6kWvw5lnxzUWYKHvh2lFknQfKXzKM3',
-        {
-            method: "GET",
-            mode: 'no-cors'
-        })
+        const response = await fetch('https://newsapi.org/v2/everything?q=software+engineering&apiKey=69a664a8204544579e5d5b80d11a8ccc')
 
         if(response.ok) {
             const data = await response.json()
-            setNewsData(data.news)
+            setNewsData(data.articles)
             setLoaded(true)
             return
         } else {
-            setFetchError("Oopsies! Currents News API experienced a server issue during fetching. Check back later!")
+            const errors = await response.json()
+            setFetchError(errors)
             setLoaded(true)
             return
         }
@@ -61,7 +58,7 @@ const NewsPage = () => {
                         {fetchError && (
                             <h3>{fetchError}</h3>
                         )}
-                        {(!fetchError && loaded) && newsData?.map(article => (
+                        {(!fetchError && loaded && newsData) && newsData?.map(article => (
                             <ArticlePreview article={article} />
                         ))}
                     </div>

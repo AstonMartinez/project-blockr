@@ -264,7 +264,7 @@ const LearnMore = () => {
                                 <div className='lm-paragraph-holder'>
                                     <p>
                                         Our "News" page is your go-to source for staying up-to-date with the latest programming-related developments.
-                                        By harnessing the power of the Currents API, we bring you real-time programming news articles that keep you
+                                        By harnessing the power of the News API, we bring you real-time programming news articles that keep you
                                         informed about industry trends, innovations, and insights. Whether you're a seasoned developer, a tech enthusiast,
                                         or a curious learner, this page offers a valuable resource to broaden your knowledge and awareness. With the "News"
                                         page, you can be at the forefront of the ever-evolving tech world, ensuring you're well-informed and ready to tackle

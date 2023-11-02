@@ -50,18 +50,6 @@ def get_session_by_category(category):
             result[session.id] = session.to_dict()
     return result
 
-@study_session_routes.route('/<int:id>', methods=["DELETE"])
-@login_required
-def delete_study_session(id):
-    """
-    Deletes an existing study session.
-    """
-    session = StudySession.query.get(id)
-    if session:
-        db.session.delete(session)
-        db.session.commit()
-    return session.to_dict()
-
 @study_session_routes.route('/new', methods=["POST"])
 @login_required
 def new_study_session():

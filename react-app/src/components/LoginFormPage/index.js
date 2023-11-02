@@ -94,6 +94,7 @@ export default function LoginFormPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [isDemo, setIsDemo] = useState(false)
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -106,6 +107,8 @@ export default function LoginFormPage() {
   };
 
   const handleDemoLogin = async () => {
+    setErrors('')
+    setIsDemo(true)
     await dispatch(login("demo@aa.io", "password"))
   }
 
@@ -180,7 +183,7 @@ export default function LoginFormPage() {
               >
                 Sign In
               </Button>
-                {errors.length > 0 && errors.map((err) => (
+              {isDemo === false && errors.map((err) => (
                   <p style={{color: "red"}}>{err}</p>
                 ))}
               {/* <Grid item xs> */}

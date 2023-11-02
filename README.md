@@ -14,6 +14,8 @@
     <br />
     <a href="https://github.com/AstonMartinez/project-blockr"><strong>Explore the docs »</strong></a>
     <br />
+    <a href="https://project-blockr.onrender.com"><strong>Visit the Live Site »</strong></a>
+    <br />
     <br />
     <a href="https://github.com/AstonMartinez/project-blockr/issues">Report Bug</a>
     ·

@@ -8,6 +8,7 @@ import quizReducer from './quiz';
 import questionReducer from './triviaQuestions';
 import materialsReducer from './materials';
 import flashCardReducer from './indivCard';
+import applicationsReducer from './applications';
 
 const rootReducer = combineReducers({
   session,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   quizzes: quizReducer,
   questions: questionReducer,
   materials: materialsReducer,
-  indivCards: flashCardReducer
+  indivCards: flashCardReducer,
+  applications: applicationsReducer,
 });
 
 

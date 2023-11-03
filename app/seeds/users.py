@@ -2,12 +2,12 @@ from app.models import db, User, environment, SCHEMA
 from app.models.trivia_questions import TriviaQuestion
 from app.models.card_sets import CardSets
 from app.models.card_questions import CardQuestion
-from app.models.user_stats import UserStats
 from app.models.trivia_quiz import TriviaQuiz
 from app.models.task import Task
 from app.models.study_session import StudySession
 from sqlalchemy.sql import text
 from datetime import time, datetime
+from app.models.user_applications import Application
 
 
 # Adds a demo user, you can add other users here if you want
@@ -6193,6 +6193,20 @@ def seed_users():
     )
 
     db.session.add_all([ss1, ss2, ss3])
+    db.session.commit()
+
+    app1 = Application(
+        user_id=1,
+        company="Example Company",
+        job_title="Example Job Title",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Applied"
+    )
+
+    db.session.add(app1)
     db.session.commit()
 
 

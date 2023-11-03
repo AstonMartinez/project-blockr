@@ -17,7 +17,6 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.String(500))
 
     cards = db.relationship('CardSets', back_populates='user')
-    stats = db.relationship('UserStats', back_populates='user')
 
     @property
     def password(self):

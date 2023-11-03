@@ -6206,7 +6206,106 @@ def seed_users():
         status="Applied"
     )
 
-    db.session.add(app1)
+    app2 = Application(
+        user_id=1,
+        company="Meta",
+        job_title="Junior Software Engineer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Applied"
+    )
+
+    app3 = Application(
+        user_id=1,
+        company="Lego",
+        job_title="Front End Developer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Applied"
+    )
+
+    app4 = Application(
+        user_id=1,
+        company="Flexpa",
+        job_title="Back End Developer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Applied"
+    )
+
+    app5 = Application(
+        user_id=1,
+        company="Jobot",
+        job_title="Web Developer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Interviewed"
+    )
+
+    app6 = Application(
+        user_id=1,
+        company="Cyberjin",
+        job_title="AI Engineer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Interviewed"
+    )
+
+    app7 = Application(
+        user_id=1,
+        company="QA Wolf",
+        job_title="QA Engineer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Rejected"
+    )
+
+    app8 = Application(
+        user_id=1,
+        company="Knock",
+        job_title="Software Engineering Intern",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Rejected"
+    )
+
+    app9 = Application(
+        user_id=1,
+        company="EMPEQ",
+        job_title="Jr Software Developer",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Received Offer"
+    )
+
+    app10 = Application(
+        user_id=1,
+        company="Workback",
+        job_title="Software Engineering Intern",
+        job_url="exampleurl.com",
+        salary=1000000,
+        date_applied=datetime.now(),
+        location="Remote",
+        status="Received Offer"
+    )
+
+    db.session.add_all([app1, app2, app3, app4, app5, app6, app7, app8, app9, app10])
     db.session.commit()
 
 

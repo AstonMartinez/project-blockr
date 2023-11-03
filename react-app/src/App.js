@@ -20,6 +20,7 @@ import UpdateSet from "./components/UpdateSet";
 import NewsPage from "./components/News";
 import AboutUs from "./components/AboutUs";
 import LearnMore from "./components/LearnMore";
+import Applications from "./components/Applications";
 
 function App() {
   const dispatch = useDispatch();
@@ -88,6 +89,9 @@ function App() {
           </Route>
           <Route exact path='/dashboard'>
             <UserDashboard />
+          </Route>
+          <Route exact path='/applications'>
+            <Applications />
           </Route>
         </Switch>
       )}

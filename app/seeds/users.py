@@ -6322,7 +6322,6 @@ def undo_users():
         db.session.execute(f"TRUNCATE table {SCHEMA}.study_sessions RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.tasks RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.trivia_quizzes RESTART IDENTITY CASCADE;")
-        db.session.execute(f"TRUNCATE table {SCHEMA}.user_stats RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.card_questions RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.trivia_questions RESTART IDENTITY CASCADE;")
     else:
@@ -6331,7 +6330,6 @@ def undo_users():
         db.session.execute(text("DELETE FROM study_sessions"))
         db.session.execute(text("DELETE FROM tasks"))
         db.session.execute(text("DELETE FROM trivia_quizzes"))
-        db.session.execute(text("DELETE FROM user_stats"))
         db.session.execute(text("DELETE FROM card_questions"))
         db.session.execute(text("DELETE FROM trivia_questions"))
 

@@ -13,6 +13,7 @@ from .api.quiz_routes import quiz_routes
 from .api.study_session_routes import study_session_routes
 from .api.task_routes import task_routes
 from .api.card_q_routes import card_q_routes
+from .api.application_routes import application_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -40,6 +41,7 @@ app.register_blueprint(question_routes, url_prefix='/api/quizzes')
 app.register_blueprint(study_session_routes, url_prefix='/api/study')
 app.register_blueprint(task_routes, url_prefix='/api/tasks')
 app.register_blueprint(card_q_routes, url_prefix='/api/flashCards')
+app.register_blueprint(application_routes, url_prefix='/api/applications')
 db.init_app(app)
 Migrate(app, db)
 

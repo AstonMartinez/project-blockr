@@ -18,6 +18,7 @@ class Application(db.Model):
     job_description = db.Column(db.String)
     status = db.Column(db.String)
     notes = db.Column(db.String)
+    draggable_id = db.Column(db.Integer)
 
     def to_dict(self):
         return {
@@ -30,5 +31,6 @@ class Application(db.Model):
             'location': self.location,
             'job_description': self.job_description,
             'status': self.status,
-            'notes': self.notes
+            'notes': self.notes,
+            'draggable_id': self.draggable_id
         }

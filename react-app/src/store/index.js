@@ -9,6 +9,7 @@ import questionReducer from './triviaQuestions';
 import materialsReducer from './materials';
 import flashCardReducer from './indivCard';
 import applicationsReducer from './applications';
+import columnsReducer from './appColumns';
 
 const rootReducer = combineReducers({
   session,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   materials: materialsReducer,
   indivCards: flashCardReducer,
   applications: applicationsReducer,
+  columns: columnsReducer,
 });
 
 

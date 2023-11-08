@@ -1,20 +1,16 @@
 """empty message
 
-Revision ID: e9d3d8df7610
-Revises:
-Create Date: 2023-11-03 15:15:27.456158
+Revision ID: 9a4acc41c0fb
+Revises: 
+Create Date: 2023-11-08 16:32:33.247381
 
 """
 from alembic import op
 import sqlalchemy as sa
 
-import os
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
-
 
 # revision identifiers, used by Alembic.
-revision = 'e9d3d8df7610'
+revision = '9a4acc41c0fb'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -49,6 +45,13 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    op.create_table('applied_applications',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('apps_list', sa.String(), nullable=True),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
     op.create_table('card_sets',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('creator_id', sa.Integer(), nullable=False),
@@ -57,6 +60,27 @@ def upgrade():
     sa.Column('status', sa.String(length=100), nullable=True),
     sa.Column('category', sa.String(length=100), nullable=True),
     sa.ForeignKeyConstraint(['creator_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('interviewed_applications',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('apps_list', sa.String(), nullable=True),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('offered_applications',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('apps_list', sa.String(), nullable=True),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('rejected_applications',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('apps_list', sa.String(), nullable=True),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('study_sessions',
@@ -117,16 +141,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['quiz_id'], ['trivia_quizzes.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-
-    if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE applications SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE card_sets SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE study_sessions SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE tasks SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE trivia_quizzes SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE card_questions SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE trivia_questions SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
@@ -137,7 +151,11 @@ def downgrade():
     op.drop_table('trivia_quizzes')
     op.drop_table('tasks')
     op.drop_table('study_sessions')
+    op.drop_table('rejected_applications')
+    op.drop_table('offered_applications')
+    op.drop_table('interviewed_applications')
     op.drop_table('card_sets')
+    op.drop_table('applied_applications')
     op.drop_table('applications')
     op.drop_table('users')
     # ### end Alembic commands ###

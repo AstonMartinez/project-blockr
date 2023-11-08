@@ -8,6 +8,10 @@ from app.models.study_session import StudySession
 from sqlalchemy.sql import text
 from datetime import time, datetime
 from app.models.user_applications import Application
+from app.models.applied_column import AppliedApp
+from app.models.interviewed_column import InterviewedApp
+from app.models.offered_column import OfferedApp
+from app.models.rejected_column import RejectedApp
 
 
 # Adds a demo user, you can add other users here if you want
@@ -6305,7 +6309,32 @@ def seed_users():
         status="Received Offer"
     )
 
+
+
     db.session.add_all([app1, app2, app3, app4, app5, app6, app7, app8, app9, app10])
+    db.session.commit()
+
+    applied = AppliedApp(
+        user_id=1,
+        apps_list=f"{app1.id},{app2.id},{app3.id},{app4.id}"
+    )
+
+    interviewed = InterviewedApp(
+        user_id=1,
+        apps_list=f"{app5.id},{app6.id}"
+    )
+
+    rejected = RejectedApp(
+        user_id=1,
+        apps_list=f"{app7.id},{app8.id}"
+    )
+
+    offered = OfferedApp(
+        user_id=1,
+        apps_list=f"{app9.id},{app10.id}"
+    )
+
+    db.session.add_all([applied, interviewed, rejected, offered])
     db.session.commit()
 
 

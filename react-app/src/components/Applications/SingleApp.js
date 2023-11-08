@@ -67,7 +67,8 @@ const formatDate = (date) => {
 }
 
 
-const SingleApp = ({ appData }) => {
+const SingleApp = ({ appData, colData }) => {
+    console.log("COLUMN DATA: ", colData)
     const [open, setOpen] = useState(false);
     const [company, setCompany] = useState(appData.company)
     const [jobTitle, setJobTitle] = useState(appData.job_title)
@@ -86,6 +87,18 @@ const SingleApp = ({ appData }) => {
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const handleAppDetailsUpdate = () => {
+
+    }
+
+    const handleAppStatusUpdate = () => {
+
+    }
+
+    const handleAppDelete = () => {
+
+    }
 
     return (
         <>

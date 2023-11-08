@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Earth Orbiter';
+    src: url(/Users/kristamartinez/Desktop/project-blockr/react-app/src/static/fonts/earthorbiter.ttf) format(regular);
+}
+
 @media screen and (max-width: 415px) {
     #landing-page-outer {
         background-color: black;
@@ -7,7 +12,7 @@
         align-items: center;
         flex-direction: column;
         color: white;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Comfortaa', sans-serif;
         padding-bottom: 50px;
         overflow-x: hidden;
     }
@@ -22,7 +27,7 @@
 
     .lp-text-holder {
         width: 380px;
-        text-align: center;
+        text-align: justify;
     }
 }
 
@@ -34,13 +39,13 @@
         align-items: center;
         flex-direction: column;
         color: white;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Comfortaa', sans-serif;
         padding-bottom: 50px;
     }
 
     .lp-text-holder {
         width: 700px;
-        text-align: center;
+        text-align: justify;
     }
 }
 
@@ -66,6 +71,7 @@
 
 #topbarouter > a {
     text-decoration: none;
+    font-family: 'Comfortaa', sans-serif;
     color: black;
     border: 3px solid transparent;
 }
@@ -83,4 +89,8 @@
 
 #lp-logo-holder {
     margin: -30px 0;
+}
+
+#lp-header-h1 {
+    font-family: 'Earth Orbiter';
 }

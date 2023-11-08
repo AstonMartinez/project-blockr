@@ -19,14 +19,14 @@ const LandingPage = () => {
             <div id='topbar'></div>
             <div id='landing-page-outer'>
                 <div id='landing-page-welcome' style={{ "marginBottom": "0" }}>
-                    <h1 style={{ "marginBottom": "0" }}>Welcome to ProjectBlockr!</h1>
+                    <h1 id='lp-header-h1' style={{ "marginBottom": "0" }}>Welcome to Project Blockr!</h1>
                 </div>
                 <section id='lp-logo-holder'>
                     <img src="https://i.ibb.co/0BKnXzX/projectblockrlogo.png" alt="projectblockrlogo" style={{"border": "0"}} />
                 </section>
                 <section>
                     <div className='lp-text-holder lp-p-and-span'>
-                        <h3>Welcome to Project Blockr, your ultimate learning and productivity companion on your coding journey! <span>&#128640;</span></h3>
+                        <h2>Welcome to Project Blockr, your ultimate learning and productivity companion on your coding journey! <span>&#128640;</span></h2>
                     </div>
                     <div className='lp-text-holder'>
                         <p>Are you eager to dive into the exciting world of coding but often find yourself overwhelmed by the endless stream of information and distractions? Look no further. Project Blockr is here to help you conquer the coding universe one block at a time. Our powerful platform empowers aspiring coders, beginners, and even seasoned programmers to unlock their full potential.</p>

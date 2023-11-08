@@ -41,12 +41,16 @@ const Applications = () => {
         })
     }, [dispatch])
 
-    setTimeout(() => {
-        setApplied(appliedApps)
-        setInterviewed(interviewedApps)
-        setReceivedOffer(offeredApps)
-        setRejected(rejectedApps)
-    }, 3000)
+    useEffect(() => {
+        setTimeout(() => {
+            setApplied(appliedApps)
+            setInterviewed(interviewedApps)
+            setReceivedOffer(offeredApps)
+            setRejected(rejectedApps)
+        }, 3000)
+    }, [])
+
+
 
     const onDragEndApplied = (result) => {
         if (!result.destination) return;
@@ -55,7 +59,6 @@ const Applications = () => {
          applied.splice(result.destination.index, 0, reorderedItem);
 
         setApplied(applied);
-        setToggle(!toggle)
     };
 
     const onDragEndInterviewed = (result) => {

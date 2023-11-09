@@ -9,8 +9,59 @@ from app.models.applied_column import AppliedApp
 from app.models.interviewed_column import InterviewedApp
 from app.models.offered_column import OfferedApp
 from app.models.rejected_column import RejectedApp
+from datetime import datetime
 
 application_routes = Blueprint('applications', __name__)
+
+@application_routes.route('/columns/switch', methods=["PUT"])
+def switch_columns():
+    old_column_name = request.json['old_column_name']
+    new_column_name = request.json['new_column_name']
+    app_id = request.json['app_id']
+
+    if old_column_name == "Applied":
+        old_column = AppliedApp.query.filter(AppliedApp.user_id == current_user.id).first()
+
+    elif old_column_name == "Interviewed":
+        old_column = InterviewedApp.query.filter(InterviewedApp.user_id == current_user.id).first()
+
+    elif old_column_name == "Rejected":
+        old_column = RejectedApp.query.filter(RejectedApp.user_id == current_user.id).first()
+
+    elif old_column_name == "Received Offer":
+        old_column = OfferedApp.query.filter(OfferedApp.user_id == current_user.id).first()
+
+    old_column_list = old_column.apps_list.split(",")
+    old_col_new_list = []
+    for entry in old_column_list:
+        if entry != str(app_id):
+            old_col_new_list.append(entry)
+
+    separator = ","
+    old_column.apps_list = separator.join(old_col_new_list)
+    db.session.commit()
+
+
+    if new_column_name == "Applied":
+        new_column = AppliedApp.query.filter(AppliedApp.user_id == current_user.id).first()
+
+    elif new_column_name == "Interviewed":
+        new_column = InterviewedApp.query.filter(InterviewedApp.user_id == current_user.id).first()
+
+    elif new_column_name == "Rejected":
+        new_column = RejectedApp.query.filter(RejectedApp.user_id == current_user.id).first()
+
+    elif new_column_name == "Received Offer":
+        new_column = OfferedApp.query.filter(OfferedApp.user_id == current_user.id).first()
+
+    new_column_list = new_column.apps_list.split(",")
+    new_column_list.append(str(app_id))
+    separator = ","
+    new_list = separator.join(new_column_list)
+    new_column.apps_list = new_list
+
+    db.session.commit()
+    return new_column.to_dict()
 
 @application_routes.route('/columns/<column>/update', methods=["PUT"])
 def update_column(column):
@@ -130,10 +181,24 @@ def create_application():
     if form.validate_on_submit():
         company = request.json['company']
         job_title = request.json['job_title']
-        deadline = request.json['deadline']
+
+        if request.json['deadline'] and request.json['deadline'] != '':
+            deadline = request.json['deadline']
+            deadline_split = deadline.split("-")
+            new_deadline = datetime(int(deadline_split[2]), int(deadline_split[0]), int(deadline_split[1]))
+        else:
+            new_deadline = None
+
         job_url = request.json['job_url']
         salary = request.json['salary']
+
         date_applied = request.json['date_applied']
+        if request.json['date_applied'] == '':
+            new_date_applied = datetime.now()
+        else:
+            date_applied_split = date_applied.split("-")
+            new_date_applied = datetime(int(date_applied_split[2]), int(date_applied_split[0]), int(date_applied_split[1]))
+
         location = request.json['location']
         job_description = request.json['job_description']
         status = request.json['status']
@@ -143,10 +208,10 @@ def create_application():
             user_id=current_user.id,
             company=company,
             job_title=job_title,
-            deadline=deadline,
+            deadline=new_deadline,
             job_url=job_url,
             salary=salary,
-            date_applied=date_applied,
+            date_applied=new_date_applied,
             location=location,
             job_description=job_description,
             status=status,
@@ -173,10 +238,23 @@ def update_application(id):
         if app.user_id == current_user.id:
             company = request.json['company']
             job_title = request.json['job_title']
-            deadline = request.json['deadline']
+
+            # if request.json['deadline']:
+            #     deadline = request.json['deadline']
+            #     if deadline != '':
+            #         deadline_split = deadline.split("-")
+            #         new_deadline = datetime(int(deadline_split[2]), int(deadline_split[0]), int(deadline_split[1]))
+            #         app.deadline = new_deadline
+
             job_url = request.json['job_url']
             salary = request.json['salary']
-            date_applied = request.json['date_applied']
+
+            # if request.json['date_applied']:
+            #     date_applied = request.json['date_applied']
+            #     date_applied_split = date_applied.split("-")
+            #     new_date_applied = datetime(int(date_applied_split[2]), int(date_applied_split[0]), int(date_applied_split[1]))
+            #     app.date_applied = new_date_applied
+
             location = request.json['location']
             job_description = request.json['job_description']
             status = request.json['status']
@@ -184,10 +262,8 @@ def update_application(id):
 
             app.company = company
             app.job_title = job_title
-            app.deadline = deadline
             app.job_url = job_url
             app.salary = salary
-            app.date_applied = date_applied
             app.location = location
             app.job_description = job_description
             app.status = status

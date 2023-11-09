@@ -10,6 +10,8 @@ import Divider from '@mui/material/Divider';
 import dayjs from 'dayjs';
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
+import { useDispatch } from 'react-redux';
+import { updateUserApplication } from '../../store/applications';
 
 const newTheme = (theme) => createTheme({
   ...theme,
@@ -68,7 +70,8 @@ const formatDate = (date) => {
 
 
 const SingleApp = ({ appData, colData }) => {
-    console.log("COLUMN DATA: ", colData)
+    // console.log("COLUMN DATA: ", colData)
+    const dispatch = useDispatch()
     const [open, setOpen] = useState(false);
     const [company, setCompany] = useState(appData.company)
     const [jobTitle, setJobTitle] = useState(appData.job_title)
@@ -88,13 +91,48 @@ const SingleApp = ({ appData, colData }) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const handleAppStatusUpdate = (newStatus) => {
+
+    }
+
+    // console.log("LOOK HERE: ", `${deadline['$M'] + 1}-${deadline['$D']}-${deadline['$y']}`)
+
     const handleAppDetailsUpdate = () => {
+        if(status !== appData.status) {
+            handleAppStatusUpdate(status)
+        }
 
+        let deadlineUpdate
+        let dateAppliedUpdate
+
+        if(deadline !== appData.deadline) {
+            deadlineUpdate = `${deadline['$M'] + 1}-${deadline['$D']}-${deadline['$y']}`
+        } else {
+            deadlineUpdate = appData.deadline
+        }
+
+        if(dateApplied !== appData.date_applied) {
+            dateAppliedUpdate = `${dateApplied['$M'] + 1}-${dateApplied['$D']}-${dateApplied['$y']}`
+        } else {
+            dateAppliedUpdate = appData.date_applied
+        }
+
+        const updatedApp = {
+            company: company,
+            job_title: jobTitle,
+            job_url: jobUrl,
+            date_applied: dateAppliedUpdate,
+            job_description: description,
+            location: location,
+            salary: salary,
+            deadline: deadlineUpdate,
+            notes: notes,
+            status: status
+        }
+
+        dispatch(updateUserApplication())
     }
 
-    const handleAppStatusUpdate = () => {
-
-    }
 
     const handleAppDelete = () => {
 
@@ -165,6 +203,8 @@ const SingleApp = ({ appData, colData }) => {
                                         <DatePicker
                                             id='app-date-picker'
                                             value={dateApplied}
+                                            readOnly={true}
+                                            disabled={true}
                                             onChange={(newValue) => setDateApplied(newValue)}
                                         />
                                     </ThemeProvider>
@@ -208,37 +248,6 @@ const SingleApp = ({ appData, colData }) => {
                                     />
                                 </section>
                                 <section className='edit-app-field'>
-                                    <label className='edit-app-modal-labels' htmlFor='deadline'>Deadline</label>
-                                    <div style={{backgroundColor: 'white'}}>
-
-                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                        <DatePicker
-                                            value={deadline}
-                                            onChange={(newValue) => {
-                                                console.log(newValue)
-                                                setDeadline(newValue)
-                                            }}
-                                        />
-                                    </LocalizationProvider>
-                                    </div>
-                                </section>
-                            </section>
-                        </section>
-                        <Divider id='app-edit-info-divider' orientation='vertical' sx={{marginTop: '5px'}} flexItem />
-                        <section className='edit-app-half'>
-                            <h3>Notes & Status</h3>
-                            <section>
-                                <section className='edit-app-field'>
-                                    <label className='edit-app-modal-labels' htmlFor='notes'>Notes</label>
-                                    <textarea
-                                        className='edit-app-textarea'
-                                        id='edit-app-textarea-2'
-                                        name='notes'
-                                        value={notes}
-                                        onChange={(e) => setNotes(e.target.value)}
-                                    />
-                                </section>
-                                <section className='edit-app-field'>
                                     <label className='edit-app-modal-labels' htmlFor='status'>Status</label>
                                     <select
                                         id='edit-app-select'
@@ -252,6 +261,52 @@ const SingleApp = ({ appData, colData }) => {
                                         <option value="Rejected">Rejected</option>
                                     </select>
                                 </section>
+                                {/* <section className='edit-app-field'>
+                                    <label className='edit-app-modal-labels' htmlFor='deadline'>Deadline</label>
+                                    <div style={{backgroundColor: 'white'}}>
+
+                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <DatePicker
+                                            value={deadline}
+                                            readOnly={true}
+                                            onChange={(newValue) => {
+                                                console.log(newValue)
+                                                setDeadline(newValue)
+                                            }}
+                                        />
+                                    </LocalizationProvider>
+                                    </div>
+                                </section> */}
+                            </section>
+                        </section>
+                        <Divider id='app-edit-info-divider' orientation='vertical' sx={{marginTop: '5px'}} flexItem />
+                        <section className='edit-app-half'>
+                            <h3>Notes</h3>
+                            <section>
+                                <section className='edit-app-field'>
+                                    {/* <label className='edit-app-modal-labels' htmlFor='notes'>Notes</label> */}
+                                    <textarea
+                                        className='edit-app-textarea'
+                                        id='edit-app-textarea-2'
+                                        name='notes'
+                                        value={notes}
+                                        onChange={(e) => setNotes(e.target.value)}
+                                    />
+                                </section>
+                                {/* <section className='edit-app-field'>
+                                    <label className='edit-app-modal-labels' htmlFor='status'>Status</label>
+                                    <select
+                                        id='edit-app-select'
+                                        className='edit-app-select-input'
+                                        value={status}
+                                        onChange={(e) => setStatus(e.target.value)}
+                                    >
+                                        <option value="Applied">Applied</option>
+                                        <option value="Interviewed">Interviewed</option>
+                                        <option value="Received Offer">Received Offer</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </section> */}
                             </section>
                         </section>
                     </section>

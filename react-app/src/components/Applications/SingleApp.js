@@ -12,6 +12,7 @@ import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@emotion/react';
 import { useDispatch } from 'react-redux';
 import { updateUserApplication } from '../../store/applications';
+import { fetchAllColumns } from '../../store/appColumns';
 
 const newTheme = (theme) => createTheme({
   ...theme,
@@ -92,7 +93,8 @@ const SingleApp = ({ appData, colData }) => {
     const handleClose = () => setOpen(false);
 
     const handleAppStatusUpdate = (newStatus) => {
-
+        let oldStatus = appData.status
+        colData.splice(colData.indexOf(appData.id))
     }
 
     // console.log("LOOK HERE: ", `${deadline['$M'] + 1}-${deadline['$D']}-${deadline['$y']}`)
@@ -102,35 +104,19 @@ const SingleApp = ({ appData, colData }) => {
             handleAppStatusUpdate(status)
         }
 
-        let deadlineUpdate
-        let dateAppliedUpdate
-
-        if(deadline !== appData.deadline) {
-            deadlineUpdate = `${deadline['$M'] + 1}-${deadline['$D']}-${deadline['$y']}`
-        } else {
-            deadlineUpdate = appData.deadline
-        }
-
-        if(dateApplied !== appData.date_applied) {
-            dateAppliedUpdate = `${dateApplied['$M'] + 1}-${dateApplied['$D']}-${dateApplied['$y']}`
-        } else {
-            dateAppliedUpdate = appData.date_applied
-        }
-
         const updatedApp = {
             company: company,
             job_title: jobTitle,
             job_url: jobUrl,
-            date_applied: dateAppliedUpdate,
             job_description: description,
             location: location,
             salary: salary,
-            deadline: deadlineUpdate,
             notes: notes,
             status: status
         }
 
-        dispatch(updateUserApplication())
+        dispatch(updateUserApplication(appData.id, updatedApp))
+        dispatch(fetchAllColumns())
     }
 
 

@@ -68,14 +68,14 @@ const MainListItems = () => {
         <ListItemText primary="Resources" />
         </ListItemButton>
     </Link>
-    <Link href="/news" style={{"textDecoration": "none", "color": "black"}}>
+    {/* <Link href="/news" style={{"textDecoration": "none", "color": "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <NewspaperIcon />
       </ListItemIcon>
       <ListItemText primary="News" />
     </ListItemButton>
-    </Link>
+    </Link> */}
     <ListItemButton onClick={() => {
       dispatch(logout()).then(() => {
         history.push('/login')

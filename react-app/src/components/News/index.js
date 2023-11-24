@@ -13,19 +13,26 @@ const NewsPage = () => {
 
     const fetchNews = async () => {
 
-        const response = await fetch('https://newsapi.org/v2/everything?q=software+engineering&apiKey=69a664a8204544579e5d5b80d11a8ccc')
+        const apiUrl = 'https://newsapi.org/v2/everything?q=software+engineering&apiKey=69a664a8204544579e5d5b80d11a8ccc';
+        const proxyUrl = 'https://project-blockr.onrender.com/news';
 
-        if(response.ok) {
-            const data = await response.json()
-            setNewsData(data.articles)
-            setLoaded(true)
-            return
-        } else {
-            const errors = await response.json()
-            setFetchError(errors)
-            setLoaded(true)
-            return
-        }
+        fetch(proxyUrl + apiUrl)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+        // const response = await fetch('https://newsapi.org/v2/everything?q=software+engineering&apiKey=69a664a8204544579e5d5b80d11a8ccc')
+
+    //     if(response.ok) {
+    //         const data = await response.json()
+    //         setNewsData(data.articles)
+    //         setLoaded(true)
+    //         return
+    //     } else {
+    //         const errors = await response.json()
+    //         setFetchError(errors)
+    //         setLoaded(true)
+    //         return
+    //     }
     }
 
     useEffect(() => {

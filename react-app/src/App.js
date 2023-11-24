@@ -42,9 +42,9 @@ function App() {
           <Route exact path='/about'>
             <AboutUs />
           </Route>
-          <Route exact path='/news'>
+          {/* <Route exact path='/news'>
             <NewsPage />
-          </Route>
+          </Route> */}
           <Route exact path='/practice'>
             <Practice />
           </Route>
